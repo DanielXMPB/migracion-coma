@@ -1,0 +1,251 @@
+/*!
+ * Universidad Industrial de Santander
+ * Grupo de Desarrollo de Software Calumet
+ * EISI | EncuestasUis | Stylesheet
+ * Creado el 2016-29-09 por Cindy Gómez
+ **/
+
+
+/*
+ * General
+ */
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.main {
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+    min-width: 1000px;
+    box-shadow: 0 0 7px #bbb;
+    background-color: #FFFFFF;
+    border-radius: 2px;
+}
+
+/*
+ * Campos/Preguntas
+ */
+
+.campos-agregados {
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+}
+
+.campos-agregados .btn-cancelar {
+    display: none;
+}
+
+.obligatorio-label {
+    font-weight: normal;
+}
+
+.campos-agregados.campoPreview .campo-edicion,
+.campos-agregados.campoPreview .vista-previa,
+.campos-agregados.campoPreview .btn-opciones-edicion {
+    display: none;
+}
+
+.campos-agregados.campoEditado .btn-cancelar {
+    display: inline-block;
+}
+
+.campos-agregados.campoPreview .campo-vista {
+    background-color: transparent;
+    border: none;
+}
+
+.campo-edicion {}
+
+.campo-vista {
+    background-color: #F9F9F9;
+    padding: 10px 15px;
+    border-top: 1px dashed #BBB;
+    border-bottom: 1px dashed #BBB;
+    margin-left: -20px;
+    width: 995px;
+    border-radius: 2px;
+    border-width: 1px 0 1px 0;
+}
+
+/*
+ * Botones de opciones
+ */
+
+.btn-opciones {
+    height: 40px;
+    padding: 10px 15px
+}
+
+.campos-agregados.campoPreview:hover .btn-opciones-vista,
+.campos-agregados.campoPreview:hover .obligatorio-label {
+    display: block;
+}
+
+.btn-opciones-edicion {
+    float: right;
+}
+
+.btn-opciones-vista {
+    float: right;
+    display: none;
+}
+
+.campoPreview .btn-opciones-vista {
+    display: block;
+}
+
+.campo-vista .ayuda {
+    padding-left: 5px;
+    font-style: italic;
+    font-size: small;
+}
+
+.ayuda {
+    padding-left: 5px;
+    font-style: italic;
+    font-size: small;
+    font-weight: normal;
+}
+
+/*
+ * Campo Selector/Radio/Checkbox Edición
+ */
+
+.campo-src-item {
+    display: block;
+    overflow: auto;
+}
+
+.campo-src-item input {
+    float: left;
+    display: inline-block;
+    margin: 5px 0 5px 5px;
+}
+
+.campo-src-item .icon {
+    float: left;
+    display: inline-block;
+    margin: 10px 0 0 10px;
+}
+
+.option-text {
+    font-weight: normal;
+}
+
+.estadoEncuesta .onoffswitch-inner:after {
+    content: "Inactivo" !important;
+}
+
+.estadoEncuesta .onoffswitch-inner:before {
+    content: "Activo" !important;
+}
+
+.permisoEncuesta .onoffswitch-inner:after {
+    content: "Público" !important;
+}
+
+.permisoEncuesta .onoffswitch-inner:before {
+    content: "Privado" !important;
+}
+
+#ac-bg ul.dropdown-menu {
+    min-width: 800px;
+}
+
+#ac-bg ul.dropdown-menu .row-fluid {
+    margin: 0;
+    padding: 5px 0 10px 0;
+}
+
+.ac-bg1 {
+    border-right: 1px solid #ddd;
+}
+
+#ac-bg .dropdown-menu h4 {
+    padding: 5px;
+    margin: 5px;
+    border-bottom: 1px solid;
+}
+
+#ac-bg .dropdown-menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#ac-bg .dropdown-menu ul li a {
+    display: block;
+    padding: 6px 15px;
+    clear: both;
+    font-weight: normal;
+    line-height: 20px;
+    font-size: 14px !important;
+    /*white-space: nowrap;*/
+}
+
+.campos-agregados h3 {
+    color: #ddd;
+    text-align: center;
+}
+
+.btn-opciones {
+    float: right !important;
+}
+
+.subtitulo {
+    font-weight: normal !important;
+}
+
+.titulo {
+    padding-bottom: 0px;
+}
+
+.subtitulo1 {
+    font-weight: normal !important;
+}
+
+.titulo1 {
+    padding-bottom: 0px;
+}
+
+.btn-agregar {
+    float: right;
+}
+
+.radio-ur {
+    padding-top: 7px;
+}
+
+.pagina {
+    display: none;
+}
+
+.caja-pregunta {
+    border-radius: 2px;
+    padding: 10px 20px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+    margin-bottom: 20px;
+    background: white;
+}
+
+.caja-pregunta.invalid {
+    box-shadow: 0 1px 4px 0 rgb(255, 93, 0);
+}
+
+.pregunta {
+    border-radius: 2px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+}
+.inactivo {
+    display: none;
+}
+
+.activo {
+    display: block;
+}
+
+

@@ -1,0 +1,319 @@
+a:hover
+{
+    color: #3ca0d0;
+}
+
+.wrapper
+{
+width:730px;
+height: auto;
+display: block;
+margin:auto;
+background: white;
+margin: 0 auto;
+padding: 10px;
+text-align: left;
+}
+
+.wrapper2
+{
+    text-align: left;
+    padding: 10px;
+    margin: auto;
+    width: 715px;
+    display: block;
+    background: white;
+    height: auto;
+}
+
+.barra{
+    width: 720px;
+    height: auto;
+    display: block;
+    margin:5px 0px 5px 0px;
+    padding: 0px 4px;
+    background: white;
+}
+
+.bocadillo1 {
+	background-color: #F4F5F9;
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	font-size: 12px;
+	font-weight: normal;
+	color: #0F144B;
+	text-decoration: none;
+}
+
+.bocadillo2 {
+	background-color: #EEF3F9;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #0F144B;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.barra span {
+    /*display: block;*/
+    color: #292929;
+}
+
+.barraUp{
+    width: 728px;
+    height: 2px;
+    display: block;
+    margin:10px 0px 20px 0px;
+    background: #086FA1;
+}
+
+.botonesTipo2{
+    width: 331px;
+    height: 30px;
+    display: block;
+    margin: auto;
+    float: left;
+    background: white;
+    padding: 2px 20px;
+}
+
+.boton{
+    width: 140px;
+    height: 25px;
+    display: block;
+    margin: auto;
+    float: left;
+    background: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.botonesPlan
+{
+    width: 70px;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+.botonGuion
+{
+    position: relative;
+    width: 280px;
+    height: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    clear: both;
+}
+
+.titulo{
+    width: 708px;
+    height: auto;
+    display: block;
+    margin:auto;
+    padding: 2px 10px;
+    background: white;
+    color:#3CA0D0;
+}
+
+.titulo1
+{
+    margin: auto;
+    padding-left: 4px;
+    display: block;
+    background: white;
+    height: auto;
+    color: #3ca0d0;
+}
+
+.camposobligatorios
+{
+    margin-top: 37px;
+    color: #7f88a9;
+    font-family: "Geneva", "Arial", "Helvetica", sans-serif;
+    font-size: 10px;
+    text-decoration: none;
+}
+
+.indicacion
+{
+    width: 195px;
+    margin-bottom: 8px;
+    color: #7f88a9;
+    font-family: "Geneva", "Arial", "Helvetica", sans-serif;
+    font-size: 10px;
+    text-decoration: none;
+}
+
+.inform1
+{
+    float: left;
+    margin-top: 3px;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    text-align: left;
+    height: auto;
+}
+
+.inform2
+{
+    float: left;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    width: 195px;
+    height: auto;
+}
+
+.inform
+{
+    margin-top: 36px;
+    width: 300px;
+    float: left;
+    height: 34px;
+    margin-left: 10px;
+    color: red;
+}
+
+.inform3
+{
+    /*clear: both;*/
+    float: left;
+    margin-left: 10px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.inform4
+{
+    clear: both;
+    float: left;
+    width: 410px;
+    height: auto;
+    margin-bottom: 15px;
+    margin-top: -50px;
+    margin-left: 175px;
+    table-layout: fixed;
+}
+
+.inform5
+{
+    clear: both;
+    float: left;
+    width: 618px;
+    height: auto;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    margin-left: 32px;
+}
+
+.respuestas{
+     width: 250px;
+     float: left;
+     padding-bottom: 10px;
+     padding-top: 10px;
+     padding-left: 10px;
+     padding-right: 20px;
+     margin: 10px 5px 10px 5px;
+     /*border-left: 2px solid #086FA1;*/
+}
+
+.inputTexto {
+    width: auto;
+    height: auto;
+}
+
+.input1
+{
+    width: 178px;
+    color: #0f144b;
+    font-family: "Arial", "Helvetica", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: none;
+}
+
+.solicitudes{
+    width: 220px;
+    float: left;
+    text-align: right;
+    padding: 12px 10px;
+    margin: 10px 5px 10px 5px;
+}
+
+span a:hover
+{
+    color: #3ca0d0;
+    text-decoration: none;
+}
+
+.subtitulo {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #0F144B;
+	font-weight: bold;
+        width: 255px;
+}
+
+select
+{
+    width: 184px;
+}
+
+.tituloPlan{
+    margin-top: 2px;
+    height: auto;
+    width:250px;
+}
+
+.texto {
+color: #0f144b;
+font-family: "Arial", "Helvetica", sans-serif;
+font-size: 12px;
+font-weight: 400;
+text-transform: none;
+}
+
+textarea
+{
+    width: 250px;
+}
+
+.espacio{
+    margin-top: 3px;
+    padding: 2px;
+}
+.espacio1{
+    margin-top: 4px;
+}
+
+.nombredecampo
+{
+    color: #2c3872;
+    font-family: "Geneva", "Arial", "Helvetica", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 3px;
+    margin-bottom: 25px;
+}
+
+.nombredecampogrupo
+{
+    float: left;
+    color: #2c3872;
+    font-family: "Geneva", "Arial", "Helvetica", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 19px;
+    clear: both;
+}
+
+.nuevoTitulo1{
+    width: 494px;
+    height: auto;
+    margin-top: 3px;
+    margin-left: 105px;
+}
+#enlace, #enlace:visited {
+    text-decoration: none;
+    color: black;
+}

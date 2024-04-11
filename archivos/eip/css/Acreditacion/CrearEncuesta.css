@@ -1,0 +1,311 @@
+/* 
+    Document   : CrearEncuesta
+    Created on : 27/09/2013, 12:29:06 AM
+    Author     : Duvan Jamid
+    Description:
+        Purpose of the stylesheet follows.
+*/
+.contendor{
+    padding: 20px;
+    max-width: 1200px;
+    min-width: 900px;
+    margin: 0 auto;
+}
+.contenido{
+    position: relative;
+    border: 1px solid #ddd;
+}
+
+
+ul.listapreguntas {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+ul.listapreguntas.hijas {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 25px;
+    margin-left: 40px;
+    position: relative;
+}
+.dock.respuesta {
+    min-width: 100px;
+    text-align: center;
+}
+
+ul.listapreguntas>li{
+    display: block;
+    clear: both;
+    font-weight: normal;
+    line-height: 18px;
+    color: #687074;
+    font-size: 13px;
+    font-weight: 400;
+
+    margin: 10px 0;
+    position: relative;
+    min-height: 40px;
+}
+ul.listapreguntas>li>div.caja{
+    display: block;
+    clear: both;
+    font-weight: normal;
+    line-height: 18px;
+    color: #687074;
+    font-size: 13px;
+    padding: 10px;
+    font-weight: 400;
+    border: 1px solid #DDD;
+    position: relative;
+}
+ul.listapreguntas>li.active {
+    border: 3px dotted #6EB056;
+}
+ul.listapreguntas>li>.caja:hover {
+    border: 1px solid #ddd;
+    box-shadow: 0 0 3px 0 #aaa;
+}
+ul.listapreguntas>li>.caja:hover .ordenar{
+    display: block;
+}
+.ordenar{
+    float: right;
+    display: none;
+    margin: 0;
+}
+.ordenar a.btn{
+    margin: 0 5px;
+}
+ul.listapreguntas>li>div.caja .enunciado {
+    text-align: left;
+    overflow: hidden;
+    margin: 0;
+    background-color: #f5f5f5;
+    padding: 5px;
+    border: 1px solid #DDD;
+    margin-right: 135px;
+}
+
+ul.listapreguntas>li>div.caja>.btn-group.agregar {
+    position: absolute;
+    top: 20px;
+    margin: 0;
+    padding: 0 !important;
+    right: 10px;
+}
+ul.listapreguntas>li>div.caja>.btn-group.agregar>button.boton {
+    margin: 0;
+}
+li .btn-group.opciones-admin{
+    position: absolute;
+    top: 10px;
+    right: 5px;
+}
+li .btn-group.opciones-admin>button.boton{
+    border-radius: 0 0 0 4px;
+    -webkit-border-radius: 0 0 0 4px;
+    margin: 0px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+.lista-opciones-fuentes{
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+.lista-opciones-fuentes>[class*="span"]{
+    min-height: 1px;
+}
+[class*="span"].estrecho{
+    min-height: 1px;
+}
+.row-fluid.estrecho{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+*.estrecho{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+ul.opciones{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+ul.opciones>li{
+    display: block;
+    font-weight: normal;
+    border-bottom: solid 1px #ddd;
+    border-left:  solid 1px #ddd;
+    border-right:   solid 1px #ddd;
+    position: relative;
+}
+
+ul.opciones>li:first-child{
+}
+ul.opciones>li>span:not(.icon){
+    display: block;
+    font-weight: normal;
+    font-size: 12px;
+    padding: 5px 5px 5px 5px;
+}
+ul.opciones>li>span:not(.icon).opcion-respuesta {
+    margin-right: 40px;
+}
+ul.opciones>li>span:not(.icon).indicador-evidencia {
+    margin-right: 20px;
+}
+ul.opciones>li button.boton.agregar_hija{
+    margin: 0px;
+    position: absolute;
+    top: 3px;
+    right: 5px;
+    opacity: 0.5;
+}
+ul.opciones>li button.boton.eliminar-fuente{
+    margin: 0px;
+    position: absolute;
+    top: 3px;
+    right: 5px;
+    opacity: 0.5;
+}
+ul.opciones>li button.boton.agregar-fuente{
+    margin: 0px;
+    position: absolute;
+    top: 3px;
+    right: 5px;
+    opacity: 0.5;
+}
+ul.opciones>li:hover button.boton{
+    opacity: 1;
+}
+ul.opciones>li:hover{
+    border: solid 1px #599CC7;
+    cursor: pointer;
+}
+
+.cancelar-cambios{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+.tools{
+    display: none;
+}
+
+ul.opciones.respuestas{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+ul.opciones.respuestas2{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    margin-right: 135px;
+    border:   solid 1px #ddd;
+    border-width: 1px  1px 1px 0;
+    margin-top: 10px;
+    background-color: #f4fafa;
+}
+ul.opciones.respuestas2>li{
+    width: 50%;
+    display: inline-block;
+    border-top: none;
+    box-sizing: border-box;
+}
+ul.opciones.respuestas2>li:last-child{
+    border-bottom: none;
+    border-right: none;
+}
+ul.opciones.respuestas2>li>span{
+    padding: 3px;
+}
+ul.opciones.respuestas2 li:nth-child(2n){
+    border-left: none;
+    border-right: none;
+}
+.herramientas{
+    position: relative;
+}
+.herramientas>.boton.agregar-pregunta{
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    float: none;
+    margin: 0;
+}
+
+
+ul.opciones.categorias{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    margin-top: 10px;
+}
+ul.opciones.categorias>li{
+    width: 49%;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 2px;
+}
+ul.opciones.categorias>li:nth-child(2){
+    border-top: 1px solid #ddd;
+}
+ul.opciones.categorias>li:hover{
+    border-bottom: solid 1px #599CC7;
+    cursor: pointer;
+}
+ul.opciones.categorias>li span.icon{
+    display:none;
+    float: right;
+    margin-top: -3px;
+}
+ul.opciones.categorias>li:hover>span:not(.icon){
+    padding-left: 20px;
+    border-left: solid 2px #599CC7;
+    color: #599CC7; 
+}
+ul.opciones.categorias>li.active>span:not(.icon){
+    background-color: #f5f5f5;
+    font-weight: bold;
+    color: #599CC7; 
+    border-left: solid 2px #599CC7;
+}
+ul.opciones.categorias>li.active span.icon{
+    display:block;
+}
+
+
+.dock{
+    display: inline-block;
+    float: none;
+    padding: 0 6px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin: 2px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 15px;
+    color: #fff;
+}
+div.lista-fuentes>.dock{
+    color: #555;
+    min-width: 130px;
+}
+.ver-fuentes,.ver-opciones{
+    padding: 2px;
+    text-decoration: underline;
+}
+.oculto{
+    display: none; 
+}

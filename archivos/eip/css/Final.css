@@ -1,0 +1,228 @@
+._3nivel { 
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFFFFF;
+	background-image: url('../images/banner/fondo3nivel.jpg');
+	background-repeat:   repeat-x;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+}
+
+.tercernivel {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFFFFF;
+	background-image: url('../images/banner/fondo3nivel.jpg');
+	background-repeat:   repeat-x;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+}
+
+._4nivel {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	background-color: #DAE4F0;
+	color: #466584;
+	text-align: left;
+	text-decoration: none;
+}
+
+.cuartonivel {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	background-color: #DAE4F0;
+	color: #466584;
+	text-align: left;
+	text-decoration: none;
+}
+
+.bocadillo1 {
+	background-color: #EFF4F9;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #3F468B;
+	text-decoration: none;
+}
+
+.bocadillo2 {
+	background-color: #DDE6F1;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #3F468B;
+	text-decoration: none;
+}
+
+.camposobligatorios {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #466584;
+	text-decoration: none;
+}
+.encabezadotablas {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: xx-small;
+	color: #4B4E9C;
+	background-color: #CFDBEB;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+}
+
+.fondotabla3y4niv {
+	background-color: #5F7D9E;
+	text-decoration: none;
+}
+
+.fondopagina {
+	background-color: #F3F5F8; vertical-align:top;
+}
+
+
+.fondotablas {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFFFFF;
+	background-color: #5F7D9E;
+}
+.fondomenu2 {
+	background-image: url('../images/banner/fondomenu2.gif');
+	background-repeat:   repeat-x;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	text-align: center;
+	vertical-align: middle;
+	font-weight: bold;
+	color: #3D3E7A;
+	font-style: italic;
+	text-decoration: none;
+}
+
+.fondoservicios {    
+	margin-top: 0; 
+	margin-bottom: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-align: center;
+	vertical-align: middle;
+	font-weight: bolder;
+	color: #3D3E7A;
+	font-style: italic;
+	text-decoration: none; background-color:#EFF3EF;
+}
+
+
+
+.index_contenidos {   	
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px; 
+	text-align: left;
+	vertical-align: middle; 
+	font-weight: bold;
+	color: #3D3E7A;
+	font-style: oblique;
+	text-decoration: none;
+}
+.index_externos {   	
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px; 
+	text-align: left;
+	vertical-align: middle;
+	font-weight: bold;
+	color: #3D3E7A;
+	font-style: oblique;
+	text-decoration: none; 
+	margin-top: 1; 
+	margin-bottom: 1; 
+}
+.index_novedades {
+	color: #CC6600;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	text-decoration: none;
+	text-align: justify;
+	vertical-align: top;
+	font-weight: normal;
+	font-style: oblique;
+	text-transform: none;
+	background-repeat: no-repeat;
+}
+.index_submenu {
+	color: #3D3E7A;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-decoration: none;	
+	vertical-align: top;
+	font-weight: normal;
+	font-style: oblique;
+	text-transform: none;
+	background-repeat: no-repeat;
+	margin-top: 1; 
+	margin-bottom: 1; 
+}
+
+
+
+.nombredecampo {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #3A5570;
+	font-weight: bold;
+}
+
+.subtitulos {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #445280;
+	text-decoration: none;
+}
+
+.titulos {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #5970A4;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.texto {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #5A799D;
+	text-decoration: none;
+}
+
+.subtituloformulario {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #466584;
+	font-weight: bold;
+}
+
+a:link {
+	color: #3F468B; text-decoration: none;
+} 
+a:visited{
+	color: #3F468B; text-decoration: none;
+}
+a:hover{
+	color: #B33D0B;	text-decoration: none;
+}
+
+
+.boton { 
+		font-family: Verdana, sans-serif; 
+		font-size: 10px; 
+		color: #5F7D9E; 
+		border: 1px #666666 solid; 
+		background-color: #f2f2f2; 
+		font-weight: bold
+}
+
+.adempresa {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: xx-small;
+	color: #5A799D;
+}

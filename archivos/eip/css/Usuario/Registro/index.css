@@ -1,0 +1,30 @@
+/* EISI | Usuario | Registro | index.css
+   Creado el 2015-03-25 por Romel Pérez, prhone.blogspot.com */
+
+label {
+    float: left;
+    clear: left;
+}
+
+select,
+input[type=text],
+input[type=password],
+input[type=number],
+input[type=email] {
+    display: block;
+    float: left;
+    clear: left;
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+.text-normal {
+    font-weight: normal;
+}
+
+.select-container {
+    overflow: hidden;
+    float: left;
+    clear: left;
+    margin-bottom: 10px;
+}

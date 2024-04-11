@@ -1,0 +1,185 @@
+/**
+ * Universidad Industrial de Santander
+ * Grupo de Desarrollo de Software Calumet
+ * EISI | Estándar | FileManager | Styles
+ * Romel Pérez, romelperez.blogspot.com
+ * Creado en Abril del 2015
+ * Actualizado en Julio del 2015
+ */
+
+/* Estética */
+html, body {
+    margin: 0;
+    background-color: #ECF0F1;
+}
+#main {
+    display: block;
+}
+h1, h2, h3, h4 {
+    display: inline-block;
+    margin: 0;
+}
+
+/* Panel header */
+/* FIXIT: la maquetación no está muy bien hecha. No se le aplica
+   prioridad porque es algo sencillo por ahora. */
+.panel-header {
+    z-index: 10;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: #34495E;
+    color: #fff;
+    box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+}
+.panel-header > div {
+    box-sizing: border-box;
+}
+.panel-header-main {
+    overflow: hidden;
+    padding: 20px 30px;
+    width: 100%;
+}
+.panel-header-main button {
+    margin-right: 0;
+}
+.panel-header-controls {
+    overflow: hidden;
+    width: 100%;
+    padding: 0 30px;
+    font-size: 1.3em;
+    background: #16A085;
+}
+.panel-header-subtitle span.icon {
+    margin: 9px 0;
+}
+.panel-header-subtitle span.label {
+    padding: 9px 0;
+}
+.panel-header-options {
+    margin: 0;
+}
+
+/* Panel content */
+.panel-content {
+    overflow: auto;
+    position: fixed;
+    top: 118px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+}
+
+/* Panel content - Archivos */
+.panel-files {
+    margin: 0;
+    padding: 0;
+}
+
+/* Panel content- Files - Vista de iconos */
+.panel-files_icons {}
+.panel-files_icons li.file-view {
+    overflow: hidden;
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    width: 120px;
+    min-height: 120px;
+    list-style: none;
+    text-align: center;
+    vertical-align: top;
+    word-break: break-word;
+    word-wrap: break-word;
+    background-color: #ffffff;
+    border-radius: 2px;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+.panel-files_icons li.file-view:hover {
+    cursor: pointer;
+    background: #1ABC9C;
+    color: #fff;
+    box-shadow: 0 0 8px #aaa;
+}
+.panel-files_icons div.file-view-icon {
+    display: inline-block;
+    width: 100%;
+    height: 100px;
+    background-size: cover;
+    background-position: 50% 50%;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    border-radius: 2px;
+}
+.panel-files_icons div.file-view-info {
+    display: block;
+    word-break: break-word;
+    word-wrap: break-word;
+    font-size: 11px;
+    line-height: 1.3;
+}
+.panel-files_icons .file-view-data {
+    display: none;
+}
+
+/* Panel content- Files - Vista de lista */
+.panel-files_list {}
+.panel-files_list li.file-view {
+    overflow: hidden;
+    display: block;
+    margin: 2px 0;
+    padding: 2px;
+    width: 100%;
+    background-color: #FFF;
+    border-bottom: 1px solid #E5E5E5;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    border-radius: 2px;
+}
+.panel-files_list li.file-view:last-child {
+    border-bottom: none;
+}
+.panel-files_list li.file-view:hover {
+    cursor: pointer;
+    background: #1ABC9C;
+    color: #FFF;
+    box-shadow: 0 0 8px #aaa;
+}
+.panel-files_list div.file-view-icon {
+    display: inline-block;
+    float: left;
+    width: 40px;
+    height: 40px;
+    list-style: none;
+    background-size: cover;
+}
+.panel-files_list div.file-view-info {
+    overflow: hidden;
+    display: inline-block;
+    width: auto;
+    padding: 0 5px;
+    font-size: 14px;
+    height: 40px;
+    line-height: 1.5;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.panel-files_list .file-view-data {
+    color: gray;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+.panel-files_list li.file-view:hover .file-view-data {
+    color: #FFF;
+}

@@ -1,0 +1,195 @@
+/* 
+    Document   : Aplicacion
+    Created on : 20/02/2014, 11:51:19 AM
+*/
+
+
+.cont-lista-talleres {
+    height: auto;
+    -moz-border-radius: 1px;
+    -webkit-border-radius: 1px;
+    border-radius: 1px;
+    -moz-box-shadow: 0px 0px 2px #000000;
+    -webkit-box-shadow: 0px 0px 2px #000000;
+    box-shadow: 0px 0px 2px #000000;
+}
+.factor{
+    float: left;
+    padding-bottom: 10px;
+}
+.encabezado{
+    color: #FFF;
+    height: 40px;
+    font-size: 15px;
+    padding-left: 10px;
+    line-height: 40px;
+}
+.cajaInstrumento{
+    -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    border: 1px solid rgba(0,0,0,.2);
+    font-size: 14px !important;
+    min-height: 760px;
+    margin: 10px;
+}
+.encabezadoInstrumento{
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 15px 0;
+}
+.table-striped-top thead tr:first-child th, .table-striped-top tbody tr:first-child th {
+    background: #eff3f8 !important;
+}
+.encabezado-encuesta{
+    line-height: 20px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 15px 0px;
+}
+.contenedor-preguntas{
+    float: left;
+    padding: 5px 30px;
+    /*width: 95%;*/
+}
+.cont-pregunta, .cont-pregunta-hija{
+    float: left;
+    padding: 5px;
+    margin-bottom: 20px;
+    margin-left: 0px !important;
+    border: 1px solid #B4B4B4;
+    line-height: 18px;
+    color: #687074;
+    font-size: 14px;
+    -moz-border-radius: 1px;
+    -webkit-border-radius: 1px;
+    border-radius: 1px;
+    -moz-box-shadow: 0px 0px 2px #b8b8bc;
+    -webkit-box-shadow: 0px 0px 2px #b8b8bc;
+    box-shadow: 0px 0px 2px rgba(136, 136, 136, 1);
+}
+.tituloPreg{
+    float: left;
+    /*border: 1px solid #ddd;*/
+    padding: 10px;
+    margin-bottom: 5px;
+}
+.tituloFactor-encuesta{
+    float: left;
+    margin-bottom: 10px;
+    color: #687074;
+    font-size: 15px;
+}
+.respPreg{
+    float: left;
+    margin: 0px !important;
+    padding: 0 5px 5px 5px;
+}
+.base-pregunta, .preg-num, .preg-normal{
+    display:none !important;
+}
+.pregunta{
+    float: left;
+    padding: 5px;
+    border-radius: 5px;
+}
+.pregunta a hover{
+    border: 1px solid #0018CF;
+}
+.btn-siguiente{
+    float : right !important;
+    margin-bottom: 10px;
+    margin-right: 5px;
+}
+.pagination {
+    margin: 20px 40px !important;
+    text-align: center;
+}
+.pagination ul{
+    -webkit-padding-start: 0px !important;
+}
+.cabecera{
+    text-align: center;
+    float: none !important;
+    text-align: center;
+    line-height: 30px;
+}
+.documentosRuta{
+    margin-left: 10px; 
+}
+.documentosRuta:hover{
+    cursor: pointer;
+    color: #1565F1;
+}
+
+/*============================================ RESULTADOS FACTOR =================================================================*/
+
+.encabezadoCaracteristica{
+    float: left;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+}
+.tituloCaracteristica{
+    text-align:center; 
+    border: 0px !important;
+    line-height: 30px;
+}
+.fila{
+    display: table-row !important;
+    float: none !important;
+}
+
+.celda{
+    display: table-cell !important; 
+    float: none !important; 
+    border-right: 1px solid #ddd;
+    padding: 0 10px;
+    vertical-align: middle;
+}
+.encabezadoIndicador{
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    background-color: #F7F7F7;
+}
+.cuerpoIndicador{
+    line-height: 30px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin-top: 0px !important;
+}
+.instrumento:hover{
+    cursor: pointer;
+    color: #1565F1;
+}
+
+/*======================================== RESULTADOS INSTRUMENTO ================================================*/
+.contenidoInstrumento{
+    margin-bottom: 30px;
+    border: 1px solid #FFF;
+    -moz-box-shadow: 0px 0px 2px #000000;
+    -webkit-box-shadow: 0px 0px 2px #CACACA;
+    box-shadow: 0px 0px 2px #4B4B4B;
+}
+
+/*======================================== RESULTADOS FUENTE ================================================*/
+
+.contenedorPregFuente{
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+    -moz-box-shadow: 0px 0px 1px #000000;
+    -webkit-box-shadow: 0px 0px 1px #000000;
+    box-shadow: 0px 0px 1px #000000;
+
+}

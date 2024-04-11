@@ -1,0 +1,320 @@
+.fabajo {
+    background-attachment: fixed;
+    background-image: url(imagenes/f_abajo.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 12px;
+    width: auto;
+}
+
+.farriba {
+    background-attachment: fixed;
+    background-image: url(imagenes/f_arriba.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 12px;
+    width: auto;
+}
+.vacia{
+    color: #333;
+    background-color: transparent !important;
+}
+.almanaque{
+    width: 570px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+.meses{
+    float: left;
+    width: 570px;
+}
+.name-mes{
+    background: rgb(244,97,97); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(244,97,97,1) 0%, rgba(196,31,9,1) 73%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(244,97,97,1)), color-stop(73%,rgba(196,31,9,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(244,97,97,1) 0%,rgba(196,31,9,1) 73%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(244,97,97,1) 0%,rgba(196,31,9,1) 73%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(244,97,97,1) 0%,rgba(196,31,9,1) 73%); /* IE10+ */
+    background: linear-gradient(top, rgba(244,97,97,1) 0%,rgba(196,31,9,1) 73%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f46161', endColorstr='#c41f09',GradientType=0 ); /* IE6-9 */
+    color: #fff;
+    font-size: 16px;
+    padding: 5px 0 5px 0;
+}
+.tablaCalendario {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid #ddd;
+
+}
+.tablaDescripcion {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size:12px;
+}
+.tdDescripcion {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #0F144B;
+    font-weight: bold;
+}
+
+.cuerpoCalendario {
+    border: 1px solid #ddd;
+    /*    background-color: #F4F5F9;*/
+    margin: 10px 5px 10px 5px;
+    float: left;
+    background: white;
+    color: #444;
+    background: -moz-linear-gradient(top, white 1%, #F7F7F7 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,white), color-stop(100%,#F7F7F7));
+    background: -webkit-linear-gradient(top, white 1%,#F7F7F7 100%);
+    background: -o-linear-gradient(top, white 1%,#F7F7F7 100%);
+    background: -ms-linear-gradient(top, white 1%,#F7F7F7 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f7f7f7',GradientType=0 );
+    background: linear-gradient(top, white 1%,#F7F7F7 100%);
+    padding: 4px;
+}
+.tablaDias {
+    border: 1px solid #ddd;
+    background-color: transparent;
+}
+.tit-ano{
+    float: left;
+    height: auto;
+    padding: 5px 0 5px 0;
+    width: 570px;
+    color: #fff;
+    font-size: 17px;
+    text-align: center;
+    margin-top: 30px;
+    background-color: #777;
+    font-weight: bold;
+
+}
+.diasSemana {	
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    background-color: #888;
+    border: 1px solid #555;
+    width: 20px;
+    height: 20px;
+    color: #fff;
+}
+.celdaVacia {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid transparent ;
+    background-color: transparent;
+    font-size: xx-small;	
+}
+.celdaOcupada {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid #ccc;
+    background-color: transparent;
+    font-size: 11px;
+    text-align: center;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+.celdaNormal{
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    color:#333;
+    border-radius: 3px;
+    font-size: 11px;
+    width: 18px;
+    height: 20px;
+    text-align: center;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+.celdaDiaActual{
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid #ddd;
+    background-color: rgba(20,200,100,0.3);  
+    font-size: 11px;
+    text-align: center;
+    width: 18px;
+    height: 20px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+.celdaDiaActual:hover{
+    cursor: pointer;
+}
+.celdaDiaActual a{
+    color: #333;
+    font-size: 11px;
+    text-align: center;
+    width: 18px;
+    height: 20px;
+}
+.cboMes{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #0F144B;
+    font-weight: bold;
+}
+
+/* Estilos para los toolTips*/
+.tablaTip {
+    border: 1px solid #ABB0C4;
+    border-collapse:collapse;
+    background-color: #D4D6E3;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    text-align:center;
+    font-weight:bold;
+    line-height: 9px;
+    list-style-type: disc;
+}
+.tdTipClaro{
+    background-color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    text-align:left;
+    font-weight:normal;
+}
+
+.tool-tip{
+    display: none;
+    background-color: #fff;
+    height: auto;
+    position: absolute;
+    left: 20px;
+    width: 510px;
+    padding:  10px;
+    border: 1px solid #ddd;
+    color: #555;
+    text-align: left;
+    font-size: 13px;
+    font-weight: normal;
+    -webkit-box-shadow: 0px 0px 10px 0px #777;
+box-shadow: 0px 0px 10px 0px #777;
+    
+}
+.tool-tip p{
+    color: #555;
+    font-size: 13px;
+    font-weight: normal;
+}
+/***************** para la muestra de la tabla del calendario******************************/
+.eventos-proximos{
+    width: 740px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.listaAgenda-cont{
+    width: 720px;
+    float: left;
+/*    background-color: #f8f8f8;*/
+    height: auto;
+    border: 1px solid #ddd;
+    margin: 10px;
+}
+.agenda-Indi:first-child{
+    border-top: none;
+}
+.agenda-Indi:last-child{
+    border-bottom:  none;
+}
+.agenda-Indi{
+    float: left;
+    height: auto;
+    width: 720px;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #fff;
+    position: relative;
+    background: -webkit-linear-gradient(top,rgba(255, 255, 255, 0.05) 0%,rgba(255, 255, 255, 0.05) 20%,rgba(0, 0, 0, 0.05) 100%);
+    background: -moz-linear-gradient(top,rgba(255, 255, 255, 0.05) 0%,rgba(255, 255, 255, 0.05) 20%,rgba(0, 0, 0, 0.05) 100%);
+    background: -o-linear-gradient(top,rgba(255, 255, 255, 0.05) 0%,rgba(255, 255, 255, 0.05) 20%,rgba(0, 0, 0, 0.05) 100%);
+    background: -ms-linear-gradient(top,rgba(255, 255, 255, 0.05) 0%,rgba(255, 255, 255, 0.05) 20%,rgba(0, 0, 0, 0.05) 100%);
+    background: linear-gradient(top,rgba(255, 255, 255, 0.05) 0%,rgba(255, 255, 255, 0.05) 20%,rgba(0, 0, 0, 0.05) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff',endColorStr='#f1f1f1');
+
+}
+.fehca-susceso{
+    float: left;
+    width: auto;
+    height: inherit;
+    overflow: hidden;
+    position: relative;
+    padding: 10px;
+}
+.Suceso-cont-list .Suceso:first-child{
+    border-top: none;
+}
+.Suceso-cont-list .Suceso:only-child{
+    padding-top:10px;
+    /*    padding-bottom: 19px;*/
+}
+
+.Suceso-cont-list .Suceso:last-child{
+    border-bottom: none;
+}
+.Suceso-cont-list:last-child{
+    border-bottom: none;
+}
+.Suceso-cont-list{
+    float: right;
+    position: relative;
+    width: 620px;
+    min-height: 85px;
+    padding: 0;
+    border-left: 1px solid #ddd;
+}
+.Suceso:last-child{
+    border-bottom: none;
+}
+.Suceso:first-child{
+    border-top: none;
+}
+.Suceso{
+    float: left;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #fff;
+    width: 600px;
+    padding: 5px 10px 5px 10px;
+    height: auto;
+    position: relative;
+}
+.suceso-cont{
+    color: #666;
+    font-size: 13px;
+    font: 'Trebuchet MS', Arial, Sans-serif;
+
+}
+.suceso-cont p{
+   
+    color: #666;
+    font-size: 13px;
+    font: 'Trebuchet MS', Arial, Sans-serif;
+
+}
+.suceso-barra-inf{
+    float: left;
+    width: 600px;
+    color: #333;
+    padding: 5px 0 5px 0;
+}
+
+.suceso-Estado{
+    float: right;
+    width: auto;
+    color: #333;
+    font-size: 11px;
+    padding: 2px 5px 2px 20px;
+    position: relative;
+}
+.Suceso-autor{
+    float: right;
+    font-size: 11px;
+    color: #777;
+    padding: 0 10px 0 10px;
+}
+/***************** para la muestra de la tabla del calendario******************************/

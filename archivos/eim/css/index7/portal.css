@@ -1,0 +1,654 @@
+/* 
+    Document   : portal
+    Created on : 10/09/2012, 10:54:18 PM
+    Author     : DUVAN
+    Description:
+*/
+
+/*------------------------------------*\
+   Body
+\*------------------------------------*/
+body {
+    margin: 0;
+    padding: 0;
+    padding: 0px;
+    background-color: #EEE;
+
+}
+.container {
+    height: auto;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+}
+
+/*------------------------------------*\
+   barra-sup
+\*------------------------------------*/
+
+.barra_sup{
+    width: 100%;
+    min-width:1000px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:900000;
+    height: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2) !important;
+    background-color: #eee;
+}
+.barra_sup_in{
+    height: 30px;
+    margin: 0 auto;
+    width: 980px;
+    padding: 0 10px 0 10px;
+}
+
+.barra_sup_in>a{
+    width: auto;
+    text-decoration: none;
+    font-size: 13px;
+    margin: 0;
+}
+.barra_sup_in>a:hover{
+    background-color: rgba(0,0,0,0.1);
+    cursor: pointer;
+    -webkit-box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+}
+.barra_sup_in>a.a-left{
+    float:left;
+}
+.barra_sup_in>a.a-right{
+    float: right;
+}
+.barra_sup_in>a>span.item{
+    margin: 5px 10px 5px 10px;
+    color: #333;
+    float: left;
+    line-height: 20px;
+    text-shadow: 1px 1px 2px #fff;
+    filter: dropshadow(color=#fff, offx=1, offy=1);
+}
+
+
+/*---------------- sona del usuario--------------------*/
+.barra_sup_in>div.menu-usuario{
+    width: auto;
+
+    text-decoration: none;
+    font-size: 13px;
+    margin: 0;
+}
+.barra_sup_in>div.menu-usuario:hover{
+    background-color: rgba(0,0,0,0.1);
+    cursor: pointer;
+    -webkit-box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+}
+
+.barra_sup_in>div.a-right{
+    float: right;
+}
+.barra_sup_in>div.menu-usuario>#dip-menu>span.item{
+    margin: 5px 10px 5px 10px;
+    color: #333;
+    float: left;
+    line-height: 20px;
+    text-shadow: 1px 1px 2px #fff;
+    filter: dropshadow(color=#fff, offx=1, offy=1);
+}
+.barra_sup_in>div.menu-usuario>#dip-menu>img#foto-usr{
+    height: 20px;
+    width: 20px;
+    float: left;
+    margin: 5px 0px 5px 10px;
+}
+
+.barra_sup_in>div.menu-usuario{
+    position: relative;
+}
+
+#user-tip{
+    position: absolute;
+    top: 30px;
+    right: 0;
+    height: auto;
+    display: none;
+    width: 310px;
+    z-index: 9999;
+
+}
+#user-arrow{
+    position: absolute;
+    top: -24px;
+    right: 70px;
+    width: 0;
+    height: 0;
+    border-bottom: 12px solid #f9f9f9;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid transparent;
+    z-index: 999999;
+}
+#user-content{
+    position: absolute;
+    margin: 15px 0 0 0;
+    float: left;
+    height: auto;
+    background-color: #f9f9f9;
+    padding: 5px;
+    width: 300px;
+    border: 1px solid #ddd;
+    -webkit-box-shadow: 0px 0px 10px 0px #aaa;
+    box-shadow: 0px 0px 10px 0px #aaa;
+}
+#user-content>img#foto-usr-g{
+    height: 90px;
+    width: 90px;
+    float: left;
+    margin: 5px 10px 20px 5px;
+}
+#user-content>div.lista-menu-usr{
+    float: left;
+    margin: 5px 5px 20px 5px;
+}
+#user-content>div.lista-menu-usr>a{
+    width: auto;
+    text-decoration: none;
+    font-size: 13px;
+    margin: 0;
+    display: block;
+    padding: 3px 0 3px 0;
+}
+#user-content>div.lista-menu-usr>a:hover{
+    color: #444;
+}
+#user-options{
+    margin: 0px;
+    float: left;
+    height: auto;
+    border-top: 1px solid #ddd;
+    padding:  10px ;
+    width: 280px;
+    text-align: right;
+}
+#user-options>a{
+    width: auto;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 0;
+    display: block;
+    font-weight: bold;
+    padding: 3px 0 3px 0;
+}
+
+/*------------------------------------*\
+   Header
+\*------------------------------------*/
+/*------------------------------------*\
+   Header
+\*------------------------------------*/
+header {
+    height: 190px;
+    float: left;
+    width: 100%;
+    min-width:1000px;
+    -webkit-box-shadow: 0px 5px 10px 0px #aaa;
+    box-shadow: 0px 5px 10px 0px #aaa;
+}
+.head_in{
+    width: 960px;
+    padding: 30px 20px 10px 20px;
+    margin: 0 auto;
+    overflow: hidden;
+    height: 123px;
+    position: relative;
+}
+.portal{
+    line-height: 35px;
+    display: block;
+    float: left;
+    padding-top: 20px;
+    padding-left: 20px;
+    text-align: left;
+    width: 630px;
+    height: 80px;
+    font-size: 35px;
+    color: white;
+    text-shadow: 0 1px 0 #450D0D;
+    -webkit-font-smoothing: antialiased;
+}
+.portal:first-line{
+    font-size: 25px;
+    color: white;
+}
+#logo_uis{
+    float: right;
+    margin: 50px 10px 0 0;
+}
+#logo_escuela{
+    float: left;
+    margin-left: 20px;
+    margin-top: 15px;
+    max-width: 110px;
+    max-height: 110px;
+
+}
+#logo_escuela img{
+    float: left;
+    margin: 5px;
+    max-width: 100px;
+    max-height: 100px;
+}
+/*------------------------------------*\
+   $Main
+\*------------------------------------*/
+
+.content{
+    height: auto;
+    float: left;
+    margin: 0px;
+    width: 100%;
+}
+.main {
+    height: auto;
+    margin: 0 auto;
+    width: 980px;
+    padding: 0 10px 10px 10px;
+    overflow: hidden;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+
+.barra{
+    width: 960px;
+    height: 20px;
+    margin: 5px;
+    float: left;
+    padding: 5px;
+
+}
+#sitemap-dis{
+    position: relative;
+}
+.sitemap{
+    display: none;
+    width: 250px;
+    position: absolute;
+    top: 35px;
+    background-color: #fdfdfd;
+    border: 1px solid #666;
+    box-shadow: 0 3px 10px #666;
+    padding: 0;
+    right: -20px;
+    border-radius: 4px;
+}
+.sitemap-title{
+    margin-top: 0;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    background-color: #f0f0f0;
+    padding: 0 2px 0 2px;
+    position: relative;
+    border-radius: 4px 4px 0 0;
+}
+.sitemap-title h5>span:last-child{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    margin: 0;
+}
+.sitemap-title h5{ 
+    margin: 0;
+    padding: 4px 0 4px 0;
+}
+.sitemap-in{
+    float: left;
+    overflow: auto;
+    max-height: 500px;
+    width: 240px;
+    margin: 5px 5px 15px 5px;
+}
+.sitemap-in:focus{
+    outline-width: 0px;
+    outline: none;
+}
+.sitemap ul{
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+}
+
+ul.sitemap-list_11,
+ul.sitemap-list_21,
+ul.sitemap-list_31,
+ul.sitemap-list_41{
+    padding: 0px 0 0px 10px;
+}
+.sitemap>ul>li:first-child>span+ a,
+.sitemap>ul>li:first-child>span+ span{
+    border-top: 1px solid #ccc;
+}
+.sitemap ul li span.icon_g1 + a,
+.sitemap ul li span.icon_g1 + span,
+.sitemap ul li span.icon_h4 + a,
+.sitemap ul li span.icon_h4 + span{
+    border-top: 1px solid #ccc;
+
+}
+.sitemap ul li a,
+.sitemap ul li span:not(.icon-s){
+    font-size: 12px;
+    border: 1px solid #ccc;
+    margin-top: -1px;
+}
+.sitemap ul li a:hover{
+    background-color: #eee;
+    text-decoration: none;
+    color: #133144;
+}
+.sitemap ul li .item{
+    padding-left: 5px;
+    margin-left: 20px;
+    display: block;
+    color: #555 !important;
+}
+
+.barra .ayuda{
+    float: right;
+}
+.barra .ayuda>a{
+    float: left;
+    text-align: left;
+    text-decoration: none;
+    color: #555;
+    margin: 0 0 0 5px;
+    font-size: 14px;
+}
+.barra .ayuda>a>span{
+    float: left;
+    padding: 2px 0 0 0;
+}
+.barra .ayuda>a:hover{
+    color: #13478F;
+}
+.barra #navegacion{
+    float: left;
+    color: #13478F;
+}
+#navegacion a{
+    text-decoration: none;
+    color: #555;
+    font-weight: normal;
+    margin: 0 5px 0 5px;
+}
+#navegacion span{
+    text-decoration: none;
+    color: #555;
+    font-weight: normal;
+    margin: 0 5px 0 5px;
+}
+#navegacion a:hover{
+    text-decoration: none;
+    color: #13478F;
+    cursor: pointer;
+}
+#navegacion a:visied{
+    text-decoration: none;
+    color: #555;
+}
+/*------------------------------------*\
+   $lateral izquierdo
+\*------------------------------------*/
+.lateral_izquierdo_out{
+    float: left;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: auto;
+    height: auto;
+}
+.lateral_izquierdo_out.active{
+    background: -moz-linear-gradient(left, rgba(183,183,183,0.65) 0%, rgba(0,0,0,0.15) 17%, rgba(0,0,0,0) 22%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(183,183,183,0.65)), color-stop(17%,rgba(0,0,0,0.15)), color-stop(22%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, rgba(183,183,183,0.65) 0%,rgba(0,0,0,0.15) 17%,rgba(0,0,0,0) 22%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, rgba(183,183,183,0.65) 0%,rgba(0,0,0,0.15) 17%,rgba(0,0,0,0) 22%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, rgba(183,183,183,0.65) 0%,rgba(0,0,0,0.15) 17%,rgba(0,0,0,0) 22%); /* IE10+ */
+    background: linear-gradient(to right, rgba(183,183,183,0.65) 0%,rgba(0,0,0,0.15) 17%,rgba(0,0,0,0) 22%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6b7b7b7', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+}
+.lateral_izquierdo{
+    float: left;
+    margin:0px 10px 0 0px;
+    text-align: left;
+    width: 197px;
+    height: auto;
+}
+.titulo-menu-izq{
+    padding: 5px 0 5px 0;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    border-style: solid;
+    border-width: 0 0 4px 0;
+    position: relative;
+}
+#ocultaMenuOut{
+    float: right;
+}
+#ocultaMenu{
+}
+.cont-menu-izq{
+    padding: 10px 5px 10px 5px;
+    margin: 0;
+    border-right: 1px solid #eee;
+}
+.img-menu-izq{
+    padding: 10px 5px 10px 5px;
+    height: 200px;
+    text-align: center;
+}
+.img-menu-izq>img{
+    height: 200px;
+    width: 150px;
+    margin: 0 auto;
+}
+.ser-menu-izq{
+    padding: 0;
+    margin: 10px -5px 10px -5px;
+}
+.ser-menu-izq>ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.ser-menu-izq>ul>.menu_n3{
+    padding: 7px 7px 3px 7px;
+    margin: 10px 0 10px 0;
+    list-style: none;
+    text-align: left;
+    border-style: solid;
+    border-width: 0 0 3px 0;
+}
+.ser-menu-izq>ul>.menu_n3>a{
+    padding: 0;
+    margin: 0;
+    color: inherit;
+    font-size: 15px;
+    display: block;
+    text-decoration: none;
+}
+.ser-menu-izq>ul>.menu_n3>a:hover{
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+.ser-menu-izq>ul>.menu_n3>a:visited{
+    color: inherit;
+    text-decoration: none;
+}
+.ser-menu-izq>ul>.menu_n3>a>span{
+    padding: 0;
+    margin: 0;
+    color: inherit;
+    display: block;
+}
+.ser-menu-izq>ul>ul{
+    padding: 5px 0 5px 0;
+    margin: 0;
+    list-style: none;
+    text-align: left;
+}
+.ser-menu-izq>ul>ul>.menu_n4{
+    padding: 4px 7px 4px 7px;
+    margin: 0;
+    list-style: none;
+    text-align: left;
+    border-bottom:1px solid #ddd;
+    border-top:1px solid #fff;
+}
+.ser-menu-izq>ul>ul>.menu_n4.active{
+    background-color: #eee;
+}
+.ser-menu-izq>ul>ul>.menu_n4:hover{
+    background-color: #F5F5F5;
+
+}
+.ser-menu-izq>ul>ul>.menu_n4>a{
+    padding: 0;
+    margin: 0;
+    color: inherit;
+    font-size: 13px;
+    display: block;
+    text-decoration: none;
+}
+.ser-menu-izq>ul>ul>.menu_n4>a:hover{
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+.ser-menu-izq>ul>ul>.menu_n4>a:visited{
+    color: inherit;
+    text-decoration: none;
+}
+.ser-menu-izq>ul>ul>.menu_n4>a>span{
+    padding: 0;
+    margin: 0;
+    color: inherit;
+    display: block;
+}
+/*------------------------------------*\
+   $centro
+\*------------------------------------*/
+.centro{
+    width: 770px;
+    float: left;
+    height: auto;
+    margin: 0;
+}
+#centro{
+    padding: 10px;
+    border: hidden;
+    min-height: 400px;
+}
+/*------------------------------------*\
+   $Footer
+\*------------------------------------*/
+footer,.footer-b {
+    height: auto;
+    width: 100%;
+    min-width:1000px;
+    float: left;
+    padding: 20px 0 0px 0;
+}
+.footer-b {
+    height: auto;
+    width: 100%;
+    float: left;
+    padding: 20px 0 20px 0;
+    background-color: #444;
+    border-top: 1px solid #111;
+}
+.footer-in {
+    height:auto;
+    width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-bottom: 20px;
+
+}
+.footer-in-top {
+    height:auto;
+    width: 600px;
+    margin: 0 auto;
+}
+.footer-in-b {
+    height:auto;
+    width: 470px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.footer-texto-b{
+    float: left;
+    vertical-align: middle;
+    padding: 0px 0 0px 20px;
+    color:#f7f8f9;
+}
+.footer-texto-t{
+    vertical-align: middle;
+    padding: 0px;
+    color:#f7f8f9;
+}
+.footer-texto-b p,.footer-texto-t p{
+    color:#f7f8f9;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+}
+.footer-texto-b strong,.footer-texto-t strong{
+    color:#f7f8f9;
+    font-size: 14px;
+    font-weight: bold;
+}
+.footer-texto-b a,.footer-texto-t a{
+    color:#F18A06 !important;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.footer-texto-b a:visited,.footer-texto-t a:visited{
+    color:#f7f8f9;
+    font-size: 14px;
+    font-weight: bold;
+}
+.footer-img{
+    float:left;
+    width: 40px;
+    padding: 10px;
+    height: auto;
+    background-color: #f9f9f9;
+    border: 1px solid #333;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0px 0px 10px 0px #555;
+    box-shadow: inset 0px 0px 10px 0px #555;
+}
+.footer-img img{
+    float:left;
+    width: 40px;
+    height: auto;
+}
+
+
+
+/*}*/
+
+/* ==|== print styles =======================================================
+ Print styles.
+ Inlined to avoid required HTTP connection: h5bp.com/r
+ ========================================================================== */
+

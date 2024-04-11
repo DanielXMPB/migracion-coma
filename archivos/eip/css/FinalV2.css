@@ -1,0 +1,517 @@
+.miinicio {
+    background-color: #fffff5;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: #8E5A08;
+    text-decoration: none;
+    border: 1.5px #dba44e solid;
+    font-style:oblique;
+}
+
+
+.table{
+    padding: 20px;
+
+    background-color : #FFFFFF;
+    border : 0px solid #000000;
+    font-family : Arial, Verdana, Helvetica, sans-serif;
+    font-size : 12px;
+
+}
+
+.bordes{
+    border-radius: 15px;
+    -moz-border-radius: 15px;	
+    -webkit-border-radius: 15px;
+    background-color : #FFFFFF;
+    border : 1px solid #FFFFFF;
+    font-family : Arial, Verdana, Helvetica, sans-serif;
+    font-size : 12px;
+    padding-left : 5px;
+    padding-right : 5px;
+}
+
+.table3{
+    border-radius: 15px;
+    -moz-border-radius: 15px;	
+    -webkit-border-radius: 15px;
+    background-color : #F4F5F9;
+    border : 1px solid #D4D6E3;
+    font-family : Arial, Verdana, Helvetica, sans-serif;
+    font-size : 12px;
+    padding-left : 5px;
+    padding-right : 5px;
+}
+
+.table4{
+    -moz-border-radius: 15px;	
+    -webkit-border-radius: 15px;
+    background-color : #F4F5F9;
+    font-family : Arial, Verdana, Helvetica, sans-serif;
+    font-size : 12px;
+    padding-left : 5px;
+    padding-right : 5px;
+    border-radius: 15px;
+}
+
+.table1{
+    border-radius: 15px;
+    -moz-border-radius: 15px;	
+    -webkit-border-radius: 15px;
+    background-color : #FFFFFF;
+    border : 1px solid #000000;
+    font-family : Arial, Verdana, Helvetica, sans-serif;
+    font-size : 12px;
+    padding-left : 5px;
+    padding-right : 5px;
+}
+
+.table2{
+    border-radius: 15px;
+    -moz-border-radius: 15px;	
+    -webkit-border-radius: 15px;
+    background-color : #D6E7FF;
+    border : 0px solid #000000;
+    font-family : Arial, Verdana, Helvetica, sans-serif;
+    font-size : 12px;
+    padding-left : 5px;
+    padding-right : 5px;
+}
+.table2b{
+    border-radius: 15px;
+    -moz-border-radius: 15px;	
+    -webkit-border-radius: 15px;
+    background-color : #D6E7FF;
+    border : 0px solid #000000;
+    font-family : Arial, Verdana, Helvetica, sans-serif;
+    font-size : 12px;
+    padding-left : 5px;
+    padding-right : 5px;
+}
+.table2b tr td:hover{background-color: #d6e7ff;}
+input.boton {
+    font-family: Verdana, sans-serif;
+    font-size: 11px;
+    color: #0F144B;
+    border: 1px #BBB solid;
+    font-weight: bold;
+    background:#FFFFFF url(/eisi/images/index6/gris.png) left repeat-x ;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+input.boton:hover {
+    font-family: Verdana, sans-serif;
+    font-size: 11px;
+    cursor: pointer;
+    color: #FFFFFF;
+    border: 1px #BBB solid;
+    font-weight: bold;
+    background: #494c9b;/*  este es para sistemas*/
+    /*               background:#FFFFFF url(/eisi/images/index6/gris2.png) 50% center;*/
+    border-radius:5px;
+    -moz-border-radius:5px;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+input.boton2 {
+    font-family: Verdana, sans-serif;
+    font-size: 11px;
+    color: #0F144B;
+    border: 1px #BBB solid;
+    font-weight: bold;
+    background:#FFFFFF url(/eisi/images/index6/gris.png) left repeat-x ;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+input.boton2.over,
+input.boton2 :hover {
+    font-family: Verdana, sans-serif;
+    font-size: 11px;
+    cursor: pointer;
+    color: #FFFFFF;
+    border: 1px #BBB solid;
+    font-weight: bold;
+    background: #494c9b;/*  este es para sistemas*/
+    /*               background:#FFFFFF url(/eisi/images/index6/gris2.png) 50% center;*/
+    border-radius:5px;
+    -moz-border-radius:5px;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+/*.boton {
+                font-family: Verdana, sans-serif; 
+                font-size: 10px; 
+                color: #0F144B; 
+                border: 2px #7F88A9 solid; 
+                background-color: #F4F5F9; 
+                font-weight: bold
+}
+.boton2 { 
+                font-family: Geneva, Arial, Helvetica, sans-serif;
+                font-size: 11px; 
+                color: #0F144B; 
+                border: 2px #cdf1f1 solid; 
+                background-color: #ffffff; 
+                font-weight: bold
+}*/
+.camposobligatorios {
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #7F88A9;
+    text-decoration: none;
+}
+.fondopagina {
+    background-color: #FFFFFF; background:#FFFFFF;	
+}
+
+.fondopagina1 {
+    background-color: #FFFFFF; background:#D6E7FF;	
+}
+
+.titulos {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #000000;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.subtitulos {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #000000;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.subtituloformulario {
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #0F144B;
+    font-weight: bold;
+}
+
+.texto {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #0F144B;
+    font-weight: normal;
+    text-transform: none;
+}
+
+
+.bocadillo1 {
+    background-color: #EEE;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: #0F144B;
+    text-decoration: none;
+}
+
+.bocadillo2 {
+    background-color: #ddd;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #0F144B;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.miinicio {
+    background-color: #fffff5;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: #8E5A08;
+    text-decoration: none;
+    border: 1.5px #dba44e solid;
+    font-style:oblique;
+}
+
+.encabezadotablas {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #0F144B;
+    text-transform: uppercase;
+    background-color: #CCB;
+    text-align: center;
+    text-decoration: none;
+
+}
+
+.encabezadotablas2 {
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #7F88A9;
+    text-decoration: none;
+    background-color: #9bcadb;
+    text-align: center;
+    text-decoration: none;
+
+}
+.fondocolumna2 {
+    background: #dff2f4;
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #69759b;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.nombredecampo {
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #2C3872;
+    font-weight: bold;
+}
+
+
+.tablabarra {
+    background-color: #D4D6E3;
+}
+
+.tablabarra2 {
+    border-radius: 20px;
+    background-color: #DEE2FE;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #0F144B;
+    font-weight: bold;	   
+    padding-left : 5px;
+    padding-right : 5px;
+}
+
+
+.trAdmin{
+    background-color: #EAEBF0;
+}
+
+.bordeImg{
+    border-color:#23305D;
+}
+
+.seccion {
+    font-family: Comic Sans MS, sans-serif;
+    font-size: x-small;
+    color: #2C3872;
+    font-weight: bold;
+    text-align: right;
+}
+
+.menuskin{
+    position:absolute;
+    width:230px;
+    background-color:#EAEBF0;
+    border:2px solid #ABB0C4;
+    font:normal 12px Verdana;
+    line-height:18px;
+    z-index:150;
+    color: #0F144B;
+    visibility:hidden;
+    text-transform: uppercase;
+}
+
+.menuskin a{
+    text-decoration:none;
+    color:#5A799D;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+#mouseoverstyle{
+    background-color:#D4D6E3;
+}
+
+#mouseoverstyle a{
+    color:#7F88A9;
+}
+
+.cuartonivel {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    background-color: #DAE4F0;
+    color: #466584;
+    text-align: left;
+    text-decoration: none;
+}
+
+.inputinactivo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    background-color: #EAEBF0;
+    color: #697293;
+    text-align: left;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+
+
+
+.fondotabla3y4niv {
+    background-color: #5F7D9E;
+    text-decoration: none;
+}
+
+
+.fondotablas {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #FFFFFF;
+    background-color: #606062;
+}
+
+.fondotablas2 {
+    background: #b5dfe8 ;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #0F144B;	
+}
+.colortexto{
+    color: #0F144B;	
+}
+
+.fondomenu2 {
+    background-image: url('../images/banner/fondomenu2.gif');
+    background-repeat:   repeat-x;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    color: #3D3E7A;
+    font-style: italic;
+    text-decoration: none;
+}
+
+.fondoservicios {    
+    margin-top: 0; 
+    margin-bottom: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bolder;
+    color: #3D3E7A;
+    font-style: italic;
+    text-decoration: none; background-color:#EFF3EF;
+}
+
+
+
+.index_contenidos {   	
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px; 
+    text-align: left;
+    vertical-align: middle; 
+    font-weight: bold;
+    color: #3D3E7A;
+    font-style: oblique;
+    text-decoration: none;
+}
+.index_externos {   	
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px; 
+    text-align: left;
+    vertical-align: middle;
+    font-weight: bold;
+    color: #3D3E7A;
+    font-style: oblique;
+    text-decoration: none; 
+    margin-top: 1; 
+    margin-bottom: 1; 
+}
+.index_novedades {
+    color: #CC6600;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: justify;
+    vertical-align: top;
+    font-weight: normal;
+    font-style: oblique;
+    text-transform: none;
+    background-repeat: no-repeat;
+}
+
+.index_novedades2 {
+    color: #CC6600;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: justify;
+    vertical-align: top;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: none;
+    background-repeat: no-repeat;
+}
+
+
+
+.index_submenu {
+    color: #3D3E7A;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-decoration: none;	
+    vertical-align: top;
+    font-weight: normal;
+    font-style: oblique;
+    text-transform: none;
+    background-repeat: no-repeat;
+    margin-top: 1; 
+    margin-bottom: 1; 
+}
+
+
+
+
+.adempresa {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-small;
+    color: #5A799D;
+}
+
+
+
+
+a:link {
+    color: #2C3872; text-decoration: none;
+}
+a:visited{
+    color: #2C3872; text-decoration: none;
+}
+a:hover{
+    color: #E67016;	text-decoration: none;
+}
+
+/* Calumet - ModificationTemp - Romel Pérez */
+
+.fondotablas{ background-color: #B0B0B0; border-radius: 4px 4px 4px 4px; }
+.fondotablas tr.encabezadotablas:first-child{
+    background: -moz-linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e3e3e3), color-stop(100%,#f6f6f6));
+    background: -webkit-linear-gradient(top, #e3e3e3 0%,#f6f6f6 100%);
+    background: -o-linear-gradient(top, #e3e3e3 0%,#f6f6f6 100%);
+    background: -ms-linear-gradient(top, #e3e3e3 0%,#f6f6f6 100%);
+    background: linear-gradient(to bottom, #e3e3e3 0%,#f6f6f6 100%);
+}
+.fondotablas td{ padding: 3px; }
+.encabezadotablas{ background-color: #F6F6F6; color: #111; }
+.bocadillo1{ background-color: #FDFDFD; }
+.bocadillo2{ background-color: #EDEEFF; }
+

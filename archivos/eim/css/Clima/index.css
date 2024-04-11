@@ -1,0 +1,67 @@
+/*!
+ * Universidad Industrial de Santander
+ * Grupo de Desarrollo de Software Calumet
+ * EISI | Clima | Servicio | Design
+ * Creado por Romel Pérez (romelperez.blogspot.com), 2014
+ * Actualizado por Romel Pérez, Mayo del 2015
+ **/
+
+body > .contenedor-fluido {
+  width: 920px;
+  padding: 0;
+  margin: 0 10px;
+}
+
+h1 {
+  text-align: center;
+  color: #3a87ad;
+  font-size: 22px;
+  line-height: 40px;
+}
+
+h2 {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.ct-graph {
+  width: 898px;
+  height: 500px;
+  margin-bottom: 10px;
+}
+.ct-graph-type {
+  float: left;
+}
+.ct-graph-range {
+  float: right;
+}
+
+.ct-ubication {
+  overflow: auto;
+  margin-bottom: 10px;
+}
+.ct-map {
+  float: left;
+  width: 430px;
+  height: 360px;
+}
+.ct-photo {
+  float: right;
+  width: 430px;
+  height: 360px;
+  background-size: cover;
+}
+
+.ct-graph,
+.ct-info,
+.ct-data,
+.ct-download {
+  min-height: 10px;
+}
+
+.ct-info,
+.ct-data,
+.ct-download,
+.ct-credits {
+    border-top: 1px solid #CCC;
+}

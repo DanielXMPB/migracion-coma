@@ -1,0 +1,146 @@
+
+.megaMenu ul.menu ul, .megaMenu ul.menu li {
+list-style: none; 
+padding: 0; 
+margin: 0;
+}
+.megaMenu ul.menu ul {
+display: none;
+}
+.megaMenu ul.menu .sub ul {
+display: block;
+}
+/***************************************
+COLORES DE FONDO PARA EL MENU PRINCIPAL
+****************************************/
+.megaMenu ul.menu li a.dc-mega  {
+background: transparent url(../../images/eisi/arrow0.png) no-repeat 93% 50%;
+position: relative;
+}
+.megaMenu ul.menu li a.dc-mega:hover {
+background-image: url(../../images/eisi/arrow1.png);
+text-shadow: none;
+}
+/*******************************
+	MENU DINAMICO
+********************************/
+#menuLuz {
+    font-family: Verdana, Geneva, sans-serif;
+    margin: 0px auto;
+    margin-top: 5px;
+    text-align: center;
+    width: 1000px;
+    border:1px solid #f2faff;
+    border-bottom: 0px;
+}
+.megaMenu {
+    width: 1000px;
+    margin: 0px auto;
+}
+/***************************************
+            POSICIONAMIENTO
+****************************************/
+.megaMenu ul.menu {
+    z-index: 1000;
+    margin-left: 10px;
+    width: 1000px;
+    position: relative; /* REQUERIDO PARA EL POSICIONAMIENTO */
+    font: normal 12px Arial, sans-serif;
+}
+.megaMenu ul.menu li {
+    z-index: 1000;
+    float: left;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+.megaMenu ul.menu li a {
+    padding-top: 5px;
+    float: left;
+    display: block;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    text-decoration: none;
+    vertical-align: middle;
+    outline: none;
+}
+/********************************
+    CONTENEDOR DEL SUB-MENU
+*********************************/
+.megaMenu ul.menu li .sub-container {/*DIV CREADO POR EL QUERY PARA EL MARCO IZQUIERDO*/
+    position: absolute; /* Required */
+    background: url(../../images/eisi/bg_sub_left.png) no-repeat 0 100%;
+    padding-left: 10px;
+    margin-left: -3px;
+    margin-top: 11px;
+}
+.megaMenu ul.menu li .sub {/*UL DENTRO DEL DIV CREADO PARA EL M. IZQUIERDO, CONTIENE EL MARCO DERECHO*/
+    background: url(../../images/eisi/bg_sub_right.png) no-repeat 100% 100%;
+}
+
+/* SI EL SUB-MENU LLEVA LA OPCION DE COLUMNAS. BORRA LOS SUB-MENU FLOTANTES */
+.megaMenu ul.menu li .sub .row /*DIV CREADO POR EL QUERY CONTIENE TODAS LAS COLUMNAS*/
+{
+    width: 100%;
+    overflow: hidden;
+    clear: both;
+}
+.megaMenu ul.menu li .sub li /*CADA LI DEL UL DEL MENU*/
+{
+    float: none;
+    font-weight: bold;
+    font-family: Verdana, Geneva, sans-serif;
+}
+/* Sub-menu Headers */
+.megaMenu ul.menu li .sub li.mega-hdr { /* Sub-menu headers - i.e. 2nd level navigation */
+    float: left; /* Float the sub-menus and give them a fixed width to from the mega menu rows */
+    width: 260px;
+    margin: 0 10px 20px 10px;
+    border: 1px solid #ccc;
+}
+.megaMenu ul.menu li .sub a /* LINKS DE CADA SUB-MENU */
+{
+    background: none;
+    border: none;
+    text-shadow: none;
+    display: block;
+    float: none;
+    text-decoration: none;
+    font-family: Dungeon, Geneva,Verdana,Sans-Serif;
+    color: #2B3D83;
+    font-weight: bold;
+    font-size: 11px;
+}
+/* Style the 3rd level links */
+.megaMenu ul.menu li .sub li ul li {
+margin-right: 90px;
+}
+.megaMenu ul.menu .sub li.mega-hdr li a {
+color: #444;
+font-weight: normal; 
+padding: 3px 0 3px 25px; 
+background: url(../../images/eisi/bullet.png) no-repeat 10px 8px;
+}
+.megaMenu ul.menu .sub li.mega-hdr li a:hover {
+color: #990000;
+background-image: url(../../images/eisi/bullet_on.png);
+}
+
+/* Styling for items with only 2 levels */
+.megaMenu ul.menu li .sub-container.non-mega .sub {
+    padding: 10px 10px 10px 5px;
+    width: 150px;
+}
+.megaMenu ul.menu li .sub-container.non-mega li {
+    text-align: center;
+    padding: 0px;
+    width: 100%;
+}
+.megaMenu ul.menu li .sub-container.non-mega li a {
+    padding: 7px 5px;
+    display: block;
+    outline: none; /*lineas del firefox*/
+}
+.megaMenu ul.menu li .sub-container.non-mega li a:hover {
+    color: #fe4902;
+    outline: none;
+}

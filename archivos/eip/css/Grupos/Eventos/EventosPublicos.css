@@ -1,0 +1,156 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12/09/2018, 09:19:27 PM
+    Author     : alexy
+*/
+
+.evento{
+    position: relative;
+    padding: 10px;
+    margin: 0 5px;
+    position: relative;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+.evento:hover {
+    box-shadow: 0 0 8px #ddd;
+    -moz-box-shadow: 0 0 8px #ddd;
+    -webkit-box-shadow: 0 0 8px #ddd;
+    -webkit-transition: box-shadow 0.2s ease-in-out;
+    -moz-transition: box-shadow 0.2s ease-in-out;
+    -o-transition: box-shadow 0.2s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out;
+}
+.evento-img{
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+.evento-img-in{
+    height: 250px;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    -webkit-transition: all 0.8s ease-in-out;
+    -moz-transition: all 0.8s ease-in-out;
+    -o-transition: all 0.8s ease-in-out;
+    -ms-transition: all 0.8s ease-in-out;
+    transition: all 0.8s ease-in-out;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+.evento:hover .evento-img-in{
+    -webkit-transform: scale(1.2) rotate(2deg);
+    -moz-transform: scale(1.2) rotate(2deg);
+    -o-transform: scale(1.2) rotate(2deg);
+    -ms-transform: scale(1.2) rotate(2deg);
+    transform: scale(1.2) rotate(2deg);
+}
+.evento-titulo{
+    text-align: justify;
+    font-size: 18px;
+    line-height: 28px;
+    color: inherit;
+}
+.evento-resumen{
+    text-align: justify;
+    font-size: 0.9em;
+}
+.evento-autor{
+    font-size: 0.8em;
+    opacity: 0.9;
+}
+.evento-fecha {
+    position: absolute;
+    top: 25px;
+    left: 10px;
+    padding: 5px 15px;
+    background: #fff;
+    text-align: center;
+    text-transform: capitalize;
+    border-radius: 0  2px 2px 0;
+    -moz-border-radius: 0  2px 2px 0;
+    -webkit-border-radius: 0  2px 2px 0;
+}
+.evento-fecha h4 {
+    margin: 0;
+    line-height: 16px;
+    font-size: 1.1em;
+}
+.evento-fecha span {
+    line-height: 16px;
+    font-size: 0.8em;
+}
+.evento-vermas{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 4px 20px;
+    color: #fff !important;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+.evento-vermas:hover{
+    color: #fff;
+}
+.evento:hover .evento-vermas{
+    right: 20px;
+    bottom: 20px;
+}
+
+
+.mainEventos{
+  width: 100%;
+  margin: 0;
+  height: 380px;
+  
+}
+
+.mainEventos .slidesEventos{
+  width: 100%;
+  position: relative;
+}
+
+.mainEventos .slidesjs-slide{
+  top:5% !important;
+}
+
+.mainEventos  .slidesjs-navigation{
+  cursor:pointer;
+  position: absolute;
+  top: 0;
+  width: auto;
+  padding: 8px;
+  z-index: 11;
+  background-color: #d1d2d2;
+  text-decoration: none;
+}
+.mainEventos .slidesjs-navigation:hover{
+    font-size: inherit;
+}
+
+.mainEventos .slidesjs-next{
+  left: 3%;
+  width: 10px;
+}
+
+.mainEventos .slidesjs-previous{
+  left: 1%;
+
+}
+    
+.mainEventos .slidesjs-container{
+    height: 310px !important;
+}

@@ -1,0 +1,110 @@
+/* 
+    Document   : destinoarchivoprivado
+    Created on : 4/07/2012, 03:56:58 PM
+    Author     : LuengasCepeda
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+body{ font: 62.5% "Trebuchet MS", sans-serif; margin: 50px;}
+.demoHeaders { margin-top: 2em; }
+#dialog_link {padding: .4em 1em .4em 20px;text-decoration: none;position: relative;}
+#dialog_link span.ui-icon {margin: 0 5px 0 0;position: absolute;left: .2em;top: 50%;margin-top: -8px;}
+ul#icons {margin: 0; padding: 0;}
+ul#icons li {margin: 2px; position: relative; padding: 4px 0; cursor: pointer; float: left;  list-style: none;}
+ul#icons span.ui-icon {float: left; margin: 0 4px;}
+
+#wrapper {
+    width:750px;
+    min-height:800px;
+    margin:auto;
+    background-color:transparent;
+}
+#buzon-destinatarios {
+    border:hidden 2px #ddd;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 2px 4px 9px #ddd;
+    -webkit-box-shadow: 2px 4px 9px #ddd;
+    box-shadow: 2px 4px 9px #ddd;
+    width: 95%;
+    min-height:20px;
+    float:left;
+    margin:0px 0px 20px 10px;
+    padding: 10px;
+    max-height: 250px;
+    overflow: auto;
+    border: 1px solid #ccc;
+
+}
+
+.destinatario {
+    width:200px;
+    height:20px;
+    float: left;
+    margin: 1px 5px 1px 5px;
+    padding: 2px;
+    border:hidden 2px #000000;
+    -moz-border-radius: 2px;
+    -webkit-border-radius:2px;
+    border-radius:2px;
+    background-color: #eee;
+
+
+}
+.destinatario:hover {
+    background-color: #EB8F00;
+}
+.destinatario a {
+    float:right;
+    display:block;
+    margin: 1px 5px;
+}
+.destinatario span{
+    float:left;
+    margin-left:5px;
+}
+.buscar-ico {
+    float: right;
+    font-size: 18px;
+    margin-right: 20px;
+    font-family: "WebSymbolsRegular";
+    -webkit-transform: rotate(14deg);
+    -moz-transform: rotate(14deg);
+    -o-transform: rotate(14deg);
+    writing-mode: rl-tb;
+}
+.buscar-ico:hover {
+    font-size: 24px;
+    -webkit-transform: rotate(14deg);
+    -moz-transform: rotate(14deg);
+    -o-transform: rotate(14deg);
+    writing-mode: rl-tb;
+}
+.separador{
+    width: 100%;
+    height: 20px;
+    margin: 1px 0px;
+    float:left;
+
+}
+
+
+
+.eliminar {
+    font-family: "WebSymbolsRegular";
+}
+.eliminar:hover {
+    cursor: pointer;
+}
+

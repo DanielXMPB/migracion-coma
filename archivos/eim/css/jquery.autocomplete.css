@@ -1,0 +1,69 @@
+.ac_results {
+        font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #0F144B;
+	font-weight: normal;
+	text-transform: none;
+	padding: 0px;
+	border: 1px solid WindowFrame;
+	background-color: Window;
+	overflow: hidden;
+}
+
+.ac_results ul {
+        font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #0F144B;
+	font-weight: normal;
+	text-transform: none;
+	width: 100%;
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ac_results iframe {
+        font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #0F144B;
+	font-weight: normal;
+	text-transform: none;
+	display:none;/*sorry for IE5*/
+	display/**/:block;/*sorry for IE5*/
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:-1;
+	filter: mask();
+	width:3000px;
+	height:3000px;
+}
+
+.ac_results li {
+        font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #0F144B;
+	font-weight: normal;
+	text-transform: none;
+	margin: 0px;
+	padding: 2px 5px;
+	cursor: pointer;
+	display: block;
+	width: 100%;
+	overflow: hidden;
+}
+
+.ac_loading {
+        
+	background : Window url('./indicator.gif') right center no-repeat;
+}
+
+.ac_over {
+        font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	text-transform: none;
+	background-color: Highlight;
+	color: HighlightText;
+}

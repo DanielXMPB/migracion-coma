@@ -1,0 +1,137 @@
+/*------------------------------------*\
+   $TOOLTIP
+\*------------------------------------*/
+
+#tooltip_holder_cronograma {
+    display: none;    
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+}
+
+#tooltip_holder_cronograma.tip_top {
+    padding-bottom: 12px;
+}
+
+#tooltip_holder_cronograma.tip_bottom {
+    padding-top: 12px;
+}
+
+#tooltip_holder_cronograma.tip_right {
+    padding-left: 12px;
+}
+
+#tooltip_holder_cronograma.tip_left {
+    padding-right: 12px;
+}
+
+#tooltip_content_cronograma {
+    font-size: 12px;
+    line-height: 20px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #444;
+    padding: 7px;
+    background: #fff;
+    border: 1px solid #999;
+    -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+    -webkit-transition: 0.1s linear all;
+    -moz-transition: 0.1s linear all;
+    -ms-transition: 0.1s linear all;
+    -o-transition: 0.1s linear all;
+    transition: 0.1s linear all;
+    float: left;
+}
+
+#tooltip_content_cronograma strong{
+    display: inline-block;
+    font-size: 130%;
+    margin-bottom: 4px;
+}
+
+#tooltip_content_cronograma span{
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.tooltipcontent{
+    display: none;
+}
+
+#tooltip_arrow, #tooltip_arrow_inner {
+    position: absolute;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 10px;
+    height: 0;
+    width: 0;
+}
+
+#tooltip_holder_cronograma.tip_top #tooltip_arrow {
+    border-top-color: #555;
+}
+
+#tooltip_holder_cronograma.tip_bottom #tooltip_arrow {
+    border-bottom-color: #555;
+}
+
+#tooltip_holder_cronograma.tip_right #tooltip_arrow {
+    border-right-color: #555;
+}
+
+#tooltip_holder_cronograma.tip_left #tooltip_arrow {
+    border-left-color: #555;
+}
+
+#tooltip_holder_cronograma.tip_top #tooltip_arrow_inner {
+    margin-top: -11px;
+    margin-left: -10px;
+    border-top-color: #fff;
+}
+
+#tooltip_holder_cronograma.tip_bottom #tooltip_arrow_inner {
+    margin-top: -9px;
+    margin-left: -10px;
+    border-bottom-color: #555;
+}
+
+#tooltip_holder_cronograma.tip_right #tooltip_arrow_inner {
+    margin-top: -10px;
+    margin-left: -9px;
+    border-right-color: #fff;
+}
+
+#tooltip_holder_cronograma.tip_left #tooltip_arrow_inner {
+    margin-top: -10px;
+    margin-left: -11px;
+    border-left-color: #fff;
+}
+
+/* Webkit Hacks  */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    #tooltip_content_cronograma {
+        padding: 20px;
+        background-color: #fff;
+    }
+    #tooltip_holder_cronograma.tip_bottom #tooltip_arrow_inner {
+        border-bottom-color: #fff;
+    }
+    #tooltip_holder_cronograma.tip_top #tooltip_arrow_inner {
+        border-top-color: #fff;
+    }
+}
+/* SEPARADOR TIPTIP MATERIA */
+.sepTipTip{
+        height: 8px;
+        border-bottom: 1px black dotted;
+        margin-bottom: 7px;
+}
+.fechaTipTip{
+    margin-bottom: 10px !important;
+}
+.txtSub{
+    //border-bottom: 1px black dotted;
+    text-decoration: underline;
+    margin: 0px !important;
+}

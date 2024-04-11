@@ -1,0 +1,933 @@
+/* 
+    Document   : portal
+    Created on : 22-abr-2012, 9:39:55
+    Author     : Fernanda
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+::selection{
+    color: #f8f8f8;
+    background-color: #333;
+    text-shadow:none;
+}
+::-moz-selection{
+    color: #f8f8f8;
+    background-color: #333;
+    text-shadow:none;
+}
+root { 
+    display: block;
+}
+
+html, body, div, span, object,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address,   del, dfn, em, img, ins, kbd, q, samp,
+small,  sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+form, label,  caption, tbody, tfoot, thead,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    font-family: 'Trebuchet MS', Arial, Sans-serif;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after { content: ''; content: none; }
+
+ins { background-color: #ff9; color: #000; text-decoration: none; }
+
+mark { background-color: #ff9; color: #000; font-style: italic; font-weight: bold; }
+
+del { text-decoration: line-through; }
+
+abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
+
+/*table { border-collapse: collapse; border-spacing: 0; }*/
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+input, select { vertical-align: middle; }
+/*para los botones*/
+input[type="text"],input[type="password"],select,option,textarea{
+    font-family: 'Trebuchet MS', Arial, Sans-serif;
+}
+input[type="text"],input[type="password"],textarea{
+    padding: 5px 5px 5px 8px;
+    font-size: 14px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    border-radius: 3px 3px 3px 3px;
+    border: 1px solid #999;
+    background-color: #f7f8f9;
+}
+input:focus{
+    outline:none;
+    -webkit-box-shadow: 0px 0px 3px 0px #15c;
+    -moz-box-shadow: 0px 0px 3px 0px #15c;
+    box-shadow: 0px 0px 3px 0px #15c;
+}
+textarea:focus{
+    outline:none;
+    -webkit-box-shadow: 0px 0px 3px 0px #15c;
+    -moz-box-shadow: 0px 0px 3px 0px #15c;
+    box-shadow: 0px 0px 3px 0px #15c;
+}
+textarea{
+    resize: none;
+}
+select{
+    padding: 2px;
+    font-size: 14px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    border-radius: 3px 3px 3px 3px;
+}
+input[type="checkbox"],input[type="radio"]{
+    margin: 0 5px 0 5px;
+}
+input[type="text"],input[type="password"],select,option:active{
+}
+textarea:active,textarea:focus{
+}
+label{
+    font-size: 14px;
+    padding: 0 5px 0 5px;
+    font-family: 'Trebuchet MS', Arial, Sans-serif;
+}
+input[type="button"],input[type="reset"]{
+    padding: 5px 10px 5px 10px;
+    margin: 5px 10px 5px 10px;
+    float: left;
+    width: auto;
+    background-color: #E3E3E3;
+    color: #666;
+    border: solid 1px #86AEEF;
+    font-weight: bold;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+input[type="button"]:hover,input[type="reset"]:hover{
+    background-color: #ddd;
+    border: solid 1px #ccc;
+    color: #333;
+    -webkit-box-shadow: 0px 0px 10px 0px #d7d7f7;
+    -moz-box-shadow: 0px 0px 10px 0px #d7d7f7;
+    box-shadow: 0px 0px 10px 0px #d7d7f7;
+    cursor: pointer;
+}
+input[type="button"]:active,input[type="reset"]:active{
+    background-color: #E3E3E3;
+    color: #444;
+    -webkit-box-shadow:inset 0px 0px 5px 0px #888;
+    -moz-box-shadow:inset 0px 0px 5px 0px #888;
+    box-shadow:inset 0px 0px 5px 0px #888;
+    border: solid 1px #777;
+    cursor: pointer;
+}
+
+/*para los botones*/
+/*se resetearon los estilos del navegador*/
+body{
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+.content{
+    float: left;
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    padding: 0;
+    margin: 0 auto;
+
+}
+.content-main{
+    display: block;
+    width: 1200px;
+    padding: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    height: auto;
+    
+}
+.header{
+    float: left;
+    height: auto;
+    width: 1200px;
+    padding: 0 0 5px 0;
+    margin:0 0 15px 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.header-in{
+    float: left;
+    height: auto;
+    width: 1150px;
+    padding: 5px 10px 5px 10px;
+    margin: 30px 0 0 0;
+}
+.ingreso{
+    position: absolute;
+    top:0;
+    right: 10px;
+    background-color: rgba(0,0,0,0.2);
+    -webkit-border-radius: 0px 0px 5px 5px;
+    border-radius: 0px 0px 5px 5px;
+}
+.ingreso a:first-child {
+    -webkit-border-radius: 0px 0px 5px 0px;
+    border-radius: 0px 0px 5px 0px;
+}
+.ingreso a:last-child {
+    -webkit-border-radius: 0px 0px 0px 5px;
+    border-radius: 0px 0px 0px 5px;
+}
+.ingreso a{
+    color: white;
+    width: auto;
+    float: right;
+    text-decoration: none;
+    padding: 5px 10px 8px 10px;
+    font-size: 15px;
+    position: relative;
+}
+.ingreso a:hover{
+    background-color: rgba(0,0,0,0.2);
+    text-decoration: none;
+    color: white;
+}
+.ingreso a:active{
+    -webkit-box-shadow: inset 0px 0px 10px 0px #333;
+    box-shadow: inset 0px 0px 10px 0px #333;
+}
+/*para la personalizacion*/
+.personaliza{
+    float: left;
+    width: 970px;
+    z-index: 2000;
+    height: auto;
+    padding: 0;
+    margin: 0 10px 0 10px;
+}
+.per-titulo{
+    float: left;
+    height: 30px;
+    width: 970px;
+    margin-top: 5px;
+}
+.per-titulo-bot{
+    float: left;
+    padding: 3px 20px 3px 20px;
+    border: 1px solid #ddd;
+    margin: 0 5px 0 5px;
+    background-color: #eee;
+    color: #333;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+}
+.per-titulo-bot:hover{
+    cursor: pointer;
+}
+.per-titulo-bot.active{
+    padding: 3px 20px 3px 20px;
+    border: 1px solid #333;
+    margin: 0 5px 0 5px;
+    background-color: #373737;
+    color: #f7f8f9;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+    -webkit-box-shadow: 0px 0px 10px 0px #333;
+    -moz-box-shadow: 0px 0px 10px 0px #333;
+    box-shadow: 0px 0px 10px 0px #333;
+}
+.per-lista{
+    float: left;
+    height: auto;
+    padding: 0px;
+    margin: 0;
+    width:970px;
+    background-color: #272727;
+    z-index: 200000;
+    -webkit-border-radius: 5px 0px 5px 5px;
+    border-radius: 5px 0px 5px 5px;
+}
+.per-lista-in{
+    float: left;
+    height: 300px;
+    padding: 10px;
+    margin: 5px  5px 0 5px;
+    width: 940px;
+    background-color: #f7f8f9;
+    -webkit-border-radius: 5px 0px 5px 5px;
+    border-radius: 5px 0px 5px 5px;
+    overflow: auto;
+    display: none;
+}
+.per-lista-in-save{
+    float: left;
+    padding: 10px;
+    margin:   5px;
+    width: 940px;
+    background-color: #f7f8f9;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    display: none;
+}
+.ind-color{
+    float: left;
+    width: 200px;
+    margin: 5px 15px 5px 15px;
+    padding: 0;
+    height: 50px;
+}
+.ind-color:hover{
+    cursor: pointer;
+}
+.ind-fondo{
+    float: left;
+    width: 200px;
+    margin: 5px 15px 5px 15px;
+    padding: 0;
+    height: 100px;
+    background-size: 200px
+}
+.ind-fondo img{
+    float: left;
+    width: 200px;
+    padding: 0;
+    height: 60px;
+}
+.ind-fondo:hover{
+    cursor: pointer;
+}
+
+/*////*/
+.profesor-name{
+    float: left;
+    padding: 15px 10px 0px 210px;
+    height: auto;
+    width: 958px;
+}
+.profesor-name .text{
+    
+    font-size: 22px;
+    font-weight: normal;
+    padding: 0 0 0 20px;
+    height: auto;
+    margin: 0;
+    position: relative;
+}
+.profesor-name .text:before{
+    content: "/";
+    position: absolute;
+    font-family: "Web Symbols";
+    left: 0px;
+    top: 4px;
+    color: #888;
+    font-size: 15px;
+}
+.barra-color{
+    float: left;
+    height: 130px;
+    width: 1180px;
+    margin: 0;
+    position: relative;
+    
+}
+.contien-logouis{
+    float: right;
+    width: 970px;
+    height: auto;
+}
+.logouis{
+    float: right;
+    margin: 10px 10px 5px 10px;
+    width: auto;
+    text-align: right;
+    padding: 5px;
+    background-color: rgba(255,255,255,0.2);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0px 0px 2px 0px #f9f9f9;
+    -moz-box-shadow: inset 0px 0px 2px 0px #f9f9f9;
+    box-shadow: inset 0px 0px 2px 0px #f9f9f9;
+}
+.contiene-tit{
+    float: right;
+    height: auto;
+    min-width: 300px;
+    position: relative;
+    overflow: hidden;
+}
+.logoEscuela{
+    width: auto;
+    height: auto;
+    z-index: 2000;
+    float: right;
+    padding: 4px;
+    margin-right: 10px;
+    margin-top: 1px;
+    background-color: rgba(255,255,255,0.3);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0px 0px 2px 0px #f9f9f9;
+    -moz-box-shadow: inset 0px 0px 2px 0px #f9f9f9;
+    box-shadow: inset 0px 0px 2px 0px #f9f9f9
+}
+.logoEscuela img{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #f8f9f9;
+    border: 1px solid #f5f5f5;
+}
+.fotoprofesor{
+    position: absolute;
+    bottom: -1px;
+    left: 40px;
+    z-index: 200;
+    padding: 5px;
+    height: 150px;
+    width: 150px;
+    border: 1px solid #ddd;
+    background-color: rgba(255,255,255,0.3);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 0px 10px 0px #333;
+    -moz-box-shadow: 0px 0px 10px 0px #333;
+    box-shadow: 0px 0px 10px 0px #333;
+}
+.fotoprofesor img{
+    float: left;
+    height: 150px;
+    width: 150px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+.uis{
+    float: right;
+    height: 20px;
+    font-size: 14px;
+    color: #fff;
+    width: 80%;
+    text-align: right;
+    padding: 0 10px;
+}
+.escuela{
+    float: right;
+    text-align: right;
+    height: 20px;
+    font-size: 14px;
+    color: #fff;
+    width: 80%;
+    position: relative;
+    padding: 0 10px;
+}
+.main{
+    float: left;
+    height:auto;
+    background-color: #f5f5f5;
+    width: 1200px;
+    padding: 0;
+    margin: 0;  
+    /*border: 1px solid #ddd;*/
+}
+.menu-superior{
+    height: 27px;
+    text-align: center;
+
+    padding-left: 5px;
+    background-color: rgba(0,0,0,0.3);
+
+}
+.lateral-cont{
+    float: left;
+    height: auto;
+    width: 219px;
+    padding: 0;
+    margin: 0;  
+    position: relative;
+}
+.lateral-mini{
+    float: left;
+    height: auto;
+    border: 1px solid #E5E5E5;
+    background-color: #F1F1F1;
+    width: 200px;
+    padding: 0;
+    margin: 30px 10px 10px 10px;  
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+.fecha-actual{
+    width:190px;
+    padding: 10px 0 10px 14px;
+    text-align: center;
+    font-size: 14px;
+    position: relative;
+}
+.fecha-actual:after{
+    position: absolute;
+    font-size: 1.5em;
+    left: 10px;
+    font-family: 'WebSymbolsRegular';
+    content: "P";
+    top: 5px;
+    color: #666;
+}
+.lateral-Menu{
+    float: left;
+    height: auto;
+    width: 200px;
+    border-bottom: 2px solid #117CEA;
+    padding: 0;
+    margin: 30px 10px 30px 10px;  
+    border-collapse: separate;
+    color: #444;
+    font-size: 20px;
+    text-align: center;
+}
+.lateral{
+    float: left;
+    height: auto;
+    min-height: 300px;
+    width: 200px;
+    padding: 0 0 0 0;
+    margin: 5px 10px 20px 10px;  
+}
+.lateral ul.menu{
+    display: block;
+    list-style: none;
+    float: left;
+}
+
+
+
+
+
+
+.centro2{
+    float: left;
+    width: 1150px;
+    margin: 30px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;   
+    height: auto;
+    min-height: 700px;
+}
+.centro2 iframe{
+    border: none;
+    float: left;
+    background-color: #fff;
+}
+
+.footer{
+    float: left;
+    height: 120px;
+    width: 1200px;
+    padding:  0;
+    margin:25px 0 0 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+
+}
+.footer-in{
+    float: left;
+    height: 120px;
+    width: 1170px;
+    padding: 5px;
+    margin:10px ;
+    border: 1px solid #ddd;
+    -webkit-box-shadow: inset 0px 0px 10px 0px #000;
+    -moz-box-shadow: inset 0px 0px 10px 0px #000;
+    box-shadow: inset 0px 0px 10px 0px #000;
+}
+.footer-content{
+    width: 590px;
+    margin: 0 auto;
+    height: auto;
+    overflow: hidden;
+}
+.footer-logo-calumet{
+    float: left;
+    margin: 10px 10px 5px 10px;
+    width: auto;
+    text-align: right;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0px 0px 2px 0px #f9f9f9;
+    -moz-box-shadow: inset 0px 0px 2px 0px #f9f9f9;
+    box-shadow: inset 0px 0px 2px 0px #f9f9f9;
+
+}
+.footer-logo-calumet img{
+    float: left;
+    max-height: 80px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.footer-info{
+    float: left;
+    width: auto;
+    height: 50px;
+    padding: 10px 10px 10px 30px;
+    border-left: 2px solid #ddd;
+    color: #f1f1f1;
+    margin: 20px 0px 20px 20px;
+}
+.footer-info h3{
+    line-height: 20px;
+    margin: 0;
+    font-size: 14px;
+}
+.footer-info h4{
+    font-size: 13px;
+    margin: 0;
+}
+.footer-info a{
+    font-size: 13px;
+    color: #f1f1f1;
+    font-weight: bold;
+}
+
+.datagrid table { border-collapse: collapse; text-align: left; width: 100%; border-left: none; border-right: none;border-bottom:none;} 
+.datagrid {font: normal 12px/150% Arial, Helvetica, sans-serif; 
+          background: #fff; overflow: hidden; 
+          border: 1px solid #006699; 
+          -webkit-border-radius: 3px; 
+          -moz-border-radius: 3px; 
+          border-radius: 3px; }
+.datagrid table td, .datagrid table th { padding: 3px 10px; }
+.datagrid table thead th {background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #006699), color-stop(1, #00557F) );
+                         background:-moz-linear-gradient( center top, #006699 5%, #00557F 100% );
+                         filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#00557F');
+                         background-color:#006699; color:#FFFFFF; font-size: 15px; font-weight: bold; border-left: 1px solid #0070A8; } 
+.datagrid table thead th:first-child { border: none; }
+.datagrid table tbody td { color: #00496B; border-left: 1px solid #E1EEF4;font-size: 12px;font-weight: normal; }
+.datagrid table tbody .alt { background: #E1EEF4; color: #333; font-weight: bold }
+.datagrid table tbody td:first-child { border-left: none; }
+.datagrid table tbody tr:last-child td { border-bottom: none; }
+td>div>span {
+    color: #333;
+    font-weight: bold;
+}
+
+
+/*
+table.horario{
+    font-size: 12px;
+    color: #444;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    margin: 20px auto 20px auto;
+}
+
+
+
+table.horario td {
+    padding: 5px ;
+    vertical-align: middle;
+    cursor: default;
+    background-color: #f7f8f9;
+    border-right:  1px solid #f1f1f1;
+    border-bottom:  1px solid #ddd;
+    border-left: 1px solid #f9f9f9;
+    border-top:none;
+    height: 20px;
+    overflow: hidden;
+    overflow: no-display;
+}
+table.horario td>div>span {
+    color: #333;
+    font-weight: bold;
+}
+table.horario th{
+    padding: 5px ;
+    vertical-align: middle;
+    cursor: default;
+    background-color: #f1f1f1;
+    border-right:  1px solid #ccc;
+    border-bottom:  1px solid #ccc;
+    border-left:none;
+    border-top:none;
+    color: #117CEA;
+    font-family: 'Trebuchet MS', Arial, Sans-serif;
+    font-size: 1.1em;
+}
+table{
+    font-size: 14px;
+    color: #444;
+    border-collapse: collapse;
+    margin: 10px;
+}
+td {
+    padding: 5px ;
+    vertical-align: middle;
+    cursor: default;
+}
+td>div>span {
+    color: #333;
+    font-weight: bold;
+}
+table th{
+    padding: 5px ;
+    vertical-align: middle;
+    cursor: default;
+    color: #117CEA;
+    font-family: 'Trebuchet MS', Arial, Sans-serif;
+    font-size: 1.1em;
+}*/
+.hora{
+    padding: 5px ;
+    vertical-align: middle;
+    cursor: default;
+    background-color: #006699;
+    border-right:  1px solid #ccc;
+    border-bottom:  1px solid #ccc;
+    border-left:none;
+    border-top:none;
+    color: #333;
+    font-family: 'Trebuchet MS', Arial, Sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.titulo-centro-p{
+    height: auto;
+    padding: 5px;
+    font-size: 35px;
+    color: #00557F;
+    text-align: center;
+}
+/*Para el perfil del profesor*/
+
+.encabezado-perfil{
+    float: left;
+    width: 800px;
+    height: auto;
+    padding: 10px;
+    margin: 0 50px;
+}
+.foto-perfil{
+    float: left;
+    max-width: 300px;
+    height: auto;
+    border: 1px solid #DDD;
+    background-color: white;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 10px 0px #333;
+    -moz-box-shadow: 0px 0px 10px 0px #333;
+    box-shadow: 0px 0px 10px 0px #333;
+    padding: 5px;
+}
+.foto-perfil img{
+    float: left;
+    max-width: 300px;
+    height: auto;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+.datos-perfil{
+    float: right;
+    width: 350px;
+    height: auto;
+    padding: 10px;
+}
+.datos-perfil h2{
+    font-size: 20px;
+    border-bottom: 1px solid #ddd;
+}
+.caja-datos-perfil{
+    float: left;
+    width: 800px;
+    height: auto;
+    padding: 0;
+    margin: 10px 50px 5px 50px;
+    background-color: #f7f8f9;
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.caja-datos-perfil h2{
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+    padding: 7px 0 5px 20px;
+    font-weight: bold;
+    border-collapse: collapse;
+}
+.caja-datos-perfil ul{
+    float: left;
+    padding: 10px 10px 10px 30px;
+    list-style: #15c;
+    color: #444;
+}
+.caja-datos-perfil li{
+    padding: 0px;
+    color: #555;
+    font-size: 13px;
+}
+.caja-datos-perfil strong{
+    padding: 0px;
+    color: #444;
+    font-size: 13px;
+    font-weight: bold;
+    padding-right: 5px;
+}
+.botones-guardar{
+    width:500px; 
+    height:40px;
+    margin:auto;
+
+}
+
+/*------------------------------------*\
+   barra-sup
+\*------------------------------------*/
+
+.barra_sup{
+    width: 100%;
+    min-width:1000px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:900000;
+    height: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2) !important;
+    background-color: #eee;
+}
+.barra_sup_in{
+    height: 30px;
+    margin: 0 auto;
+    width: 980px;
+    padding: 0 10px 0 10px;
+}
+
+.barra_sup_in>a{
+    width: auto;
+    text-decoration: none;
+    font-size: 13px;
+    margin: 0;
+}
+.barra_sup_in>a:hover{
+    background-color: rgba(0,0,0,0.1);
+    cursor: pointer;
+    -webkit-box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+}
+.barra_sup_in>a.a-left{
+    float:left;
+}
+.barra_sup_in>a.a-right{
+    float: right;
+}
+.barra_sup_in>a>span.item{
+    margin: 5px 10px 5px 10px;
+    color: #333;
+    float: left;
+    line-height: 20px;
+    text-shadow: 1px 1px 2px #fff;
+    filter: dropshadow(color=#fff, offx=1, offy=1);
+}
+
+#usr-item{
+    float: right;
+    margin: 4px;
+}
+
+#usr-item>div>span>span{
+    font-family: 'Trebuchet MS', Arial, Sans-serif;
+    font-size: 14px;
+}
+
+
+/*------------------------------------*\
+   LATERAL IZQUIERDO
+\*------------------------------------*/
+
+.nav-left{
+    width: 280px;
+    float: left;
+    height: 100%;
+    height: 100%;
+    margin: 85px 10px 10px 10px;
+    position: fixed;
+}
+
+.nav-stacked li.active{position:relative;}
+
+.nav-stacked li.active:before{
+    border-style: solid;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #797979;
+    position: absolute;
+    right: -10px;
+    top: 6px;
+    z-index: 999;
+    content: "";
+}
+.nav-stacked li.active:after{
+    border-style: solid;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #fff;
+    position: absolute;
+    right: -9px;
+    top: 6px;
+    z-index: 9999;
+    content: "";
+}
+.nav-stacked>li.head-box>a{text-align: center;position: relative;text-shadow: none;}
+
+.nav-stacked li.active.head-box:after,
+.nav-stacked li.active.head-box:before{
+    display: none;
+}
+
+.nav-tabs.nav-stacked > li > a{
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+
+}

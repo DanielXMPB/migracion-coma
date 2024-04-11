@@ -1,0 +1,146 @@
+
+/* 
+    Created on : 31/10/2016, 12:45:20 AM
+    Author     : duvanjamid
+*/
+#wrapper .row,#wrapper .row-fluid {
+    margin-top: 0; 
+    margin-bottom: 0; 
+}
+
+#wrapper .container-fluid, .contenedor, .contenedor-fluido {
+    margin:0;
+}
+#wrapper .border-box {
+    border-width: 0 1px 0 1px;
+    border-color: #aaa;
+    border-style: solid;
+}
+body{
+    background: #f5f4f3;
+}
+.widget a{
+    color: inherit !important;
+}
+.widget .oculto{
+    display: none; 
+}
+.tooltip{
+    position: relative !important;
+    opacity: 1 !important;
+}
+.menu-top li{
+    position: relative;
+}
+.menu-top li .label{
+   color: #666;
+   font-weight: normal;
+   font-size: 1em;
+}
+
+
+.barra{
+    margin: 5px;
+    padding: 5px;
+
+}.barra .ayuda{
+    float: right;
+}
+.barra .ayuda>a{
+    float: left;
+    text-align: left;
+    text-decoration: none;
+    color: #555;
+    margin: 0 0 0 5px;
+    font-size: 14px;
+}
+.barra .ayuda>a>span{
+    float: left;
+    padding: 2px 0 0 0;
+}
+.barra .ayuda>a:hover{
+    color: #13478F;
+}
+.barra #navegacion{
+    float: left;
+    color: #13478F;
+}
+#navegacion a{
+    text-decoration: none;
+    color: #555;
+    font-weight: normal;
+    margin: 0 5px 0 5px;
+}
+#navegacion span{
+    text-decoration: none;
+    color: #555;
+    font-weight: normal;
+    margin: 0 5px 0 5px;
+}
+#navegacion a:hover{
+    text-decoration: none;
+    color: #13478F;
+    cursor: pointer;
+}
+#navegacion a:visied{
+    text-decoration: none;
+    color: #555;
+}
+.lateral_izquierdo_out{
+    float: left;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: auto;
+    height: auto;
+}
+.lateral_izquierdo{
+    float: left;
+    margin:0px 10px 0 0px;
+    text-align: left;
+    width: 197px;
+    height: auto;
+}
+.titulo-menu-izq{
+    padding: 5px 0 5px 0;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    border-style: solid;
+    border-width: 0 0 4px 0;
+    position: relative;
+}/*------------------------------------*\
+   $centro
+\*------------------------------------*/
+.centro{
+    float: left;
+    height: auto;
+    margin: 0;
+}
+#centro{
+    padding: 0 20px;
+    border: hidden;
+    min-height: 400px;
+}
+.cont-menu-izq{
+    padding: 40px 5px 10px 20px;
+    margin: 0;
+}
+.menuzord-menu ul.dropdown {
+    box-shadow: 0px 2px 5px #666;
+}
+.alert.alert-error.mensaje {
+    position: fixed;
+    top: left;
+    left: 50%;
+    z-index: 200;
+    margin-left: -150px;
+}
+
+.main{
+    min-height: 700px;
+}
+
+.menuzord-brand img {
+    max-height: 75px;
+}

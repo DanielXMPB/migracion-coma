@@ -1,0 +1,642 @@
+/*MANTENER AYUDAS*/
+
+/* 
+    Document   : AdminMenus
+    Created on : 19/11/2011, 04:12:40 PM
+    Author     : Mi-DuJa
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+#loader{
+    font-family: 'WebSymbolsRegular';
+    color:#333;
+    font-size: 40px;
+    width: auto;
+    padding: 20px;
+    float: left;
+
+}
+#loader2{
+    font-family: 'WebSymbolsRegular';
+    color:rgba(58, 200, 66, 0.8);
+    font-size: 40px;
+    width: auto;
+    padding: 20px;
+    float: left;
+}
+#loader3{
+    font-family: 'WebSymbolsRegular';
+    color:rgba(204, 0, 0, 0.8);
+    font-size: 40px;
+    width: auto;
+    padding: 20px;
+    float: left;
+
+}
+.Guardando#Permisos{
+    width: auto;
+    float: left;
+    color: #333;
+    padding: 20px 0 20px 0;
+}
+#arbol-menu{
+    float: left;
+    margin: 10px 0 20px 10px;
+    display: block;
+    height: auto;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.arbol-uno{
+    list-style: none;
+    display: block;
+    height: auto;
+    width: 560px;
+    float: left;
+}
+.arbol-uno li:first-child{
+    border-top: 1px solid #ddd;
+}
+.arbol-uno li{
+    list-style: none;
+    display: block;
+    height: auto;
+    display: block;
+    padding: 0;
+    width: 560px;
+    float: left;
+}
+.arbol-uno-n1{
+    height: 29px;
+    width: 548px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #ddd;
+    border-right:  1px solid #ddd;
+    border-left:  1px solid #ddd;
+    background-color: #f1f1f1;
+    padding: 2px 0 2px 10px;
+}
+.arbol-uno li .ind{
+    font-family: 'WebSymbolsRegular';
+    color: #474DB3;
+    font-size: 20px;
+    float: left;
+    padding: 0;
+    height: 23px;
+    width: 20px;
+}
+.arbol-uno li .ind1{
+    padding: 0;
+    color: #333;
+    float: left;
+    width: 460px;
+    font-size: 1em;
+    padding: 3px 0 0 0;
+}
+.arbol-uno li:hover .arbol-uno-n1 {
+    background-color: rgba(241,218,54,0.5);
+}
+.arbol-uno .arbol-uno-n1.active{
+    background-color: rgba(0,0,0, 0.2);
+}
+.arbol-dos:hover li.n2{
+    background-color: rgba(241,218,54,0.5);
+}
+.arbol-uno li:hover .ind {
+    color: #474DB3;
+}
+.arbol-dos{
+    list-style: none;
+    margin-top: 0;
+    display: block;
+    float: left;
+    width: 560px;
+    height: auto;
+}
+.arbol-dos ul{
+    float: left;
+    margin: 0;
+}
+.arbol-dos li{
+    width: auto;
+    list-style: none;
+    display: block;
+    height: 29px;
+    display: block;
+    padding: 2px 0px 2px 10px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #ddd;
+    border-right:  1px solid #ddd;
+    border-left:  1px solid #ddd;
+    background-color: #f1f1f1;
+    width: 508px;
+}
+.arbol-dos li.active{
+    background-color: rgba(0,0,0, 0.2);
+}
+.arbol-dos li:first-child{
+    border-top: 1px solid #fff;
+}
+.arbol-dos li:last-child{
+    border-bottom: 1px solid #ddd;
+}
+.arbol-dos li .ind2{
+    font-family: 'WebSymbolsRegular';
+    color: #474DB3;
+    font-size: 20px;
+    float: left;
+    padding: 0;
+    height: 20px;
+    width: 20px;
+}
+.arbol-dos li .ind3{
+    padding: 0;
+    color: #333;
+    float: left;
+    width: 420px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    font-weight: normal;
+    padding: 3px 0 0 0;
+}
+.arbol-dos li:hover {
+    background-color: rgba(241, 218, 54, 0.5);
+}
+.arbol-dos li:hover .ind2 {
+    color: #474DB3;
+}
+.arbol-tres{
+    list-style: none;
+    margin-left: 40px;
+    margin-top: 0;
+    display: block;
+    float: left;
+    width: 520px;
+}
+.arbol-tres ul{
+    float: left;
+    margin: 0;
+}
+.arbol-tres li{
+    width: auto;
+    list-style: none;
+    display: block;
+    height: 29px;
+    display: block;
+    padding: 2px 0px 2px 10px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #ddd;
+    border-right:  1px solid #ddd;
+    border-left:  1px solid #ddd;
+    background-color: #f8f8f8;
+    width: 468px;
+}
+.arbol-tres li.active{
+    background-color: rgba(0,0,0, 0.2);
+}
+.arbol-tres li:first-child{
+    border-top: 1px solid #fff;
+}
+.arbol-tres li:last-child{
+    border-bottom: 1px solid #ddd;
+}
+.arbol-tres li .ind4{
+    font-family: 'WebSymbolsRegular';
+    color:#109E10;
+    font-size: 20px;
+    float: left;
+    padding: 0;
+    height: 20px;
+    width: 20px;
+}
+.arbol-tres li .ind5{
+    padding: 0;
+    color: #333;
+    float: left;
+    width: 380px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    font-weight: normal;
+    padding: 3px 0 0 0;
+}
+.arbol-tres li:hover {
+    background-color: rgba(241,218,54,0.3);
+}
+.arbol-tres li:hover .ind4 {
+    color:#109E10;
+}
+.btn-permiso{
+    float: right;
+    height: 22px;
+    width: auto;
+    color: #fff;
+    font-size: 1em;
+    margin: 0 5px 0 5px;
+    padding: 3px 5px 0px 5px;
+    border: 1px solid #4E80A2;
+    background-color: #0084B4;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.btn-permiso:hover{
+    border: 1px solid #ccc;
+    background-color: #4E80A2;
+    cursor: pointer;
+    color: #ffffff
+}
+/*.btn-permiso.active{
+    background-color: #ddd;
+    -webkit-box-shadow: 0px 0px 10px 0px #dddddd;
+    -moz-box-shadow: 0px 0px 10px 0px #dddddd;
+    box-shadow: 0px 0px 10px 0px #4E80A2;
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 4px;
+    -webkit-border-radius: 4px 0px 0px 4px;
+}*/
+.Admin-permiso{
+    background-color: #ddd;
+    position: absolute;
+    right: 0;
+    width: 218px;
+    border-left:  1px solid #bbb;
+    border-right: 1px solid #bbb;
+    border-top: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+    padding: 0;
+    display: none;
+    -moz-border-radius-topleft: 0px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 0px;
+    -webkit-border-radius: 0px 5px 5px 0px;
+    border-radius: 0px 5px 5px 0px;
+}
+.Admin-permiso .permiso-tipo-usr-titulo{
+    border-top: none;
+    text-align: left;
+    background: #ddd;
+    float: left;
+    -moz-border-radius-topleft: 0px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    -webkit-border-radius: 0px 5px 0px 0px;
+    border-radius: 0px 5px 0px 0px;
+    position: relative;
+    padding: 5px 10px 5px 10px;
+    margin: 0;
+}
+.Admin-permiso .permiso-tipo-usr-titulo h5{
+    width: 155px;
+    margin: 0 0 0 40px;
+    float: left;
+}
+.Admin-permiso .permiso-tipo-usr-titulo:before{
+    content: "L";
+    margin-right: 5px;
+    color: #555;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    bottom: 5px;
+    padding: 3px;
+    font-family: 'Icons-font';
+    font-size: 35px;
+    border: 1px solid #bba;
+    background-color: #f1f1f1;
+}
+.Admin-permiso .chec-tipo-usr:last-child{
+    border-bottom:  1px solid #eed;
+    position: relative;
+}
+.Admin-permiso .chec-tipo-usr:after{
+    content: "U";
+    font-family: 'WebSymbolsRegular';
+    color: #f8f8f8;
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    right: 5px;
+    z-index: 2;
+    font-size: 20px;
+}
+.Admin-permiso .chec-tipo-usr:last-child:after{
+    content: "W";
+    font-family: 'WebSymbolsRegular';
+    color: red;
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    right: 5px;
+    z-index: 2;
+    font-size: 20px;
+}
+.Admin-permiso .chec-tipo-usr:last-child input:hover:before{
+    content: "Si Selecciona  < Público >  este menu sera visible a todo el mundo, ademas se deselecionan todas las demas casillas";
+    background-color: rgba(255,255,255,0.9);
+    padding: 5px;
+    color: #333;
+    border: 1px solid #f1f1f1;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: -170px;
+    z-index: 10;
+    font-size: 12px;
+    width: 170px;
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    border-radius: 4px 4px 4px 4px;
+    -webkit-box-shadow: 0px 0px 10px 0px #333333;
+    -moz-box-shadow: 0px 0px 10px 0px #333333;
+    box-shadow: 0px 0px 10px 0px #333333;
+}
+.Admin-permiso .chec-tipo-usr{
+    border-top: 1px solid #bba;
+    border-bottom:  1px solid #eed;
+    padding: 7px 15px 7px 15px;
+    float: left;
+    width: 188px;
+    position: relative;
+    font-weight: normal;
+}
+.Admin-permiso .permiso-tipo-usr-boton {
+    border-top: 1px solid #bba;
+    float: left;
+    width: 218px;
+    text-align: center;
+    border-bottom: none;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.Admin-permiso .permiso-tipo-usr-boton .btn-aplicar{
+    color: #3AB242;
+    padding: 10px;
+    font-family: 'WebSymbolsRegular';
+    margin: 0 5px 0 5px;
+    text-align: left;
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #eee;
+    width: 75px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0px 0px 5px 0px #ddd;
+    -moz-box-shadow: inset 0px 0px 5px 0px #ddd;
+    box-shadow: inset 0px 0px 5px 0px #ddd;
+    position: relative;
+    font-weight: bold;
+    text-shadow: 1px -1px 2px #fff;
+    filter: dropshadow(color=#fff, offx=1, offy=-1);
+}
+.Admin-permiso .permiso-tipo-usr-boton .btn-aplicar:after{
+    color: #333;
+    content: "Guardar";
+    padding: 5px;
+    font-family: 'arial';
+    font-size: 13px;
+    width: auto;
+    position: absolute;
+    right: 5px;
+    top: 6px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.Admin-permiso .permiso-tipo-usr-boton .btn-cancel{
+    color: red;
+    padding: 10px;
+    font-family: 'WebSymbolsRegular';
+    margin: 0 5px 0 5px;
+    text-align: left;
+    float: right;
+    border: 1px solid #ccc;
+    background-color: #eee;
+    width: 75px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0px 0px 5px 0px #ddd;
+    -moz-box-shadow: inset 0px 0px 5px 0px #ddd;
+    box-shadow: inset 0px 0px 5px 0px #ddd;
+    position: relative;
+    font-weight: bold;
+    text-shadow: 1px -1px 2px #fff;
+    filter: dropshadow(color=#fff, offx=1, offy=-1);
+}
+.Admin-permiso .permiso-tipo-usr-boton .btn-cancel:after{
+    color: #333;
+    content: "Cancelar";
+    padding: 5px;
+    font-family: 'arial';
+    font-size: 13px;
+    width: auto;
+    position: absolute;
+    right: 5px;
+    top: 6px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.Admin-permiso .permiso-tipo-usr-boton .btn-cancel:hover{
+    background-color: #bbb;
+    -webkit-box-shadow: 0px 0px 15px 0px #fff;
+    -moz-box-shadow: 0px 0px 15px 0px #fff;
+    box-shadow: 0px 0px 15px 0px #fff;
+    border: 1px solid #aaa;
+    cursor: pointer;
+}
+.Admin-permiso .permiso-tipo-usr-boton .btn-aplicar:hover{
+    background-color: #bbb;
+    -webkit-box-shadow: 0px 0px 15px 0px #fff;
+    -moz-box-shadow: 0px 0px 15px 0px #fff;
+    box-shadow: 0px 0px 15px 0px #fff;
+    border: 1px solid #aaa;
+    cursor: pointer;
+}
+/*para las etiquetas de los menus privados y pblicos*/
+.tag{
+    /*    font-family: 'WebSymbolsRegular';*/
+    font-size: 14px;
+    color: #333;
+    float: right;
+    height: auto;
+    width: 35px;
+    border: 1px dashed #777;
+    margin: 3px 5px 5px 10px;
+    padding: 1px 5px 1px 5px;
+    background-color: #f8f9f9;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.publico{
+    background: rgba(255, 165, 0,0.8);
+    color: #333;
+}
+.privado{
+    background: rgba(58, 178, 66,0.8);
+    color: #333;
+}
+.publico:before{
+    content: "Público";
+    color: #333;
+}
+.privado:before{
+    content: "Privado";
+    color: #333;
+}
+.privado:after{
+    content: "x";
+    font-family: 'WebSymbolsRegular';
+    margin: 0 5px;
+    font-size: 12px;
+    background: transparent;
+    color: #333;
+}
+.publico:after{
+    content: "w";
+    font-family: 'WebSymbolsRegular';
+    margin: 0 5px;
+    font-size: 12px;
+    background: transparent;
+    color: #333;
+}
+.tips{
+    float: left;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border: 1px solid #ddd;
+    font-size: 13px;
+    width: 660px;
+}
+.tips ol{
+    display: none;
+    list-style: decimal;
+    margin-left: 25px;
+}
+.tips li{
+    list-style-type: decimal;
+    list-style: decimal;
+    padding: 3px;
+}
+.ayuda{
+    background-color: #dddfff;
+    padding:3px 5px;
+    border: 1px solid #eee;
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    vertical-align: middle;
+}
+.ayuda:hover{
+    background-color: #dddfff;
+    color: #333fff;
+    cursor: pointer;
+}
+.alerta-1{
+    float: left;
+    font-size: 1.3em;
+    color: #fff;
+    padding: 5px 20px 5px 20px;
+    -webkit-box-shadow: 0px 0px 5px 0px #4E80A2;
+    -moz-box-shadow: 0px 0px 5px 0px #4E80A2;
+    box-shadow: 0px 0px 5px 0px #4E80A2;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #4E80A2;
+    background-color: #0084B4;
+}
+.btn-permiso1{
+    float: right;
+    height: 22px;
+    width: auto;
+    color: #fff;
+    font-size: 1em;
+    margin: 0 5px 0 5px;
+    padding: 3px 5px 0px 5px;
+    border: 1px solid #4E80A2;
+    background-color: #0084B4;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.btn-permiso1:hover{
+    border: 1px solid #ccc;
+    background-color: #4E80A2;
+    cursor: pointer;
+    color: #ffffff
+}
+.btn-permiso2{
+    float: right;
+    height: 22px;
+    width: auto;
+    color: #fff;
+    font-size: 1em;
+    margin: 0 5px 0 5px;
+    padding: 3px 5px 0px 5px;
+    border: 1px solid #239107;
+    background-color:#109E10;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.btn-permiso2:hover{
+    border: 1px solid #ccc;
+    background-color: #138D13;
+    cursor: pointer;
+    color: #ffffff
+}
+.btn-permiso12{
+    height: 22px;
+    width: auto;
+    color: #fff;
+    font-size: 1em;
+    margin: 0 5px 0 5px;
+    padding: 3px 5px 0px 5px;
+    border: 1px solid #4E80A2;
+    background-color: #0084B4;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.btn-permiso22{
+    height: 22px;
+    width: auto;
+    color: #fff;
+    font-size: 1em;
+    margin: 0 5px 0 5px;
+    padding: 3px 5px 0px 5px;
+    border: 1px solid #4E80A2;
+    background-color:tomato;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+#loaderM{
+    font-family: 'WebSymbolsRegular';
+    color:#fff;
+    font-size: 16px;
+    width: auto;
+    float: right;
+    margin: 0 5px 0 5px;
+    padding: 3px 10px 0px 10px;
+}

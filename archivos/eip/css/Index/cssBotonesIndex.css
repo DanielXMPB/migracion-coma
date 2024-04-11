@@ -1,0 +1,40 @@
+/*
+    Última actualización de DISEÑO y PROGRAMACIÓN 21/03/2011
+    Realizada por: AUGUSTO MIGUEL IMBETT CORREDOR
+    Grupo CALUMET - UIS
+*/
+
+.clear { /* contenedor para los botones flotantes  */
+    overflow: hidden;
+    width: 100%;
+}
+/* LADO DERECHO DEL BOTON */
+a.btnindex {
+    background: transparent url('../../images/index/btnIndexDerAzul.png') no-repeat scroll top right;
+    font: 14px "Trebuchet MS", Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: bold;
+    display:inline-block;
+    margin-right: 0px;
+    padding-right: 18px; /* espacio al lado derecho del boton. no debe sobrepasa la anchura de la imagen que utilizamos aqui */
+    text-decoration: none;
+}
+/* LADO IZQUIERDO DEL BOTON */
+a.btnindex span {
+    background: transparent url('../../images/index/btnIndexIzqAzul.png') no-repeat;
+    line-height: 14px;
+    height: 25px;
+    padding: 5px 0 0 18px;
+    display:inline-block;
+}
+/* LADO DERECHO DEL BOTON */
+a.btnindex:hover {
+    background: transparent url('../../images/index/btnIndexPrssDerAzul.png') no-repeat scroll top right;
+    color: #212121;
+    outline: none; /* Elimina la linia de puntos Firefox */
+}
+/* LADO IZQUIERDO DEL BOTON */
+a.btnindex:hover span {
+    background: transparent url('../../images/index/btnIndexPrssIzqAzul.png') no-repeat;
+    outline: none;
+}

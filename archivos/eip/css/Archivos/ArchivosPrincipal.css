@@ -1,0 +1,84 @@
+
+.file-wraper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+}
+
+.contenedor-archivos{
+    position: fixed; 
+    bottom: 0;
+    top: 120px;
+    overflow-y: auto;
+}
+
+/*Para las vistas de los archivos*/
+.file-view{
+    width: 140px;
+    display:inline-block;
+    /*z-index: 1;*/
+    background: #fff;                
+    border-radius: 2px;
+    margin:10px;
+    -webkit-box-shadow: 0 1px 5px 0 rgba(0,0,0,.2);
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,.2);
+}
+
+.file-view.favorito .isfavorito {
+    display: block;
+}
+.isfavorito {
+    display: none;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: #FFC524;
+    text-align: center;
+}
+.file-view>div{
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+    border-radius: 2px;
+}
+
+.file-view:hover{
+    box-shadow: 0 0  10px #222;
+    cursor: pointer;
+}
+
+.file-view.selected{
+     box-shadow: inset 0 0 0px 3px rgb(26, 179, 148);
+    cursor: pointer;
+}
+
+.file-view-icon{
+    background-size: 55%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    height:110px;
+    margin-bottom: 10px;
+}
+.file-view-label{
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 0.9em;
+    text-align: center;
+}
+.btn-group>.dropdown-menu.pull-right{
+    margin: 0;
+}
+.btn-group{
+    font-size: 0.9em;
+}
+
+.btn-up-download.active{
+    box-shadow: 0 1px 10px 0 rgba(0,0,0,.2);
+    cursor:pointer;
+    background-color:#f7f8f9;
+}
+[class*=" mi-"], [class^=mi-] {
+    font-size: 1.7em;
+}

@@ -1,0 +1,390 @@
+/* 
+    Document   : ConstruirModelo
+    Created on : 20/10/2013, 10:24:29 PM
+    Author     : Duvan Jamid
+    Description:
+        Purpose of the stylesheet follows.
+*/
+.contendor{
+    padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.accordion-group{
+    border: 1px solid #ddd;
+}
+.accordion-toggle>span.icon-s{
+    margin-left: -5px !important;
+    margin-right: 5px !important;
+}
+.accordion {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.accordion-heading .accordion-toggle {
+    font-weight: normal;
+    color: #555 !important;
+    padding: 5px !important;
+    position: relative;
+}
+.accordion-heading .accordion-toggle:hover {
+    text-decoration: none;
+}
+.accordion-toggle:after{
+    content: "";
+    border: none !important;
+}
+/* --- Para los Acordeones que agregan ---- */
+.accordion-group.agregar {
+    border: none !important;
+    margin-top: 27px;
+    position: relative;
+}
+.accordion-group.agregar .suma_total {
+    position: absolute;
+    top: -25px;
+
+}
+.suma_total .boton.left {
+    margin-left: 0; 
+}
+.suma_total .boton.total {
+    text-shadow: none;
+    font-weight: bold;
+    color: #fff;
+}
+.accordion-group.agregar {
+    border: none !important;
+    margin-top: 25px;
+}
+.accordion-group.agregar .accordion-toggle.collapsed{
+    color: #999 !important;
+}
+.accordion-group.agregar .accordion-heading .accordion-toggle.collapsed.factores{
+    text-align: center;
+    border: 2px dotted #DDD !important;
+    background: #FFF;
+}
+.accordion-group.agregar .accordion-heading .accordion-toggle.factores{
+    text-align: center;
+    border: 2px dotted #7EBEDB  !important;
+    background: #f4fafa;
+    font-weight: bold;
+}
+.accordion-group.agregar .accordion-heading .accordion-toggle.collapsed.indicadores{
+    text-align: center;
+    border: 2px dotted #DDD !important;
+    background: #FFF;
+}
+.accordion-group.agregar .accordion-heading .accordion-toggle.indicadores{
+    text-align: center;
+    border: 2px dotted #E03E72  !important;
+    background: #FAF4F5;
+    font-weight: bold;
+}
+.accordion-group.agregar .accordion-heading .accordion-toggle.collapsed.caracteristicas{
+    text-align: center;
+    border: 2px dotted #DDD !important;
+    background: #FFF;
+}
+.accordion-group.agregar .accordion-heading .accordion-toggle.caracteristicas{
+    text-align: center;
+    border: 2px dotted #6EB056  !important;
+    background: #EEFFE8;
+    font-weight: bold;
+}
+.accordion-group.agregar .accordion-body .accordion-inner{
+    border: 1px dashed #d5d5d5 ;
+    border-top: none;
+}
+
+.accordion-toggle>.row-fluid{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.accordion-toggle>.row-fluid [class*='span']{
+    min-height: inherit;
+}
+
+
+.combo1>button.boton{
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 2px 4px 2px 4px;
+    min-height: inherit;
+}
+.combo1>button.boton>.label{
+    margin: 0;
+    height: auto;
+    line-height: 16px;
+    margin-left: 3px;
+    font-size: 12px;
+}
+.accordion-body{
+}
+.table{
+    background: #fff; 
+}
+.caja-formulario{
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    padding: 0 10px;
+    border-radius: 3px;
+    margin: 10px;
+}
+.caja-formulario h5{
+    background: #f2f2f2;
+    -webkit-border-radius: 3px 3px 0px 0px;
+    border-radius: 3px 3px 0px 0px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    margin: 0px -10px 10px;
+    color: #6a6a6a;
+    text-shadow: 1px -1px 1px #fff;
+    filter: dropshadow(color=#fff, offx=1, offy=-1);
+}
+.caja-formulario label{
+    padding-top: 10px;
+    float:right;
+}
+div.descripcion{
+    margin: -10px -15px 20px -15px;
+    padding: 4px 10PX;
+    text-align: justify;
+    -webkit-box-shadow: inset 0px 0px 3px 0px #FFF;
+    box-shadow: inset 0px 0px 3px 0px #FFF;
+    color: #444;
+    font-size: 13px;
+    color: #888;
+    border-bottom: 1px solid #D5D5D5;
+    box-shadow: 0 1px 0 0 #FFF inset, 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+div[contenteditable='true'].descripcion{
+    margin: 5px;
+
+}
+.dock{
+    padding: 2px 4px;
+    font-size: 11.844px;
+    font-weight: 700;
+    line-height: 14px;
+    color: #FFF;
+    text-shadow: -1 -1px 0 rgba(0, 0, 0, 0.25);
+    text-align: center;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    float: left;
+    max-width: 60px;
+    margin-left: 5px;
+}
+.peso{
+    display: inline-block;
+}
+.contador{
+    width: 29px;
+    position:absolute;
+    top: 50%;
+    margin-top: -10px;
+}
+.accordion-toggle .cajatitulo{
+    padding: 0;
+}
+.titulo{
+    margin-left: 30px;
+    padding: 2px 0 5px 0;
+}
+/* ----        Para el arbol          -----*/
+.accordion-inner.factor.activo{
+    border-left: 2px solid #599CC7;
+}
+.accordion-heading.factor,.accordion-toggle.factor {
+    position: relative;
+}
+.accordion-toggle.factor:not(.collapsed):not(.simple):before{
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0px;
+    height: 50%;
+    width: 10px;
+    border-right: 2px solid #599CC7;
+    border-top: 9px solid rgba(0, 0, 0, 0);
+    border-bottom: 2px solid #599CC7;
+    border-left: none;
+    z-index: 2;
+}
+.accordion-inner.caracteristica.activo{
+    border-left: 2px solid #6EB056;
+}
+
+.accordion-heading.caracteristica,.accordion-toggle.caracteristica {
+    position: relative;
+}
+
+.accordion-group.caracteristica:not(.agregar) .accordion-heading.caracteristica:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -16px;
+    margin-top: -13px;
+    height: 2px;
+    width: 9px;
+    border-right: 6px solid #599CC7;
+    background: #599CC7;
+    border-top: 12px solid #FFF;
+    border-bottom: 12px solid #FFF;
+    border-left: none;
+    z-index: 2;
+}
+.accordion-group.caracteristica.agregar .accordion-heading.caracteristica:before {
+    content:"";
+    position: absolute;
+    top:50%;
+    left: -20px;
+    margin-top: -1px;
+    height: 0px;
+    width: 20px;
+    border-top: 2px dotted #599CC7;
+}
+.accordion-toggle.caracteristica:not(.collapsed):not(.simple):before{
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0px;
+    height: 50%;
+    width: 10px;
+    border-right: 2px solid #6EB056;
+    border-top: 9px solid rgba(0, 0, 0, 0);
+    border-bottom: 2px solid #6EB056;
+    border-left: none;
+    z-index: 2;
+}
+.accordion-heading.indicador {
+    position: relative;
+}
+.accordion-group.indicador:not(.agregar) .accordion-heading.indicador:before {
+
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -16px;
+    margin-top: -13px;
+    height: 2px;
+    width: 9px;
+    border-right: 6px solid #6EB056;
+    background: #6EB056;
+    border-top: 12px solid #FFF;
+    border-bottom: 12px solid #FFF;
+    border-left: none;
+    z-index: 2;
+}
+.accordion-group.indicador.agregar .accordion-heading.indicador:before {
+    content:"";
+    position: absolute;
+    top:50%;
+    left: -20px;
+    margin-top: -1px;
+    height: 0px;
+    width: 20px;
+    border-top: 2px dotted #6EB056;
+}
+
+div[contentEditable="true"]{
+    line-height: 21px !important;
+    padding: 2px 5px 2px 5px !important;
+    font-size: 15px !important;
+    color: #333 !important;
+    border: 1px solid #CCC !important;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    font-weight: normal  !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+div[contenteditable="true"]:focus{
+    outline: 0;
+    border-color: rgba(82, 168, 236, 0.8) !important;
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6) !important;
+    -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6) !important;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6) !important;
+}
+div[contentEditable="true"].factor{
+    background: #F4FAFA !important;
+    border: 1px dashed #7EBEDB !important;
+}
+div[contentEditable="true"].caracteristica{
+    background: #EEFFE8 !important;
+    border: 1px dashed #6EB056 !important;
+}
+div[contentEditable="true"].indicador{
+    background: #FAF4F5 !important;
+    border: 1px dashed #DB88A3 !important;
+}
+.divisor {
+    border-bottom: 1px dotted #DDD;
+}
+input.decimal+span {
+    padding: 7px 0 7px 4px;
+    font-size: 20px;
+    float: left;
+    font-weight: bold;
+    color: #666;
+}
+.box.ayuda{
+    border-radius: 3px 3px 0 0 !important;
+    padding: 10px;
+    margin: 0;
+    display: none;
+}
+.box.btn-ayuda:hover{
+    cursor: pointer;
+}
+
+.box.btn-ayuda.active{
+    border-top-color: #FFF; 
+    border-radius: 0 0 3px 3px !important;
+    background-color: #f2f2f2;
+}
+.new{
+    -webkit-animation: nuevoelemento 0.7s linear 0 infinite;
+    -o-animation: nuevoelemento 0.7s linear 0 infinite;
+    animation: nuevoelemento 0.7s linear 0 infinite;
+}
+@-webkit-keyframes nuevoelemento {
+    from { 
+        background: #1ABC9C;
+    }
+    to {  
+        background: inherit;
+    }
+}
+@-o-keyframes nuevoelemento {
+    from { 
+        background: #1ABC9C;
+    }
+    to {  
+        background: inherit;
+    }
+}
+@-moz-keyframes nuevoelemento {
+    from { 
+        background: #1ABC9C;
+    }
+    to {  
+        background: inherit;
+    }
+}
+@keyframes nuevoelemento {
+    from { 
+        background: #1ABC9C;
+    }
+    to {  
+        background: inherit;
+    }
+}

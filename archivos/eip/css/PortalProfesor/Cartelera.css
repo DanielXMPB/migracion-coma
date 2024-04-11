@@ -1,0 +1,862 @@
+/* 
+    Document   : Cartelera
+    Created on : 20-feb-2012, 16:40:55
+    Author     : Duvan Jamid Vargas Castillo
+    Description: Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+.Cartelera-conte{
+    width: 940px;
+    float: left;
+    display: block;
+    padding: 10px 5px 40px 5px;
+    margin: 0 10px 0 10px;
+    height: auto;
+    overflow: hidden;
+}
+.Cartelera-barra-superior{
+    margin: 0;
+    padding: 0;
+    width:  940px;
+    float: left;
+}
+.Cartelera-titulo{
+    padding: 0 0 0 60px;
+    float: left;
+    width: 300px;
+    color: #333;
+    font-size: 19px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px white;
+    filter: dropshadow(color=#fff, offx=1, offy=1);
+    position: relative;
+}
+.Cartelera-titulo:before{
+    font-family: 'WebSymbolsRegular';
+    content: ",";
+    font-size: 28px;
+    position: absolute;
+    left: 7px;
+    top: 0;
+    color: tomato;
+}
+.Cartelera-titulo:after{
+    font-family: 'WebSymbolsRegular';
+    content: ",";
+    font-size: 30px;
+    position: absolute;
+    left: 25px;
+    color: #0172FF;
+    top: -6;
+}
+.Cartelera-barra-menus{
+    float: right;
+    height: auto;
+    background-color: #fff;
+    position: relative;
+}
+.Cartelera-barra-menus-boton{
+    color: #333;
+    padding: 3px;
+    margin: 0 5px 0 5px;
+    border: 1px solid #CCC;
+    background-color: #EEE;
+    float: right;
+    text-align: center;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+.Cartelera-barra-menus-boton:hover{
+    background-color: #BBB;
+    border: 1px solid #AAA;
+    cursor: pointer;
+    color: #0172FF;
+}
+/*de prueba*/
+
+/*de prueba*/
+
+#Cartel-recinte{
+    font-family:  'Icons-font';
+    font-size: 23pt;
+    width: 30px;
+    height:30px;
+    position: relative;
+}
+#Cartel-recinte.active{
+    background-color: rgba(0,0,0,0.7);
+    border: 1px solid #333;
+    color: #f1f1f1;
+    -webkit-box-shadow: 0px 0px 10px 0px #333;
+    -moz-box-shadow: 0px 0px 10px 0px #333;
+    box-shadow: 0px 0px 10px 0px #333;
+}
+#Cartel-recinte:hover:before{
+    content: "Ver Cartelera";
+    position: absolute;
+    padding: 10px 5px 3px 5px;
+    bottom: -35;
+    left: -70px;
+    font-size: 13px;
+    font-weight: normal;
+    font-family:  'Trebuchet MS', Arial, Sans-serif;
+    width: 150px;
+    z-index: 200;
+    color: #eee;
+    height: auto;
+    background: url('/eisi/images/grupos/tooltip.png');
+    background-position:  -100px -5px;
+    background-repeat: no-repeat;
+}
+#Cartel-todos{
+    font-family:  'Icons-font';
+    font-size: 23pt;
+    width: 30px;
+    height:30px;
+    position: relative;
+}
+#Cartel-todos.active{
+    background-color: rgba(0,0,0,0.7);
+    border: 1px solid #333;
+    color: #f1f1f1;
+    -webkit-box-shadow: 0px 0px 10px 0px #333;
+    -moz-box-shadow: 0px 0px 10px 0px #333;
+    box-shadow: 0px 0px 10px 0px #333;
+    text-shadow: 1px -1px 0px #666;
+    filter: dropshadow(color=#666, offx=1, offy=-1);
+}
+#Cartel-todos:hover:before{
+    content: "Publicar Cartelera";
+    position: absolute;
+    padding: 10px 5px 3px 5px;
+    bottom: -35;
+    left: -70px;
+    font-size: 12px;
+    font-weight: normal;
+    font-family:  'Trebuchet MS', Arial, Sans-serif;
+    width: 130px;
+    z-index: 200;
+    color: #eee;
+    height: auto;
+    background: url('/eisi/images/grupos/tooltip.png');
+    background-position:  -100px -5px;
+    background-repeat: no-repeat;
+}
+#Cartel-nuevo{
+    font-family:  'Icons-font';
+    font-size: 23pt;
+    width: 30px;
+    height:30px;
+    position: relative;
+}
+#Cartel-nuevo:hover:before{
+    content: "Crear Publicacion";
+    position: absolute;
+    padding: 10px 5px 3px 5px;
+    bottom: -35;
+    left: -70px;
+    font-size: 12px;
+    font-weight: normal;
+    font-family:  'Trebuchet MS', Arial, Sans-serif;
+    width: 100px;
+    z-index: 200;
+    color: #eee;
+    height: auto;
+    background: url('/eisi/images/grupos/tooltip.png');
+    background-position:  -100px -5px;
+    background-repeat: no-repeat;
+}
+#Cartel-nuevo.active{
+    background-color: rgba(0,0,0,0.7);
+    border: 1px solid #333;
+    color: #f1f1f1;
+    -webkit-box-shadow: 0px 0px 10px 0px #333;
+    -moz-box-shadow: 0px 0px 10px 0px #333;
+    box-shadow: 0px 0px 10px 0px #333;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+    text-shadow: 1px -1px 0px #666;
+    filter: dropshadow(color=#666, offx=1, offy=-1);
+}
+#Cartel-nuevo-caja{
+    position: absolute;
+    top: 39px;
+    right:  5px;
+    display: none;
+    padding: 10px;
+    width: 900px;
+    height: 600px;
+    background-color: rgba(0,0,0,0.7);
+    border: 1px solid #333;
+    z-index: 2000;
+    -webkit-box-shadow: 0px 0px 10px 0px #333;
+    -moz-box-shadow: 0px 0px 10px 0px #333;
+    box-shadow: 0px 0px 10px 0px #333;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 0px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    -webkit-border-radius: 10px 0px 10px 10px;
+    border-radius: 10px 0px 10px 10px;
+}
+.Cartel-centro-contenido{
+    float: left;
+    height: auto;
+    width: 940px;
+    margin: 20px 0 20px 0;
+    position: relative;
+}
+/*para la parte izquierda*/
+.Cartel-cont{
+    width: 852px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 0 40px 0;
+}
+.Cartel-cont2{
+    width: 720px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 0 10px 0;
+}
+.Cartel-cont-izq-titulo{
+    float: left;
+    margin: 0px 0 10px 0;
+    height: auto;
+    background-color: #DDD;
+    width: 678px;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid #CCC;
+    color: #333;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px white;
+    filter: dropshadow(color=#fff, offx=1, offy=1);
+}
+.Cartel-cont-izq-titulo2{
+    float: left;
+    margin: 0px 0 10px 0;
+    height: auto;
+    background-color: #DDD;
+    width: 780px;
+    padding: 5px 10px 5px 10px;
+    border-top: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    color: #333;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px white;
+    filter: dropshadow(color=#fff, offx=1, offy=1);
+}
+
+
+/*para las publicaciones individuales*/
+
+.Cartel-cont-ind{
+    float: left;
+    border: 1px solid #ddd;
+    width: 850px;
+    height: auto;
+    margin: 5px 0 5px 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+.Cartel-cont-ind:last-child{
+    margin: 5px 0 30px 0;
+}
+.Cartel-cont-sup{
+    float: left;
+    border-bottom: 1px solid #ddd;
+    width: 850px;
+    margin: 0;
+    padding: 0;
+}
+.Cartel-cont-inf{
+    float: left;
+    border-top: 1px solid #fff;
+    width: 850px;
+    margin: 0;
+    padding: 0;
+}
+.Cartel-cont-caja-sup{
+    float: left;
+    height: auto;
+    padding: 3px 10px 3px 10px;
+}
+.Cartel-cont-caja-sup.numero{
+    float: left;
+    font-size: 0.8em;
+    color: #333;
+    width: 60px;
+    font-weight: bold;
+    background-color: rgba(20, 208, 204, 0.3);
+    position: relative;
+    padding-left: 15px;
+    text-align: center;
+}
+.Cartel-cont-caja-sup.numero:after{
+    font-family: 'WebSymbolsRegular';
+    content: ",";
+    font-size: 1.4em;
+    position: absolute;
+    left: 3px;
+    top: 0;
+    color: #F65D20; 
+}
+.Cartel-cont-caja-sup.Autor{
+    float: left;
+    font-size: 0.8em;
+    color: #333;
+    width: 60px;
+    font-weight: bold;
+    background-color: #eee;
+    border-left: 1px solid #ddd;
+    text-align: center;
+}
+
+.Cartel-cont-caja-sup.NombreUsr{
+    float: left;
+    font-size: 0.8em;
+    color: #333;
+    width: 288px;
+    border-left: 1px solid #ddd;
+}
+.Cartel-cont-caja-sup.Estado{
+    float: left;
+    font-size: 0.8em;
+    color: #333;
+    width: 88px;
+    text-align: center;
+    border-left: 1px solid #ddd;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    background-color: #eee;
+}
+.Cartel-cont-caja-sup.EtiqEstado{
+    float: left;
+    font-size: 0.8em;
+    color: #333;
+    width: 150px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    text-align: center;
+}
+.Cartel-cont-caja-inf{
+    float: left;
+    height: 50px;
+    padding: 3px 10px 3px 10px;
+    margin: 0;
+}
+.Cartel-cont-caja-inf.FotoPubl{
+    float: left;
+    height: 44px;
+    margin: 0;
+    width: 35px;
+    background-color: #fcfcfc;
+}
+.Cartel-cont-caja-inf.FotoPubl img{
+    float: left;
+    height: 40px;
+    margin: 0;
+    width: 40px;
+}
+.Cartel-cont-caja-inf.FotoPubl.vacia{
+    float: left;
+    font-family:  'Icons-font';
+    font-size: 3.2em;
+    color: #666;
+    height: 40px;
+    margin: 0;
+    width: 35px;
+    background-color: #fcfcfc;
+}
+.Cartel-cont-caja-inf.Titular{
+    float: left;
+    height: 44px;
+    margin: 0;
+    width: 400px;
+    font-size: 1em;
+    text-transform: lowercase;
+    background-color: #fcfcfc;
+}
+.Cartel-cont-caja-inf.Fechas{
+    float: left;
+    height: 50px;
+    margin: 0;
+    width: 269px;
+    border-right: 1px solid #DDD;
+    border-left: 1px solid #ddd;
+    padding: 0;
+}
+.barra-fechas{
+    float: left;
+    margin: 0;
+    width: 269px;
+}
+.Cartel-cont-caja-inf.Fechas span{
+    float: left;
+    height: 24px;
+    margin: 0;
+    padding: 0px 5px 0px 5px;
+    text-align: center;
+}
+.barra-fechas span:first-child{
+    float: left;
+    margin: 0;
+    width: 130px;
+    font-weight: bold;
+    font-size: 0.8em;
+    background-color: #eee;
+}
+.barra-fechas span:last-child{
+    float: left;
+    margin: 0;
+    width: 88px;
+    font-weight: normal;
+    font-size: 0.8em;
+    border-left: 1px solid #ddd;
+}
+.barra-fechas:first-child {
+    border-bottom: 1px solid #ddd;
+}
+.barra-fechas:last-child span{
+    border-top: 1px solid #fff;
+}
+.Cartel-cont-caja-sup.Eliminar{
+    float: left;
+    height: 24px;
+    margin: 0;
+    width: 69px;
+    font-size: 0.8em;
+    color: #333;
+    padding: 0;
+    text-align: left;
+    position: relative;
+    padding: 0px 5px 0px 30px;
+}
+.Cartel-cont-caja-sup.Eliminar:hover{
+    background-color: rgba(200,20,30,0.6);
+    cursor:pointer;
+    color: #000;
+    -webkit-box-shadow: inset 0px 0px 10px 5px rgba(200, 20, 20, 0.7);
+    -moz-box-shadow: inset 0px 0px 10px 5px rgba(200, 20, 20, 0.7);
+    box-shadow: inset 0px 0px 10px 5px rgba(200, 20, 20, 0.7);
+}
+.Cartel-cont-caja-sup.Eliminar:before{
+    position: absolute;
+    font-family: 'WebSymbolsRegular';
+    content: "'";
+    top: 4px;
+    left: 10px;
+    font-size: 0.9em;
+}
+.Cartel-cont-caja-inf.Editar{
+    float: left;
+    height: 50px;
+    margin: 0;
+    width: 104px;
+    font-size: 0.8em;
+    color: #333;
+    padding: 0;
+    text-align: center;
+}
+.Cartel-cont-caja-inf.Editar:hover{
+    background-color: rgba(58, 178, 66, 0.7);
+    -webkit-box-shadow: inset 0px 0px 15px 0px #777;
+    -moz-box-shadow: inset 0px 0px 15px 0px #777;
+    box-shadow: inset 0px 0px 15px 0px #777;
+    color: #000;
+    cursor: pointer;
+}
+.Cartel-cont-caja-inf.Editar #icon{
+    float: left;
+    height: 30px;
+    margin: 0;
+    width: 104px;
+    font-size: 2.6em;
+    font-family:  'Icons-font';
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+.Cartel-cont-caja-inf.Editar #text{
+    float: left;
+    height: 20px;
+    margin: 0;
+    width: 104px;
+    font-size: 1.0em;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+/*para ver cartelera*/
+.lista-Cartelera-titular{
+    width: 670px;
+    margin: 0 auto;
+    height: auto;
+
+}
+.Cartelera-ver-ind{
+    position: relative;
+    float: left;
+    width: 670px;
+    height: auto;
+    padding: 5px 5px 5px 0;
+    border-collapse: separate;
+    border-spacing: 2px 2px;
+    margin: 10px 0 10px 0;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    background-color:#f7f8f9;
+    /*background: white;
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 2%, rgba(223, 223, 223, 1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,rgba(255, 255, 255, 1)), color-stop(100%,rgba(223, 223, 223, 1)));
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 2%,rgba(223, 223, 223, 1) 100%);
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 2%,rgba(223, 223, 223, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 2%,rgba(223, 223, 223, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dfdfdf',GradientType=0 );
+    background: linear-gradient(top, rgba(255, 255, 255, 1) 2%,rgba(223, 223, 223, 1) 100%);*/
+}
+.Cartelera-ver-ind-titulo{
+    height: auto;
+    font: bold 14px/25px "trebuchet MS",arial,sans-serif;
+    border-bottom: 1px solid #ddd;
+    width: 480px;
+    float: left;
+    color: #117CEA;
+    text-align: left;
+    padding: 3px 10px 3px 40px;
+    position: relative;
+}
+.Cartelera-ver-ind-titulo:before{
+    position: absolute;
+    font-size: 1.5em;
+    left: 10px;
+    font-family: 'WebSymbolsRegular';
+    content: "D";
+    top: 0;
+    color: #777;
+}
+.Cartelera-ver-ind-texto{
+    float: left;
+    padding:10px;
+    text-align: left;
+    height: 70px;
+    width: 510px;
+    font-size: 0.8em;
+    color: #666;
+    font-family: arial,sans-serif;
+    border-top: 1px solid #fff;
+}
+.Cartelera-ver-ind-texto .ver-mas{
+    text-align: center;
+    font-size: .9em;
+    color: #F65D20;
+    text-decoration: none;
+}
+.Cartelera-ver-ind-texto .ver-mas:hover{
+    color:#0172FF;
+    cursor: pointer;
+}
+.Cartelera-ver-ind-img{
+    float: right;
+    width: 139px;
+    height: auto;
+
+}
+.Cartelera-ver-ind-img.vacia{
+    float: right;
+    width: 129px;
+    height: auto;
+    text-align: center;
+    font-size: 11em;
+    font-family:  'Icons-font';
+    color: rgba(85, 126, 180, 0.4);
+
+}
+.Cartelera-ver-ind-img img{
+    max-width: 128px;
+    max-height: 120px;
+    float: right;
+
+}
+.Cartelera-ver-ind-barra{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 510px;
+    padding: 2px 10px 2px 10px;
+    font-size: 0.7em;
+}
+.Cartelera-ver-ind-barra .fechas{
+    width: 250px;
+    float: left;
+    padding: 2px 10px 2px 10px;
+    font-family: arial,sans-serif;
+    color: #666;
+}
+.Cartelera-ver-ind-barra .autor{
+    text-align: right;
+    width: 250px;
+    float: right;
+    padding: 2px 10px 2px 10px;
+}
+/*para los boptones de ir a adelante atras y volver a la lista*/
+.Cartelera-ver-ind-barra-botones{
+    float: right;
+    width: auto;
+    margin: 10px 10px 20px 10px;
+}
+.Cartelera-ver-ind-barra-botones span{
+    font-family: 'WebSymbolsRegular';
+    color: #666;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 2px 7px 2px 7px;
+    background-color: #eee;
+}
+.Cartelera-ver-ind-barra-botones span:hover{
+    color: #0172FF; 
+    background-color: #dfdfdf;
+    cursor: pointer;
+}
+.Cartelera-ver-ind-barra-botones .next{
+    width: 40px;
+    float: right;
+    border-width:  1px 1px 1px 0;
+    border-color: #dedede;
+    border-style: solid;
+    -moz-border-radius-topleft: 0px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 0px;
+    -webkit-border-radius: 0px 5px 5px 0px;
+    border-radius: 0px 5px 5px 0px;
+    position: relative;
+    -webkit-box-shadow: inset 0px 0px 10px 0px #dedede;
+    -moz-box-shadow: inset 0px 0px 10px 0px #dedede;
+    box-shadow: inset 0px 0px 10px 0px #dedede;
+}
+.Cartelera-ver-ind-barra-botones .next:hover:before{
+    content: "Siguiente";
+    position: absolute;
+    padding: 10px 5px 3px 5px;
+    bottom: -35;
+    left: -30px;
+    font-size: 13px;
+    font-weight: normal;
+    font-family:  'Trebuchet MS', Arial, Sans-serif;
+    width:80px;
+    z-index: 200;
+    color: #eee;
+    height: auto;
+    background: url('/eisi/images/grupos/tooltip.png');
+    background-position:  -130px -5px;
+    background-repeat: no-repeat;
+}
+.Cartelera-ver-ind-barra-botones .back:hover:before{
+    content: "Anterior";
+    position: absolute;
+    padding: 10px 5px 3px 5px;
+    bottom: -35;
+    left: -30px;
+    font-size: 13px;
+    font-weight: normal;
+    font-family:  'Trebuchet MS', Arial, Sans-serif;
+    width:80px;
+    z-index: 200;
+    color: #eee;
+    height: auto;
+    background: url('/eisi/images/grupos/tooltip.png');
+    background-position:  -130px -5px;
+    background-repeat: no-repeat;
+}
+.Cartelera-ver-ind-barra-botones .home:hover:before{
+    content: "Ver Todas";
+    position: absolute;
+    padding: 10px 5px 3px 5px;
+    bottom: -35;
+    left: -30px;
+    font-size: 13px;
+    font-weight: normal;
+    font-family:  'Trebuchet MS', Arial, Sans-serif;
+    width:80px;
+    z-index: 200;
+    color: #eee;
+    height: auto;
+    background: url('/eisi/images/grupos/tooltip.png');
+    background-position:  -130px -5px;
+    background-repeat: no-repeat;
+}
+.Cartelera-ver-ind-barra-botones .back{
+    width: 40px;
+    float: right;
+    border-width: 1px 0 1px 1px;
+    border-color: #dedede;
+    border-style: solid;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-radius: 5px 0px 0px 5px;
+    border-radius: 5px 0px 0px 5px;
+    position: relative;
+    -webkit-box-shadow: inset 0px 0px 10px 0px #dedede;
+    -moz-box-shadow: inset 0px 0px 10px 0px #dedede;
+    box-shadow: inset 0px 0px 10px 0px #dedede;
+}
+.Cartelera-ver-ind-barra-botones .home{
+    width: 38px;
+    float: right;
+    border-width: 1px 1px 1px 1px;
+    border-color: #dedede;
+    border-style: solid;
+    position: relative;
+    -webkit-box-shadow: inset 0px 0px 10px 0px #dedede;
+    -moz-box-shadow: inset 0px 0px 10px 0px #dedede;
+    box-shadow: inset 0px 0px 10px 0px #dedede;
+}
+/*para mostrar la publicacion completa*/
+.Cartel-cont{
+    padding: 0 0 40px 0;
+}
+.Cartelera-ver-ind-info{
+    position: relative;
+    width: 708px;
+    height: auto;
+    overflow: hidden;
+    padding: 10px 5px 40px 5px;
+    border-collapse: separate;
+    margin: 0 auto;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    background-color:#f7f8f9;
+}
+.Cartelera-ver-ind-info-img{
+    float: left;
+    width: auto;
+    height: auto;
+    margin: 0 20px 20px 0;
+}
+.Cartelera-ver-ind-info-img.vacia{
+    width: 0;
+    height: 0;
+
+}
+.Cartelera-ver-ind-info-img img{
+    margin: 0 auto;
+    text-align: center;
+    max-width: 300px;
+    max-height: 280px;
+
+}
+.Cartelera-ver-ind-info-titulo{
+    height: auto;
+    font: bold 15px/25px "trebuchet MS", Arial, Tahoma, Sans-serif;
+    border-bottom: 1px solid #ccc;
+    width: 650px;
+    float: left;
+    color: #117CEA;
+    -webkit-font-smoothing: antialiased;
+    text-align: left;
+    padding: 3px 10px 3px 40px;
+    position: relative;
+}
+.Cartelera-ver-ind-info-titulo:before{
+    position: absolute;
+    font-size: 1.5em;
+    left: 10px;
+    font-family: 'WebSymbolsRegular';
+    content: ",";
+    top: 0;
+    color: #54CD32;
+}
+.Cartelera-ver-ind-info-texto{
+    float: left;
+    padding: 10px;
+    height: auto;
+    width: 800px;
+    font-size: .9em;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.Cartelera-ver-ind-info-Cont{
+    float: left;
+    padding:10px;
+    height: auto;
+    width: 680px;
+    font-size: .9em;
+    color: #555;
+    font-family: "trebuchet MS", Arial, Tahoma, Sans-serif;
+    background-color: #fff;
+}
+.Cartelera-ver-ind-info-Cont div,.Cartelera-ver-ind-info-Cont span,.Cartelera-ver-ind-info-Cont table,.Cartelera-ver-ind-info-Cont p
+,.Cartelera-ver-ind-info-Cont li,.Cartelera-ver-ind-info-Cont h1,h2,h3,h5,h6{
+    padding:0;
+    height: auto;
+    max-width: 680px !important;
+    font-size: 1em !important;
+    color: #555 !important;
+    font-family: "trebuchet MS", Arial, Tahoma, Sans-serif !important;
+}
+.Cartelera-ver-ind-info-Cont a{
+    color: #1F1E9E !important;
+    text-decoration: underline;
+}
+.Cartelera-ver-ind-info-Cont img{
+     max-width: 680px !important;
+     height: auto;
+}
+.Cartelera-ver-ind-info-Cont ol,.Cartelera-ver-ind-info-Cont ul{
+    margin-left: 40px;
+    width: auto;
+}
+.Cartelera-ver-ind-info-barra{
+    float: left;
+    width: 670px;
+    font-size: 0.8em;
+    margin-bottom: 5px;
+}
+.Cartelera-ver-ind-info-barra .Autor{
+    float: right;
+}
+.Cartelera-ver-ind-info-barra .fechas{
+    float: left;
+    color: #555;
+    font-size: 14px;
+}
+/*para una nueva publicacion*/
+.Cartelera-Nuevo-conte{
+    float: left;
+    width: 940px;
+    height: auto;
+}
+fieldset{
+    background-color: #fff;
+}
+legend{
+    background-color: rgba(20, 208, 204, 0.3);
+    border: 1px solid #dedede;
+}

@@ -1,0 +1,63 @@
+/* 
+    Author     : duvanjamid
+*/
+body {
+    -webkit-print-color-adjust: exact;
+    overflow: auto;
+}
+@media print {
+    @page {
+        size: portrait letter;
+        page-break-inside: avoid;
+        margin: 0.8cm;
+    }
+    .row-fluid [class*="span"]{
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+    table{
+        margin: 0 !important; 
+        border-color: #444 !important;
+    }
+    .salto-pagina{
+        page-break-after: always;
+    }
+    .bloque{
+        page-break-inside:  avoid;
+    }
+    body {
+        -webkit-print-color-adjust: exact;
+        overflow: auto;
+    }
+
+    table td{
+        border-color: #444 !important;
+        border-left-color: #444 !important;
+        -webkit-print-color-adjust: exact;
+    }
+    table  th{
+        background-color: #ccc !important;
+        border-color: #444 !important;
+        border-left-color: #444 !important;
+        font-weight: bolder !important;
+        -webkit-print-color-adjust: exact;
+    }
+    .resaltada>td{
+        background-color: #eee !important;
+        -webkit-print-color-adjust: exact;
+    }
+    .titulo-proyecto {
+        display: block;
+        color: #999 !important;
+        text-align: center !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .no-imprimir{
+        display: none;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+}

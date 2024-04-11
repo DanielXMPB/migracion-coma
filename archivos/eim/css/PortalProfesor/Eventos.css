@@ -1,0 +1,1057 @@
+/* 
+    Document   : Eventos
+    Created on : 20-feb-2012, 16:40:55
+    Author     : Duvan Jamid Vargas Castillo
+    Description: Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+.Eventos-conte{
+    width: 720px;
+    display: block;
+    padding: 0;
+    margin: 0 auto;
+    height: auto;
+    overflow: hidden;
+}
+.Eventos-barra-superior{
+    margin: 0;
+    padding: 0;
+    width:  940px;
+    float: left;
+}
+.Eventos-titulo{
+    padding: 0 0 0 60px;
+    float: left;
+    width: 300px;
+    color: #333;
+    font-size: 19px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px white;
+    filter: dropshadow(color=#fff, offx=1, offy=1);
+    position: relative;
+}
+.Eventos-titulo:before{
+    font-family: 'WebSymbolsRegular';
+    content: "?";
+    font-size: 28px;
+    position: absolute;
+    left: 7px;
+    top: 0;
+    color: tomato;
+}
+.Eventos-titulo:after{
+    font-family: 'WebSymbolsRegular';
+    content: "?";
+    font-size: 30px;
+    position: absolute;
+    left: 25px;
+    color: #0172FF;
+    top: -6;
+}
+.Eventos-barra-menus{
+    float: right;
+    height: auto;
+    background-color: #fff;
+    position: relative;
+}
+.Eventos-barra-menus-boton{
+    color: #333;
+    padding: 3px;
+    margin: 0 5px 0 5px;
+    border: 1px solid #CCC;
+    background-color: #EEE;
+    float: right;
+    text-align: center;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+.Eventos-barra-menus-boton:hover{
+    background-color: #BBB;
+    border: 1px solid #AAA;
+    cursor: pointer;
+    color: #0172FF;
+}
+/*de prueba*/
+
+/*de prueba*/
+
+#Even-recinte{
+    font-family:  'Icons-font';
+    font-size: 23pt;
+    width: 30px;
+    height:30px;
+    position: relative;
+}
+#Even-recinte.active{
+    background-color: rgba(0,0,0,0.7);
+    border: 1px solid #333;
+    color: #f1f1f1;
+    -webkit-box-shadow: 0px 0px 10px 0px #333;
+    -moz-box-shadow: 0px 0px 10px 0px #333;
+    box-shadow: 0px 0px 10px 0px #333;
+}
+#Even-recinte:hover:before{
+    content: "Ver Eventos";
+    position: absolute;
+    padding: 10px 5px 3px 5px;
+    bottom: -35;
+    left: -70px;
+    font-size: 13px;
+    font-weight: normal;
+    font-family:  'Trebuchet MS', Arial, Sans-serif;
+    width: 150px;
+    z-index: 200;
+    color: #eee;
+    height: auto;
+    background: url('/eisi/images/grupos/tooltip.png');
+    background-position:  -100px -5px;
+    background-repeat: no-repeat;
+}
+#Even-todos{
+    font-family:  'Icons-font';
+    font-size: 23pt;
+    width: 30px;
+    height:30px;
+    position: relative;
+}
+#Even-todos.active{
+    background-color: rgba(0,0,0,0.7);
+    border: 1px solid #333;
+    color: #f1f1f1;
+    -webkit-box-shadow: 0px 0px 10px 0px #333;
+    -moz-box-shadow: 0px 0px 10px 0px #333;
+    box-shadow: 0px 0px 10px 0px #333;
+    text-shadow: 1px -1px 0px #666;
+    filter: dropshadow(color=#666, offx=1, offy=-1);
+}
+#Even-todos:hover:before{
+    content: "Eventos Propuestos";
+    position: absolute;
+    padding: 10px 5px 3px 5px;
+    bottom: -35;
+    left: -70px;
+    font-size: 12px;
+    font-weight: normal;
+    font-family:  'Trebuchet MS', Arial, Sans-serif;
+    width: 130px;
+    z-index: 200;
+    color: #eee;
+    height: auto;
+    background: url('/eisi/images/grupos/tooltip.png');
+    background-position:  -100px -5px;
+    background-repeat: no-repeat;
+}
+#Even-nuevo{
+    font-family:  'Icons-font';
+    font-size: 23pt;
+    width: 30px;
+    height:30px;
+    position: relative;
+}
+#Even-nuevo:hover:before{
+    content: "Proponer Evento";
+    position: absolute;
+    padding: 10px 5px 3px 5px;
+    bottom: -35;
+    left: -70px;
+    font-size: 12px;
+    font-weight: normal;
+    font-family:  'Trebuchet MS', Arial, Sans-serif;
+    width: 100px;
+    z-index: 200;
+    color: #eee;
+    height: auto;
+    background: url('/eisi/images/grupos/tooltip.png');
+    background-position:  -100px -5px;
+    background-repeat: no-repeat;
+}
+#Even-nuevo.active{
+    background-color: rgba(0,0,0,0.7);
+    border: 1px solid #333;
+    color: #f1f1f1;
+    -webkit-box-shadow: 0px 0px 10px 0px #333;
+    -moz-box-shadow: 0px 0px 10px 0px #333;
+    box-shadow: 0px 0px 10px 0px #333;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+    text-shadow: 1px -1px 0px #666;
+    filter: dropshadow(color=#666, offx=1, offy=-1);
+}
+#Even-nuevo-caja{
+    position: absolute;
+    top: 39px;
+    right:  5px;
+    display: none;
+    padding: 10px;
+    width: 900px;
+    height: 600px;
+    background-color: rgba(0,0,0,0.7);
+    border: 1px solid #333;
+    z-index: 2000;
+    -webkit-box-shadow: 0px 0px 10px 0px #333;
+    -moz-box-shadow: 0px 0px 10px 0px #333;
+    box-shadow: 0px 0px 10px 0px #333;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 0px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    -webkit-border-radius: 10px 0px 10px 10px;
+    border-radius: 10px 0px 10px 10px;
+}
+.Even-centro-contenido{
+    float: left;
+    height: auto;
+    width: 730px;
+    margin: 20px 0 20px 0;
+    position: relative;
+    padding: 5px;
+}
+/*para la parte izquierda*/
+.Even-cont{
+    width: 720px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 0 40px 0;
+}
+.Even-cont-izq-titulo{
+    float: left;
+    margin: 0px 0 10px 0;
+    height: auto;
+    background-color: #DDD;
+    width: 850px;
+    padding: 5px 10px 5px 10px;
+    border-top: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    color: #333;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px white;
+    filter: dropshadow(color=#fff, offx=1, offy=1);
+}
+/*para las publicaciones individuales*/
+
+.Even-cont-ind{
+    float: left;
+    border: 1px solid #ddd;
+    width: 718px;
+    height: auto;
+    margin: 5px 0 5px 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+.Even-cont-ind:last-child{
+    margin: 5px 0 30px 0;
+}
+.Even-cont-sup{
+    float: left;
+    border-bottom: 1px solid #ddd;
+    width: 850px;
+    margin: 0;
+    padding: 0;
+}
+.Even-cont-inf{
+    float: left;
+    border-top: 1px solid #fff;
+    width: 850px;
+    margin: 0;
+    padding: 0;
+}
+.Even-cont-caja-sup{
+    float: left;
+    height: auto;
+    padding: 3px 10px 3px 10px;
+}
+.Even-cont-caja-sup.numero{
+    float: left;
+    font-size: 0.8em;
+    color: #333;
+    width: 60px;
+    font-weight: bold;
+    background-color: rgba(20, 208, 204, 0.3);
+    position: relative;
+    padding-left: 15px;
+    text-align: center;
+}
+.Even-cont-caja-sup.numero:after{
+    font-family: 'WebSymbolsRegular';
+    content: ",";
+    font-size: 1.4em;
+    position: absolute;
+    left: 3px;
+    top: 0;
+    color: #F65D20; 
+}
+.Even-cont-caja-sup.Autor{
+    float: left;
+    font-size: 0.8em;
+    color: #333;
+    width: 60px;
+    font-weight: bold;
+    background-color: #eee;
+    border-left: 1px solid #ddd;
+    text-align: center;
+}
+
+.Even-cont-caja-sup.NombreUsr{
+    float: left;
+    font-size: 0.8em;
+    color: #333;
+    width: 288px;
+    border-left: 1px solid #ddd;
+}
+.Even-cont-caja-sup.Estado{
+    float: left;
+    font-size: 0.8em;
+    color: #333;
+    width: 88px;
+    text-align: center;
+    border-left: 1px solid #ddd;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    background-color: #eee;
+}
+.Even-cont-caja-sup.EtiqEstado{
+    float: left;
+    font-size: 0.8em;
+    color: #333;
+    width: 150px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    text-align: center;
+}
+.Even-cont-caja-inf{
+    float: left;
+    height: 50px;
+    padding: 3px 10px 3px 10px;
+    margin: 0;
+}
+.Even-cont-caja-inf.FotoPubl{
+    float: left;
+    height: 44px;
+    margin: 0;
+    width: 35px;
+    background-color: #fcfcfc;
+}
+.Even-cont-caja-inf.FotoPubl img{
+    float: left;
+    height: 40px;
+    margin: 0;
+    width: 40px;
+}
+.Even-cont-caja-inf.FotoPubl.vacia{
+    float: left;
+    font-family:  'Icons-font';
+    font-size: 3.2em;
+    color: #666;
+    height: 40px;
+    margin: 0;
+    width: 35px;
+    background-color: #fcfcfc;
+}
+.Even-cont-caja-inf.Titular{
+    float: left;
+    height: 44px;
+    margin: 0;
+    width: 355px;
+    font-size: 0.8em;
+    text-transform: lowercase;
+    background-color: #fcfcfc;
+}
+.Even-cont-caja-inf.Fechas{
+    float: left;
+    height: 50px;
+    margin: 0;
+    width: 269px;
+    border-right: 1px solid #DDD;
+    border-left: 1px solid #ddd;
+    padding: 0;
+}
+.barra-fechas{
+    float: left;
+    margin: 0;
+    width: 269px;
+}
+.Even-cont-caja-inf.Fechas span{
+    float: left;
+    height: 24px;
+    margin: 0;
+    padding: 0px 5px 0px 5px;
+    text-align: center;
+}
+.barra-fechas span:first-child{
+    float: left;
+    margin: 0;
+    width: 130px;
+    font-weight: bold;
+    font-size: 0.7em;
+    background-color: #eee;
+}
+.barra-fechas span:last-child{
+    float: left;
+    margin: 0;
+    width: 88px;
+    font-weight: normal;
+    font-size: 0.7em;
+    border-left: 1px solid #ddd;
+}
+.barra-fechas:first-child {
+    border-bottom: 1px solid #ddd;
+}
+.barra-fechas:last-child span{
+    border-top: 1px solid #fff;
+}
+.Even-cont-caja-sup.Eliminar{
+    float: left;
+    height: 24px;
+    margin: 0;
+    width: 69px;
+    font-size: 0.8em;
+    color: #333;
+    padding: 0;
+    text-align: left;
+    position: relative;
+    padding: 0px 5px 0px 30px;
+}
+.Even-cont-caja-sup.Eliminar:hover{
+    background-color: rgba(200,20,30,0.6);
+    cursor:pointer;
+    color: #000;
+    -webkit-box-shadow: inset 0px 0px 10px 5px rgba(200, 20, 20, 0.7);
+    -moz-box-shadow: inset 0px 0px 10px 5px rgba(200, 20, 20, 0.7);
+    box-shadow: inset 0px 0px 10px 5px rgba(200, 20, 20, 0.7);
+}
+.Even-cont-caja-sup.Eliminar:before{
+    position: absolute;
+    font-family: 'WebSymbolsRegular';
+    content: "'";
+    top: 4px;
+    left: 10px;
+    font-size: 0.9em;
+}
+.Even-cont-caja-inf.Editar{
+    float: left;
+    height: 50px;
+    margin: 0;
+    width: 104px;
+    font-size: 0.8em;
+    color: #333;
+    padding: 0;
+    text-align: center;
+}
+.Even-cont-caja-inf.Editar:hover{
+    background-color: rgba(58, 178, 66, 0.7);
+    -webkit-box-shadow: inset 0px 0px 15px 0px #777;
+    -moz-box-shadow: inset 0px 0px 15px 0px #777;
+    box-shadow: inset 0px 0px 15px 0px #777;
+    color: #000;
+    cursor: pointer;
+}
+.Even-cont-caja-inf.Editar #icon{
+    float: left;
+    height: 30px;
+    margin: 0;
+    width: 104px;
+    font-size: 2.6em;
+    font-family:  'Icons-font';
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+.Even-cont-caja-inf.Editar #text{
+    float: left;
+    height: 20px;
+    margin: 0;
+    width: 104px;
+    font-size: 1.0em;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+/*para las publicaciones individuales 2*/
+
+.Even-cont-ind2{
+    float: left;
+    border: 1px solid #ddd;
+    width: 710px;
+    height: auto;
+    margin: 10px 5px 10px 7px;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+}
+.Even-cont-ind:last-child{
+    margin: 5px 0 30px 0;
+}
+.Even-cont-sup2{
+    float: left;
+    border-top: 1px solid #fff;
+    width: 710px;
+    margin: 0;
+    padding: 0;
+}
+.Even-cont-inf2{
+    float: left;
+    border-bottom: 1px solid #ddd;
+    width: 710px;
+    margin: 0;
+    padding: 0;
+}
+.Even-cont-caja-sup2{
+    float: left;
+    padding: 3px 5px 3px 5px;
+    height: 35px;
+}
+
+.Even-cont-caja-sup2.Autor{
+    float: left;
+    font-size: 0.8em;
+    color: #333;
+    width: 60px;
+    font-weight: bold;
+    background-color: #eee;
+    text-align: center;
+}
+
+.Even-cont-caja-sup2.NombreUsr{
+    float: left;
+    font-size: 0.8em;
+    color: #333;
+    width: 272px;
+    border-left: 1px solid #ddd;
+}
+.Even-cont-caja-inf21.Estado2{
+    float: left;
+    font-size: 0.8em;
+    color: #333;
+    width: 150px;
+    text-align: center;
+    border-left: 1px solid #ddd;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-border-radius-topleft: 0px;
+    -moz-border-radius-topright: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 10px;
+    -webkit-border-radius: 0px 0px 0px 10px;
+    border-radius: 0px 0px 0px 10px;
+    background-color: #eee;
+}
+.Even-cont-caja-inf21.EtiqEstado2{
+    float: left;
+    font-size: 0.8em;
+    color: #333;
+    width: 255px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    text-align: left;
+}
+.Even-cont-caja-sup2.Estado2{
+    float: left;
+    font-size: 0.8em;
+    color: #333;
+    width: 100px;
+    text-align: center;
+    border-left: 1px solid #ddd;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-border-radius-topleft: 0px;
+    -moz-border-radius-topright: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 10px;
+    -webkit-border-radius: 0px 0px 0px 10px;
+    border-radius: 0px 0px 0px 10px;
+    background-color: #eee;
+}
+.Even-cont-caja-sup2.EtiqEstado2{
+    float: left;
+    font-size: 0.8em;
+    color: #333;
+    width: 230px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    text-align: left;
+}
+.Even-cont-caja-inf2{
+    float: left;
+    height: 50px;
+    padding: 3px 10px 3px 10px;
+    margin: 0;
+}
+.Even-cont-caja-inf21{
+    float: left;
+    height: auto;
+    padding: 3px 10px 3px 10px;
+    margin: 0;
+}
+
+
+.Even-cont-caja-inf2.Titular{
+    float: left;
+    height: 44px;
+    margin: 0;
+    width: 315px;
+    font-size: 0.9em;
+    text-transform: lowercase;
+    background-color:  #f8f8f8;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    -webkit-border-radius: 10px 0px 0px 0px;
+    border-radius: 10px 0px 0px 0px;
+    color: #117CEA;
+}
+.Even-cont-caja-inf2.Fechas{
+    float: left;
+    height: 50px;
+    margin: 0;
+    width: 269px;
+    border-right: 1px solid #DDD;
+    border-left: 1px solid #ddd;
+    padding: 0;
+}
+.barra-fechas{
+    float: left;
+    margin: 0;
+    width: 269px;
+}
+.Even-cont-caja-inf2.Fechas span{
+    float: left;
+    height: 20px;
+    margin: 0;
+    padding: 2px 5px 2px 5px;
+    text-align: center;
+}
+.barra-fechas span:first-child{
+    float: left;
+    margin: 0;
+    width: 130px;
+    font-weight: bold;
+    font-size: 0.7em;
+    background-color: #eee;
+}
+.barra-fechas span:last-child{
+    float: left;
+    margin: 0;
+    width: 88px;
+    font-weight: normal;
+    font-size: 0.7em;
+    border-left: 1px solid #ddd;
+}
+.barra-fechas:first-child {
+    border-bottom: 1px solid #ddd;
+}
+.barra-fechas:last-child span{
+    border-top: 1px solid #fff;
+}
+
+.Even-cont-caja-inf2.Editar{
+    float: left;
+    height: 50px;
+    margin: 0;
+    width: 104px;
+    font-size: 0.8em;
+    color: #333;
+    padding: 0;
+    text-align: center;
+    color: rgb(0, 132, 220);
+    -moz-border-radius-topleft: 0px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    -webkit-border-radius: 0px 10px 0px 0px;
+    border-radius: 0px 10px 0px 0px;
+}
+.Even-cont-caja-inf2.Editar:hover{
+    background-color: #0084B4;
+    -webkit-box-shadow: inset 0px 0px 15px 0px #0084B4;
+    -moz-box-shadow: inset 0px 0px 15px 0px #0084B4;
+    box-shadow: inset 0px 0px 15px 0px #0084B4;
+    color: #000;
+    cursor: pointer;
+}
+.Even-cont-caja-inf2.Editar #icon{
+    float: left;
+    height: 30px;
+    margin: 0;
+    width: 104px;
+    font-size: 2.5em;
+    font-family:  'Icons-font';
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+
+}
+.Even-cont-caja-inf2.Editar #text{
+    float: left;
+    height: 20px;
+    margin: 0;
+    width: 104px;
+    font-size: 1.0em;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+/*para eventos nuevos*/
+
+tr.bocadillo1 {
+    background-color: #fcfcfc;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: #0F144B;
+    text-decoration: none;
+}
+tr.bocadillo1>td {
+    border-top: 1px solid #ddd;
+    border-bottom:  1px solid #ddd;
+
+}
+tr.bocadillo1 td:first-child {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    background-color: #ddd;
+}
+tr.bocadillo1 td:last-child{
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+.subtitulos {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #000000;
+    font-weight: bold;
+}
+tr.titulo{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #000000;
+    font-weight: bold;
+    background-color: #ddd;
+}
+tr.titulo>td{
+    padding: 10px;
+}
+#loader{
+    font-family: 'WebSymbolsRegular';
+    color:#333;
+    font-size: 40px;
+    width: auto;
+    padding: 20px;
+    float: left;
+}
+#loader-text{
+    color:#333;
+    width: auto;
+    float: left;
+    font-size: 15px;
+}
+/*// para la vista individual de los eventos*/
+.Even-boton-volver{
+    width: 80px;
+    border-width: 1px 1px 1px 0;
+    border-color: #DEDEDE;
+    border-style: solid;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-radius: 0px 5px 5px 0px;
+    border-radius: 5px 5px 5px 5px;
+    position: relative;
+    -webkit-box-shadow: inset 0px 0px 10px 0px #dedede;
+    -moz-box-shadow: inset 0px 0px 10px 0px #dedede;
+    box-shadow: inset 0px 0px 10px 0px #dedede;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 2px 7px 2px 7px;
+    background-color: #eee;
+}
+.Even-boton-volver:hover{
+    background-color: #DFDFDF;
+    cursor: pointer;
+    color: #0084B4;
+}
+.lft{
+    float: left;
+}
+.rgt{
+    float: right;
+}
+.Even-all-contenido{
+    width: 720px;
+    margin: 20px auto 20px auto;
+    height: auto;
+    overflow: hidden;
+}
+.Even-parte-ind{
+    height: auto;
+    width: 718px;
+    margin: 10px 0 10px 0 ;
+    padding: 0;
+    float: left;
+    background-color: #f7f8f9;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.Even-parte-ind h2{
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+    padding: 7px 0 5px 20px;
+    font-weight: bold;
+    border-collapse: collapse;
+}
+
+.Even-parte-ind h1{
+    float: left;
+    height: auto;
+    font-size: 18px;
+    color: #444;
+    padding: 7px 0 5px 20px;
+    font-weight: bold;
+    border-bottom: 2px solid #fdfdfd;
+}
+.Even-parte-ind-texto{
+    float: left;
+    height: auto;
+    width: 700px;
+    padding: 5px 10px 15px 10px;
+    border-top: 1px solid #ddd;
+    font-size: 13px;
+    color: #555;
+}
+.Even-cont-caja-inf2.Unidos{
+    float: left;
+    border-right: 1px solid #ddd;
+    font-size: 13px;
+    width: 147px;
+    overflow: hidden;
+    position: relative;
+    height: 40px;
+    padding-left: 80px;
+    margin: 2px 4px 2px 3px;
+    background-color: rgba(0, 132, 150, 0.1);
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 132, 150, 0.5);
+    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 132, 150, 0.5);
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 132, 150, 0.5);
+    -moz-border-radius-topleft: 15px;
+    -moz-border-radius-topright: 15px;
+    -moz-border-radius-bottomright: 15px;
+    -moz-border-radius-bottomleft: 15px;
+    -webkit-border-radius: 15px 15px 15px 0px;
+    border-radius: 15px 15px 15px 15px;
+
+}
+.Even-cont-caja-inf2.Unidos:hover{
+    background-color:#ccc; 
+    cursor: pointer;
+}
+.Even-cont-caja-inf2.Unidos:before{
+    content: "U";
+    font-family: 'WebSymbolsRegular';
+    font-size: 30px;
+    position: absolute;
+    top: 1px;
+    left: 35px;
+    color: #0084B4;
+}
+.Even-cont-caja-inf2.Unidos:after{
+    content: "U";
+    font-family: 'WebSymbolsRegular';
+    font-size: 30px;
+    position: absolute;
+    top: 3px;
+    left: 25px;
+    color: tomato;
+}
+.Even-cont-caja-inf2.Comentarios{
+    float: left;
+    font-size: 13px;
+    width: 130px;
+    padding-left: 100px;
+    overflow: hidden;
+    position: relative;
+    height: 40px;
+    margin: 2px 4px 2px 3px;
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 132, 150, 0.5);
+    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 132, 150, 0.5);
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 132, 150, 0.5);
+    -moz-border-radius-topleft: 15px;
+    -moz-border-radius-topright: 15px;
+    -moz-border-radius-bottomright: 15px;
+    -moz-border-radius-bottomleft: 15px;
+    -webkit-border-radius: 15px 15px 15px 0px;
+    border-radius: 15px 15px 15px 15px;
+    background-color: rgba(0, 132, 150, 0.1);
+}
+.Even-cont-caja-inf2.Comentarios:hover{
+    background-color:#ccc; 
+    cursor: pointer;
+}
+.Even-cont-caja-inf2.Comentarios:before{
+    content: "c";
+    font-family: 'WebSymbolsRegular';
+    font-size: 30px;
+    position: absolute;
+    top: 5px;
+    left: 30px;
+    color: #0F144B;
+}
+.Even-cont-caja-inf2.Comentarios:after{
+    content: "c";
+    font-family: 'WebSymbolsRegular';
+    font-size: 30px;
+    position: absolute;
+    top: 3px;
+    left: 40px;
+    color: tomato;
+}
+/*// para los usuarios Unidos*/
+.Eventos-conte-Unidos{
+    float: left;
+    padding: 0px;
+    height: 500px;
+    width: 750px;
+}
+.Eventos-conte-Unidos-lista{
+    float: left;
+    padding: 0px;
+    height: 460px;
+    width: 750px;
+    overflow: auto;
+}
+.Eventos-conte-Unidos-sup{
+    float: left;
+    padding: 0;
+    width: 750px;
+    height: 40px;
+
+}
+.Eventos-conte-Unidos-titulo{
+    width: auto;
+    height: auto;
+    padding: 0 0 0 60px;
+    float: left;
+    color: #333;
+    font-size: 19px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px white;
+    filter: dropshadow(color=#fff, offx=1, offy=1);
+    position: relative;
+
+}
+.Eventos-conte-Unidos-titulo:before {
+    content: "U";
+    font-family: 'WebSymbolsRegular';
+    font-size: 30px;
+    position: absolute;
+    top: -8px;
+    left: 15px;
+    color: #0084B4;
+}
+.Eventos-conte-Unidos-titulo:after{
+    content: "U";
+    font-family: 'WebSymbolsRegular';
+    font-size: 30px;
+    position: absolute;
+    top: -5px;
+    left: 5px;
+    color: tomato;
+}
+.Eventos-conte-Unidos-Unirme{
+    width: auto;
+    float: right;
+    border-width: 1px 1px 1px 0;
+    border-color: #DEDEDE;
+    background-color: #eee;
+    border-style: solid;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    position: relative;
+    -webkit-box-shadow: inset 0px 0px 10px 0px #dedede;
+    -moz-box-shadow: inset 0px 0px 10px 0px #dedede;
+    box-shadow: inset 0px 0px 10px 0px #dedede;
+    padding: 3px 10px 3px 10px;
+}
+.Eventos-conte-Unidos-Unirme:hover{
+    color: #0172FF;
+    background-color: #DFDFDF;
+    cursor: pointer;
+}
+.Eventos-conte-Unidos-baja{
+    width: auto;
+    float: right;
+    border: 1px solid #DEDEDE;
+    background-color: #eee;
+    border-style: solid;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    position: relative;
+    -webkit-box-shadow: inset 0px 0px 10px 0px #dedede;
+    -moz-box-shadow: inset 0px 0px 10px 0px #dedede;
+    box-shadow: inset 0px 0px 10px 0px #dedede;
+    padding: 3px 10px 3px 10px;
+}
+.Eventos-conte-Unidos-baja:hover{
+    color: #0172FF;
+    background-color: #DFDFDF;
+    cursor: pointer;
+}
+.Eventos-Unidos-foto{
+    float: left;
+    height: 130px;
+    width: 100px;
+    padding: 5px 5px 5px 5px;
+    margin: 5px;
+    background-color: #eee;
+    border: 1px solid #DEDEDE;
+
+}
+.Eventos-Unidos-foto img{
+    float: left;
+    height: 100px;
+    width: 100px;
+
+}
+.Eventos-Unidos-foto label{
+    float: left;
+    width: 100px;
+    font-size: 12px;
+    color: #333;
+    text-align: center;
+
+}

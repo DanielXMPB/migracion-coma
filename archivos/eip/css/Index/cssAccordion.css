@@ -1,0 +1,45 @@
+#inicio{
+    margin-left: 10px;
+    padding: 6px 0px;
+    background-color: #001BED;
+}
+#NIVEL0 .nodespliegue, #NIVEL1 .despliegue{
+    font-family: "HandelGothic BT", Dungeon, Geneva,Verdana,Sans-Serif;
+    color: #f2faff;
+    letter-spacing: 2px;
+    font-size: 10px;
+    display: block;
+    padding:7px 10px;
+    border-bottom: 1px solid #4169E1;
+    background-color: #001BED; /*4169E1 6495ED 001BED 0012a0 0015BA */
+    background-image: url('../../images/index/menu-fondo0.png');
+    background-repeat:no-repeat;
+    background-position: center right;
+    font-weight: bold;
+}
+#NIVEL0 .nodespliegue:hover, #NIVEL1 .despliegue:hover{
+    background-color: #6495ED; /*6495ED 001BED 0012a0 */
+    border-bottom: 1px solid #fff;
+}
+#NIVEL1 .selected{
+    background-color: #edf1f4; /*6495ED 001BED 0012a0 */
+    border-bottom: 1px solid #edf1f4;
+    background-image: url('../../images/index/menu-fondo1.png');
+    background-repeat:no-repeat;
+    background-position: center right;
+}
+.NIVEL2{
+    font-family: Verdana, Geneva, sans-serif;
+    color: #333;
+    font-size: 12px;
+    display: block;
+    font-weight: bold;
+    margin: 0px;
+    padding:7px 0px;
+    padding-left: 20px;
+    background-color: #edf1f4; /*6495ED 001BED 0012a0 */
+}
+.NIVEL2:hover{
+    color: #f2faff;
+    background-color: #6495ED; /*6495ED 001BED 0012a0 */
+}

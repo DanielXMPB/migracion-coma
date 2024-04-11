@@ -1,0 +1,301 @@
+/* 
+    Document   : AgregarDocumento
+    Created on : 10-oct-2013, 17:09:57
+*/
+
+.contendor{
+    padding: 20px;
+    max-width: 1200px;
+    min-width: 900px;
+    margin: 0 auto;
+}
+.contenido{
+    position: relative;
+    border: 1px solid #ddd;
+}
+[class*="span"].estrecho{
+    min-height: 1px;
+}
+.row-fluid.estrecho{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+*.estrecho{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.barra-busqueda {
+    height: auto;
+    background: #f5f5f5;
+    z-index: 20;
+    padding: 0 20px 10px;
+}
+.AgregarDocumento{
+    float: left;
+}
+.encabezado{
+    float: left;
+    width: 100%;
+    /* border-bottom: 1px solid #ddd; */
+    background-color: #F3F3F3; 
+}
+.encabezado .hijo-encabezado{
+    height: auto;
+    margin: 10px;
+}
+.plantillaDoc{
+    -moz-box-shadow: 0px 0px 1px #D5D5D5;
+    -webkit-box-shadow: 0px 0px 1px #D5D5D5;
+    box-shadow: 0px 0px 1px #D5D5D5;
+}
+.cuerpo{
+    float: left;
+    width: 100%;
+    height: auto;
+    background: #FAFAFA;
+}
+.info-documento{
+    font-size: 13px;
+    text-align: justify;
+    height: auto;
+    margin-bottom: 20px;
+    border: 1px solid;
+    border-color: #E0E0E0; 
+    box-shadow: 0px 0px 1px #000001;
+    -webkit-box-shadow: inset 0 0 0 1px rgb(255, 255, 255);
+}
+.contenedorInterno{
+    float: left;
+    width: 100%;
+    height: auto;
+    /* border: 1px solid #ddd; */
+}
+.dock{
+    display: inline-block;
+    float: left;
+    padding: 0 6px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin: 12px 10px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 15px;
+}
+.contenedor-busqueda{
+    float: left;
+    height: auto;
+    width: 100%;
+    display: none;
+}
+.cont-infoBusqueda{
+    float: left;
+    width: 40%;
+    height: auto;
+    border: 1px solid #C0C0C0;
+    margin: 20px 0 20px 20px;
+    margin-top: 20px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 0px 0px 3px #adafba;
+    -webkit-box-shadow: 0px 0px 3px #adafba;
+    box-shadow: 0px 0px 3px #adafba;
+}
+.info-busqueda{
+    border-bottom: 1px solid #ddd;
+    padding: 8px 6px 0px 6px;
+    float: left;
+    width: 97%;
+}
+.info-grupo{
+    float: right;
+    width: 58%;
+    padding: 6px;
+    min-height: 130px;
+    border-bottom: 1px solid #ddd;
+}
+.contenedorDocumentos{
+    padding: 0 25px;
+}
+.contenidoDoc{
+    float: left;
+    padding-bottom: 10px;
+}
+.titulo-doc{
+    float:left;
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    padding: 6px;
+}
+.desc-doc{
+    float: right;
+    width: 50%;
+    height: auto;
+    margin: 20px;
+    padding: 10px;
+    text-align: justify;
+    border: 1px solid #C0C0C0;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 0px 0px 3px #adafba;
+    -webkit-box-shadow: 0px 0px 3px #adafba;
+    box-shadow: 0px 0px 3px #adafba;
+}
+.desc-doc-inicial{
+    float: left;
+    width: 98%;
+    height: auto;
+    margin: 10px;
+    text-align: justify;
+    -moz-border-radius: 3px;
+    -moz-box-shadow: 0px 0px 3px #adafba;
+}
+.lista-grupo{
+    list-style: none;
+}
+.lista-grupo .nombre{
+    width: 50%;
+    float: left;
+    padding-right: 5px;
+    margin-left: 25px;
+}
+.lista-grupo .categoria{
+    width: 30%;
+    float: right;
+    background-color: antiquewhite;
+    margin-right: 65px;
+}
+.contenedorOpciones{
+    float: right;
+    margin: 3px;
+    padding: 2px;
+    border: 1px solid #ddd;
+}
+
+.cont-busquedaCriterios{
+    float: left;
+}
+.cajaCriterios{
+    float: left;
+    width: 97%;
+    border: 1px solid #ddd;
+    padding: 0 10px;
+    background-color: #FCFCFC;
+    
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+    -moz-box-shadow: 0px 0px 1px #c9c9c9;
+    -webkit-box-shadow: 0px 0px 1px #c9c9c9;
+    box-shadow: 0px 0px 1px #c9c9c9;
+    /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+
+}
+.criterios{
+    width: 90%;
+    float: left;
+    padding: 0 35px;
+    margin: 5px 0;
+    font-size: 14px;
+}
+.entidad{
+    float: left;
+    width: 45%;
+}
+.tipo{
+    float: right;
+    width: 40%;
+}
+.numeroDoc{
+    float: left;
+    width: 40%;
+}
+.anno{
+    float: right;
+    width: 40%;
+}
+
+blockquote{
+    margin-left: 15px !important;
+    padding-left: 10px !important;
+}
+.lista-documentos-busqueda{
+    float: left;
+    width: 90%;
+    height: auto;
+    display: block;
+    list-style: none;
+}
+.contDoc-busqueda{
+    float: left;
+    width: 100%;
+    height: auto;
+}
+.header-busquedaDoc{
+    border: 1px solid #B6D9FF;
+    width: 95%;
+    padding: 5px 15px;
+    margin-bottom: 15px;
+    height: auto;
+    float: left;
+    background-color: #F7F7F7;
+    border: 1px solid #CFCFCF;
+    text-align: justify;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 0px 0px 7px #dadae7;
+    -webkit-box-shadow: 0px 0px 7px #dadae7;
+    box-shadow: 0px 0px 7px #dadae7;
+}
+.header-busquedaDoc:hover{
+    background-color: #DDEDFF;
+}
+p{
+    display: block;
+    -webkit-margin-before: 0px !important;
+    -webkit-margin-after: 0px !important;
+    -webkit-margin-start: 0px !important;
+    -webkit-margin-end: 0px !important;
+}
+.enunciado{
+    float: left;
+    width: 78%;
+    height: auto;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    padding: 7px 10px 7px 0;
+}
+.body-busquedaDoc{
+    float: right;
+    width: 20%;
+}
+.preguntaClonar{
+    display: none;
+}
+.pregunta:first-child{
+    /*display: none;*/
+}
+.alert-info{
+    margin-top: 30px !important;
+}
+.valResult{ 
+    display: inline-block; margin: 8px;
+}
+.pregunta{
+    display: block;
+    float: left;
+    margin-top: 5px;
+}
+
+/* +++++++++++++++++=============== VER DOCUMENTO ====================+++++++++++++++++++++++++++ */
+.contenedorVistaDoc{
+    padding: 20px;
+    max-width: 1200px;
+    min-width: 900px;
+    margin: 0 auto;
+}

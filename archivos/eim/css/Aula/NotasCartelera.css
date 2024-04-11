@@ -1,0 +1,115 @@
+
+
+.hover-effect {
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+.magazine-nota{
+    min-height: 300px;
+    padding: 8px;
+    margin: 0 10px;
+    margin-top: 20px;
+    position: relative;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+.magazine-nota:hover{
+    box-shadow: 0 0 8px #ddd;
+    -moz-box-shadow: 0 0 8px #ddd;
+    -webkit-box-shadow: 0 0 8px #ddd;
+    -webkit-transition: box-shadow 0.2s ease-in-out;
+    -moz-transition: box-shadow 0.2s ease-in-out;
+    -o-transition: box-shadow 0.2s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out;
+}
+.magazine-nota-img{
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+.magazine-nota-img-in{
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    position: relative;
+    -webkit-transition: all 0.8s ease-in-out;
+    -moz-transition: all 0.8s ease-in-out;
+    -o-transition: all 0.8s ease-in-out;
+    -ms-transition: all 0.8s ease-in-out;
+    transition: all 0.8s ease-in-out;
+    
+}
+.magazine-nota:hover .magazine-noticia-img-in{
+    -webkit-transform: scale(1.2) rotate(2deg);
+    -moz-transform: scale(1.2) rotate(2deg);
+    -o-transform: scale(1.2) rotate(2deg);
+    -ms-transform: scale(1.2) rotate(2deg);
+    transform: scale(1.2) rotate(2deg);
+}
+.magazine h3{
+    font-size: 18px;
+    line-height: 28px;
+    color: inherit;
+}
+.magazine .by-author{
+    margin: 0 0 3px;
+    font-size: 0.8em;
+}
+.magazine p{
+    font-size: 0.9em;
+    margin: 0 0 10px;
+    text-align: justify;
+}
+.magazine a{
+}
+.magazine a:hover{
+    color: inherit;
+}
+.magazine-nota-img-in:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.05);
+}
+.magazine-nota-vermas{
+    position: absolute;
+    top:  170px;
+    right: 0px;
+    padding: 4px 20px;
+    color: #fff !important;
+    opacity: 0.9;
+}
+a.magazine-nota-vermas:hover{
+    opacity: 1;
+    color: #fff;
+    
+}
+.magazine-nota:hover .magazine-noticia-vermas{
+    right: 10px;
+}
+.magazine-nota-fecha{
+    position: absolute;
+    top:  25px;
+    left:  10px;
+    padding: 5px 15px;
+    background: #fff;
+    text-align: center;
+    text-transform: capitalize;
+}
+.magazine-nota-fecha h4{
+    margin: 0;
+    line-height: 16px;
+    font-size: 1.1em;
+}
+.magazine-nota-fecha span{
+    line-height: 16px;
+    font-size: 0.8em;
+}

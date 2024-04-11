@@ -1,0 +1,125 @@
+.hv-image{
+    width: 200px;
+    height: 200px;
+    background-position: center center;
+    background-size: cover;
+}
+h1,h2,h3,h4,h5,h6{
+    color: #2980B9;
+    text-transform: uppercase;
+}
+.nombre-usr{
+    background: #2980B9;
+    color: #fff;
+    padding: 0 10px;
+}
+hr{
+    border-color: #2980B9;
+    border-width: 1px 0 0 0;
+}
+/*.caja-estudio .editar{
+    display: none;
+}*/
+.caja-estudio h5{
+    color: #666;
+    margin-bottom: 0;
+}
+/*.caja-estudio.edit .editar{
+    display: block;
+}*/
+.caja-estudio.edit .vista-estudio{
+    display: none;
+}
+.caja{
+    background-color: #fefefe;
+    border-radius: 2px;
+    position: relative;
+    padding: 0 10px 10px;
+    margin: 2px 0;
+}
+.caja-editar{
+    box-shadow: 0 0 5px #aaa;
+    background-color: #f6f6f6;
+    padding: 0 20px 10px 20px;
+
+}
+.caja-editar label{
+    font-weight: normal;
+}
+/*.caja:hover{
+   box-shadow: 0 0 5px #aaa;
+}*/
+/*.caja:hover .opt{
+    display: block;
+}*/
+.opt{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #666;
+}
+.opt button{
+    font-size: 1.2em;
+    color: #666;
+}
+.print{
+    display: none;
+}
+
+@media print {
+
+    @page {
+        size: portrait letter;
+        page-break-inside: avoid;
+        margin: 40px 30px 30px 40px;
+        border:none !important;
+    }
+    .contenedor{
+        margin: 0;
+        box-shadow:none !important;
+        border:none !important;
+        background-color: #FFFFFF;
+    }
+    .nombre-usr{
+        background: #2980B9 !important;
+        color: #fff !important;
+        padding: 0 10px;
+    }
+    .hv-image{
+        display: none;
+    }
+    .hv-image .print{
+        display: block;
+    }
+    .print{
+        display: inherit;
+    }
+    .no-print{
+        display: none;
+    }
+    p.ver-perfil{
+        margin-right: 0 !important;
+    }
+    a{
+        color: #999 !important;
+    }
+    body {
+        -webkit-print-color-adjust: exact;
+        color: #666 !important;
+        overflow: auto;
+    }
+    h1,h2,h3,h4,h5,h6{
+        color: #2980B9 !important;
+        text-transform: uppercase;
+        -webkit-print-color-adjust: exact;
+    }
+
+    @media print and (-webkit-min-device-pixel-ratio:0) {
+
+        h1,h2,h3,h4,h5,h6{
+            color: #2980B9 !important;;
+            -webkit-print-color-adjust: exact;
+            text-transform: uppercase;
+        }
+    }
+}
