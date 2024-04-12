@@ -67,7 +67,7 @@ services:
       POSGRADO_6: "338"
       POSGRADO_7: "99999"
       POSGRADO_8: "99999"
-    command: "/bin/bash /usr/local/tomcat/startup.sh"
+    command: bash -c "chmod +x /usr/local/tomcat/startup.sh && /bin/bash /usr/local/tomcat/startup.sh"
   coma_eip:
     depends_on:
       - poseidon
