@@ -78,6 +78,8 @@ services:
       - "9001:8080"
     volumes:
       - ./webapps/eisi.war:/usr/local/tomcat/webapps/eisi.war
+      - ./archivos/eip/css:/usr/local/tomcat/datos
+      - ./startup.sh:/usr/local/tomcat/startup.sh
     networks:
       - coma_network
     environment:
@@ -95,6 +97,7 @@ services:
       POSGRADO_6: "99999"
       POSGRADO_7: "99999"
       POSGRADO_8: "99999"
+    command: bash -c "chmod +x /usr/local/tomcat/startup.sh && /bin/bash /usr/local/tomcat/startup.sh"
 volumes:
   poseidon:
     external: false
@@ -102,10 +105,6 @@ volumes:
     external: false
   eim_diamante:
     external: false
-  eim_css:
-    driver: local
-  eip_css:
-    driver: local
 networks:
   coma_network:
     driver: bridge

@@ -1,8 +1,13 @@
-#!/bin/bash
+apt-get update && \
+    apt-get install -y unzip && \
+    apt-get clean
+
+unzip -qq /usr/local/tomcat/webapps/eisi.war -d /usr/local/tomcat/webapps/eisi/
+
+printf WAR Descomprimido
+
+rm -r /usr/local/tomcat/webapps/eisi/css/*
+
+cp -r /usr/local/tomcat/datos/* /usr/local/tomcat/webapps/eisi/css/
+
 catalina.sh run
-wget http://security.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.7.14build2_amd64.deb -O apt.deb
-dpkg -i apt.deb
-pkexec dpkg -i apt.deb
-apt-get update
-apt-get install rsync
-rsync -av --delete /usr/local/tomcat/datos /usr/local/tomcat/webapps/eisi/css/
