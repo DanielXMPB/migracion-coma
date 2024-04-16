@@ -42,14 +42,16 @@ services:
     depends_on:
       - poseidon
       - eim_diamante
-    image: tomcat:9.0.87
+    image: coma:latest
     container_name: coma_eim
     ports:
       - "9000:8080"
     volumes:
-      - ./webapps/eisi.war:/usr/local/tomcat/webapps/eisi.war
-      - ./archivos/eim/css:/usr/local/tomcat/datos
-      - ./startup.sh:/usr/local/tomcat/startup.sh
+      - ./webapps/eisi.war:/datadrive/tomcat/webapps/eisi.war
+      - ./archivos/eim/css:/datadrive/tomcat/datos/css
+      - ./archivos/eim/archivos:/datadrive/tomcat/datos/archivos
+      - ./archivos/eim/images:/datadrive/tomcat/datos/images
+      - ./startup.sh:/datadrive/tomcat/startup.sh
     networks:
       - coma_network
     environment:
@@ -67,19 +69,21 @@ services:
       POSGRADO_6: "338"
       POSGRADO_7: "99999"
       POSGRADO_8: "99999"
-    command: bash -c "chmod +x /usr/local/tomcat/startup.sh && /bin/bash /usr/local/tomcat/startup.sh"
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
   coma_eip:
     depends_on:
       - poseidon
       - eip_diamante
-    image: tomcat:9.0.87
+    image: coma:latest
     container_name: coma_eip
     ports:
       - "9001:8080"
     volumes:
-      - ./webapps/eisi.war:/usr/local/tomcat/webapps/eisi.war
-      - ./archivos/eip/css:/usr/local/tomcat/datos
-      - ./startup.sh:/usr/local/tomcat/startup.sh
+      - ./webapps/eisi.war:/datadrive/tomcat/webapps/eisi.war
+      - ./archivos/eip/css:/datadrive/tomcat/datos/css
+      - ./archivos/eip/archivos:/datadrive/tomcat/datos/archivos
+      - ./archivos/eip/images:/datadrive/tomcat/datos/images
+      - ./startup.sh:/datadrive/tomcat/startup.sh
     networks:
       - coma_network
     environment:
@@ -97,7 +101,7 @@ services:
       POSGRADO_6: "99999"
       POSGRADO_7: "99999"
       POSGRADO_8: "99999"
-    command: bash -c "chmod +x /usr/local/tomcat/startup.sh && /bin/bash /usr/local/tomcat/startup.sh"
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
 volumes:
   poseidon:
     external: false

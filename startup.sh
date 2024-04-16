@@ -2,12 +2,15 @@ apt-get update && \
     apt-get install -y unzip && \
     apt-get clean
 
-unzip -qq /usr/local/tomcat/webapps/eisi.war -d /usr/local/tomcat/webapps/eisi/
+unzip -qq /datadrive/tomcat/webapps/eisi.war -d /datadrive/tomcat/webapps/eisi/
 
 printf WAR Descomprimido
 
-rm -r /usr/local/tomcat/webapps/eisi/css/*
+rm -r /datadrive/tomcat/webapps/eisi/css/*
+rm -r /datadrive/tomcat/webapps/eisi/images/*
 
-cp -r /usr/local/tomcat/datos/* /usr/local/tomcat/webapps/eisi/css/
+cp -r /datadrive/tomcat/datos/css/* /datadrive/tomcat/webapps/eisi/css/
+cp -r /datadrive/tomcat/datos/images/* /datadrive/tomcat/webapps/eisi/images/
+cp -r /datadrive/tomcat/datos/archivos/* /datadrive/archivos/
 
 catalina.sh run
