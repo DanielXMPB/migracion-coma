@@ -42,7 +42,7 @@ services:
     depends_on:
       - poseidon
       - eim_diamante
-    image: coma:latest
+    image: untetheredj/coma:latest
     container_name: coma_eim
     ports:
       - "9000:8080"
@@ -74,7 +74,7 @@ services:
     depends_on:
       - poseidon
       - eip_diamante
-    image: coma:latest
+    image: untetheredj/coma:latest
     container_name: coma_eip
     ports:
       - "9001:8080"
