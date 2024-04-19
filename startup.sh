@@ -9,7 +9,7 @@ if [ ! -f /tmp/initializated ]; then
 
     unzip -qq /datadrive/tomcat/webapps/eisi.war -d /datadrive/tomcat/webapps/eisi/
 
-    printf WAR Descomprimido
+    echo "WAR Descomprimido"
 
     rm -r /datadrive/tomcat/webapps/eisi/css/*
     rm -r /datadrive/tomcat/webapps/eisi/images/*
