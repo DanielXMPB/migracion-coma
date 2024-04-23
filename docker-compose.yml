@@ -1,4 +1,17 @@
 services:
+  proxy_manager:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    container_name: nginx-proxy-manager
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+    networks:
+      - coma_network
   poseidon:
     image: mysql:latest
     container_name: poseidon
@@ -44,8 +57,8 @@ services:
       - eim_diamante
     image: untetheredj/coma:latest
     container_name: coma_eim
-    ports:
-      - "9000:8080"
+    # ports:
+    #   - "9000:8080"
     volumes:
       - ./webapps/eisi.war:/datadrive/tomcat/webapps/eisi.war
       - ./archivos/eim/css:/datadrive/tomcat/datos/css
@@ -76,8 +89,8 @@ services:
       - eip_diamante
     image: untetheredj/coma:latest
     container_name: coma_eip
-    ports:
-      - "9001:8080"
+    # ports:
+    #   - "9001:8080"
     volumes:
       - ./webapps/eisi.war:/datadrive/tomcat/webapps/eisi.war
       - ./archivos/eip/css:/datadrive/tomcat/datos/css
