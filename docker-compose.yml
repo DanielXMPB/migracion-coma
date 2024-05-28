@@ -120,6 +120,9 @@ services:
       POSGRADO_8: "99999"
     command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
 volumes:
+  caddy_data:
+    external: true
+  caddy_config:
   poseidon:
     external: false
   eip_diamante:

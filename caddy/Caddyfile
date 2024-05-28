@@ -1,16 +1,11 @@
-{
-	auto_https off
-}
-
-
-http://eisidev01.uis.edu.co {
+eisidev01.uis.edu.co {
     reverse_proxy coma_eim:8080
 }
 
-http://eisidev01.uis.edu.co {
+eisidev02.uis.edu.co {
     reverse_proxy coma_eip:8080
 }
 
-http://localhost {
+localhost {
     reverse_proxy coma_eim:8080
 }
