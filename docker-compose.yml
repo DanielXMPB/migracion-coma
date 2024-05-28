@@ -1,17 +1,21 @@
 services:
-  proxy_manager:
-    image: 'jc21/nginx-proxy-manager:latest'
+  reverse_proxy:
+    image: 'caddy:latest'
     restart: unless-stopped
-    container_name: nginx-proxy-manager
+    container_name: caddy
     ports:
       - '80:80'
-      - '81:81'
       - '443:443'
     volumes:
-      - ./data:/data
-      - ./letsencrypt:/etc/letsencrypt
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+      - ./caddy/site:/srv
+      - ./caddy/caddy_data:/data
+      - ./caddy/caddy_config:/config
     networks:
       - coma_network
+    depends_on:
+      - coma_eim
+      - coma_eip
   poseidon:
     image: mysql:latest
     container_name: poseidon
@@ -57,8 +61,8 @@ services:
       - eim_diamante
     image: untetheredj/coma:latest
     container_name: coma_eim
-    # ports:
-    #   - "9000:8080"
+    #ports:
+    #  - "9000:8080"
     volumes:
       - ./webapps/eisi.war:/datadrive/tomcat/webapps/eisi.war
       - ./archivos/eim/css:/datadrive/tomcat/datos/css
@@ -89,8 +93,8 @@ services:
       - eip_diamante
     image: untetheredj/coma:latest
     container_name: coma_eip
-    # ports:
-    #   - "9001:8080"
+    #ports:
+    #  - "9001:8080"
     volumes:
       - ./webapps/eisi.war:/datadrive/tomcat/webapps/eisi.war
       - ./archivos/eip/css:/datadrive/tomcat/datos/css
