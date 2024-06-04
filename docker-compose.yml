@@ -1,16 +1,19 @@
 services:
   reverse_proxy:
-    image: 'caddy:latest'
+    image: 'jc21/nginx-proxy-manager'
     restart: unless-stopped
-    container_name: caddy
+    container_name: reverse_proxy
     ports:
       - '80:80'
+      - '81:81'
       - '443:443'
     volumes:
-      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
-      - ./caddy/site:/srv
-      - ./caddy/caddy_data:/data
-      - ./caddy/caddy_config:/config
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+  #    - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+  #    - ./caddy/site:/srv
+  #    - ./caddy/caddy_data:/data
+  #    - ./caddy/caddy_config:/config
     networks:
       - coma_network
     depends_on:
