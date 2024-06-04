@@ -55,9 +55,14 @@ services:
     #  - "9000:8080"
     volumes:
       - ./webapps/eisi.war:/datadrive/tomcat/webapps/eisi.war
-      - ./archivos/eim/css:/datadrive/tomcat/datos/css
-      - ./archivos/eim/archivos:/datadrive/tomcat/datos/archivos
-      - ./archivos/eim/images:/datadrive/tomcat/datos/images
+      - ./archivos/eg/css:/datadrive/tomcat/datos/css
+      - ./archivos/eg/archivosDatadrive:/datadrive/tomcat/datos/archivosDatadrive
+      - ./archivos/eg/Archivos:/datadrive/tomcat/datos/Archivos
+      - ./archivos/eg/ArchivosProfesores:/datadrive/tomcat/datos/ArchivosProfesores
+      - ./archivos/eg/WebProfesor:/datadrive/tomcat/datos/WebProfesor
+      - ./archivos/eg/grupo:/datadrive/tomcat/datos/grupo
+      - ./archivos/eg/images:/datadrive/tomcat/datos/images
+      - ./archivos/eg/Profesores:/datadrive/tomcat/datos/Profesores
       - ./startup.sh:/datadrive/tomcat/startup.sh
     networks:
       - coma_network
@@ -90,8 +95,13 @@ services:
     volumes:
       - ./webapps/eisi.war:/datadrive/tomcat/webapps/eisi.war
       - ./archivos/eip/css:/datadrive/tomcat/datos/css
-      - ./archivos/eip/archivos:/datadrive/tomcat/datos/archivos
+      - ./archivos/eip/archivosDatadrive:/datadrive/tomcat/datos/archivosDatadrive
+      - ./archivos/eip/Archivos:/datadrive/tomcat/datos/Archivos
+      - ./archivos/eip/ArchivosProfesores:/datadrive/tomcat/datos/ArchivosProfesores
+      - ./archivos/eip/WebProfesor:/datadrive/tomcat/datos/WebProfesor
+      - ./archivos/eip/grupo:/datadrive/tomcat/datos/grupo
       - ./archivos/eip/images:/datadrive/tomcat/datos/images
+      - ./archivos/eip/Profesores:/datadrive/tomcat/datos/Profesores
       - ./startup.sh:/datadrive/tomcat/startup.sh
     networks:
       - coma_network
