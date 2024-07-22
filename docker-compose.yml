@@ -1,4 +1,24 @@
 services:
+  reverse_proxy:
+    image: 'jc21/nginx-proxy-manager'
+    restart: unless-stopped
+    container_name: reverse_proxy
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+  #    - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+  #    - ./caddy/site:/srv
+  #    - ./caddy/caddy_data:/data
+  #    - ./caddy/caddy_config:/config
+    networks:
+      - coma_network
+    depends_on:
+      - coma_esgeo
+      - coma_eip
   db_poseidon:
     image: mysql:5.7.44
     container_name: db_poseidon
@@ -27,12 +47,12 @@ services:
     networks:
       - coma_network
     command: --max_allowed_packet=32505856 && ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
-  coma_ep:
+  coma_esgeo:
     depends_on:
       - db_poseidon
       - db_ffm
     image: untetheredj/coma:latest
-    container_name: coma_eim
+    container_name: coma_esgeo
     #ports:
     #  - "9000:8080"
     volumes:
