@@ -57,14 +57,14 @@ services:
     #  - "9000:8080"
     volumes:
       - ./webapps/eisi.war:/datadrive/tomcat/webapps/eisi.war
-      - ./archivos/eg/css:/datadrive/tomcat/datos/css
-      - ./archivos/eg/archivosDatadrive:/datadrive/tomcat/datos/archivosDatadrive
-      - ./archivos/eg/Archivos:/datadrive/tomcat/datos/Archivos
-      - ./archivos/eg/ArchivosProfesores:/datadrive/tomcat/datos/ArchivosProfesores
-      - ./archivos/eg/WebProfesor:/datadrive/tomcat/datos/WebProfesor
-      - ./archivos/eg/grupo:/datadrive/tomcat/datos/grupo
-      - ./archivos/eg/images:/datadrive/tomcat/datos/images
-      - ./archivos/eg/Profesores:/datadrive/tomcat/datos/Profesores
+      - ./archivos/esgeo/css:/datadrive/tomcat/datos/css
+      - ./archivos/esgeo/archivosDatadrive:/datadrive/tomcat/datos/archivosDatadrive
+      - ./archivos/esgeo/Archivos:/datadrive/tomcat/datos/Archivos
+      - ./archivos/esgeo/ArchivosProfesores:/datadrive/tomcat/datos/ArchivosProfesores
+      - ./archivos/esgeo/WebProfesor:/datadrive/tomcat/datos/WebProfesor
+      - ./archivos/esgeo/grupo:/datadrive/tomcat/datos/grupo
+      - ./archivos/esgeo/images:/datadrive/tomcat/datos/images
+      - ./archivos/esgeo/Profesores:/datadrive/tomcat/datos/Profesores
       - ./startup.sh:/datadrive/tomcat/startup.sh
     networks:
       - coma_network
