@@ -1,0 +1,11 @@
+eisidev01.uis.edu.co {
+    reverse_proxy coma_eim:8080
+}
+
+eisidev02.uis.edu.co {
+    reverse_proxy coma_eip:8080
+}
+
+localhost {
+    reverse_proxy coma_eim:8080
+}
