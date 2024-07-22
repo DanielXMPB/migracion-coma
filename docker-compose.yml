@@ -1,65 +1,61 @@
 services:
-  poseidon:
-    image: mysql:latest
-    container_name: poseidon
+  db_poseidon:
+    image: mysql:5.7.44
+    container_name: db_poseidon
     ports:
       - "3307:3306"
     environment:
       MYSQL_ROOT_PASSWORD: 1234
     volumes:
-      - poseidon:/var/lib/mysql
+      - db_poseidon:/var/lib/mysql
       - ./datos/poseidon:/docker-entrypoint-initdb.d
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf
     networks:
       - coma_network
-    command: --default-authentication-plugin=mysql_native_password
-  eim_diamante:
-    image: mysql:latest
-    container_name: eim_diamante
+    command: --max_allowed_packet=32505856 && ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
+  db_ffm:
+    image: mysql:5.7.44
+    container_name: db_ffm
     ports:
       - "3308:3306"
     environment:
       MYSQL_ROOT_PASSWORD: 1234
     volumes:
-      - eim_diamante:/var/lib/mysql
-      - ./datos/eim:/docker-entrypoint-initdb.d
+      - db_ffm:/var/lib/mysql
+      - ./datos/ffm:/docker-entrypoint-initdb.d
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf
     networks:
       - coma_network
-    command: --default-authentication-plugin=mysql_native_password
-  eip_diamante:
-    image: mysql:latest
-    container_name: eip_diamante
-    ports:
-      - "3309:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: 1234
-    volumes:
-      - eip_diamante:/var/lib/mysql
-      - ./datos/eip:/docker-entrypoint-initdb.d
-    networks:
-      - coma_network
-    command: --default-authentication-plugin=mysql_native_password
-  coma_eim:
+    command: --max_allowed_packet=32505856 && ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
+  coma_ep:
     depends_on:
-      - poseidon
-      - eim_diamante
-    image: coma:latest
+      - db_poseidon
+      - db_ffm
+    image: untetheredj/coma:latest
     container_name: coma_eim
-    ports:
-      - "9000:8080"
+    #ports:
+    #  - "9000:8080"
     volumes:
       - ./webapps/eisi.war:/datadrive/tomcat/webapps/eisi.war
-      - ./archivos/eim/css:/datadrive/tomcat/datos/css
-      - ./archivos/eim/archivos:/datadrive/tomcat/datos/archivos
-      - ./archivos/eim/images:/datadrive/tomcat/datos/images
+      - ./archivos/eg/css:/datadrive/tomcat/datos/css
+      - ./archivos/eg/archivosDatadrive:/datadrive/tomcat/datos/archivosDatadrive
+      - ./archivos/eg/Archivos:/datadrive/tomcat/datos/Archivos
+      - ./archivos/eg/ArchivosProfesores:/datadrive/tomcat/datos/ArchivosProfesores
+      - ./archivos/eg/WebProfesor:/datadrive/tomcat/datos/WebProfesor
+      - ./archivos/eg/grupo:/datadrive/tomcat/datos/grupo
+      - ./archivos/eg/images:/datadrive/tomcat/datos/images
+      - ./archivos/eg/Profesores:/datadrive/tomcat/datos/Profesores
       - ./startup.sh:/datadrive/tomcat/startup.sh
     networks:
       - coma_network
     environment:
       MYSQL_ROOT_PASSWORD: 1234
-      DIAMANTE_DNS: "eim_diamante"
-      NOMBRE_ESCUELA: "Escuela de Ingeniería Mecánica"
-      NOMBRE_ABREVIADO: "EIM"
-      PROGRAMA_PREGRADO: "24"
+      DIAMANTE_DNS: "db_ffm"
+      POSEIDON_DNS: "db_poseidon"
+      DATABASE_NAME: "diamante"
+      NOMBRE_ESCUELA: "Escuela de Geología"
+      NOMBRE_ABREVIADO: "ESGEO"
+      PROGRAMA_PREGRADO: "34"
       CODIGO_ESCUELA: "6560"
       POSGRADO_1: "217"
       POSGRADO_2: "314"
@@ -72,23 +68,30 @@ services:
     command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
   coma_eip:
     depends_on:
-      - poseidon
-      - eip_diamante
-    image: coma:latest
+      - db_poseidon
+      - db_ffm
+    image: untetheredj/coma:latest
     container_name: coma_eip
-    ports:
-      - "9001:8080"
+    #ports:
+    #  - "9001:8080"
     volumes:
       - ./webapps/eisi.war:/datadrive/tomcat/webapps/eisi.war
       - ./archivos/eip/css:/datadrive/tomcat/datos/css
-      - ./archivos/eip/archivos:/datadrive/tomcat/datos/archivos
+      - ./archivos/eip/archivosDatadrive:/datadrive/tomcat/datos/archivosDatadrive
+      - ./archivos/eip/Archivos:/datadrive/tomcat/datos/Archivos
+      - ./archivos/eip/ArchivosProfesores:/datadrive/tomcat/datos/ArchivosProfesores
+      - ./archivos/eip/WebProfesor:/datadrive/tomcat/datos/WebProfesor
+      - ./archivos/eip/grupo:/datadrive/tomcat/datos/grupo
       - ./archivos/eip/images:/datadrive/tomcat/datos/images
+      - ./archivos/eip/Profesores:/datadrive/tomcat/datos/Profesores
       - ./startup.sh:/datadrive/tomcat/startup.sh
     networks:
       - coma_network
     environment:
       MYSQL_ROOT_PASSWORD: 1234
-      DIAMANTE_DNS: "eip_diamante"
+      DIAMANTE_DNS: "db_ffm"
+      POSEIDON_DNS: "db_poseidon"
+      DATABASE_NAME: "diamante"
       NOMBRE_ESCUELA: "Escuela de Ingeniería de Petróleos"
       NOMBRE_ABREVIADO: "EISI"
       PROGRAMA_PREGRADO: "11"
@@ -103,11 +106,9 @@ services:
       POSGRADO_8: "99999"
     command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
 volumes:
-  poseidon:
+  db_poseidon:
     external: false
-  eip_diamante:
-    external: false
-  eim_diamante:
+  db_ffm:
     external: false
 networks:
   coma_network:
