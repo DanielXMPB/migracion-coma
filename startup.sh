@@ -1,15 +1,15 @@
-if [ ! -f /tmp/initializated ]; then
+if [ ! -f /tmp/initialized ]; then
     echo "Running one-time initialization command..."
 
-    touch /tmp/initializated
+    touch /tmp/initialized
 
-    apt-get update && \
-    apt-get install -y unzip && \
-    apt-get clean
+    # apt-get update && \
+    # apt-get install -y unzip && \
+    # apt-get clean
 
     unzip -qq /datadrive/tomcat/webapps/eisi.war -d /datadrive/tomcat/webapps/eisi/
 
-    echo "WAR Descomprimido"
+    echo "Finished unzipping eisi.war"
 
     rm -rf /datadrive/tomcat/webapps/eisi/css/*
     rm -rf /datadrive/tomcat/webapps/eisi/images/*
@@ -27,6 +27,8 @@ if [ ! -f /tmp/initializated ]; then
 
     cp -r /datadrive/tomcat/datos/archivosDatadrive/* /datadrive/archivos/
     cp -r /datadrive/tomcat/datos/Profesores/* /datadrive/tomcat/webapps/
+
+    echo "Finished transferring files."
 fi
 
 catalina.sh run
