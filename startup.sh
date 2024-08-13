@@ -3,13 +3,11 @@ if [ ! -f /tmp/initialized ]; then
 
     touch /tmp/initialized
 
-    # apt-get update && \
-    # apt-get install -y unzip && \
-    # apt-get clean
+    apt-get update && \
+    apt-get install -y unzip && \
+    apt-get clean
 
-    jar -xvf /datadrive/tomcat/webapps/eisi.war -c /datadrive/tomcat/webapps/eisi/
-
-    # unzip -qq /datadrive/tomcat/webapps/eisi.war -d /datadrive/tomcat/webapps/eisi/
+    unzip -qq /datadrive/tomcat/webapps/eisi.war -d /datadrive/tomcat/webapps/eisi/
 
     echo "Finished unzipping eisi.war"
 

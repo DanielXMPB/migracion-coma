@@ -31,7 +31,6 @@ RUN set -eux; \
 		ca-certificates \
 		curl \
 		gnupg \
-		unzip \
 	; \
 	\
 	ddist() { \
