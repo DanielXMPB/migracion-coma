@@ -7,7 +7,9 @@ if [ ! -f /tmp/initialized ]; then
     # apt-get install -y unzip && \
     # apt-get clean
 
-    unzip -qq /datadrive/tomcat/webapps/eisi.war -d /datadrive/tomcat/webapps/eisi/
+    jar -xvf /datadrive/tomcat/webapps/eisi.war
+
+    # unzip -qq /datadrive/tomcat/webapps/eisi.war -d /datadrive/tomcat/webapps/eisi/
 
     echo "Finished unzipping eisi.war"
 
