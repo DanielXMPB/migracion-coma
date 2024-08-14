@@ -72,7 +72,7 @@ services:
     environment:
       DIAMANTE_DNS: "db_ffm"
       POSEIDON_DNS: "db_poseidon"
-      DATABASE_NAME: "diamante_esgeo"
+      DIAMANTE_NAME: "diamante_esgeo"
       URL_ESCUELA: "http://10.6.100.3" #parametro[2]
       NOMBRE_ABREVIADO: "ESGEO" #parametro[3]
       NOMBRE_LARGO_ESCUELA: "Escuela de Geología" #parametro[4]
