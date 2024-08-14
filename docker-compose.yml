@@ -186,7 +186,7 @@ services:
       # - ./archivos/eip/Profesores:/datadrive/tomcat/datos/Profesores
       #- ./archivos/eip:/datadrive/tomcat/datos/
       - ./archivos/eip/images:/datadrive/files/images
-      - ./archivos/server.xml:/datadrive/tomcat/conf/server.xml
+      #- ./archivos/server.xml:/datadrive/tomcat/conf/server.xml
       - ./startup.sh:/datadrive/tomcat/startup.sh
     networks:
       - coma_network
