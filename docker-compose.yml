@@ -185,7 +185,8 @@ services:
       # - ./archivos/eip/images:/datadrive/tomcat/datos/images
       # - ./archivos/eip/Profesores:/datadrive/tomcat/datos/Profesores
       #- ./archivos/eip:/datadrive/tomcat/datos/
-      - ./archivos/eip/images:/datadrive/files/images
+      #- ./archivos/eip/images:/datadrive/files/images
+      - ./archivos/eip:/datadrive/tomcat/datos/
       #- ./archivos/server.xml:/datadrive/tomcat/conf/server.xml
       - ./startup.sh:/datadrive/tomcat/startup.sh
     networks:
