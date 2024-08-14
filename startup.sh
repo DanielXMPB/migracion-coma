@@ -13,7 +13,7 @@ if [ ! -f /tmp/initializated ]; then
 
     echo "Finished unzipping eisi.war"
 
-    ##rm -rf /datadrive/tomcat/webapps/eisi/css/*
+    rm -rf /datadrive/tomcat/webapps/eisi/css/*
     ##rm -rf /datadrive/tomcat/webapps/eisi/images/*
     ##rm -rf /datadrive/tomcat/webapps/eisi/ArchivosProfesores/*
 
@@ -21,16 +21,22 @@ if [ ! -f /tmp/initializated ]; then
     mkdir -p /datadrive/tomcat/webapps/eisi/grupo
     #mkdir -p /datadrive/archivos
 
-    cp -r /datadrive/tomcat/datos/css/* /datadrive/tomcat/webapps/eisi/css/
+    cp -r /datadrive/files/css/* /datadrive/tomcat/webapps/eisi/css/
     ##cp -r /datadrive/tomcat/datos/images/* /datadrive/tomcat/webapps/eisi/images/
     ##cp -r /datadrive/tomcat/datos/ArchivosProfesores/* /datadrive/tomcat/webapps/eisi/ArchivosProfesores/
-    cp -r /datadrive/tomcat/datos/WebProfesor/* /datadrive/tomcat/webapps/eisi/WebProfesor/
-    cp -r /datadrive/tomcat/datos/grupo/* /datadrive/tomcat/webapps/eisi/grupo/
+    cp -r /datadrive/files/WebProfesor/* /datadrive/tomcat/webapps/eisi/WebProfesor/
+    cp -r /datadrive/files/grupo/* /datadrive/tomcat/webapps/eisi/grupo/
 
     #cp -r /datadrive/tomcat/datos/archivosDatadrive/* /datadrive/archivos/
     cp -r /datadrive/tomcat/datos/Profesores/* /datadrive/tomcat/webapps/
 
     echo "Finished transferring files."
 fi
+
+cp -rn /datadrive/tomcat/webapps/eisi/css/* /datadrive/files/css/
+cp -rn /datadrive/tomcat/webapps/eisi/WebProfesor/* /datadrive/files/WebProfesor/
+cp -rn /datadrive/tomcat/webapps/eisi/grupo/* /datadrive/files/grupo/
+
+echo "Finished copying current files."
 
 catalina.sh run

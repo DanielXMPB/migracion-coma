@@ -71,7 +71,6 @@ services:
     networks:
       - coma_network
     environment:
-      COLOR_PRINCIPAL: "#f6ff00"
       DIAMANTE_DNS: "db_ffm"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_esgeo"
@@ -193,7 +192,6 @@ services:
     networks:
       - coma_network
     environment:
-      COLOR_PRINCIPAL: "#e600ff"
       DIAMANTE_DNS: "db_ffm"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_eip"
