@@ -1,7 +1,7 @@
-if [ ! -f /tmp/initialized ]; then
+if [ ! -f /tmp/initializated ]; then
     echo "Running one-time initialization command..."
 
-    touch /tmp/initialized
+    touch /tmp/initializated
 
     apt-get update && \
     apt-get install -y unzip && \
