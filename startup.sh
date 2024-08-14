@@ -13,7 +13,7 @@ if [ ! -f /tmp/initializated ]; then
 
     echo "Finished unzipping eisi.war"
 
-    rm -rf /datadrive/tomcat/webapps/eisi/css/*
+    ##rm -rf /datadrive/tomcat/webapps/eisi/css/*
     rm -rf /datadrive/tomcat/webapps/eisi/images/*
     rm -rf /datadrive/tomcat/webapps/eisi/ArchivosProfesores/*
 
@@ -21,7 +21,7 @@ if [ ! -f /tmp/initializated ]; then
     mkdir -p /datadrive/tomcat/webapps/eisi/grupo
     mkdir -p /datadrive/archivos
 
-    cp -r /datadrive/tomcat/datos/css/* /datadrive/tomcat/webapps/eisi/css/
+    ##cp -r /datadrive/tomcat/datos/css/* /datadrive/tomcat/webapps/eisi/css/
     cp -r /datadrive/tomcat/datos/images/* /datadrive/tomcat/webapps/eisi/images/
     cp -r /datadrive/tomcat/datos/ArchivosProfesores/* /datadrive/tomcat/webapps/eisi/ArchivosProfesores/
     cp -r /datadrive/tomcat/datos/WebProfesor/* /datadrive/tomcat/webapps/eisi/WebProfesor/

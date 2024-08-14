@@ -53,8 +53,8 @@ services:
       - db_ffm
     image: untetheredj/coma:latest
     container_name: coma_esgeo
-    #ports:
-    #  - "9000:8080"
+    ports:
+      - "9000:8080"
     volumes:
       - ./webapps/eisi.war:/datadrive/tomcat/webapps/eisi.war
     #  - ./archivos/esgeo/css:/datadrive/tomcat/datos/css
@@ -70,6 +70,7 @@ services:
     networks:
       - coma_network
     environment:
+      COLOR_PRINCIPAL: "#f6ff00"
       DIAMANTE_DNS: "db_ffm"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_esgeo"
@@ -171,8 +172,8 @@ services:
       - db_ffm
     image: untetheredj/coma:latest
     container_name: coma_eip
-    #ports:
-    #  - "9001:8080"
+    ports:
+      - "9001:8080"
     volumes:
       - ./webapps/eisi.war:/datadrive/tomcat/webapps/eisi.war
       # - ./archivos/eip/css:/datadrive/tomcat/datos/css
@@ -183,11 +184,14 @@ services:
       # - ./archivos/eip/grupo:/datadrive/tomcat/datos/grupo
       # - ./archivos/eip/images:/datadrive/tomcat/datos/images
       # - ./archivos/eip/Profesores:/datadrive/tomcat/datos/Profesores
-      - ./archivos/eip:/datadrive/tomcat/datos/
+      #- ./archivos/eip:/datadrive/tomcat/datos/
+      - ./archivos/eip/images:/datadrive/files/images
+      - ./archivos/server.xml:/datadrive/tomcat/conf/server.xml
       - ./startup.sh:/datadrive/tomcat/startup.sh
     networks:
       - coma_network
     environment:
+      COLOR_PRINCIPAL: "#e600ff"
       DIAMANTE_DNS: "db_ffm"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_eip"
