@@ -23,7 +23,7 @@ if [ ! -f /tmp/initializated ]; then
 
     cp -r /datadrive/tomcat/datos/css/* /datadrive/tomcat/webapps/eisi/css/
     cp -r /datadrive/tomcat/datos/images/* /datadrive/tomcat/webapps/eisi/images/
-    cp -r /datadrive/tomcat/datos/ArchivosProfesores/* /datadrive/webapps/tomcat/eisi/ArchivosProfesores/
+    cp -r /datadrive/tomcat/datos/ArchivosProfesores/* /datadrive/tomcat/webapps/eisi/ArchivosProfesores/
     cp -r /datadrive/tomcat/datos/WebProfesor/* /datadrive/tomcat/webapps/eisi/WebProfesor/
     cp -r /datadrive/tomcat/datos/grupo/* /datadrive/tomcat/webapps/eisi/grupo/
 

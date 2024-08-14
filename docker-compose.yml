@@ -57,14 +57,15 @@ services:
     #  - "9000:8080"
     volumes:
       - ./webapps/eisi.war:/datadrive/tomcat/webapps/eisi.war
-      - ./archivos/esgeo/css:/datadrive/tomcat/datos/css
-      - ./archivos/esgeo/archivosDatadrive:/datadrive/tomcat/datos/archivosDatadrive
-      - ./archivos/esgeo/Archivos:/datadrive/tomcat/datos/Archivos
-      - ./archivos/esgeo/ArchivosProfesores:/datadrive/tomcat/datos/ArchivosProfesores
-      - ./archivos/esgeo/WebProfesor:/datadrive/tomcat/datos/WebProfesor
-      - ./archivos/esgeo/grupo:/datadrive/tomcat/datos/grupo
-      - ./archivos/esgeo/images:/datadrive/tomcat/datos/images
-      - ./archivos/esgeo/Profesores:/datadrive/tomcat/datos/Profesores
+    #  - ./archivos/esgeo/css:/datadrive/tomcat/datos/css
+    #  - ./archivos/esgeo/archivosDatadrive:/datadrive/tomcat/datos/archivosDatadrive
+    #  - ./archivos/esgeo/Archivos:/datadrive/tomcat/datos/Archivos
+    #  - ./archivos/esgeo/ArchivosProfesores:/datadrive/tomcat/datos/ArchivosProfesores
+    #  - ./archivos/esgeo/WebProfesor:/datadrive/tomcat/datos/WebProfesor
+    #  - ./archivos/esgeo/grupo:/datadrive/tomcat/datos/grupo
+    #  - ./archivos/esgeo/images:/datadrive/tomcat/datos/images
+    #  - ./archivos/esgeo/Profesores:/datadrive/tomcat/datos/Profesores
+      - ./archivos/esgeo:/datadrive/tomcat/datos/
       - ./startup.sh:/datadrive/tomcat/startup.sh
     networks:
       - coma_network
@@ -174,14 +175,15 @@ services:
     #  - "9001:8080"
     volumes:
       - ./webapps/eisi.war:/datadrive/tomcat/webapps/eisi.war
-      - ./archivos/eip/css:/datadrive/tomcat/datos/css
-      - ./archivos/eip/archivosDatadrive:/datadrive/tomcat/datos/archivosDatadrive
-      - ./archivos/eip/Archivos:/datadrive/tomcat/datos/Archivos
-      - ./archivos/eip/ArchivosProfesores:/datadrive/tomcat/datos/ArchivosProfesores
-      - ./archivos/eip/WebProfesor:/datadrive/tomcat/datos/WebProfesor
-      - ./archivos/eip/grupo:/datadrive/tomcat/datos/grupo
-      - ./archivos/eip/images:/datadrive/tomcat/datos/images
-      - ./archivos/eip/Profesores:/datadrive/tomcat/datos/Profesores
+      # - ./archivos/eip/css:/datadrive/tomcat/datos/css
+      # - ./archivos/eip/archivosDatadrive:/datadrive/tomcat/datos/archivosDatadrive
+      # - ./archivos/eip/Archivos:/datadrive/tomcat/datos/Archivos
+      # - ./archivos/eip/ArchivosProfesores:/datadrive/tomcat/datos/ArchivosProfesores
+      # - ./archivos/eip/WebProfesor:/datadrive/tomcat/datos/WebProfesor
+      # - ./archivos/eip/grupo:/datadrive/tomcat/datos/grupo
+      # - ./archivos/eip/images:/datadrive/tomcat/datos/images
+      # - ./archivos/eip/Profesores:/datadrive/tomcat/datos/Profesores
+      - ./archivos/eip:/datadrive/tomcat/datos/
       - ./startup.sh:/datadrive/tomcat/startup.sh
     networks:
       - coma_network
