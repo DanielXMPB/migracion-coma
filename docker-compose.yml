@@ -71,7 +71,7 @@ services:
     environment:
       DIAMANTE_DNS: "db_ffm"
       POSEIDON_DNS: "db_poseidon"
-      DATABASE_NAME: "diamante"
+      DATABASE_NAME: "diamante_esgeo"
       URL_ESCUELA: "http://10.6.100.3" #parametro[2]
       NOMBRE_ABREVIADO: "ESGEO" #parametro[3]
       NOMBRE_LARGO_ESCUELA: "Escuela de Geología" #parametro[4]
@@ -83,8 +83,10 @@ services:
       VERSION_SERVIDOR: "5.0" #parametro[10]
       CIUDAD: "Bucaramanga" #parametro[11]
       NOMBRE_CORTO_ESCUELA: "GEOLOGIA" #parametro[12]
-      SQL_USER: "root" #parametro[13]
-      SQL_PASSWORD: "1234" #parametro[14]
+      DIAMANTE_SQL_USER: "root" #parametro[13]
+      DIAMANTE_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
       CODIGO_PREGRADO: "34" #parametro[15]
       CODIGO_UNIDAD_ESCUELA: "6420" #parametro[16]
       PREGRADO_2: "99999" #parametro[17]
@@ -186,7 +188,7 @@ services:
     environment:
       DIAMANTE_DNS: "db_ffm"
       POSEIDON_DNS: "db_poseidon"
-      DATABASE_NAME: "diamante"
+      DIAMANTE_NAME: "diamante_eip"
       URL_ESCUELA: "http://10.6.100.3" #parametro[2]
       NOMBRE_ABREVIADO: "EIP" #parametro[3]
       NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Petróleos" #parametro[4]
@@ -198,8 +200,10 @@ services:
       VERSION_SERVIDOR: "5.0" #parametro[10]
       CIUDAD: "Bucaramanga" #parametro[11]
       NOMBRE_CORTO_ESCUELA: "INGENIERIA DE PETROLEOS" #parametro[12]
-      SQL_USER: "root" #parametro[13]
-      SQL_PASSWORD: "1234" #parametro[14]
+      DIAMANTE_SQL_USER: "root" #parametro[13]
+      DIAMANTE_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
       CODIGO_PREGRADO: "32" #parametro[15]
       CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
       PREGRADO_2: "99999" #parametro[17]
