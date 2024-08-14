@@ -21,6 +21,10 @@ if [ ! -f /tmp/initializated ]; then
     mkdir -p /datadrive/tomcat/webapps/eisi/grupo
     #mkdir -p /datadrive/archivos
 
+    mkdir -p /datadrive/backup/css
+    mkdir -p /datadrive/backup/WebProfesor
+    mkdir -p /datadrive/backup/grupo
+
     cp -r /datadrive/files/css/* /datadrive/tomcat/webapps/eisi/css/
     ##cp -r /datadrive/tomcat/datos/images/* /datadrive/tomcat/webapps/eisi/images/
     ##cp -r /datadrive/tomcat/datos/ArchivosProfesores/* /datadrive/tomcat/webapps/eisi/ArchivosProfesores/
@@ -31,12 +35,24 @@ if [ ! -f /tmp/initializated ]; then
     cp -r /datadrive/files/Profesores/* /datadrive/tomcat/webapps/
 
     echo "Finished transferring files."
+else
+    cp -ru /datadrive/tomcat/webapps/eisi/css/* /datadrive/backup/css/
+    cp -ru /datadrive/tomcat/webapps/eisi/WebProfesor/* /datadrive/backup/WebProfesor/
+    cp -ru /datadrive/tomcat/webapps/eisi/grupo/* /datadrive/backup/grupo/
+
+    rm -rf /datadrive/tomcat/webapps/eisi/*
+
+    unzip -qq /datadrive/tomcat/webapps/eisi.war -d /datadrive/tomcat/webapps/eisi/
+
+    echo "Finished unzipping AGAIN"
+
+    rm -rf /datadrive/tomcat/webapps/eisi/css/*
+
+    cp -r /datadrive/backup/css/* /datadrive/tomcat/webapps/eisi/css/
+    cp -r /datadrive/backup/WebProfesor/* /datadrive/tomcat/webapps/eisi/WebProfesor/
+    cp -r /datadrive/backup/grupo/* /datadrive/tomcat/webapps/eisi/grupo/
+
+    echo "Finished copying current files."
 fi
-
-cp -rn /datadrive/tomcat/webapps/eisi/css/* /datadrive/files/css/
-cp -rn /datadrive/tomcat/webapps/eisi/WebProfesor/* /datadrive/files/WebProfesor/
-cp -rn /datadrive/tomcat/webapps/eisi/grupo/* /datadrive/files/grupo/
-
-echo "Finished copying current files."
 
 catalina.sh run
