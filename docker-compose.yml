@@ -65,7 +65,8 @@ services:
     #  - ./archivos/esgeo/grupo:/datadrive/tomcat/datos/grupo
     #  - ./archivos/esgeo/images:/datadrive/tomcat/datos/images
     #  - ./archivos/esgeo/Profesores:/datadrive/tomcat/datos/Profesores
-      - ./archivos/esgeo:/datadrive/tomcat/datos/
+    #  - ./archivos/esgeo:/datadrive/tomcat/datos/
+      - ./archivos/esgeo:/datadrive/files
       - ./startup.sh:/datadrive/tomcat/startup.sh
     networks:
       - coma_network
