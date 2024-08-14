@@ -7,6 +7,8 @@ if [ ! -f /tmp/initializated ]; then
     apt-get install -y unzip && \
     apt-get clean
 
+    echo "Unzip installed successfully."
+
     unzip -qq /datadrive/tomcat/webapps/eisi.war -d /datadrive/tomcat/webapps/eisi/
 
     echo "Finished unzipping eisi.war"
@@ -15,12 +17,9 @@ if [ ! -f /tmp/initializated ]; then
     rm -rf /datadrive/tomcat/webapps/eisi/images/*
     rm -rf /datadrive/tomcat/webapps/eisi/ArchivosProfesores/*
 
-    mkdir /datadrive/tomcat/webapps/eisi/css
-    mkdir /datadrive/tomcat/webapps/eisi/images
-    mkdir /datadrive/tomcat/webapps/eisi/ArchivosProfesores
-    mkdir /datadrive/tomcat/webapps/eisi/WebProfesor
-    mkdir /datadrive/tomcat/webapps/eisi/grupo
-    mkdir /datadrive/archivos
+    mkdir -p /datadrive/tomcat/webapps/eisi/WebProfesor
+    mkdir -p /datadrive/tomcat/webapps/eisi/grupo
+    mkdir -p /datadrive/archivos
 
     cp -r /datadrive/tomcat/datos/css/* /datadrive/tomcat/webapps/eisi/css/
     cp -r /datadrive/tomcat/datos/images/* /datadrive/tomcat/webapps/eisi/images/
