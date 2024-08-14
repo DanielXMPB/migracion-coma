@@ -28,7 +28,7 @@ if [ ! -f /tmp/initializated ]; then
     cp -r /datadrive/files/grupo/* /datadrive/tomcat/webapps/eisi/grupo/
 
     #cp -r /datadrive/tomcat/datos/archivosDatadrive/* /datadrive/archivos/
-    cp -r /datadrive/tomcat/datos/Profesores/* /datadrive/tomcat/webapps/
+    cp -r /datadrive/files/Profesores/* /datadrive/tomcat/webapps/
 
     echo "Finished transferring files."
 fi
