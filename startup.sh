@@ -9,6 +9,7 @@ if [ ! -f /tmp/initializated ]; then
 
     echo "Unzip installed successfully."
 
+    mkdir -p /datadrive/tomcat/webapps/eisi/
     cp -r /datadrive/backup/eisi.war -d /datadrive/tomcat/webapps/eisi/
 
     unzip -qq /datadrive/tomcat/webapps/eisi.war -d /datadrive/tomcat/webapps/eisi/
