@@ -178,6 +178,24 @@
 
         <Context path="/eisi/images" docBase="/datadrive/files/images"/>
         <Context path="/eisi/ArchivosProfesores" docBase="/datadrive/files/ArchivosProfesores"/>
+
+        <Context path="/eisi/WebProfesor" docBase="/datadrive/files/WebProfesor" reloadable="true">
+          <Resources>
+             <PreResources base="/datadrive/files/WebProfesor" className="org.apache.catalina.webresources.DirResourceSet" webAppMount="/" />
+          </Resources>
+        </Context>
+
+        <Context path="/eisi/grupo" docBase="/datadrive/files/grupo" reloadable="true">
+          <Resources>
+             <PreResources base="/datadrive/files/grupo" className="org.apache.catalina.webresources.DirResourceSet" webAppMount="/" />
+          </Resources>
+        </Context>
+
+        <Context path="/" docBase="/datadrive/files/Profesores" reloadable="true">
+          <Resources>
+             <PreResources base="/datadrive/files/Profesores" className="org.apache.catalina.webresources.DirResourceSet" webAppMount="/" />
+          </Resources>
+        </Context>
       </Host>
     </Engine>
   </Service>
