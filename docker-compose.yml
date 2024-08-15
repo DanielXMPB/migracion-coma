@@ -56,7 +56,7 @@ services:
     ports:
       - "9000:8080"
     volumes:
-      - ./webapps/eisi.war:/datadrive/webapps/eisi.war
+      - ./webapps/eisi.war:/datadrive/tomcat/webapps/eisi.war
     #  - ./archivos/esgeo/css:/datadrive/tomcat/datos/css
     #  - ./archivos/esgeo/archivosDatadrive:/datadrive/tomcat/datos/archivosDatadrive
     #  - ./archivos/esgeo/Archivos:/datadrive/tomcat/datos/Archivos
@@ -175,7 +175,7 @@ services:
     ports:
       - "9001:8080"
     volumes:
-      - ./webapps/eisi.war:/datadrive/webapps/eisi.war
+      - ./webapps/eisi.war:/datadrive/tomcat/webapps/eisi.war
       # - ./archivos/eip/css:/datadrive/tomcat/datos/css
       # - ./archivos/eip/archivosDatadrive:/datadrive/tomcat/datos/archivosDatadrive
       # - ./archivos/eip/Archivos:/datadrive/tomcat/datos/Archivos
