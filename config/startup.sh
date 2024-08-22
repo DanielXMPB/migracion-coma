@@ -3,12 +3,6 @@ if [ ! -f /tmp/initializated ]; then
 
     touch /tmp/initializated
 
-    apt-get update && \
-    apt-get install -y unzip && \
-    apt-get clean
-
-    echo "Unzip installed successfully."
-
     mkdir -p /datadrive/tomcat/webapps/eisi/
     cp -r /datadrive/build/eisi.war -d /datadrive/tomcat/webapps/
 
@@ -71,6 +65,6 @@ else
     echo "Finished copying current files."
 fi
 
-cron && tail -f /var/log/cron.log
+service cron start
 
 catalina.sh run
