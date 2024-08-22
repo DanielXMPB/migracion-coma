@@ -10,7 +10,7 @@ for escuela in "${escuelas[@]}"; do
   docker stop "$escuela"
 
   # Copiar .war para despliegue
-  docker cp eisi.war "$escuela":/datadrive/tomcat/webapps/
+  docker cp ../build/eisi.war "$escuela":/datadrive/tomcat/webapps/
 
   # Reiniciar el contenedor para asegurar que todos los cambios se apliquen
   docker start "$escuela"
