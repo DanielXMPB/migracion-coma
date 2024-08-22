@@ -65,6 +65,4 @@ else
     echo "Finished copying current files."
 fi
 
-service cron start
-
 catalina.sh run

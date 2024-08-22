@@ -142,21 +142,7 @@ RUN set -eux; \
 		exit 1; \
 	fi
 
-RUN apt-get update && apt-get install -y mysql-client cron nano && rm -rf /var/lib/apt/lists/* 
-
-COPY config/maintenance.jar /datadrive/maintenance/
-COPY config/config.properties /datadrive/maintenance/
-COPY config/crontab /etc/cron.d/
-
-RUN chmod 0644 /etc/cron.d/crontab
-RUN crontab /etc/cron.d/crontab
-RUN touch /var/log/cron.log
-
-# Set permissions for the crontab file
-RUN chmod 0644 /etc/cron.d/crontab
-
-# Create the log file to be able to run tail
-RUN touch /var/log/cron.log
+RUN apt-get update && apt-get install -y mysql-client cron nano && rm -rf /var/lib/apt/lists/*
 
 EXPOSE 8080
 

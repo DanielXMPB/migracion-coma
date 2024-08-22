@@ -12,7 +12,7 @@ MAILTO=root
 # |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
 # |  |  |  |  |
 # *  *  *  *  * user-name  command to be executed
-* * * * * root /opt/java/openjdk/bin/java -jar /datadrive/maintenance/maintenance.jar --diamante --division
+01 00 * * * root /opt/java/openjdk/bin/java -jar /datadrive/maintenance/maintenance.jar --diamante --division
 * * * * * root curl http://127.0.0.1/eisi/CorreosUis/PeticionesEnvCorreosPoseidon.jsp
 00 02 * * * root curl http://127.0.0.1/eisi/Administrador/actualizaDivision.jsp
 01 00 * * * root curl http://127.0.0.1/eisi/Trabajos_de_Grado/Pre_Comite/ConstruyeActa.jsp
