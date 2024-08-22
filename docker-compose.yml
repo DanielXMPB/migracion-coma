@@ -15,26 +15,6 @@ services:
     depends_on:
       - coma_esgeo
       - coma_eip
-  #reverse_proxy:
-  #  image: 'jc21/nginx-proxy-manager'
-  #  restart: unless-stopped
-  #  container_name: reverse_proxy
-  #  ports:
-  #    - '80:80'
-  #    - '81:81'
-  #    - '443:443'
-  #  volumes:
-  #    - ./data:/data
-  #    - ./letsencrypt:/etc/letsencrypt
-  #    - ./caddy/Caddyfile:/etc/caddy/Caddyfile
-  #    - ./caddy/site:/srv
-  #    - ./caddy/caddy_data:/data
-  #    - ./caddy/caddy_config:/config
-  #  networks:
-  #    - coma_network
-  #  depends_on:
-  #    - coma_esgeo
-  #    - coma_eip
   db_poseidon:
     image: mysql:5.7.44
     container_name: db_poseidon
@@ -204,7 +184,6 @@ services:
       #- ./archivos/eip:/datadrive/tomcat/datos/
       #- ./archivos/eip/images:/datadrive/files/images
       - ./archivos/eip:/datadrive/files
-      #- ./archivos/server.xml:/datadrive/tomcat/conf/server.xml
       - ./startup.sh:/datadrive/tomcat/startup.sh
     networks:
       - coma_network
