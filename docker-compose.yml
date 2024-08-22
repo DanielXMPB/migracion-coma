@@ -168,10 +168,10 @@ services:
       - coma_network
     environment:
       VIRTUAL_HOST: "hola.escuela2.co"
-      DIAMANTE_DNS: "db_ffm"
+      DB_DNS: "db_ffm"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_eip"
-      DIVISION_NAME: "division_esgeo"
+      DIVISION_NAME: "division_eip"
       URL_ESCUELA: "http://10.6.100.3" #parametro[2]
       NOMBRE_ABREVIADO: "EIP" #parametro[3]
       NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Petróleos" #parametro[4]
