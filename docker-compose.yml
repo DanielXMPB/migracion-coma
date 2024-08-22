@@ -4,7 +4,7 @@ services:
     restart: unless-stopped
     container_name: reverse_proxy
     volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./config/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
     ports:
       - "80:80"
     environment:
@@ -12,9 +12,6 @@ services:
       - NGINX_PORT=80
     networks:
       - coma_network
-    depends_on:
-      - coma_esgeo
-      - coma_eip
   db_poseidon:
     image: mysql:5.7.44
     container_name: db_poseidon
@@ -24,8 +21,8 @@ services:
       MYSQL_ROOT_PASSWORD: 1234
     volumes:
       - db_poseidon:/var/lib/mysql
-      - ./datos/poseidon:/docker-entrypoint-initdb.d
-      - ./my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./database/poseidon:/docker-entrypoint-initdb.d
+      - ./config/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
     networks:
       - coma_network
     command: --max_allowed_packet=32505856 && mysql ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
@@ -38,8 +35,8 @@ services:
       MYSQL_ROOT_PASSWORD: 1234
     volumes:
       - db_ffm:/var/lib/mysql
-      - ./datos/ffm:/docker-entrypoint-initdb.d
-      - ./my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./database/ffm:/docker-entrypoint-initdb.d
+      - ./config/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
     networks:
       - coma_network
     command: --max_allowed_packet=32505856 && mysql ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
@@ -52,25 +49,17 @@ services:
     ports:
       - "9000:8080"
     volumes:
-      - ./webapps/eisi.war:/datadrive/backup/eisi.war
-    #  - ./archivos/esgeo/css:/datadrive/tomcat/datos/css
-    #  - ./archivos/esgeo/archivosDatadrive:/datadrive/tomcat/datos/archivosDatadrive
-    #  - ./archivos/esgeo/Archivos:/datadrive/tomcat/datos/Archivos
-    #  - ./archivos/esgeo/ArchivosProfesores:/datadrive/tomcat/datos/ArchivosProfesores
-    #  - ./archivos/esgeo/WebProfesor:/datadrive/tomcat/datos/WebProfesor
-    #  - ./archivos/esgeo/grupo:/datadrive/tomcat/datos/grupo
-    #  - ./archivos/esgeo/images:/datadrive/tomcat/datos/images
-    #  - ./archivos/esgeo/Profesores:/datadrive/tomcat/datos/Profesores
-    #  - ./archivos/esgeo:/datadrive/tomcat/datos/
-      - ./archivos/esgeo:/datadrive/files
-      - ./startup.sh:/datadrive/tomcat/startup.sh
+      - ./build/eisi.war:/datadrive/build/eisi.war
+      - ./files/esgeo:/datadrive/original_files
+      - ./config/startup.sh:/datadrive/tomcat/startup.sh
     networks:
       - coma_network
     environment:
       VIRTUAL_HOST: "hola.escuela1.co"
-      DIAMANTE_DNS: "db_ffm"
+      DB_DNS: "db_ffm"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_esgeo"
+      DIVISION_NAME: "division_esgeo"
       URL_ESCUELA: "http://10.6.100.3" #parametro[2]
       NOMBRE_ABREVIADO: "ESGEO" #parametro[3]
       NOMBRE_LARGO_ESCUELA: "Escuela de Geología" #parametro[4]
@@ -82,8 +71,8 @@ services:
       VERSION_SERVIDOR: "5.0" #parametro[10]
       CIUDAD: "Bucaramanga" #parametro[11]
       NOMBRE_CORTO_ESCUELA: "GEOLOGIA" #parametro[12]
-      DIAMANTE_SQL_USER: "root" #parametro[13]
-      DIAMANTE_SQL_PASSWORD: "1234" #parametro[14]
+      DB_SQL_USER: "root" #parametro[13] db contiene tanto a Diamante como Division
+      DB_SQL_PASSWORD: "1234" #parametro[14] db contiene tanto a Diamante como Division
       POSEIDON_SQL_USER: "root"
       POSEIDON_SQL_PASSWORD: "1234"
       CODIGO_PREGRADO: "34" #parametro[15]
@@ -108,8 +97,8 @@ services:
       DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
       CAT_REG_AULA: "CT24" #parametro[27]
       CAT_EST_AULA: "CT25" #parametro[28]
-      VISTA_USER: "otro" #parametro[29]
-      VISTA_PASSWORD: "otro" #parametro[30]
+      VISTA_SQL_USER: "otro" #parametro[29]
+      VISTA_SQL_PASSWORD: "otro" #parametro[30]
       POSGRADO_1: "281" #parametro[39]
       POSGRADO_2: "99999" #parametro[40]
       POSGRADO_3: "99999" #parametro[41]
@@ -172,19 +161,9 @@ services:
     ports:
       - "9001:8080"
     volumes:
-      - ./webapps/eisi.war:/datadrive/backup/eisi.war
-      # - ./archivos/eip/css:/datadrive/tomcat/datos/css
-      # - ./archivos/eip/archivosDatadrive:/datadrive/tomcat/datos/archivosDatadrive
-      # - ./archivos/eip/Archivos:/datadrive/tomcat/datos/Archivos
-      # - ./archivos/eip/ArchivosProfesores:/datadrive/tomcat/datos/ArchivosProfesores
-      # - ./archivos/eip/WebProfesor:/datadrive/tomcat/datos/WebProfesor
-      # - ./archivos/eip/grupo:/datadrive/tomcat/datos/grupo
-      # - ./archivos/eip/images:/datadrive/tomcat/datos/images
-      # - ./archivos/eip/Profesores:/datadrive/tomcat/datos/Profesores
-      #- ./archivos/eip:/datadrive/tomcat/datos/
-      #- ./archivos/eip/images:/datadrive/files/images
-      - ./archivos/eip:/datadrive/files
-      - ./startup.sh:/datadrive/tomcat/startup.sh
+      - ./build/eisi.war:/datadrive/build/eisi.war
+      - ./files/eip:/datadrive/original_files
+      - ./config/startup.sh:/datadrive/tomcat/startup.sh
     networks:
       - coma_network
     environment:
@@ -192,6 +171,7 @@ services:
       DIAMANTE_DNS: "db_ffm"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_eip"
+      DIVISION_NAME: "division_esgeo"
       URL_ESCUELA: "http://10.6.100.3" #parametro[2]
       NOMBRE_ABREVIADO: "EIP" #parametro[3]
       NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Petróleos" #parametro[4]
@@ -203,8 +183,8 @@ services:
       VERSION_SERVIDOR: "5.0" #parametro[10]
       CIUDAD: "Bucaramanga" #parametro[11]
       NOMBRE_CORTO_ESCUELA: "INGENIERIA DE PETROLEOS" #parametro[12]
-      DIAMANTE_SQL_USER: "root" #parametro[13]
-      DIAMANTE_SQL_PASSWORD: "1234" #parametro[14]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
       POSEIDON_SQL_USER: "root"
       POSEIDON_SQL_PASSWORD: "1234"
       CODIGO_PREGRADO: "32" #parametro[15]
