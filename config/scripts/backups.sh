@@ -7,13 +7,13 @@ escuelas=(
 )
 
 # Ruta dentro del contenedor donde están los backups de diamante
-ruta_diamante="/datadrive/archivos/backups/diamante"
+ruta_diamante="/datadrive/backup/db/diamante"
 
 # Ruta dentro del contenedor donde están los backups de division
-ruta_division="/datadrive/archivos/backups/division"
+ruta_division="/datadrive/backup/db/division"
 
 # Ruta en tu sistema local donde se copian los archivos
-ruta_local="/datadrive/backups/"
+ruta_local="/datadrive/backup/db/"
 
 for escuela in "${escuelas[@]}"; do
   diamante_reciente=$(docker exec "$escuela" bash -c "ls -t $ruta_diamante | head -n 1")
@@ -26,7 +26,7 @@ for escuela in "${escuelas[@]}"; do
 done
 
 # Ruta dentro del contenedor donde están los backups de diamante
-ruta_poseidon="/datadrive/archivos/backups/poseidon"
+ruta_poseidon="/datadrive/backup/db/poseidon"
 
 poseidon_reciente=$(docker exec coma_esgeo bash -c "ls -t $ruta_division | head -n 1")
 mkdir -p "$ruta_local/poseidon"

@@ -142,9 +142,7 @@ RUN set -eux; \
 		exit 1; \
 	fi
 
-RUN apt-get update && apt-get install -y mysql-client && rm -rf /var/lib/apt/lists/* 
-RUN apt-get update && apt-get install -y cron 
-RUN apt-get update && apt-get install -y nano
+RUN apt-get update && apt-get install -y mysql-client cron nano && rm -rf /var/lib/apt/lists/* 
 
 COPY config/maintenance.jar /datadrive/maintenance/
 COPY config/config.properties /datadrive/maintenance/
@@ -165,4 +163,4 @@ EXPOSE 8080
 # upstream eclipse-temurin-provided entrypoint script caused https://github.com/docker-library/tomcat/issues/77 to come back as https://github.com/docker-library/tomcat/issues/302; use "/entrypoint.sh" at your own risk
 ENTRYPOINT []
 
-CMD cron && tail -f /var/log/cron.log & catalina.sh run
+CMD ["catalina.sh", "run"]

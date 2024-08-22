@@ -71,4 +71,6 @@ else
     echo "Finished copying current files."
 fi
 
+cron && tail -f /var/log/cron.log
+
 catalina.sh run
