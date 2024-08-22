@@ -143,6 +143,7 @@ RUN set -eux; \
 	fi
 
 COPY config/maintenance.jar /datadrive/maintenance/
+COPY config/config.properties /datadrive/maintenance/
 COPY config/crontab /etc/cron.d/
 
 EXPOSE 8080
