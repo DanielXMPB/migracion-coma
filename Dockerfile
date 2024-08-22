@@ -142,13 +142,27 @@ RUN set -eux; \
 		exit 1; \
 	fi
 
+RUN apt-get update && apt-get install -y mysql-client && rm -rf /var/lib/apt/lists/* 
+RUN apt-get update && apt-get install -y cron 
+RUN apt-get update && apt-get install -y nano
+
 COPY config/maintenance.jar /datadrive/maintenance/
 COPY config/config.properties /datadrive/maintenance/
 COPY config/crontab /etc/cron.d/
+
+RUN chmod 0644 /etc/cron.d/crontab
+RUN crontab /etc/cron.d/crontab
+RUN touch /var/log/cron.log
+
+# Set permissions for the crontab file
+RUN chmod 0644 /etc/cron.d/crontab
+
+# Create the log file to be able to run tail
+RUN touch /var/log/cron.log
 
 EXPOSE 8080
 
 # upstream eclipse-temurin-provided entrypoint script caused https://github.com/docker-library/tomcat/issues/77 to come back as https://github.com/docker-library/tomcat/issues/302; use "/entrypoint.sh" at your own risk
 ENTRYPOINT []
 
-CMD ["catalina.sh", "run"]
+CMD cron && tail -f /var/log/cron.log & catalina.sh run
