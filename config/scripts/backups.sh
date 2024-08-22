@@ -18,9 +18,11 @@ ruta_local="/datadrive/backup/db/"
 for escuela in "${escuelas[@]}"; do
   diamante_reciente=$(docker exec "$escuela" bash -c "ls -t $ruta_diamante | head -n 1")
   mkdir -p "$ruta_local/$escuela/diamante"
+  rm -rf $ruta_local/$escuela/diamante/*
   docker cp "$escuela:$ruta_diamante/$diamante_reciente" "$ruta_local/$escuela/diamante"
   division_reciente=$(docker exec "$escuela" bash -c "ls -t $ruta_division | head -n 1")
   mkdir -p "$ruta_local/$escuela/divison"
+  rm -rf $ruta_local/$escuela/divison/*
   docker cp "$escuela:$ruta_division/$diamante_reciente" "$ruta_local/$escuela/divison"
   echo "Backup de $escuela realizado"
 done
@@ -30,5 +32,6 @@ ruta_poseidon="/datadrive/backup/db/poseidon"
 
 poseidon_reciente=$(docker exec coma_esgeo bash -c "ls -t $ruta_division | head -n 1")
 mkdir -p "$ruta_local/poseidon"
+rm -rf $ruta_local/poseidon/*
 docker cp "coma_esgeo:$ruta_poseidon/$poseidon_reciente" "$ruta_local/poseidon"
 echo "Backup de poseidon realizado"
