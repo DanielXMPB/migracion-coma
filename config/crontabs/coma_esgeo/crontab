@@ -13,6 +13,6 @@ MAILTO=root
 # |  |  |  |  |
 # *  *  *  *  * user-name  command to be executed
 06 00 * * * root /opt/java/openjdk/bin/java -jar /datadrive/maintenance/maintenance.jar --diamante --division
-* * * * * root curl http://127.0.0.1/eisi/CorreosUis/PeticionesEnvCorreosPoseidon.jsp
-05 02 * * * root curl http://127.0.0.1/eisi/Administrador/actualizaDivision.jsp
-01 00 * * * root curl http://127.0.0.1/eisi/Trabajos_de_Grado/Pre_Comite/ConstruyeActa.jsp
+* * * * * root curl http://127.0.0.1:8080/eisi/CorreosUis/PeticionesEnvCorreosPoseidon.jsp
+05 02 * * * root curl http://127.0.0.1:8080/eisi/Administrador/actualizaDivision.jsp
+01 00 * * * root curl http://127.0.0.1:8080/eisi/Trabajos_de_Grado/Pre_Comite/ConstruyeActa.jsp
