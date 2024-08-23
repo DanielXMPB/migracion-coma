@@ -4,6 +4,9 @@
 mapfile -t escuelas < escuelas.txt
 
 for escuela in "${escuelas[@]}"; do
+  # Crear carpeta si no existe
+  mkdir -p /datadrive/maintenance/
+
   # Copiar archivos dentro del contenedor
   docker cp ../maintenance.jar "$escuela":/datadrive/maintenance/
   docker cp ../config.properties "$escuela":/datadrive/maintenance/

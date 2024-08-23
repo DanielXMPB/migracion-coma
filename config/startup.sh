@@ -24,7 +24,6 @@ if [ ! -f /tmp/initializated ]; then
     mkdir -p /datadrive/backup/files/WebProfesor
     mkdir -p /datadrive/backup/files/grupo
 
-
     # Backups de bases de datos
     mkdir -p /datadrive/backup/db/diamante
     mkdir -p /datadrive/backup/db/poseidon
