@@ -4,6 +4,13 @@ mapfile -t escuelas < escuelas.txt
 for escuela in "${escuelas[@]}"; do
   echo "Moviendo archivos de la escuela en la carpeta designada de: $escuela"
 
+  mkdir -p ../../files/$escuela/css
+  mkdir -p ../../files/$escuela/images
+  mkdir -p ../../files/$escuela/ArchivosProfesores
+  mkdir -p ../../files/$escuela/WebProfesor
+  mkdir -p ../../files/$escuela/grupo
+  mkdir -p ../../files/$escuela/Profesores
+
   mv -f ../../../coma_files/$escuela/eisi/css/* ../../files/$escuela/css/
   mv -f ../../../coma_files/$escuela/eisi/images/* ../../files/$escuela/images/
   mv -f ../../../coma_files/$escuela/eisi/ArchivosProfesores/* ../../files/$escuela/ArchivosProfesores/
