@@ -17,7 +17,7 @@ for escuela in "${escuelas[@]}"; do
   mv -f ../../../coma_files/$escuela/eisi/WebProfesor/* ../../files/$escuela/WebProfesor/
   mv -f ../../../coma_files/$escuela/eisi/grupo/* ../../files/$escuela/grupo/
 
-  find ../../../coma_files/$escuela/ -mindepth 1 -maxdepth 1 ! -name 'eisi' -exec mv {} ../../files/$escuela/Profesores/
+  find ../../../coma_files/$escuela/ -mindepth 1 -maxdepth 1 ! -name 'eisi' -exec mv {} ../../files/$escuela/Profesores/ \;
 
   echo "Moviendo copia de archivos de escuela: $escuela"
 done
