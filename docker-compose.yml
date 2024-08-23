@@ -50,7 +50,7 @@ services:
       - "9000:8080"
     volumes:
       - ./build/eisi.war:/datadrive/build/eisi.war
-      - ./files/esgeo:/datadrive/original_files
+      - ./files/coma_esgeo:/datadrive/original_files
       - ./config/startup.sh:/datadrive/tomcat/startup.sh
     networks:
       - coma_network
@@ -162,7 +162,7 @@ services:
       - "9001:8080"
     volumes:
       - ./build/eisi.war:/datadrive/build/eisi.war
-      - ./files/eip:/datadrive/original_files
+      - ./files/coma_eip:/datadrive/original_files
       - ./config/startup.sh:/datadrive/tomcat/startup.sh
     networks:
       - coma_network
