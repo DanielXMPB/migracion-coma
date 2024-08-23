@@ -12,6 +12,9 @@ for escuela in "${escuelas[@]}"; do
   # Configurar permisos para el archivo crontab
   docker exec "$escuela" chmod 0644 /etc/cron.d/crontab
 
+  # Iniciar crontab
+  docker exec "$escuela" crontab /etc/cron.d/crontab
+
   # Iniciar el servicio cron dentro del contenedor
   docker exec "$escuela" cron start
 done
