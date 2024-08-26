@@ -162,7 +162,7 @@ services:
     ports:
       - "9001:8080"
     volumes:
-      - coma_esip_files_backup:/datadrive/backup
+      - coma_eip_files_backup:/datadrive/backup
       - ./build/eisi.war:/datadrive/build/eisi.war
       - ./files/coma_eip:/datadrive/original_files
       - ./config/startup.sh:/datadrive/tomcat/startup.sh
