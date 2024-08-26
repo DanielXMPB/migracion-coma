@@ -142,11 +142,15 @@ RUN set -eux; \
 		exit 1; \
 	fi
 
-RUN apt-get update && apt-get install -y mysql-client cron nano && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y mysql-client cron nano unzip && rm -rf /var/lib/apt/lists/*
+
+COPY config/startup.sh $CATALINA_HOME/startup.sh
+
+RUN chmod +x $CATALINA_HOME/startup.sh
 
 EXPOSE 8080
 
 # upstream eclipse-temurin-provided entrypoint script caused https://github.com/docker-library/tomcat/issues/77 to come back as https://github.com/docker-library/tomcat/issues/302; use "/entrypoint.sh" at your own risk
 ENTRYPOINT []
 
-CMD ["catalina.sh", "run"]
+CMD ["/bin/bash", "-c", "/path/to/startup.sh && catalina.sh run"]
