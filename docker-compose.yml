@@ -49,6 +49,7 @@ services:
     ports:
       - "9000:8080"
     volumes:
+      - coma_esgeo_files_backup:/datadrive/backup
       - ./build/eisi.war:/datadrive/build/eisi.war
       - ./files/coma_esgeo:/datadrive/original_files
       - ./config/startup.sh:/datadrive/tomcat/startup.sh
@@ -161,6 +162,7 @@ services:
     ports:
       - "9001:8080"
     volumes:
+      - coma_esip_files_backup:/datadrive/backup
       - ./build/eisi.war:/datadrive/build/eisi.war
       - ./files/coma_eip:/datadrive/original_files
       - ./config/startup.sh:/datadrive/tomcat/startup.sh
@@ -268,6 +270,10 @@ volumes:
   db_poseidon:
     external: false
   db_ffm:
+    external: false
+  coma_esgeo_files_backup:
+    external: false
+  coma_esip_files_backup:
     external: false
 networks:
   coma_network:
