@@ -7,7 +7,7 @@ if [ ! -f /tmp/initializated ]; then
     cp -r /datadrive/build/eisi.war -d /datadrive/tomcat/webapps/
 
     # Se crea la carpeta de maintenance
-    mkdir -p datadrive/maintenance/
+    mkdir -p /datadrive/maintenance/
 
     unzip -qq /datadrive/tomcat/webapps/eisi.war -d /datadrive/tomcat/webapps/eisi/
 
