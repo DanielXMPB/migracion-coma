@@ -269,12 +269,16 @@ services:
 volumes:
   db_poseidon:
     external: false
+    name: db_poseidon
   db_ffm:
     external: false
+    name: db_ffm
   coma_esgeo_files_backup:
     external: false
-  coma_esip_files_backup:
+    name: coma_esgeo_files_backup
+  coma_eip_files_backup:
     external: false
+    name: coma_eip_files_backup
 networks:
   coma_network:
     driver: bridge
