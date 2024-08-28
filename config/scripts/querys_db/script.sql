@@ -1,0 +1,1 @@
+UPDATE tp_usuarios tu SET tu.ClaveUsr = '1234' WHERE tu.IdUsr = 'U0';

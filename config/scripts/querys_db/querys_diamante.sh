@@ -7,7 +7,7 @@ source ./config_diamante.sh
 source ./secrets.sh
 
 # Query a ejecutar
-query="UPDATE tp_usuarios tu SET tu.ClaveUsr = '1234' WHERE tu.IdUsr = 'U0';"
+sql_file="script.sql"
 
 # Recorre cada contenedor y sus bases de datos
 for container in "${!containers_dbs[@]}"; do
@@ -17,10 +17,16 @@ for container in "${!containers_dbs[@]}"; do
     # Asigna la la contraseña de cada contenedor
     password=${container_passwords[$container]}
 
+    # Copiar el archivo SQL al contenedor
+    docker cp "$sql_file" "$container:/tmp/$sql_file"
+
     for db in $dbs; do
         echo "Ejecutando query en $db dentro de $container"
 
         # Ejecutar query en cada escuela
-        docker exec -i "$container" mysql -u root -p"${password}" "$db" -e "$query"
+        docker exec -i "$container" mysql -u root -p"${password}" "$db" < "/tmp/$sql_file"
     done
+
+    # Eliminar el archivo SQL del contenedor después de la ejecución
+    docker exec "$container" rm "/tmp/$sql_file"
 done
