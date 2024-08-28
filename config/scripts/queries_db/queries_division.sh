@@ -17,16 +17,11 @@ for container in "${!containers_dbs[@]}"; do
     # Asigna la la contraseña de cada contenedor
     password=${container_passwords[$container]}
 
-    # Copiar el archivo SQL al contenedor
-    docker cp "$sql_file" "$container":/tmp/
-
     for db in $dbs; do
         echo "Ejecutando query en $db dentro de $container"
 
         # Ejecutar query en cada escuela
-        docker exec -i "$container" mysql -u root -p "${password}" "$db" < /tmp/"$sql_file"
+        docker exec -i "$container" mysql -u root -p"${password}" "$db" < "$sql_file"
     done
 
-    # Eliminar el archivo SQL del contenedor después de la ejecución
-    docker exec "$container" rm /tmp/"$sql_file"
 done
