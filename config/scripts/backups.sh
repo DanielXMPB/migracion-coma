@@ -1,4 +1,4 @@
-#!/bin/bash
+# Script para obtener la ultima copia de la base de datos realizada en cada escuela
 
 # Lista de nombres o IDs de los contenedores
 mapfile -t escuelas < escuelas.txt

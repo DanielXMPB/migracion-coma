@@ -1,4 +1,4 @@
-#!/bin/bash
+# Script para copiar los archivos de el crontab en cada escuela
 
 # Lista de nombres o IDs de los contenedores
 mapfile -t escuelas < escuelas.txt
