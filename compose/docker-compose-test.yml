@@ -1,12 +1,9 @@
 services:
   coma_esgeo:
-    depends_on:
-      - db_poseidon
-      - db_ffm
     image: untetheredj/coma:latest
     container_name: coma_esgeo
-    ports:
-      - "9000:8080"
+    #ports:
+    #  - "9000:8080"
     volumes:
       - coma_esgeo_files_backup:/datadrive/backup
       - ./build/eisi.war:/datadrive/build/eisi.war
@@ -113,13 +110,10 @@ services:
       RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
     command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
   coma_eip:
-    depends_on:
-      - db_poseidon
-      - db_ffm
     image: untetheredj/coma:latest
     container_name: coma_eip
-    ports:
-      - "9001:8080"
+    #ports:
+    #  - "9001:8080"
     volumes:
       - coma_eip_files_backup:/datadrive/backup
       - ./build/eisi.war:/datadrive/build/eisi.war

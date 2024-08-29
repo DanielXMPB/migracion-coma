@@ -1,8 +1,5 @@
 services:
   coma_eip:
-    depends_on:
-      - db_poseidon
-      - db_ffm
     image: untetheredj/coma:latest
     container_name: coma_eip
     ports:
