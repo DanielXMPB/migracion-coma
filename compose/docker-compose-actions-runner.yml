@@ -1,17 +1,18 @@
 services:
   actions-runner:
-    image: tomcat:9.0.93
+    image: untetheredj/actions-runner:latest
     container_name: actions-runner
     restart: always
-      - REPO=calumet/coma
-      - TOKEN=<token>
-  deploy:
-    resources: 
-      limits:
-        cpus: '0.20'
-        memory: 1G
-      reservations:
-        memory: 512MB
+    environment:
+      - REPO="calumet/coma"
+      - TOKEN="AYIK4KNVOY3XRS5XS4GWUMDG2DC7M"
+    deploy:
+      resources: 
+        limits:
+          cpus: '0.20'
+          memory: 1G
+        reservations:
+          memory: 512MB
 networks:
   coma_network:
     driver: bridge
