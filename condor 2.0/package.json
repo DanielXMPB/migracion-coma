@@ -1,0 +1,15 @@
+{
+  "name": "el_condor_herido",
+  "version": "1.0.0",
+  "description": "Proyecto para ejecutar scripts con Grunt",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "grunt": "0.4.1",
+    "grunt-ssh": "0.12.9"
+  }
+}
