@@ -8,8 +8,8 @@ services:
       MYSQL_ROOT_PASSWORD: 1234
     volumes:
       - db_poseidon:/var/lib/mysql
-      - ./database/poseidon:/docker-entrypoint-initdb.d
-      - ./config/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+      - .../database/poseidon:/docker-entrypoint-initdb.d
+      - .../config/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
     networks:
       - coma_network
     command: --max_allowed_packet=32505856 && mysql ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
@@ -22,8 +22,8 @@ services:
       MYSQL_ROOT_PASSWORD: 1234
     volumes:
       - db_ffm:/var/lib/mysql
-      - ./database/ffm:/docker-entrypoint-initdb.d
-      - ./config/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+      - .../database/ffm:/docker-entrypoint-initdb.d
+      - .../config/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
     networks:
       - coma_network
     command: --max_allowed_packet=32505856 && mysql ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
@@ -36,8 +36,8 @@ services:
       MYSQL_ROOT_PASSWORD: 1234
     volumes:
       - db_ffq:/var/lib/mysql
-      - ./database/ffq:/docker-entrypoint-initdb.d
-      - ./config/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ../database/ffq:/docker-entrypoint-initdb.d
+      - ../config/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
     networks:
       - coma_network
     command: --max_allowed_packet=32505856 && mysql ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
@@ -50,8 +50,8 @@ services:
       MYSQL_ROOT_PASSWORD: 1234
     volumes:
       - db_fch:/var/lib/mysql
-      - ./database/fch:/docker-entrypoint-initdb.d
-      - ./config/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ../database/fch:/docker-entrypoint-initdb.d
+      - ../config/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
     networks:
       - coma_network
     command: --max_allowed_packet=32505856 && mysql ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
@@ -64,8 +64,8 @@ services:
       MYSQL_ROOT_PASSWORD: 1234
     volumes:
       - db_fcie:/var/lib/mysql
-      - ./database/fcie:/docker-entrypoint-initdb.d
-      - ./config/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ../database/fcie:/docker-entrypoint-initdb.d
+      - ../config/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
     networks:
       - coma_network
     command: --max_allowed_packet=32505856 && mysql ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
@@ -78,8 +78,8 @@ services:
       MYSQL_ROOT_PASSWORD: 1234
     volumes:
       - db_fs:/var/lib/mysql
-      - ./database/fs:/docker-entrypoint-initdb.d
-      - ./config/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ../database/fs:/docker-entrypoint-initdb.d
+      - ../config/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
     networks:
       - coma_network
     command: --max_allowed_packet=32505856 && mysql ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
@@ -92,8 +92,8 @@ services:
       MYSQL_ROOT_PASSWORD: 1234
     volumes:
       - db_otros:/var/lib/mysql
-      - ./database/otros:/docker-entrypoint-initdb.d
-      - ./config/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ../database/otros:/docker-entrypoint-initdb.d
+      - ../config/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
     networks:
       - coma_network
     command: --max_allowed_packet=32505856 && mysql ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';

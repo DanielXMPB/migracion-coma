@@ -6,9 +6,9 @@ services:
     #  - "9000:8080"
     volumes:
       - coma_esgeo_files_backup:/datadrive/backup
-      - ./build/eisi.war:/datadrive/build/eisi.war
-      - ./files/coma_esgeo:/datadrive/original_files
-      - ./config/startup.sh:/datadrive/tomcat/startup.sh
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_esgeo:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
     networks:
       - coma_network
     environment:
@@ -116,9 +116,9 @@ services:
     #  - "9001:8080"
     volumes:
       - coma_eip_files_backup:/datadrive/backup
-      - ./build/eisi.war:/datadrive/build/eisi.war
-      - ./files/coma_eip:/datadrive/original_files
-      - ./config/startup.sh:/datadrive/tomcat/startup.sh
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_eip:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
     networks:
       - coma_network
     environment:
