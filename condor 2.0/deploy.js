@@ -5,10 +5,6 @@ const fs = require('fs');
 const { despliegue } = require('./scripts/despliegue');
 const { utilidades } = require('./scripts/utilidades');
 
-// Leer las variables desde un archivo JSON
-const variables = JSON.parse(fs.readFileSync('./config/config_escuelas.json', 'utf8'));
-const containersEscuelas = variables.containersEscuelas;
-
 // Configuración del servidor remoto
 const config = {
     host: '10.6.100.3',
@@ -17,20 +13,23 @@ const config = {
     privateKey: fs.readFileSync('config/id_rsa')
 };
 
-// Obtener accií a realizar
+// Obtener acción a realizar
 const action = process.argv[2];
 if (!action) {
     console.error('Por favor, proporciona la acción ejecutar.');
     process.exit(1);
 }
 
+// Ejecutar acción
 if (action === 'test') {
 
     const conn = new Client();
 
+    // Realizar conexión
     conn.on('ready', () => {
         console.log('Conexión establecida.');
 
+        // Funcion de preuba para verificar la conexión
         conn.exec('mkdir /tmp/Conexion.txt', (err, stream) => {
             if (err) {
                 console.error('Error al ejecutar el comando:', err);
@@ -52,10 +51,12 @@ if (action === 'test') {
 
 } else if (action === 'despliegue') {
 
+    // Función de despliegue de la aplicación en todos los contenedores
     despliegue(config);
 
 } else if (action === 'connect') {
 
+    // Funcion para copiar archivos de utilidades a los contenedores (crontabs, maintenece, etc)
     utilidades(config);
 
 } else {

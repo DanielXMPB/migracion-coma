@@ -1,16 +1,15 @@
 {
   "name": "el_condor_herido",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Proyecto para ejecutar scripts con Node.js",
   "main": "deploy.js",
   "scripts": {
     "test": "node deploy.js test",
     "despliegue": "node deploy.js despliegue",
-    "copiar_crontabs": "node deploy.js ./scripts/utilidades.sh",
-    "queries_diamante": "node deploy.js ./scripts/queries_diamante.sh",
-    "queries_division": "node deploy.js ./scripts/queries_division.sh",
-    "queries_poseidon": "node deploy.js ./scripts/queries_poseidon.sh",
-    "connect": "node deploy.js connect"
+    "utilidades": "node deploy.js utilidades",
+    "queries_diamante": "node deploy.js queries_diamante",
+    "queries_division": "node deploy.js queries_division",
+    "queries_poseidon": "node deploy.js queries_poseidon"
   },
   "author": "Calumet - Daniel Perez",
   "license": "ISC",
