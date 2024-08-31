@@ -1,15 +1,20 @@
 {
   "name": "el_condor_herido",
   "version": "1.0.0",
-  "description": "Proyecto para ejecutar scripts con Grunt",
-  "main": "Gruntfile.js",
+  "description": "Proyecto para ejecutar scripts con Node.js",
+  "main": "deploy.js",
   "scripts": {
-    "test": "echo "
+    "test": "node deploy.js test",
+    "despliegue": "node deploy.js despliegue",
+    "copiar_crontabs": "node deploy.js ./scripts/utilidades.sh",
+    "queries_diamante": "node deploy.js ./scripts/queries_diamante.sh",
+    "queries_division": "node deploy.js ./scripts/queries_division.sh",
+    "queries_poseidon": "node deploy.js ./scripts/queries_poseidon.sh",
+    "connect": "node deploy.js connect"
   },
-  "author": "",
+  "author": "Calumet - Daniel Perez",
   "license": "ISC",
   "dependencies": {
-    "grunt": "0.4.1",
-    "grunt-ssh": "0.12.9"
+    "ssh2": "^1.15.0"
   }
 }
