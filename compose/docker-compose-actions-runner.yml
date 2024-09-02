@@ -13,6 +13,8 @@ services:
           memory: 1G
         reservations:
           memory: 512MB
+    volumes:
+      - /datadrive/deployment:/datadrive/deployment
 networks:
   coma_network:
     driver: bridge

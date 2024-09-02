@@ -31,7 +31,7 @@ COPY start.sh start.sh
 # make the script executable
 RUN chmod +x start.sh
 
-RUN cd / &&  mkdir datadrive && cd datadrive
+RUN cd / &&  mkdir datadrive && cd datadrive $$ mkdir deployment
 # Install Tomcat
 RUN curl -O -L https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.93/bin/apache-tomcat-9.0.93.tar.gz \
     && tar xzvf apache-tomcat-9.0.93.tar.gz \
