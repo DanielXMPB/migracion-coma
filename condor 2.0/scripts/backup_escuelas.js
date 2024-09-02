@@ -10,13 +10,11 @@ const containersEscuelas = variables.containersEscuelas;
 
 async function backupEscuelas(conn, config) {
 
-    // Generar la fecha una vez
-    const fechaBackup = new Date().toISOString().replace(/[-:.]/g, '').slice(0, 12);
-
     // Ciclo para recorrer cada contenedor de escuela
     for (const escuela of containersEscuelas) {
+
         try {
-            var ruta_backup = `/tmp/escuelas/${escuela}/backup_${fechaBackup}`;
+            var ruta_backup = `/tmp/escuelas/${escuela}/backup_$(date +%y%m%d%H%M)`;
 
             var resultadoComando = await ejecutarComando(conn, `mkdir -p ${ruta_backup}`);
 
@@ -30,6 +28,7 @@ async function backupEscuelas(conn, config) {
             console.error(`Error al sacar backup ${escuela}:`, error);
             resultadoComando = await ejecutarComando(conn, `rm -rf ${ruta_backup}`);
         }
+
     }
 
     // Copiar archivos al servidor

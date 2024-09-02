@@ -1,6 +1,7 @@
 // Funcion para descargar archivos con SFTP
 
 const { exec } = require('child_process');
+const { Console } = require('console');
 const util = require('util');
 const execPromise = util.promisify(exec);
 
@@ -12,17 +13,13 @@ async function descargarArchivos(config, rutaRemota, rutaLocal) {
     const privateKeyPath = config.privateKeyPath; // Asegúrate de que esta ruta sea correcta
 
     // Comando rsync con la opción -a para archivos y carpetas, --progress para ver el progreso, y -i para la clave privada
-    const rsyncCommand = `rsync -avbz -e "ssh -i ${privateKeyPath} -p ${config.port}" ${remotePath} ${rutaLocal}`;
+    const rsyncCommand = `rsync -avbz -e "ssh -i ${privateKeyPath} -p ${config.port}" ${remotePath} ${rutaLocal} > /dev/null 2>&1`;
 
     try {
-        const { stdout, stderr } = await execPromise(rsyncCommand);
-        console.log(stdout);
-        if (stderr) {
-            console.error(`Error en la sincronización: ${stderr}`);
-        }
-        return `Sincronización completada:\n${stdout}`;
+        await execPromise(rsyncCommand);
+        return `Sincronización completada.`;
     } catch (error) {
-        throw new Error(`Error en la sincronización: ${error.message}`);
+        console.log(`Error en la sincronización: ${error.message}`);
     }
 }
 
