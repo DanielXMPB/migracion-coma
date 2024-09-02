@@ -2,8 +2,8 @@ services:
   coma_eip:
     image: untetheredj/coma:latest
     container_name: coma_eip
-    #ports:
-    #  - "9001:8080"
+    ports:
+      - "9001:8080"
     volumes:
       - coma_eip_files_backup:/datadrive/backup
       - ../build/eisi.war:/datadrive/build/eisi.war
@@ -12,11 +12,12 @@ services:
     networks:
       - coma_network
     environment:
+      VIRTUAL_HOST: "hola.escuela2.co"
       DB_DNS: "db_ffm"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_eip"
       DIVISION_NAME: "division_eip"
-      URL_ESCUELA: "http://eisidev02.uis.edu.co" #parametro[2]
+      URL_ESCUELA: "http://10.6.100.3:9001" #parametro[2]
       NOMBRE_ABREVIADO: "EIP" #parametro[3]
       NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Petróleos" #parametro[4]
       NOMBRE_SISTEMA: "EIPWeb" #parametro[5]
