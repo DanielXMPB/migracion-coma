@@ -4,8 +4,8 @@ services:
     container_name: actions-runner
     restart: always
     environment:
-      - REPO="calumet/coma"
-      - TOKEN="1234"
+      - REPO=calumet/coma
+      - TOKEN=token
     deploy:
       resources: 
         limits:
