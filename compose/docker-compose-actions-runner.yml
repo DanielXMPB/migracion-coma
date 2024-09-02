@@ -16,6 +16,8 @@ services:
     volumes:
       - /datadrive/deployment:/datadrive/deployment
     command: bash -c "chown -R docker:docker /datadrive/deployment && ./start.sh"
+    networks:
+      - coma_network
 networks:
   coma_network:
     driver: bridge
