@@ -5,15 +5,20 @@
   "main": "deploy.js",
   "scripts": {
     "test": "node deploy.js test",
-    "despliegue": "node deploy.js despliegue",
+    "despliegue_develop": "node deploy.js despliegue_develop",
+    "despliegue_master": "node deploy.js despliegue_master",
     "utilidades": "node deploy.js utilidades",
     "queries_diamante": "node deploy.js queries_diamante",
     "queries_division": "node deploy.js queries_division",
-    "queries_poseidon": "node deploy.js queries_poseidon"
+    "queries_poseidon": "node deploy.js queries_poseidon",
+    "backup_db": "node deploy.js backup_db",
+    "backup_escuelas": "node deploy.js backup_escuelas"
   },
   "author": "Calumet - Daniel Perez",
   "license": "ISC",
   "dependencies": {
-    "ssh2": "^1.15.0"
+    "progress": "^2.0.3",
+    "ssh2": "^1.15.0",
+    "ssh2-sftp-client": "^11.0.0"
   }
 }
