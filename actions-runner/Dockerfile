@@ -31,16 +31,14 @@ COPY start.sh start.sh
 # make the script executable
 RUN chmod +x start.sh
 
-RUN cd / &&  mkdir datadrive && cd datadrive $$ mkdir deployment
-
-RUN chmod -R 777 /datadrive/deployment
+RUN cd / &&  mkdir datadrive && cd datadrive
 
 # Install Tomcat
 RUN curl -O -L https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.93/bin/apache-tomcat-9.0.93.tar.gz \
     && tar xzvf apache-tomcat-9.0.93.tar.gz \
     && mv apache-tomcat-9.0.93 tomcat \
     && rm apache-tomcat-9.0.93.tar.gz
-   
+
 # Set environment variables for Tomcat
 ENV CATALINA_HOME /datadrive/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
@@ -48,5 +46,7 @@ ENV PATH $CATALINA_HOME/bin:$PATH
 # since the config and run script for actions are not allowed to be run by root,
 # set the user to 'docker' so all subsequent commands are run as the docker user
 USER docker
+
+RUN mkdir -p /datadrive/deployment
 
 ENTRYPOINT [ "./start.sh" ]
