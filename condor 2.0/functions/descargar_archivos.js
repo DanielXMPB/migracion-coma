@@ -1,9 +1,10 @@
 // Funcion para descargar archivos con SFTP
 
 const { exec } = require('child_process');
+const util = require('util');
+const execPromise = util.promisify(exec);
 
 async function descargarArchivos(config, rutaRemota, rutaLocal) {
-
     const userAtHost = `${config.username}@${config.host}`;
     const remotePath = `${userAtHost}:${rutaRemota}`;
 
@@ -13,24 +14,16 @@ async function descargarArchivos(config, rutaRemota, rutaLocal) {
     // Comando rsync con la opción -a para archivos y carpetas, --progress para ver el progreso, y -i para la clave privada
     const rsyncCommand = `rsync -avbz -e "ssh -i ${privateKeyPath} -p ${config.port}" ${remotePath} ${rutaLocal}`;
 
-    return new Promise((resolve, reject) => {
-        const rsyncProcess = exec(rsyncCommand, (error, stdout, stderr) => {
-            if (error) {
-                return reject(`Error en la sincronización: ${error.message}`);
-            }
-            resolve(`Sincronización completada:\n${stdout}`);
-        });
-
-        // Capturar y mostrar el progreso
-        rsyncProcess.stdout.on('data', (data) => {
-            console.log(data);
-        });
-
-        rsyncProcess.stderr.on('data', (data) => {
-            console.error(data);
-        });
-    });
-
+    try {
+        const { stdout, stderr } = await execPromise(rsyncCommand);
+        console.log(stdout);
+        if (stderr) {
+            console.error(`Error en la sincronización: ${stderr}`);
+        }
+        return `Sincronización completada:\n${stdout}`;
+    } catch (error) {
+        throw new Error(`Error en la sincronización: ${error.message}`);
+    }
 }
 
 module.exports = { descargarArchivos };
