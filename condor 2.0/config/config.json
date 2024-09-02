@@ -4,7 +4,21 @@
         "coma_eip"
     ],
     "diamanteEscuelas": [
-        "coma_esgeo",
-        "coma_eip"
+        {
+            "name": "db_ffm",
+            "dbs": [
+                "diamante_esgeo",
+                "diamante_eip"
+            ]
+        }
+    ],
+    "divisionEscuelas": [
+        {
+            "name": "db_ffm",
+            "dbs": [
+                "division_esgeo",
+                "division_eip"
+            ]
+        }
     ]
 }
