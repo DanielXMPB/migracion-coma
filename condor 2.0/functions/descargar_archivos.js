@@ -1,48 +1,36 @@
 // Funcion para descargar archivos con SFTP
 
-const Client = require('ssh2-sftp-client');
-const ProgressBar = require('progress');
-const fs = require('fs');
-const path = require('path');
+const { exec } = require('child_process');
 
 async function descargarArchivos(config, rutaRemota, rutaLocal) {
-    const sftp = new Client();
-    try {
-        await sftp.connect(config);
 
-        // Obtener la lista de archivos y carpetas en el directorio remoto
-        const fileList = await sftp.list(rutaRemota);
-        const totalFiles = fileList.length;
+    const userAtHost = `${config.username}@${config.host}`;
+    const remotePath = `${userAtHost}:${rutaRemota}`;
 
-        // Crear una barra de progreso
-        const bar = new ProgressBar('Descargando [:bar] :percent :etas', {
-            total: totalFiles,
-            width: 40
+    // Ruta a la clave privada
+    const privateKeyPath = config.privateKeyPath; // Asegúrate de que esta ruta sea correcta
+
+    // Comando rsync con la opción -a para archivos y carpetas, --progress para ver el progreso, y -i para la clave privada
+    const rsyncCommand = `rsync -avbz -e "ssh -i ${privateKeyPath} -p ${config.port}" ${remotePath} ${rutaLocal}`;
+
+    return new Promise((resolve, reject) => {
+        const rsyncProcess = exec(rsyncCommand, (error, stdout, stderr) => {
+            if (error) {
+                return reject(`Error en la sincronización: ${error.message}`);
+            }
+            resolve(`Sincronización completada:\n${stdout}`);
         });
 
-        // Descargar cada archivo y actualizar la barra de progreso
-        for (const file of fileList) {
-            const remotePath = `${rutaRemota}/${file.name}`;
-            const localPath = path.join(rutaLocal, file.name);
+        // Capturar y mostrar el progreso
+        rsyncProcess.stdout.on('data', (data) => {
+            console.log(data);
+        });
 
-            if (file.type === 'd') {
-                // Si es un directorio, crear el directorio local y descargar recursivamente
-                if (!fs.existsSync(localPath)) {
-                    fs.mkdirSync(localPath, { recursive: true });
-                }
-                await descargarArchivos(config, remotePath, localPath);
-            } else {
-                await sftp.fastGet(remotePath, localPath);
-            }
-            bar.tick();
-        }
+        rsyncProcess.stderr.on('data', (data) => {
+            console.error(data);
+        });
+    });
 
-        return `Archivos descargados con éxito a: ${rutaLocal}`;
-    } catch (err) {
-        return `Error al transferir archivo: ${err}`;
-    } finally {
-        await sftp.end();
-    }
 }
 
 module.exports = { descargarArchivos };

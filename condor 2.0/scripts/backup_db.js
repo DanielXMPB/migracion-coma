@@ -102,7 +102,7 @@ async function backupDB(conn, config) {
     console.log("Fin backup de poseidon");
 
     // Copiar archivos al servidor
-    const resultadoTransferencia = await descargarArchivos(config, '/tmp/dbs', './backups/database');
+    const resultadoTransferencia = await descargarArchivos(config, '/tmp/dbs/.', './backups/database');
     console.log(resultadoTransferencia);
 
     // Eliminar backups

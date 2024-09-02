@@ -32,7 +32,7 @@ async function backupEscuelas(conn, config) {
     }
 
     // Copiar archivos al servidor
-    const resultadoTransferencia = await descargarArchivos(config, '/tmp/escuelas', './backups/project');
+    const resultadoTransferencia = await descargarArchivos(config, '/tmp/escuelas/.', './backups/project');
     console.log(resultadoTransferencia);
 
     // Eliminar backups
