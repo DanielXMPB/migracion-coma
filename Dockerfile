@@ -142,7 +142,7 @@ RUN set -eux; \
 		exit 1; \
 	fi
 
-RUN apt-get update && apt-get install -y mysql-client cron nano unzip && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y rsync mysql-client cron nano unzip && rm -rf /var/lib/apt/lists/*
 
 COPY config/startup.sh $CATALINA_HOME/startup.sh
 
