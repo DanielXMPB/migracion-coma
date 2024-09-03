@@ -1,1 +1,1 @@
-UPDATE TP_Usuarios tu SET tu.ClaveUsr = '45337ab528ab456381fd0fe311633a6b' WHERE tu.IdUsr = 'U0';
+UPDATE TP_Usuarios tu SET tu.ClaveUsr = '81dc9bdb52d04dc20036dbd8313ed055' WHERE tu.IdUsr = 'U0';

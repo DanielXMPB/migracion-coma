@@ -5,8 +5,13 @@ const { transferirArchivos } = require('../functions/transferir_archivos.js');
 const { ejecutarComando } = require('../functions/ejecutar_comando.js');
 
 // Leer las variables desde un archivo JSON
-const variables = JSON.parse(fs.readFileSync('./config/config.json', 'utf8'));
-const containersEscuelas = variables.containersEscuelas;
+const fileEscuelas = JSON.parse(fs.readFileSync('./config/escuelas.json', 'utf8'));
+
+// Leer configuracion
+const data = fs.readFileSync('./config/config.conf', 'utf8');
+const escuelas = data.split('\n')
+    .map(line => line.trim())
+    .filter(line => !line.startsWith('#'));
 
 async function utilidades(conn, config) {
 
@@ -15,30 +20,34 @@ async function utilidades(conn, config) {
     console.log(resultadoTransferencia);
 
     // Ciclo para desplegar en cada contenedor de escuela
-    for (const escuela of containersEscuelas) {
+    for (const escuela of escuelas) {
+
+         // Encuentra los datos correspondientes a la escuela
+         const datosEscuela = fileEscuelas.find(entry => entry.name === escuela);
+
         try {
-            console.log(`Iniciando copia de utilidades en ${escuela}`);
+            console.log(`Iniciando copia de utilidades en ${datosEscuela.name}`);
 
             // Copiar maintenece.jar en contenedor
-            var resultadoComando = await ejecutarComando(conn, `docker cp /tmp/utils/maintenance.jar ${escuela}:/datadrive/maintenance`);
-            console.log(`Resultado copiar maintenece en ${escuela}: ${resultadoComando}`);
+            var resultadoComando = await ejecutarComando(conn, `docker cp /tmp/utils/maintenance.jar ${datosEscuela.container}:/datadrive/maintenance`);
+            console.log(`Copiar maintenece en ${datosEscuela.name}: ${resultadoComando}`);
 
             // Copiar config.properties en contenedor
-            resultadoComando = await ejecutarComando(conn, `docker cp /tmp/utils/config.properties ${escuela}:/datadrive/maintenance`);
-            console.log(`Resultado copiar config.properties en ${escuela}: ${resultadoComando}`);
+            resultadoComando = await ejecutarComando(conn, `docker cp /tmp/utils/config.properties ${datosEscuela.container}:/datadrive/maintenance`);
+            console.log(`Copiar config.properties en ${datosEscuela.name}: ${resultadoComando}`);
 
             // Copiar crontab en contenedor
-            resultadoComando = await ejecutarComando(conn, `docker cp /tmp/utils/crontabs/${escuela}/crontab ${escuela}:/etc/cron.d/`);
-            console.log(`Resultado copiar crontab en ${escuela}: ${resultadoComando}`);
+            resultadoComando = await ejecutarComando(conn, `docker cp /tmp/utils/crontabs/${datosEscuela.name}/crontab ${datosEscuela.container}:/etc/cron.d/`);
+            console.log(`Copiar crontab en ${datosEscuela.name}: ${resultadoComando}`);
 
             // Comandos para inciar crontab
-            const crontabStart = `docker exec ${escuela} chmod 0644 /etc/cron.d/crontab && docker exec ${escuela} crontab /etc/cron.d/crontab`;
+            const crontabStart = `docker exec ${datosEscuela.container} chmod 0644 /etc/cron.d/crontab && docker exec ${datosEscuela.container} crontab /etc/cron.d/crontab`;
             resultadoComando = await ejecutarComando(conn, crontabStart);
-            console.log(`Resultado ejectutar crontab en ${escuela}: ${resultadoComando}`);
+            console.log(`Ejectutar crontab en ${datosEscuela.name}: ${resultadoComando}`);
 
-            console.log(`Fin copia utilidades en ${escuela}`);
+            console.log(`Fin copia utilidades en ${datosEscuela.name}`);
         } catch (error) {
-            console.error(`Error al copiar utilidades en ${escuela}:`, error);
+            console.error(`Error al copiar utilidades en ${datosEscuela.name}:`, error);
         }
     }
 

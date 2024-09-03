@@ -1,7 +1,6 @@
 // Funcion para descargar archivos con SFTP
 
 const { exec } = require('child_process');
-const { Console } = require('console');
 const util = require('util');
 const execPromise = util.promisify(exec);
 
@@ -12,7 +11,7 @@ async function descargarArchivos(config, rutaRemota, rutaLocal) {
     // Ruta a la clave privada
     const privateKeyPath = config.privateKeyPath; // Asegúrate de que esta ruta sea correcta
 
-    // Comando rsync con la opción -a para archivos y carpetas, --progress para ver el progreso, y -i para la clave privada
+    // Comando rsync con la opción -a para archivos y carpetas, y -i para la clave privada
     const rsyncCommand = `rsync -avbz -e "ssh -i ${privateKeyPath} -p ${config.port}" ${remotePath} ${rutaLocal} > /dev/null 2>&1`;
 
     try {

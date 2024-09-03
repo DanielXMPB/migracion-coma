@@ -5,27 +5,37 @@ const { descargarArchivos } = require('../functions/descargar_archivos.js');
 const { ejecutarComando } = require('../functions/ejecutar_comando.js');
 
 // Leer las variables desde un archivo JSON
-const variables = JSON.parse(fs.readFileSync('./config/config.json', 'utf8'));
-const containersEscuelas = variables.containersEscuelas;
+const fileEscuelas = JSON.parse(fs.readFileSync('./config/escuelas.json', 'utf8'));
+
+// Leer configuracion
+const data = fs.readFileSync('./config/config.conf', 'utf8');
+const escuelas = data.split('\n')
+    .map(line => line.trim())
+    .filter(line => !line.startsWith('#'));
 
 async function backupEscuelas(conn, config) {
 
     // Ciclo para recorrer cada contenedor de escuela
-    for (const escuela of containersEscuelas) {
+    for (const escuela of escuelas) {
+
+        // Encuentra los datos correspondientes a la escuela
+        const datosEscuela = fileEscuelas.find(entry => entry.name === escuela);
 
         try {
-            var ruta_backup = `/tmp/escuelas/${escuela}/backup_$(date +%y%m%d%H%M)`;
+            console.log(`Iniciando backup de ${datosEscuela.name}`);
+
+            var ruta_backup = `/tmp/escuelas/${datosEscuela.name}/backup_$(date +%y%m%d%H%M)`;
 
             var resultadoComando = await ejecutarComando(conn, `mkdir -p ${ruta_backup}`);
 
             var ruta_contenedor = `/datadrive/tomcat/webapps/.`;
 
-            const commad = `docker cp ${escuela}:${ruta_contenedor} ${ruta_backup}`;
+            const commad = `docker cp ${datosEscuela.container}:${ruta_contenedor} ${ruta_backup}`;
 
             resultadoComando = await ejecutarComando(conn, commad);
-            console.log(`Backup de ${escuela}: ${resultadoComando}`);
+            console.log(`Backup de ${datosEscuela.name}: ${resultadoComando}`);
         } catch (error) {
-            console.error(`Error al sacar backup ${escuela}:`, error);
+            console.error(`Error al sacar backup ${datosEscuela.name}:`, error);
             resultadoComando = await ejecutarComando(conn, `rm -rf ${ruta_backup}`);
         }
 

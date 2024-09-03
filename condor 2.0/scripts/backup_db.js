@@ -5,26 +5,34 @@ const { descargarArchivos } = require('../functions/descargar_archivos.js');
 const { ejecutarComando } = require('../functions/ejecutar_comando.js');
 
 // Leer las variables desde un archivo JSON
-const variables = JSON.parse(fs.readFileSync('./config/config.json', 'utf8'));
-const containersEscuelas = variables.containersEscuelas;
+const fileEscuelas = JSON.parse(fs.readFileSync('./config/escuelas.json', 'utf8'));
+
+// Leer configuracion
+const data = fs.readFileSync('./config/config.conf', 'utf8');
+const escuelas = data.split('\n')
+    .map(line => line.trim())
+    .filter(line => !line.startsWith('#'));
 
 async function backupDB(conn, config) {
 
     // Ciclo para recorrer cada contenedor de escuela
-    for (const escuela of containersEscuelas) {
+    for (const escuela of escuelas) {
+
+        // Encuentra los datos correspondientes a la escuela
+        const datosEscuela = fileEscuelas.find(entry => entry.name === escuela);
 
         try {
-            console.log(`Iniciando backup de ${escuela}`);
+            console.log(`Iniciando backup de ${datosEscuela.name}`);
 
             // Ruta diamante
             const ruta_diamante = "/datadrive/backup/db/diamante"
 
             // Crear carpeta temporal para backups
-            var resultadoComando = await ejecutarComando(conn, `mkdir -p /tmp/dbs/${escuela}/diamante`);
+            var resultadoComando = await ejecutarComando(conn, `mkdir -p /tmp/dbs/${datosEscuela.name}/diamante`);
 
             // Buscar el archivo más reciente en la carpeta de backups
-            resultadoComando = await ejecutarComando(conn, `docker exec ${escuela} bash -c "ls -t ${ruta_diamante} | head -n 1"`);
-            console.log(`Backup reciente de diamante en ${escuela}: ${resultadoComando}`);
+            resultadoComando = await ejecutarComando(conn, `docker exec ${datosEscuela.container} bash -c "ls -t ${ruta_diamante} | head -n 1"`);
+            console.log(`Backup reciente de diamante en ${datosEscuela.name}: ${resultadoComando}`);
 
             // Extraer el nombre del archivo más reciente
             const match1 = resultadoComando.match(/Resultado:\s*(\S+)/);
@@ -32,8 +40,8 @@ async function backupDB(conn, config) {
             if (match1) {
                 const diamante_reciente = match1[1];
                 // Saca el backup del contenedor a la carpeta local
-                resultadoComando = await ejecutarComando(conn, `docker cp "${escuela}:${ruta_diamante}/${diamante_reciente}" "/tmp/dbs/${escuela}/diamante"`);
-                console.log(`Copiar backup de ${escuela}: ${resultadoComando}`);
+                resultadoComando = await ejecutarComando(conn, `docker cp "${datosEscuela.container}:${ruta_diamante}/${diamante_reciente}" "/tmp/dbs/${datosEscuela.name}/diamante"`);
+                console.log(`Copiar backup de ${datosEscuela.name}: ${resultadoComando}`);
             } else {
                 console.log("No se encontró diamante backup");
             }
@@ -42,11 +50,11 @@ async function backupDB(conn, config) {
             const ruta_division = "/datadrive/backup/db/division"
 
             // Crear carpeta temporal para backups
-            resultadoComando = await ejecutarComando(conn, `mkdir -p /tmp/dbs/${escuela}/division`);
+            resultadoComando = await ejecutarComando(conn, `mkdir -p /tmp/dbs/${datosEscuela.name}/division`);
 
             // Buscar el archivo más reciente en la carpeta de backups
-            resultadoComando = await ejecutarComando(conn, `docker exec ${escuela} bash -c "ls -t ${ruta_division} | head -n 1"`);
-            console.log(`Backup reciente en ${escuela}: ${resultadoComando}`);
+            resultadoComando = await ejecutarComando(conn, `docker exec ${datosEscuela.container} bash -c "ls -t ${ruta_division} | head -n 1"`);
+            console.log(`Backup reciente en ${datosEscuela.name}: ${resultadoComando}`);
 
             // Extraer el nombre del archivo más reciente
             const match2 = resultadoComando.match(/Resultado:\s*(\S+)/);
@@ -54,8 +62,8 @@ async function backupDB(conn, config) {
             if (match2) {
                 const division_reciente = match2[1];
                 // Saca el backup del contenedor a la carpeta local
-                resultadoComando = await ejecutarComando(conn, `docker cp "${escuela}:${ruta_division}/${division_reciente}" "/tmp/dbs/${escuela}/division"`);
-                console.log(`Copiar backup de ${escuela}: ${resultadoComando}`);
+                resultadoComando = await ejecutarComando(conn, `docker cp "${datosEscuela.container}:${ruta_division}/${division_reciente}" "/tmp/dbs/${datosEscuela.name}/division"`);
+                console.log(`Copiar backup de ${datosEscuela.name}: ${resultadoComando}`);
             } else {
                 console.log("No se encontró division backup");
             }

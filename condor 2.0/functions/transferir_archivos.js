@@ -1,19 +1,24 @@
 // Funcion para transferir archivos con SFTP
 
-const Client = require('ssh2-sftp-client');
+const { exec } = require('child_process');
+const util = require('util');
+const execPromise = util.promisify(exec);
 
 async function transferirArchivos(config, rutaLocal, rutaRemota) {
-    const sftp = new Client();
+    const userAtHost = `${config.username}@${config.host}`;
+    const remotePath = `${userAtHost}:${rutaRemota}`;
+
+    // Ruta a la clave privada
+    const privateKeyPath = config.privateKeyPath; // Asegúrate de que esta ruta sea correcta
+
+    // Comando rsync con la opción -a para archivos y carpetas, y -i para la clave privada
+    const rsyncCommand = `rsync -avbz -e "ssh -i ${privateKeyPath} -p ${config.port}" ${rutaLocal} ${remotePath} > /dev/null 2>&1`;
+
     try {
-        // Conectar al servidor de origen
-        await sftp.connect(config);
-        // Subir la carpeta desde el servidor local al servidor de destino
-        await sftp.uploadDir(rutaLocal, rutaRemota);
-        return(`Archivos subidos con éxito a: ${rutaRemota}`);
-    } catch (err) {
-        return('Error al transferir archivo:', err);
-    } finally {
-        await sftp.end(); // Cerrar la conexión
+        await execPromise(rsyncCommand);
+        return `Sincronización completada.`;
+    } catch (error) {
+        console.log(`Error en la sincronización: ${error.message}`);
     }
 }
 

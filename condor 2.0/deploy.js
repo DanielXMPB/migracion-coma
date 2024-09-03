@@ -26,14 +26,13 @@ if (!action) {
     process.exit(1);
 }
 
-// Ejecutar acción
-if (action === 'test') {
+const conn = new Client();
 
-    const conn = new Client();
+conn.on('ready', () => {
+    console.log('Conexión establecida.');
 
-    // Realizar conexión
-    conn.on('ready', () => {
-        console.log('Conexión establecida.');
+    // Ejecutar acción
+    if (action === 'test') {
 
         // Funcion de preuba para verificar la conexión
         conn.exec('mkdir /tmp/Conexion.txt', (err, stream) => {
@@ -49,141 +48,54 @@ if (action === 'test') {
                 console.log('Salida:', data.toString());
             });
         });
-    }).connect(config);
 
-    conn.on('error', (err) => {
-        console.error('Error de conexión:', err);
-    });
-
-} else if (action === 'despliegue_develop') {
-
-    const conn = new Client();
-
-    conn.on('ready', () => {
-        console.log('Conexión establecida.');
+    } else if (action === 'despliegue_develop') {
 
         // Función de despliegue de la aplicación en todos los contenedores
         despliegueDevelop(conn);
 
-    }).connect(config);
-
-    conn.on('error', (err) => {
-        console.error('Error de conexión:', err);
-    });
-
-} else if (action === 'despliegue_master') {
-
-    const conn = new Client();
-
-    conn.on('ready', () => {
-        console.log('Conexión establecida.');
+    } else if (action === 'despliegue_master') {
 
         // Función de despliegue de la aplicación en todos los contenedores
         despliegueMaster(conn);
 
-    }).connect(config);
-
-    conn.on('error', (err) => {
-        console.error('Error de conexión:', err);
-    });
-
-} else if (action === 'utilidades') {
-
-    const conn = new Client();
-
-    conn.on('ready', () => {
-        console.log('Conexión establecida.');
+    } else if (action === 'utilidades') {
 
         // Funcion para copiar archivos de utilidades a los contenedores (crontabs, maintenece, etc)
         utilidades(conn, config);
 
-    }).connect(config);
-
-    conn.on('error', (err) => {
-        console.error('Error de conexión:', err);
-    });
-
-} else if (action === 'queries_diamante') {
-
-    const conn = new Client();
-
-    conn.on('ready', () => {
-        console.log('Conexión establecida.');
+    } else if (action === 'queries_diamante') {
 
         // Funcion para ejecutar SQL en diamante de todas las escuelas
         queriesDiamante(conn, config);
 
-    }).connect(config);
-
-    conn.on('error', (err) => {
-        console.error('Error de conexión:', err);
-    });
-
-} else if (action === 'queries_division') {
-
-    const conn = new Client();
-
-    conn.on('ready', () => {
-        console.log('Conexión establecida.');
+    } else if (action === 'queries_division') {
 
         // Funcion para ejecutar SQL en division de todas las escuelas
         queriesDivision(conn, config);
 
-    }).connect(config);
-
-    conn.on('error', (err) => {
-        console.error('Error de conexión:', err);
-    });
-
-} else if (action === 'queries_poseidon') {
-
-    const conn = new Client();
-
-    conn.on('ready', () => {
-        console.log('Conexión establecida.');
+    } else if (action === 'queries_poseidon') {
 
         // Funcion para ejecutar SQL en Poseidon
         queriesPoseidon(conn, config);
 
-    }).connect(config);
-
-    conn.on('error', (err) => {
-        console.error('Error de conexión:', err);
-    });
-
-} else if (action === 'backup_db') {
-
-    const conn = new Client();
-
-    conn.on('ready', () => {
-        console.log('Conexión establecida.');
+    } else if (action === 'backup_db') {
 
         // Funcion para sacar la ultima copia de todas las bases de datos de las escuelas
         backupDB(conn, config);
 
-    }).connect(config);
-
-    conn.on('error', (err) => {
-        console.error('Error de conexión:', err);
-    });
-
-} else if (action === 'backup_escuelas') {
-
-    const conn = new Client();
-
-    conn.on('ready', () => {
-        console.log('Conexión establecida.');
+    } else if (action === 'backup_escuelas') {
 
         // Funcion sacar backups de todas las bases de datos de las escuelas
         backupEscuelas(conn, config);
 
-    }).connect(config);
+    } else {
+        console.error('Acción no válida. Por favor, proporciona una acción válida.');
+        process.exit(1);
+    }
 
-    conn.on('error', (err) => {
-        console.error('Error de conexión:', err);
-    });
+}).connect(config);
 
-} else {
-    console.error('Acción no válida. Por favor, proporciona una acción válida.');
-    process.exit(1);
-}
+conn.on('error', (err) => {
+    console.error('Error de conexión:', err);
+});

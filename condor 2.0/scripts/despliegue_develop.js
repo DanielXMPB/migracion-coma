@@ -1,6 +1,5 @@
 // Funcion para despleguar un nuevo war dentro de cada contenedor
 
-const fs = require('fs');
 const { ejecutarComando } = require('../functions/ejecutar_comando.js');
 
 async function despliegueDevelop(conn) {
