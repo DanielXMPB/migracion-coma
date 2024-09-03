@@ -4,7 +4,7 @@ if [ ! -f /tmp/initializated ]; then
     touch /tmp/initializated
 
     mkdir -p /datadrive/tomcat/webapps/eisi/
-    cp -r /datadrive/build/eisi.war -d /datadrive/tomcat/webapps/
+    rsync -a /datadrive/build/eisi.war -d /datadrive/tomcat/webapps/
 
     # Se crea la carpeta de maintenance
     mkdir -p /datadrive/maintenance/
@@ -33,39 +33,39 @@ if [ ! -f /tmp/initializated ]; then
     mkdir -p /datadrive/backup/db/division
 
     # Copies original file from first time creation
-    cp -r /datadrive/original_files/css/* /datadrive/tomcat/webapps/eisi/css/
-    cp -r /datadrive/original_files/images/* /datadrive/tomcat/webapps/eisi/images/
-    cp -r /datadrive/original_files/ArchivosProfesores/* /datadrive/tomcat/webapps/eisi/ArchivosProfesores/
-    cp -r /datadrive/original_files/WebProfesor/* /datadrive/tomcat/webapps/eisi/WebProfesor/
-    cp -r /datadrive/original_files/grupo/* /datadrive/tomcat/webapps/eisi/grupo/
+    rsync -a /datadrive/original_files/css/ /datadrive/tomcat/webapps/eisi/css/
+    rsync -a /datadrive/original_files/images/ /datadrive/tomcat/webapps/eisi/images/
+    rsync -a /datadrive/original_files/ArchivosProfesores/ /datadrive/tomcat/webapps/eisi/ArchivosProfesores/
+    rsync -a /datadrive/original_files/WebProfesor/ /datadrive/tomcat/webapps/eisi/WebProfesor/
+    rsync -a /datadrive/original_files/grupo/ /datadrive/tomcat/webapps/eisi/grupo/
 
-    #cp -r /datadrive/tomcat/datos/archivosDatadrive/* /datadrive/archivos/
-    cp -r /datadrive/original_files/Profesores/* /datadrive/tomcat/webapps/
+    #rsync -a /datadrive/tomcat/datos/archivosDatadrive/* /datadrive/archivos/
+    rsync -a /datadrive/original_files/Profesores/ /datadrive/tomcat/webapps/
 
     echo "Finished transferring files."
 else
-    cp -ru /datadrive/tomcat/webapps/eisi/css/* /datadrive/backup/files/css/
-    cp -ru /datadrive/tomcat/webapps/eisi/images/* /datadrive/backup/files/images/
-    cp -ru /datadrive/tomcat/webapps/eisi/ArchivosProfesores/* /datadrive/backup/files/ArchivosProfesores/
-    cp -ru /datadrive/tomcat/webapps/eisi/WebProfesor/* /datadrive/backup/files/WebProfesor/
-    cp -ru /datadrive/tomcat/webapps/eisi/grupo/* /datadrive/backup/files/grupo/
+    rsync -a /datadrive/tomcat/webapps/eisi/css/ /datadrive/backup/files/css/
+    rsync -a /datadrive/tomcat/webapps/eisi/images/ /datadrive/backup/files/images/
+    rsync -a /datadrive/tomcat/webapps/eisi/ArchivosProfesores/ /datadrive/backup/files/ArchivosProfesores/
+    rsync -a /datadrive/tomcat/webapps/eisi/WebProfesor/ /datadrive/backup/files/WebProfesor/
+    rsync -a /datadrive/tomcat/webapps/eisi/grupo/ /datadrive/backup/files/grupo/
 
     rm -rf /datadrive/tomcat/webapps/eisi/*
 
     unzip -qq /datadrive/tomcat/webapps/eisi.war -d /datadrive/tomcat/webapps/eisi/
 
-    echo "Finished unzipping AGAIN"
+    echo "Finished unzipping after deployment."
 
     rm -rf /datadrive/tomcat/webapps/eisi/css/*
 
     mkdir -p /datadrive/tomcat/webapps/eisi/WebProfesor
     mkdir -p /datadrive/tomcat/webapps/eisi/grupo
 
-    cp -r /datadrive/backup/files/css/* /datadrive/tomcat/webapps/eisi/css/
-    cp -r /datadrive/backup/files/images/* /datadrive/tomcat/webapps/eisi/images/
-    cp -r /datadrive/backup/files/ArchivosProfesores/* /datadrive/tomcat/webapps/eisi/ArchivosProfesores/
-    cp -r /datadrive/backup/files/WebProfesor/* /datadrive/tomcat/webapps/eisi/WebProfesor/
-    cp -r /datadrive/backup/files/grupo/* /datadrive/tomcat/webapps/eisi/grupo/
+    rsync -a /datadrive/backup/files/css/ /datadrive/tomcat/webapps/eisi/css/
+    rsync -a /datadrive/backup/files/images/ /datadrive/tomcat/webapps/eisi/images/
+    rsync -a /datadrive/backup/files/ArchivosProfesores/ /datadrive/tomcat/webapps/eisi/ArchivosProfesores/
+    rsync -a /datadrive/backup/files/WebProfesor/ /datadrive/tomcat/webapps/eisi/WebProfesor/
+    rsync -a /datadrive/backup/files/grupo/ /datadrive/tomcat/webapps/eisi/grupo/
 
     echo "Finished copying current files."
 fi
