@@ -58,6 +58,9 @@ else
 
     rm -rf /datadrive/tomcat/webapps/eisi/css/*
 
+    mkdir -p /datadrive/backup/files/WebProfesor
+    mkdir -p /datadrive/backup/files/grupo
+
     cp -r /datadrive/backup/files/css/* /datadrive/tomcat/webapps/eisi/css/
     cp -r /datadrive/backup/files/images/* /datadrive/tomcat/webapps/eisi/images/
     cp -r /datadrive/backup/files/ArchivosProfesores/* /datadrive/tomcat/webapps/eisi/ArchivosProfesores/
