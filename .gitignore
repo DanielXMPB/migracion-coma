@@ -1,6 +1,4 @@
 build/eisi.war
 files
-condor 2.0/config/id_rsa
-condor 2.0/other/build/eisi.war
-condor 2.0/node_modules/*
-condor 2.0/node_modules/
+condor/config/id_rsa
+condor/node_modules/

@@ -1,7 +1,7 @@
 {
   "name": "el_condor_herido",
-  "version": "0.1.0",
-  "description": "Proyecto para ejecutar scripts con Node.js",
+  "version": "1.0.0",
+  "description": "Proyecto para automatizar funciones de administracion de contendores en Node.js",
   "main": "deploy.js",
   "scripts": {
     "test": "node deploy.js test",
@@ -14,10 +14,9 @@
     "backup_db": "node deploy.js backup_db",
     "backup_escuelas": "node deploy.js backup_escuelas"
   },
-  "author": "Calumet - Daniel Perez",
+  "author": "Calumet",
   "license": "ISC",
   "dependencies": {
-    "progress": "^2.0.3",
     "ssh2": "^1.15.0"
   }
 }
