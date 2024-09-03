@@ -1,6 +1,7 @@
 // Realizar backups de la base de datos de las escuelas
 
 const fs = require('fs');
+const path = require('path');
 const { descargarArchivos } = require('../functions/descargar_archivos.js');
 const { ejecutarComando } = require('../functions/ejecutar_comando.js');
 
@@ -109,8 +110,12 @@ async function backupDB(conn, config) {
 
     console.log("Fin backup de poseidon");
 
+    const localPath = path.resolve(__dirname, '../backups/database');
+
+    console.log("Iniciando transferencia de archivos");
+
     // Copiar archivos al servidor
-    const resultadoTransferencia = await descargarArchivos(config, '/tmp/dbs/.', './backups/database');
+    const resultadoTransferencia = await descargarArchivos(config, '/tmp/dbs/.', localPath);
     console.log(resultadoTransferencia);
 
     // Eliminar backups

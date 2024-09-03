@@ -1,6 +1,7 @@
 // Funcion para copiar los archivos de el crontab en cada escuela
 
 const fs = require('fs');
+const path = require('path');
 const { transferirArchivos } = require('../functions/transferir_archivos.js');
 const { ejecutarComando } = require('../functions/ejecutar_comando.js');
 
@@ -15,8 +16,10 @@ const escuelas = data.split('\n')
 
 async function utilidades(conn, config) {
 
+    const localPath = path.resolve(__dirname, '../utils');
+
     // Copiar utilidades al servidor
-    const resultadoTransferencia = await transferirArchivos(config, './utils', '/tmp/utils');
+    const resultadoTransferencia = await transferirArchivos(config, localPath, '/tmp/');
     console.log(resultadoTransferencia);
 
     // Ciclo para desplegar en cada contenedor de escuela
@@ -37,7 +40,7 @@ async function utilidades(conn, config) {
             console.log(`Copiar config.properties en ${datosEscuela.name}: ${resultadoComando}`);
 
             // Copiar crontab en contenedor
-            resultadoComando = await ejecutarComando(conn, `docker cp /tmp/utils/crontabs/${datosEscuela.name}/crontab ${datosEscuela.container}:/etc/cron.d/`);
+            resultadoComando = await ejecutarComando(conn, `docker cp /tmp/utils/crontabs/${datosEscuela.container}/crontab ${datosEscuela.container}:/etc/cron.d/`);
             console.log(`Copiar crontab en ${datosEscuela.name}: ${resultadoComando}`);
 
             // Comandos para inciar crontab

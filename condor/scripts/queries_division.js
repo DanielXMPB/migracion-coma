@@ -15,8 +15,10 @@ const escuelas = data.split('\n')
 
 async function queriesDiamante(conn, config) {
 
+    const localPath = path.resolve(__dirname, '../config/script.sql');
+
     // Copiar script de SQL
-    const resultadoTransferencia = await transferirArchivos(config, './config/script.sql', '/tmp/script.sql');
+    const resultadoTransferencia = await transferirArchivos(config, localPath, '/tmp/');
     console.log(resultadoTransferencia);
 
     // Ciclo para recorrer las escuelas

@@ -1,6 +1,7 @@
 // Realizar backups de la base de datos de las escuelas
 
 const fs = require('fs');
+const path = require('path');
 const { descargarArchivos } = require('../functions/descargar_archivos.js');
 const { ejecutarComando } = require('../functions/ejecutar_comando.js');
 
@@ -41,8 +42,12 @@ async function backupEscuelas(conn, config) {
 
     }
 
+    const localPath = path.resolve(__dirname, '../backups/project');
+
+    console.log("Iniciando transferencia de archivos");
+
     // Copiar archivos al servidor
-    const resultadoTransferencia = await descargarArchivos(config, '/tmp/escuelas/.', './backups/project');
+    const resultadoTransferencia = await descargarArchivos(config, '/tmp/escuelas/.', localPath);
     console.log(resultadoTransferencia);
 
     // Eliminar backups
