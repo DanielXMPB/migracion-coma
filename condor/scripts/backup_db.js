@@ -5,7 +5,7 @@ const { descargarArchivos } = require('../functions/descargar_archivos.js');
 const { ejecutarComando } = require('../functions/ejecutar_comando.js');
 
 // Rutas
-const rutas = require('./config/routes.json');
+const rutas = require('../config/routes.json');
 
 // Leer las variables desde un archivo JSON
 const fileEscuelas = JSON.parse(fs.readFileSync('./config/escuelas.json', 'utf8'));
@@ -104,7 +104,7 @@ async function backupDB(conn, config) {
             resultadoComando = await ejecutarComando(conn, `docker cp "${escuela_poseidon}:${ruta_poseidon}/${poseidon_reciente}" "/tmp/dbs/poseidon"`);
             console.log(`Copiar backup de poseidon: ${resultadoComando}`);
         } else {
-            console.log("No se encontró division backup");
+            console.log("No se encontró backup de poseidon");
         }
     } catch (error) {
         console.error(`Error al sacar backup posiedon:`, error);

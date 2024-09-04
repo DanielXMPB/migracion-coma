@@ -9,10 +9,10 @@ async function crearBackup(config, rutaLocal, rutaRemota) {
     const remotePath = `${userAtHost}:${rutaRemota}`;
 
     // Ruta a la clave privada
-    const privateKeyPath = config.privateKeyPath; // Asegúrate de que esta ruta sea correcta
+    const privateKeyPath = config.privateKeyPath;
 
     // Comando rsync con la opción -a para archivos y carpetas, y -i para la clave privada
-    const rsyncCommand = `rsync -abz --delete --backup-dir=${rutaRemota}$/backup_$(date +%y%m%d%H%M) -e "ssh -i ${privateKeyPath} -p ${config.port}" ${rutaLocal} ${remotePath} > /dev/null 2>&1`;
+    const rsyncCommand = `rsync -abz --delete --backup-dir=${rutaLocal}backup_$(date +%y%m%d%H%M) -e "ssh -i ${privateKeyPath} -p ${config.port}" ${remotePath} ${rutaLocal} > /dev/null 2>&1`;
 
     try {
         await execPromise(rsyncCommand);
