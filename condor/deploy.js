@@ -20,7 +20,7 @@ const config = {
     port: 22,
     username: 'root',
     privateKey: fs.readFileSync(rutas.ruta_privatekey),
-    passphrase: fs.readFileSync(rutas.passphrase)
+    passphrase: rutas.passphrase
 };
 
 // Obtener acción a realizar

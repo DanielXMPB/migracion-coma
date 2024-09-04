@@ -52,7 +52,6 @@ async function backupEscuelas(conn, config) {
         }
 
     }
-    console.log('Copiando backups al servidor...');
 
     // Eliminar backups
     resultadoComando = await ejecutarComando(conn, 'rm -rf /tmp/escuelas');
