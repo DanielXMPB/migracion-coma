@@ -1,11 +1,11 @@
 // Realizar backups de la base de datos de las escuelas
 
 const fs = require('fs');
-const { crearBackup } = require('../functions/create_backup.js');
+const { crearBackup } = require('../functions/crear_backup.js');
 const { ejecutarComando } = require('../functions/ejecutar_comando.js');
 
 // Rutas
-const rutas = require('./config/routes.json');
+const rutas = require('../config/routes.json');
 
 // Leer las variables desde un archivo JSON
 const fileEscuelas = JSON.parse(fs.readFileSync('./config/escuelas.json', 'utf8'));
@@ -51,7 +51,7 @@ async function backupEscuelas(conn, config) {
     console.log('Copiando backups al servidor...');
 
     // Copiar archivos al servidor
-    const resultadoTransferencia = await crearBackup(config, '/tmp/escuelas/.', rutas.ruta_backup_escuelas);
+    const resultadoTransferencia = await crearBackup(config, rutas.ruta_backup_escuelas, '/tmp/escuelas/.');
     console.log(resultadoTransferencia);
 
     // Eliminar backups
