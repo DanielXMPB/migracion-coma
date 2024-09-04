@@ -1,8 +1,11 @@
 // Realizar backups de la base de datos de las escuelas
 
 const fs = require('fs');
-const { descargarArchivos } = require('../functions/descargar_archivos.js');
+const { crearBackup } = require('../functions/create_backup.js');
 const { ejecutarComando } = require('../functions/ejecutar_comando.js');
+
+// Rutas
+const rutas = require('./config/routes.json');
 
 // Leer las variables desde un archivo JSON
 const fileEscuelas = JSON.parse(fs.readFileSync('./config/escuelas.json', 'utf8'));
@@ -24,15 +27,20 @@ async function backupEscuelas(conn, config) {
         try {
             console.log(`Iniciando backup de ${datosEscuela.name}`);
 
-            var ruta_backup = `/tmp/escuelas/${datosEscuela.name}/backup_$(date +%y%m%d%H%M)`;
+            var ruta_backup = `/tmp/escuelas/${datosEscuela.name}`;
 
-            var resultadoComando = await ejecutarComando(conn, `mkdir -p ${ruta_backup}`);
+            var resultadoComando = await ejecutarComando(conn, `mkdir -p ${ruta_backup}/eisi`);
+            resultadoComando = await ejecutarComando(conn, `mkdir -p ${ruta_backup}/archivos`);
 
             var ruta_contenedor = `/datadrive/tomcat/webapps/.`;
+            var ruta_archivos = `/datadrive/archivos/.`;
 
-            const commad = `docker cp ${datosEscuela.container}:${ruta_contenedor} ${ruta_backup}`;
+            const commad1 = `docker cp ${datosEscuela.container}:${ruta_contenedor} ${ruta_backup}/eisi`;
+            resultadoComando = await ejecutarComando(conn, commad1);
 
-            resultadoComando = await ejecutarComando(conn, commad);
+            const commad2 = `docker cp ${datosEscuela.container}:${ruta_archivos} ${ruta_backup}/archivos`;
+            resultadoComando = await ejecutarComando(conn, commad2);
+
             console.log(`Backup de ${datosEscuela.name}: ${resultadoComando}`);
         } catch (error) {
             console.error(`Error al sacar backup ${datosEscuela.name}:`, error);
@@ -40,9 +48,10 @@ async function backupEscuelas(conn, config) {
         }
 
     }
+    console.log('Copiando backups al servidor...');
 
     // Copiar archivos al servidor
-    const resultadoTransferencia = await descargarArchivos(config, '/tmp/escuelas/.', './backups/project');
+    const resultadoTransferencia = await crearBackup(config, '/tmp/escuelas/.', rutas.ruta_backup_escuelas);
     console.log(resultadoTransferencia);
 
     // Eliminar backups

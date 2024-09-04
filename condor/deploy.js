@@ -1,6 +1,9 @@
 const { Client } = require('ssh2');
 const fs = require('fs');
 
+// Rutas
+const rutas = require('./config/routes.json');
+
 // Funciones
 const { despliegueDevelop } = require('./scripts/despliegue_develop');
 const { despliegueMaster } = require('./scripts/despliegue_master');
@@ -16,7 +19,7 @@ const config = {
     host: '10.6.100.3',
     port: 22,
     username: 'root',
-    privateKey: fs.readFileSync('config/id_rsa')
+    privateKey: fs.readFileSync(rutas.ruta_privatekey)
 };
 
 // Obtener acción a realizar

@@ -4,6 +4,9 @@ const fs = require('fs');
 const { descargarArchivos } = require('../functions/descargar_archivos.js');
 const { ejecutarComando } = require('../functions/ejecutar_comando.js');
 
+// Rutas
+const rutas = require('./config/routes.json');
+
 // Leer las variables desde un archivo JSON
 const fileEscuelas = JSON.parse(fs.readFileSync('./config/escuelas.json', 'utf8'));
 
@@ -106,11 +109,12 @@ async function backupDB(conn, config) {
     } catch (error) {
         console.error(`Error al sacar backup posiedon:`, error);
     }
-
     console.log("Fin backup de poseidon");
 
+    console.log('Copiando backups al servidor...');
+
     // Copiar archivos al servidor
-    const resultadoTransferencia = await descargarArchivos(config, '/tmp/dbs/.', './backups/database');
+    const resultadoTransferencia = await descargarArchivos(config, '/tmp/dbs/.', rutas.ruta_backup_db);
     console.log(resultadoTransferencia);
 
     // Eliminar backups
