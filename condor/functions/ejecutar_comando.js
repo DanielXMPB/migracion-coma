@@ -6,7 +6,11 @@ async function ejecutarComando(conn, comando) {
             if (err) return reject(err);
             let data = '';
             stream.on('close', (code, signal) => {
-                resolve(`Resultado: ${data}`);
+                if (code === 0 && data.trim() === '') {
+                    resolve('Resultado: exitoso');
+                } else {
+                    resolve(`Resultado: ${data}`);
+                }
             }).on('data', (chunk) => {
                 data += chunk;
             }).stderr.on('data', (chunk) => {
