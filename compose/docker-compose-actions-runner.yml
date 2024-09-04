@@ -4,15 +4,20 @@ services:
     container_name: actions-runner
     restart: always
     environment:
-      - REPO="calumet/coma"
-      - TOKEN="1234"
+      - REPO=calumet/coma
+      - TOKEN=token
     deploy:
       resources: 
         limits:
           cpus: '0.20'
-          memory: 1G
+          memory: 2G
         reservations:
-          memory: 512MB
+          memory: 1.5G
+    volumes:
+      - /datadrive/deployment:/datadrive/deployment
+    command: bash -c "chown -R docker:docker /datadrive/deployment && ./start.sh"
+    networks:
+      - coma_network
 networks:
   coma_network:
     driver: bridge
