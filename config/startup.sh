@@ -19,13 +19,14 @@ if [ ! -f /tmp/initializated ]; then
 
     mkdir -p /datadrive/tomcat/webapps/eisi/WebProfesor
     mkdir -p /datadrive/tomcat/webapps/eisi/grupo
-    #mkdir -p /datadrive/archivos
+    mkdir -p /datadrive/archivos
 
     mkdir -p /datadrive/backup/files/css
     mkdir -p /datadrive/backup/files/images
     mkdir -p /datadrive/backup/files/ArchivosProfesores
     mkdir -p /datadrive/backup/files/WebProfesor
     mkdir -p /datadrive/backup/files/grupo
+    mkdir -p /datadrive/backup/archivos
 
     # Backups de bases de datos
     mkdir -p /datadrive/backup/db/diamante
@@ -49,6 +50,7 @@ else
     rsync -a /datadrive/tomcat/webapps/eisi/ArchivosProfesores/ /datadrive/backup/files/ArchivosProfesores/
     rsync -a /datadrive/tomcat/webapps/eisi/WebProfesor/ /datadrive/backup/files/WebProfesor/
     rsync -a /datadrive/tomcat/webapps/eisi/grupo/ /datadrive/backup/files/grupo/
+    rsync -a /datadrive/archivos/ /datadrive/backup/archivos/
 
     rm -rf /datadrive/tomcat/webapps/eisi/*
 
