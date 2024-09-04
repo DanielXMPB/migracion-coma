@@ -1,6 +1,7 @@
 // Funcion para ejecutar querys dentro de poseidon
 
 const fs = require('fs');
+const path = require('path');
 const { transferirArchivos } = require('../functions/transferir_archivos.js');
 const { ejecutarComando } = require('../functions/ejecutar_comando.js');
 
@@ -9,8 +10,10 @@ const fileEscuelas = JSON.parse(fs.readFileSync('./config/escuelas.json', 'utf8'
 
 async function queriesDiamante(conn, config) {
 
+    const localPath = path.resolve(__dirname, '../config/script.sql');
+
     // Copiar script de SQL
-    const resultadoTransferencia = await transferirArchivos(config, './config/script.sql', '/tmp/script.sql');
+    const resultadoTransferencia = await transferirArchivos(config, localPath, '/tmp/');
     console.log(resultadoTransferencia);
 
     // Encuentra los datos correspondientes a la escuela

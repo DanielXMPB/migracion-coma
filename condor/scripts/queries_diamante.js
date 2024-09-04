@@ -1,6 +1,7 @@
 // Funcion para ejecutar querys dentro de diamante en cada escuela
 
 const fs = require('fs');
+const path = require('path');
 const { transferirArchivos } = require('../functions/transferir_archivos.js');
 const { ejecutarComando } = require('../functions/ejecutar_comando.js');
 
@@ -15,8 +16,10 @@ const escuelas = data.split('\n')
 
 async function queriesDiamante(conn, config) {
 
+    const localPath = path.resolve(__dirname, '../config/script.sql');
+
     // Copiar script de SQL
-    const resultadoTransferencia = await transferirArchivos(config, './config/script.sql', '/tmp/script.sql');
+    const resultadoTransferencia = await transferirArchivos(config, localPath, '/tmp/');
     console.log(resultadoTransferencia);
 
     // Ciclo para recorrer las escuelas
@@ -51,8 +54,8 @@ async function queriesDiamante(conn, config) {
     }
 
     // Eliminar script.sql
-    resultadoComando = await ejecutarComando(conn, 'rm -rf /tmp/script.sql');
-    console.log(`Resultado al borrar script: ${resultadoComando}`);
+    //resultadoComando = await ejecutarComando(conn, 'rm -rf /tmp/script.sql');
+    //console.log(`Resultado al borrar script: ${resultadoComando}`);
 
     conn.end();
 
