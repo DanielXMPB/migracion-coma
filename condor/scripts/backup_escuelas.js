@@ -29,17 +29,21 @@ async function backupEscuelas(conn, config) {
 
             var ruta_backup = `/tmp/escuelas/${datosEscuela.name}`;
 
-            var resultadoComando = await ejecutarComando(conn, `mkdir -p ${ruta_backup}/eisi`);
+            var resultadoComando = await ejecutarComando(conn, `mkdir -p ${ruta_backup}/webapps`);
             resultadoComando = await ejecutarComando(conn, `mkdir -p ${ruta_backup}/archivos`);
 
             var ruta_contenedor = `/datadrive/tomcat/webapps/.`;
             var ruta_archivos = `/datadrive/archivos/.`;
 
-            const commad1 = `docker cp ${datosEscuela.container}:${ruta_contenedor} ${ruta_backup}/eisi`;
+            const commad1 = `docker cp ${datosEscuela.container}:${ruta_contenedor} ${ruta_backup}/webapps`;
             resultadoComando = await ejecutarComando(conn, commad1);
 
             const commad2 = `docker cp ${datosEscuela.container}:${ruta_archivos} ${ruta_backup}/archivos`;
             resultadoComando = await ejecutarComando(conn, commad2);
+
+            // Copiar archivos al servidor
+            const resultadoTransferencia = await crearBackup(config, `${rutas.ruta_backup_escuelas}/${datosEscuela.name}`, `/tmp/escuelas/${datosEscuela.name}/.`);
+            console.log(resultadoTransferencia);
 
             console.log(`Backup de ${datosEscuela.name}: ${resultadoComando}`);
         } catch (error) {
@@ -49,10 +53,6 @@ async function backupEscuelas(conn, config) {
 
     }
     console.log('Copiando backups al servidor...');
-
-    // Copiar archivos al servidor
-    const resultadoTransferencia = await crearBackup(config, rutas.ruta_backup_escuelas, '/tmp/escuelas/.');
-    console.log(resultadoTransferencia);
 
     // Eliminar backups
     resultadoComando = await ejecutarComando(conn, 'rm -rf /tmp/escuelas');

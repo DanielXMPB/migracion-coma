@@ -19,7 +19,8 @@ const config = {
     host: '10.6.100.3',
     port: 22,
     username: 'root',
-    privateKey: fs.readFileSync(rutas.ruta_privatekey)
+    privateKey: fs.readFileSync(rutas.ruta_privatekey),
+    passphrase: fs.readFileSync(rutas.passphrase)
 };
 
 // Obtener acción a realizar
