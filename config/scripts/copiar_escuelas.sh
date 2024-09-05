@@ -4,20 +4,22 @@ mapfile -t escuelas < escuelas.txt
 for escuela in "${escuelas[@]}"; do
   echo "Moviendo archivos de la escuela en la carpeta designada de: $escuela"
 
-  mkdir -p ../../files/$escuela/css
-  mkdir -p ../../files/$escuela/images
-  mkdir -p ../../files/$escuela/ArchivosProfesores
-  mkdir -p ../../files/$escuela/WebProfesor
-  mkdir -p ../../files/$escuela/grupo
-  mkdir -p ../../files/$escuela/Profesores
+  mkdir -p /datadrive/coma_files/files/$escuela/css
+  mkdir -p /datadrive/coma_files/files/$escuela/images
+  mkdir -p /datadrive/coma_files/files/$escuela/ArchivosProfesores
+  mkdir -p /datadrive/coma_files/files/$escuela/WebProfesor
+  mkdir -p /datadrive/coma_files/files/$escuela/grupo
+  mkdir -p /datadrive/coma_files/files/$escuela/Profesores
+  mkdir -p /datadrive/coma_files/files/$escuela/archivos
 
-  mv -f ../../../coma_files/$escuela/eisi/css/* ../../files/$escuela/css/
-  mv -f ../../../coma_files/$escuela/eisi/images/* ../../files/$escuela/images/
-  mv -f ../../../coma_files/$escuela/eisi/ArchivosProfesores/* ../../files/$escuela/ArchivosProfesores/
-  mv -f ../../../coma_files/$escuela/eisi/WebProfesor/* ../../files/$escuela/WebProfesor/
-  mv -f ../../../coma_files/$escuela/eisi/grupo/* ../../files/$escuela/grupo/
+  mv -f /datadrive/coma_files/$escuela/webapps/eisi/css/* /datadrive/coma_files/files/$escuela/css/
+  mv -f /datadrive/coma_files/$escuela/webapps/eisi/images/* /datadrive/coma_files/files/$escuela/images/
+  mv -f /datadrive/coma_files/$escuela/webapps/eisi/ArchivosProfesores/* /datadrive/coma_files/files/$escuela/ArchivosProfesores/
+  mv -f /datadrive/coma_files/$escuela/webapps/eisi/WebProfesor/* /datadrive/coma_files/files/$escuela/WebProfesor/
+  mv -f /datadrive/coma_files/$escuela/webapps/eisi/grupo/* /datadrive/coma_files/files/$escuela/grupo/
+  mv -f /datadrive/coma_files/$escuela/archivos/* /datadrive/coma_files/files/$escuela/archivos/
 
-  find ../../../coma_files/$escuela/ -mindepth 1 -maxdepth 1 ! -name 'eisi' -exec mv {} ../../files/$escuela/Profesores/ \;
+  find /datadrive/coma_files/$escuela/webapps/ -mindepth 1 -maxdepth 1 ! -name 'eisi' -exec mv {} /datadrive/coma_files/files/$escuela/Profesores/ \;
 
   echo "Moviendo copia de archivos de escuela: $escuela"
 done
