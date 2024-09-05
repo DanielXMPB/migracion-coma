@@ -1,25 +1,27 @@
 # Lista de nombres o IDs de los contenedores
 mapfile -t escuelas < escuelas.txt
+mapfile -t escuelasWebapps < escuelasWebapps.txt
+mapfile -t escuelasArchivos < escuelasArchivos.txt
 
-for escuela in "${escuelas[@]}"; do
-  echo "Moviendo archivos de la escuela en la carpeta designada de: $escuela"
+for i in {0..32}; do
+    echo "Moviendo archivos de la escuela en la carpeta designada de: ${escuelas[$i]}"
 
-  mkdir -p /datadrive/migracion-coma/files/$escuela/css
-  mkdir -p /datadrive/migracion-coma/files/$escuela/images
-  mkdir -p /datadrive/migracion-coma/files/$escuela/ArchivosProfesores
-  mkdir -p /datadrive/migracion-coma/files/$escuela/WebProfesor
-  mkdir -p /datadrive/migracion-coma/files/$escuela/grupo
-  mkdir -p /datadrive/migracion-coma/files/$escuela/Profesores
-  mkdir -p /datadrive/migracion-coma/files/$escuela/archivos
+    mkdir -p /datadrive/migracion-coma/files/${escuelas[$i]}/css
+    mkdir -p /datadrive/migracion-coma/files/${escuelas[$i]}/images
+    mkdir -p /datadrive/migracion-coma/files/${escuelas[$i]}/ArchivosProfesores
+    mkdir -p /datadrive/migracion-coma/files/${escuelas[$i]}/WebProfesor
+    mkdir -p /datadrive/migracion-coma/files/${escuelas[$i]}/grupo
+    mkdir -p /datadrive/migracion-coma/files/${escuelas[$i]}/Profesores
+    mkdir -p /datadrive/migracion-coma/files/${escuelas[$i]}/archivos
 
-  mv -f /datadrive/coma_files/$escuela/webapps/css/* /datadrive/migracion-coma/files/$escuela/css/
-  mv -f /datadrive/coma_files/$escuela/webapps/images/* /datadrive/migracion-coma/files/$escuela/images/
-  mv -f /datadrive/coma_files/$escuela/webapps/ArchivosProfesores/* /datadrive/migracion-coma/files/$escuela/ArchivosProfesores/
-  mv -f /datadrive/coma_files/$escuela/webapps/WebProfesor/* /datadrive/migracion-coma/files/$escuela/WebProfesor/
-  mv -f /datadrive/coma_files/$escuela/webapps/grupo/* /datadrive/migracion-coma/files/$escuela/grupo/
-  mv -f /datadrive/coma_files/$escuela/archivos/* /datadrive/migracion-coma/files/$escuela/archivos/
+    rsync -avz /datadrive/CopiaSitios/${escuelasWebapps[$i]}/eisi/css/ /datadrive/migracion-coma/files/${escuelas[$i]}/css/
+    rsync -avz /datadrive/CopiaSitios/${escuelasWebapps[$i]}/eisi/images/ /datadrive/migracion-coma/files/${escuelas[$i]}/images/
+    rsync -avz /datadrive/CopiaSitios/${escuelasWebapps[$i]}/eisi/ArchivosProfesores/ /datadrive/migracion-coma/files/${escuelas[$i]}/ArchivosProfesores/
+    rsync -avz /datadrive/CopiaSitios/${escuelasWebapps[$i]}/eisi/WebProfesor/ /datadrive/migracion-coma/files/${escuelas[$i]}/WebProfesor/
+    rsync -avz /datadrive/CopiaSitios/${escuelasWebapps[$i]}/eisi/grupo/ /datadrive/migracion-coma/files/${escuelas[$i]}/grupo/
+    rsync -avz /datadrive/CopiaSitios/${escuelasArchivos[$i]}/ /datadrive/migracion-coma/files/${escuelas[$i]}/archivos/
 
-  find /datadrive/coma_files/$escuela/webapps/Profesores/ -mindepth 1 -maxdepth 1 ! -name 'eisi' -exec mv {} /datadrive/migracion-coma/files/$escuela/Profesores/ \;
+    find datadrive/CopiaSitios/${escuelasWebapps[$i]}/ -mindepth 1 -maxdepth 1 ! -name 'eisi' -exec mv {} /datadrive/migracion-coma/files/${escuelas[$i]}/Profesores/ \;
 
-  echo "Finaliza la escuela: $escuela"
+    echo "Finaliza la escuela: $escuela"
 done
