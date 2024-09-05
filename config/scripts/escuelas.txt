@@ -1,2 +1,33 @@
-coma_esgeo
-coma_eip
+coma_eisi .
+coma_fifme .
+coma_edi .
+coma_fifqui .
+coma_trs .
+coma_fch .
+coma_vac .
+coma_esfis .
+coma_cie .
+coma_esquim .
+coma_eci .
+coma_esmed .
+coma_em .
+coma_his .
+coma_mat .
+coma_bio .
+coma_idio .
+coma_ipred .
+coma_eeie .
+coma_eder .
+coma_eart .
+coma_e2con .
+coma_efis .
+coma_esfil .
+coma_esenf .
+coma_edu .
+coma_nutri .
+coma_eim .
+coma_eip .
+coma_eiq .
+coma_eimt .
+coma_esgeo .
+coma_e3t .
