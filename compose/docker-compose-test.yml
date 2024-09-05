@@ -1,38 +1,39 @@
 services:
-  coma_esgeo:
+# ----------------------------------------------- #
+#                   SISTEMAS                      #
+# ----------------------------------------------- #
+  coma_eisi:
     image: untetheredj/coma:latest
-    container_name: coma_esgeo
-    #ports:
-    #  - "9000:8080"
+    container_name: coma_eisi
     volumes:
-      - coma_esgeo_files_backup:/datadrive/backup
+      - coma_eisi_files_backup:/datadrive/backup
       - ../build/eisi.war:/datadrive/build/eisi.war
-      - ../files/coma_esgeo:/datadrive/original_files
+      - ../files/coma_eip:/datadrive/original_files
       - ../config/startup.sh:/datadrive/tomcat/startup.sh
     networks:
       - coma_network
     environment:
       DB_DNS: "db_ffm"
       POSEIDON_DNS: "db_poseidon"
-      DIAMANTE_NAME: "diamante_esgeo"
-      DIVISION_NAME: "division_esgeo"
-      URL_ESCUELA: "http://eisidev01.uis.edu.co" #parametro[2]
-      NOMBRE_ABREVIADO: "ESGEO" #parametro[3]
-      NOMBRE_LARGO_ESCUELA: "Escuela de Geología" #parametro[4]
-      NOMBRE_SISTEMA: "GEOWeb" #parametro[5]
+      DIAMANTE_NAME: "diamante_eisi"
+      DIVISION_NAME: "division_eisi"
+      URL_ESCUELA: "https://eisidev01.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "EISI" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
       NOMBRE_CORTO_UIS: "UIS" #parametro[6]
       NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
-      CORREO_CALUMET: "Esc. de Geología UIS <calumet@uis.edu.co>" #parametro[8]
-      NOMBRE_SERVIDOR: "geología" #parametro[9]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
       VERSION_SERVIDOR: "5.0" #parametro[10]
       CIUDAD: "Bucaramanga" #parametro[11]
-      NOMBRE_CORTO_ESCUELA: "GEOLOGIA" #parametro[12]
-      DB_SQL_USER: "root" #parametro[13] db contiene tanto a Diamante como Division
-      DB_SQL_PASSWORD: "1234" #parametro[14] db contiene tanto a Diamante como Division
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
       POSEIDON_SQL_USER: "root"
       POSEIDON_SQL_PASSWORD: "1234"
-      CODIGO_PREGRADO: "34" #parametro[15]
-      CODIGO_UNIDAD_ESCUELA: "6420" #parametro[16]
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
       PREGRADO_2: "99999" #parametro[17]
       PREGRADO_3: "99999" #parametro[18]
       PREGRADO_4: "99999" #parametro[19]
@@ -53,14 +54,14 @@ services:
       DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
       CAT_REG_AULA: "CT24" #parametro[27]
       CAT_EST_AULA: "CT25" #parametro[28]
-      VISTA_SQL_USER: "otro" #parametro[29]
-      VISTA_SQL_PASSWORD: "otro" #parametro[30]
-      POSGRADO_1: "281" #parametro[39]
-      POSGRADO_2: "99999" #parametro[40]
-      POSGRADO_3: "99999" #parametro[41]
-      POSGRADO_4: "99999" #parametro[42]
-      POSGRADO_5: "99999" #parametro[43]
-      POSGRADO_6: "99999" #parametro[44]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
       POSGRADO_7: "99999" #parametro[45]
       POSGRADO_8: "99999" #parametro[46]
       POSGRADO_9: "99999" #parametro[47]
@@ -84,35 +85,3174 @@ services:
       CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
       IDESC_VICERRECTORIA: "ESC15" #parametro[67]
       SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
-      CORREO_1: "geologia@comunidaduis.co" #parametro[70]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
       CORREO_1_PASS: "piolin" #parametro[71]
-      CORREO_2: "geologia1@comunidaduis.co" #parametro[72]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
       CORREO_2_PASS: "piolin" #parametro[73]
-      CORREO_3: "geologia2@comunidaduis.co" #parametro[74]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
       CORREO_3_PASS: "piolin" #parametro[75]
-      CORREO_4: "geologia3@comunidaduis.co" #parametro[76]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
       CORREO_4_PASS: "piolin" #parametro[77]
-      CORREO_5: "geologia4@comunidaduis.co" #parametro[78]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
       CORREO_5_PASS: "piolin" #parametro[79]
-      CORREO_6: "geologia5@comunidaduis.co" #parametro[80]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
       CORREO_6_PASS: "piolin" #parametro[81]
-      CORREO_7: "geologia6@comunidaduis.co" #parametro[82]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
       CORREO_7_PASS: "piolin" #parametro[83]
-      CORREO_8: "geologia7@comunidaduis.co" #parametro[84]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
       CORREO_8_PASS: "piolin" #parametro[85]
-      CORREO_9: "geologia8@comunidaduis.co" #parametro[86]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
       CORREO_9_PASS: "piolin" #parametro[87]
-      CORREO_10: "geologia9@comunidaduis.co" #parametro[88]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
       CORREO_10_PASS: "piolin" #parametro[89]
       CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
       COMA_REALTIME_KEY: "otro" #parametro[91]
       RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
     command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                FISICOMECANICAS                  #
+# ----------------------------------------------- #
+  coma_fifme:
+    image: untetheredj/coma:latest
+    container_name: coma_fifme
+    ports:
+      - "9000:8080"
+    volumes:
+      - coma_fifme_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_fifme:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_ffm"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_fifme"
+      DIVISION_NAME: "division_fifme"
+      URL_ESCUELA: "http://fisicomecanicas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "FIFMe" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Facultad de Ingenierías Fisicomecánicas" #parametro[4]
+      NOMBRE_SISTEMA: "EIPWeb" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Petróleos UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "petróleos" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE PETROLEOS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#               DISEÑO INDUSTRIAL                 #
+# ----------------------------------------------- #
+  coma_edi:
+    image: untetheredj/coma:latest
+    container_name: coma_edi
+    ports:
+      - "9001:8080"
+    volumes:
+      - coma_edi_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_edi:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_ffm"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_edi"
+      DIVISION_NAME: "division_edi"
+      URL_ESCUELA: "http://disindustrial.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "EDI" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Facultad de Ingenierías Fisicomecánicas" #parametro[4]
+      NOMBRE_SISTEMA: "EIPWeb" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Petróleos UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "petróleos" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE PETROLEOS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                FISICOQUIMICAS                   #
+# ----------------------------------------------- #
+  coma_fifqui:
+    image: untetheredj/coma:latest
+    container_name: coma_fifqui
+    ports:
+      - "9002:8080"
+    volumes:
+      - coma_fifqui_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_fifqui:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_ffq"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_fifqui"
+      DIVISION_NAME: "division_fifqui"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "FIFQUI" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#             TRABAJO SOCIAL                      #
+# ----------------------------------------------- #
+  coma_trs:
+    image: untetheredj/coma:latest
+    container_name: coma_trs
+    ports:
+      - "9003:8080"
+    volumes:
+      - coma_trs_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_trs:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_fch"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_trs"
+      DIVISION_NAME: "division_trs"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "TRS" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                   HUMANAS                       #
+# ----------------------------------------------- #
+  coma_fch:
+    image: untetheredj/coma:latest
+    container_name: coma_fch
+    ports:
+      - "9004:8080"
+    volumes:
+      - coma_fch_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_fch:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_fch"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_fch"
+      DIVISION_NAME: "division_fch"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "FCH" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                   VACADEM                       #
+# ----------------------------------------------- #
+  coma_vac:
+    image: untetheredj/coma:latest
+    container_name: coma_vac
+    ports:
+      - "9005:8080"
+    volumes:
+      - coma_vac_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_vac:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_otros"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_vac"
+      DIVISION_NAME: "division_vac"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "VAC" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                     FISICA                      #
+# ----------------------------------------------- #
+  coma_esfis:
+    image: untetheredj/coma:latest
+    container_name: coma_esfis
+    ports:
+      - "9006:8080"
+    volumes:
+      - coma_esfis_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_esfis:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_fcie"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_esfis"
+      DIVISION_NAME: "division_esfis"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "ESFIS" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                   CIENCIAS                      #
+# ----------------------------------------------- #
+  coma_cie:
+    image: untetheredj/coma:latest
+    container_name: coma_cie
+    ports:
+      - "9007:8080"
+    volumes:
+      - coma_cie_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_cie:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_fcie"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_cie"
+      DIVISION_NAME: "division_cie"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "CIE" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                    QUIMICA                      #
+# ----------------------------------------------- #
+  coma_esquim:
+    image: untetheredj/coma:latest
+    container_name: coma_esquim
+    ports:
+      - "9008:8080"
+    volumes:
+      - coma_esquim_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_esquim:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_fcie"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_esquim"
+      DIVISION_NAME: "division_esquim"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "ESQUIM" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                      SALUD                      #
+# ----------------------------------------------- #
+  coma_fs:
+    image: untetheredj/coma:latest
+    container_name: coma_fs
+    ports:
+      - "9009:8080"
+    volumes:
+      - coma_fs_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_fs:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_fs"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_fs"
+      DIVISION_NAME: "division_fs"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "FS" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                      CIVIL                      #
+# ----------------------------------------------- #
+  coma_eci:
+    image: untetheredj/coma:latest
+    container_name: coma_eci
+    ports:
+      - "9010:8080"
+    volumes:
+      - coma_eci_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_eci:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_ffm"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_eci"
+      DIVISION_NAME: "division_eci"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "ECI" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                   MEDICINA                      #
+# ----------------------------------------------- #
+  coma_esmed:
+    image: untetheredj/coma:latest
+    container_name: coma_esmed
+    ports:
+      - "9011:8080"
+    volumes:
+      - coma_esmed_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_esmed:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_fs"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_esmed"
+      DIVISION_NAME: "division_esmed"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "ESMED" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#              MICROBIOLOGIA                      #
+# ----------------------------------------------- #
+  coma_em:
+    image: untetheredj/coma:latest
+    container_name: coma_em
+    ports:
+      - "9012:8080"
+    volumes:
+      - coma_em_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_em:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_fs"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_em"
+      DIVISION_NAME: "division_em"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "EM" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                   HISTORIA                      #
+# ----------------------------------------------- #
+  coma_his:
+    image: untetheredj/coma:latest
+    container_name: coma_his
+    ports:
+      - "9013:8080"
+    volumes:
+      - coma_his_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_his:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_fch"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_his"
+      DIVISION_NAME: "division_his"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "HIS" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                MATEMATICAS                      #
+# ----------------------------------------------- #
+  coma_mat:
+    image: untetheredj/coma:latest
+    container_name: coma_mat
+    ports:
+      - "9014:8080"
+    volumes:
+      - coma_mat_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_mat:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_fcie"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_mat"
+      DIVISION_NAME: "division_mat"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "MAT" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                   BIOLOGIA                      #
+# ----------------------------------------------- #
+  coma_bio:
+    image: untetheredj/coma:latest
+    container_name: coma_bio
+    ports:
+      - "9015:8080"
+    volumes:
+      - coma_bio_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_bio:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_fcie"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_bio"
+      DIVISION_NAME: "division_bio"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "BIO" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                    IDIOMAS                      #
+# ----------------------------------------------- #
+  coma_idio:
+    image: untetheredj/coma:latest
+    container_name: coma_idio
+    ports:
+      - "9016:8080"
+    volumes:
+      - coma_idio_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_idio:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_fch"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_idio"
+      DIVISION_NAME: "division_idio"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "IDIO" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                      IPRED                      #
+# ----------------------------------------------- #
+  coma_ipred:
+    image: untetheredj/coma:latest
+    container_name: coma_ipred
+    ports:
+      - "9017:8080"
+    volumes:
+      - coma_ipred_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_ipred:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_otros"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_ipred"
+      DIVISION_NAME: "division_ipred"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "IPRED" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                 INDUSTRIAL                      #
+# ----------------------------------------------- #
+  coma_eeie:
+    image: untetheredj/coma:latest
+    container_name: coma_eeie
+    ports:
+      - "9018:8080"
+    volumes:
+      - coma_eeie_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_eeie:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_ffm"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_eeie"
+      DIVISION_NAME: "division_eeie"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "EEIE" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                   DERECHO                      #
+# ----------------------------------------------- #
+  coma_eder:
+    image: untetheredj/coma:latest
+    container_name: coma_eder
+    ports:
+      - "9019:8080"
+    volumes:
+      - coma_eder_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_eder:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_fch"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_eder"
+      DIVISION_NAME: "division_eder"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "EDER" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                     ARTES                       #
+# ----------------------------------------------- #
+  coma_eart:
+    image: untetheredj/coma:latest
+    container_name: coma_eart
+    ports:
+      - "9020:8080"
+    volumes:
+      - coma_eart_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_eart:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_fch"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_eart"
+      DIVISION_NAME: "division_eart"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "EART" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                   ECONOMIA                      #
+# ----------------------------------------------- #
+  coma_e2con:
+    image: untetheredj/coma:latest
+    container_name: coma_e2con
+    ports:
+      - "9021:8080"
+    volumes:
+      - coma_e2con_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_e2con:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_fch"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_e2con"
+      DIVISION_NAME: "division_e2con"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "E2CON" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                 FISIOTERAPIA                    #
+# ----------------------------------------------- #
+  coma_efis:
+    image: untetheredj/coma:latest
+    container_name: coma_efis
+    ports:
+      - "9022:8080"
+    volumes:
+      - coma_efis_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_efis:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_fs"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_efis"
+      DIVISION_NAME: "division_efis"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "EFIS" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                  FILOSOFIA                      #
+# ----------------------------------------------- #
+  coma_esfil:
+    image: untetheredj/coma:latest
+    container_name: coma_esfil
+    ports:
+      - "9023:8080"
+    volumes:
+      - coma_esfil_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_esfil:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_fch"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_esfil"
+      DIVISION_NAME: "division_esfil"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "ESFIL" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                 ENFERMERIA                      #
+# ----------------------------------------------- #
+  coma_esenf:
+    image: untetheredj/coma:latest
+    container_name: coma_esenf
+    ports:
+      - "9024:8080"
+    volumes:
+      - coma_esenf_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_esenf:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_fs"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_esenf"
+      DIVISION_NAME: "division_esenf"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "ESENF" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                   EDUCACION                     #
+# ----------------------------------------------- #
+  coma_edu:
+    image: untetheredj/coma:latest
+    container_name: coma_edu
+    ports:
+      - "9025:8080"
+    volumes:
+      - coma_edu_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_edu:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_fch"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_edu"
+      DIVISION_NAME: "division_edu"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "EDU" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                   NUTRICION                     #
+# ----------------------------------------------- #
+  coma_nutri:
+    image: untetheredj/coma:latest
+    container_name: coma_nutri
+    ports:
+      - "9026:8080"
+    volumes:
+      - coma_nutri_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_nutri:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_fs"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_nutri"
+      DIVISION_NAME: "division_nutri"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "NUTRI" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                   MECANICA                      #
+# ----------------------------------------------- #
+  coma_eim:
+    image: untetheredj/coma:latest
+    container_name: coma_eim
+    ports:
+      - "9027:8080"
+    volumes:
+      - coma_eim_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_eim:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_ffm"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_eim"
+      DIVISION_NAME: "division_eim"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "EIM" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                  PETROLEOS                      #
+# ----------------------------------------------- #
   coma_eip:
     image: untetheredj/coma:latest
     container_name: coma_eip
-    #ports:
-    #  - "9001:8080"
+    ports:
+      - "9028:8080"
     volumes:
       - coma_eip_files_backup:/datadrive/backup
       - ../build/eisi.war:/datadrive/build/eisi.war
@@ -217,13 +3357,555 @@ services:
       COMA_REALTIME_KEY: "otro" #parametro[91]
       RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
     command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#           INGENIERIA QUIMICA                    #
+# ----------------------------------------------- #
+  coma_eiq:
+    image: untetheredj/coma:latest
+    container_name: coma_eiq
+    ports:
+      - "9029:8080"
+    volumes:
+      - coma_eiq_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_eiq:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_ffq"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_eiq"
+      DIVISION_NAME: "division_eiq"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "EIQ" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                METALURGICA                      #
+# ----------------------------------------------- #
+  coma_eimt:
+    image: untetheredj/coma:latest
+    container_name: coma_eimt
+    ports:
+      - "9030:8080"
+    volumes:
+      - coma_eimt_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_eimt:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_ffq"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_eimt"
+      DIVISION_NAME: "division_eimt"
+      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "EIMT" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                   GEOLOGÍA                      #
+# ----------------------------------------------- #
+  coma_esgeo:
+    image: untetheredj/coma:latest
+    container_name: coma_esgeo
+    ports:
+      - "9031:8080"
+    volumes:
+      - coma_esgeo_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_esgeo:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_ffq"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_esgeo"
+      DIVISION_NAME: "division_esgeo"
+      URL_ESCUELA: "http://eisidev01.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "ESGEO" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Geología" #parametro[4]
+      NOMBRE_SISTEMA: "GEOWeb" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Geología UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "geología" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "GEOLOGIA" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13] db contiene tanto a Diamante como Division
+      DB_SQL_PASSWORD: "1234" #parametro[14] db contiene tanto a Diamante como Division
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "34" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6420" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_SQL_USER: "otro" #parametro[29]
+      VISTA_SQL_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "281" #parametro[39]
+      POSGRADO_2: "99999" #parametro[40]
+      POSGRADO_3: "99999" #parametro[41]
+      POSGRADO_4: "99999" #parametro[42]
+      POSGRADO_5: "99999" #parametro[43]
+      POSGRADO_6: "99999" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "geologia@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "geologia1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "geologia2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "geologia3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "geologia4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "geologia5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "geologia6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "geologia7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "geologia8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "geologia9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+# ----------------------------------------------- #
+#                     E3T                         #
+# ----------------------------------------------- #
+  coma_e3t:
+    image: untetheredj/coma:latest
+    container_name: coma_e3t
+    volumes:
+      - coma_e3t_files_backup:/datadrive/backup
+      - ../build/eisi.war:/datadrive/build/eisi.war
+      - ../files/coma_e3t:/datadrive/original_files
+      - ../config/startup.sh:/datadrive/tomcat/startup.sh
+    networks:
+      - coma_network
+    environment:
+      DB_DNS: "db_ffm"
+      POSEIDON_DNS: "db_poseidon"
+      DIAMANTE_NAME: "diamante_e3t"
+      DIVISION_NAME: "division_e3t"
+      URL_ESCUELA: "https://eisidev02.uis.edu.co" #parametro[2]
+      NOMBRE_ABREVIADO: "E3T" #parametro[3]
+      NOMBRE_LARGO_ESCUELA: "Escuela de Ingeniería de Sistemas" #parametro[4]
+      NOMBRE_SISTEMA: "EISI" #parametro[5]
+      NOMBRE_CORTO_UIS: "UIS" #parametro[6]
+      NOMBRE_LARGO_UIS: "Universidad Industrial de Santander" #parametro[7]
+      CORREO_CALUMET: "Esc. de Ingeniería de Sistemas UIS <calumet@uis.edu.co>" #parametro[8]
+      NOMBRE_SERVIDOR: "sistemas" #parametro[9]
+      VERSION_SERVIDOR: "5.0" #parametro[10]
+      CIUDAD: "Bucaramanga" #parametro[11]
+      NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
+      DB_SQL_USER: "root" #parametro[13]
+      DB_SQL_PASSWORD: "1234" #parametro[14]
+      POSEIDON_SQL_USER: "root"
+      POSEIDON_SQL_PASSWORD: "1234"
+      CODIGO_PREGRADO: "32" #parametro[15]
+      CODIGO_UNIDAD_ESCUELA: "6440" #parametro[16]
+      PREGRADO_2: "99999" #parametro[17]
+      PREGRADO_3: "99999" #parametro[18]
+      PREGRADO_4: "99999" #parametro[19]
+      PREGRADO_5: "99999" #parametro[20]
+      PREGRADO_6: "99999" #parametro[21]
+      PREGRADO_7: "99999" #parametro[22]
+      PREGRADO_8: "99999" #parametro[31]
+      PREGRADO_9: "99999" #parametro[32]
+      PREGRADO_10: "99999" #parametro[33]
+      PREGRADO_11: "99999" #parametro[34]
+      PREGRADO_12: "99999" #parametro[35]
+      PREGRADO_13: "99999" #parametro[36]
+      PREGRADO_14: "99999" #parametro[37]
+      PREGRADO_15: "99999" #parametro[38]
+      CORREO_ARCHIVOS_GRUPOS: "A11" #parametro[23]
+      CORREO_ARCHIVOS_PROFES: "A12" #parametro[24]
+      SALON_CRONOGRAMA: "TR7" #parametro[25]
+      DOCENTE_CRONOGRAMA: "TR8" #parametro[26]
+      CAT_REG_AULA: "CT24" #parametro[27]
+      CAT_EST_AULA: "CT25" #parametro[28]
+      VISTA_USER: "otro" #parametro[29]
+      VISTA_PASSWORD: "otro" #parametro[30]
+      POSGRADO_1: "247" #parametro[39]
+      POSGRADO_2: "250" #parametro[40]
+      POSGRADO_3: "252" #parametro[41]
+      POSGRADO_4: "303" #parametro[42]
+      POSGRADO_5: "352" #parametro[43]
+      POSGRADO_6: "356" #parametro[44]
+      POSGRADO_7: "99999" #parametro[45]
+      POSGRADO_8: "99999" #parametro[46]
+      POSGRADO_9: "99999" #parametro[47]
+      POSGRADO_10: "99999" #parametro[48]
+      POSGRADO_11: "99999" #parametro[49]
+      POSGRADO_12: "99999" #parametro[50]
+      POSGRADO_13: "99999" #parametro[51]
+      POSGRADO_14: "99999" #parametro[52]
+      POSGRADO_15: "99999" #parametro[53]
+      SERVICIO_INICIO: "S2" #parametro[54]
+      SERVICIO_USUARIO: "S111" #parametro[55]
+      SERVICIO_CREDITOS: "S75" #parametro[56]
+      SERVICIO_AYUDA_NOV: "S76" #parametro[57]
+      SERVICIO_OTRO_1: "99999" #parametro[58]
+      SERVICIO_OTRO_2: "99999" #parametro[59]
+      SERVICIO_OTRO_3: "99999" #parametro[60]
+      SERVICIO_OTRO_4: "99999" #parametro[61]
+      SERVICIO_OTRO_5: "99999" #parametro[62]
+      CAT_COMITE_PREGRADO: "CT20" #parametro[64]
+      CAT_COMITE_POSGRADO: "CT26" #parametro[65]
+      CAT_ESTANDAR: "'8','9','10','11','12'" #parametro[66]
+      IDESC_VICERRECTORIA: "ESC15" #parametro[67]
+      SERVICIO_PORTAL_GRUPOS: "GM40" #parametro[68]
+      CORREO_1: "petroleos@comunidaduis.co" #parametro[70]
+      CORREO_1_PASS: "piolin" #parametro[71]
+      CORREO_2: "petroleos1@comunidaduis.co" #parametro[72]
+      CORREO_2_PASS: "piolin" #parametro[73]
+      CORREO_3: "petroleos2@comunidaduis.co" #parametro[74]
+      CORREO_3_PASS: "piolin" #parametro[75]
+      CORREO_4: "petroleos3@comunidaduis.co" #parametro[76]
+      CORREO_4_PASS: "piolin" #parametro[77]
+      CORREO_5: "petroleos4@comunidaduis.co" #parametro[78]
+      CORREO_5_PASS: "piolin" #parametro[79]
+      CORREO_6: "petroleos5@comunidaduis.co" #parametro[80]
+      CORREO_6_PASS: "piolin" #parametro[81]
+      CORREO_7: "petroleos6@comunidaduis.co" #parametro[82]
+      CORREO_7_PASS: "piolin" #parametro[83]
+      CORREO_8: "petroleos7@comunidaduis.co" #parametro[84]
+      CORREO_8_PASS: "piolin" #parametro[85]
+      CORREO_9: "petroleos8@comunidaduis.co" #parametro[86]
+      CORREO_9_PASS: "piolin" #parametro[87]
+      CORREO_10: "petroleos9@comunidaduis.co" #parametro[88]
+      CORREO_10_PASS: "piolin" #parametro[89]
+      CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
+      COMA_REALTIME_KEY: "otro" #parametro[91]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
 volumes:
-  coma_esgeo_files_backup:
+  coma_eisi_files_backup:
     external: false
-    name: coma_esgeo_files_backup
+    name: coma_eisi_files_backup
+  coma_fifme_files_backup:
+    external: false
+    name: coma_fifme_files_backup
+  coma_edi_files_backup:
+    external: false
+    name: coma_edi_files_backup
+  coma_fifqui_files_backup:
+    external: false
+    name: coma_fifqui_files_backup
+  coma_trs_files_backup:
+    external: false
+    name: coma_trs_files_backup
+  coma_fch_files_backup:
+    external: false
+    name: coma_fch_files_backup
+  coma_vac_files_backup:
+    external: false
+    name: coma_vac_files_backup
+  coma_esfis_files_backup:
+    external: false
+    name: coma_esfis_files_backup
+  coma_cie_files_backup:
+    external: false
+    name: coma_cie_files_backup
+  coma_esquim_files_backup:
+    external: false
+    name: coma_esquim_files_backup
+  coma_fs_files_backup:
+    external: false
+    name: coma_fs_files_backup
+  coma_eci_files_backup:
+    external: false
+    name: coma_eci_files_backup
+  coma_esmed_files_backup:
+    external: false
+    name: coma_esmed_files_backup
+  coma_em_files_backup:
+    external: false
+    name: coma_em_files_backup
+  coma_his_files_backup:
+    external: false
+    name: coma_his_files_backup
+  coma_mat_files_backup:
+    external: false
+    name: coma_mat_files_backup
+  coma_bio_files_backup:
+    external: false
+    name: coma_bio_files_backup
+  coma_idio_files_backup:
+    external: false
+    name: coma_idio_files_backup
+  coma_ipred_files_backup:
+    external: false
+    name: coma_ipred_files_backup
+  coma_eeie_files_backup:
+    external: false
+    name: coma_eeie_files_backup
+  coma_eder_files_backup:
+    external: false
+    name: coma_eder_files_backup
+  coma_eart_files_backup:
+    external: false
+    name: coma_eart_files_backup
+  coma_e2con_files_backup:
+    external: false
+    name: coma_e2con_files_backup
+  coma_efis_files_backup:
+    external: false
+    name: coma_efis_files_backup
+  coma_esfil_files_backup:
+    external: false
+    name: coma_esfil_files_backup
+  coma_esenf_files_backup:
+    external: false
+    name: coma_esenf_files_backup
+  coma_edu_files_backup:
+    external: false
+    name: coma_edu_files_backup
+  coma_nutri_files_backup:
+    external: false
+    name: coma_nutri_files_backup
+  coma_eim_files_backup:
+    external: false
+    name: coma_eim_files_backup
   coma_eip_files_backup:
     external: false
     name: coma_eip_files_backup
+  coma_eiq_files_backup:
+    external: false
+    name: coma_eiq_files_backup
+  coma_eimt_files_backup:
+    external: false
+    name: coma_eimt_files_backup
+  coma_esgeo_files_backup:
+    external: false
+    name: coma_esgeo_files_backup
+  coma_e3t_files_backup:
+    external: false
+    name: coma_e3t_files_backup
 networks:
   coma_network:
     driver: bridge
