@@ -349,7 +349,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_ffq"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_fifqui"
       DIVISION_NAME: "division_fifqui"
@@ -461,7 +461,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_fch"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_trs"
       DIVISION_NAME: "division_trs"
@@ -573,7 +573,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_fch"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_fch"
       DIVISION_NAME: "division_fch"
@@ -685,7 +685,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_otros"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_vac"
       DIVISION_NAME: "division_vac"
@@ -797,7 +797,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_fcie"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_esfis"
       DIVISION_NAME: "division_esfis"
@@ -909,7 +909,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_fcie"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_cie"
       DIVISION_NAME: "division_cie"
@@ -1021,7 +1021,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_fcie"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_esquim"
       DIVISION_NAME: "division_esquim"
@@ -1133,7 +1133,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_fs"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_fs"
       DIVISION_NAME: "division_fs"
@@ -1357,7 +1357,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_fs"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_esmed"
       DIVISION_NAME: "division_esmed"
@@ -1469,7 +1469,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_fs"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_em"
       DIVISION_NAME: "division_em"
@@ -1581,7 +1581,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_fch"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_his"
       DIVISION_NAME: "division_his"
@@ -1693,7 +1693,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_fcie"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_mat"
       DIVISION_NAME: "division_mat"
@@ -1805,7 +1805,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_fcie"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_bio"
       DIVISION_NAME: "division_bio"
@@ -1917,7 +1917,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_fch"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_idio"
       DIVISION_NAME: "division_idio"
@@ -2029,7 +2029,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_otros"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_ipred"
       DIVISION_NAME: "division_ipred"
@@ -2253,7 +2253,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_fch"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_eder"
       DIVISION_NAME: "division_eder"
@@ -2365,7 +2365,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_fch"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_eart"
       DIVISION_NAME: "division_eart"
@@ -2477,7 +2477,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_fch"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_e2con"
       DIVISION_NAME: "division_e2con"
@@ -2589,7 +2589,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_fs"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_efis"
       DIVISION_NAME: "division_efis"
@@ -2701,7 +2701,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_fch"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_esfil"
       DIVISION_NAME: "division_esfil"
@@ -2813,7 +2813,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_fs"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_esenf"
       DIVISION_NAME: "division_esenf"
@@ -2925,7 +2925,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_fch"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_edu"
       DIVISION_NAME: "division_edu"
@@ -3037,7 +3037,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_fs"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_nutri"
       DIVISION_NAME: "division_nutri"
@@ -3373,7 +3373,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_ffq"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_eiq"
       DIVISION_NAME: "division_eiq"
@@ -3485,7 +3485,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_ffq"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_eimt"
       DIVISION_NAME: "division_eimt"
@@ -3597,7 +3597,7 @@ services:
     networks:
       - coma_network
     environment:
-      DB_DNS: "db_ffm"
+      DB_DNS: "db_ffq"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_esgeo"
       DIVISION_NAME: "division_esgeo"
