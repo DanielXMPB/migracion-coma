@@ -39,8 +39,7 @@ if [ ! -f /tmp/initializated ]; then
     rsync -a /datadrive/original_files/ArchivosProfesores/ /datadrive/tomcat/webapps/eisi/ArchivosProfesores/
     rsync -a /datadrive/original_files/WebProfesor/ /datadrive/tomcat/webapps/eisi/WebProfesor/
     rsync -a /datadrive/original_files/grupo/ /datadrive/tomcat/webapps/eisi/grupo/
-
-    #rsync -a /datadrive/tomcat/datos/archivosDatadrive/* /datadrive/archivos/
+    rsync -a /datadrive/original_files/archivos/ /datadrive/archivos/
     rsync -a /datadrive/original_files/Profesores/ /datadrive/tomcat/webapps/
 
     echo "Finished transferring files."
@@ -50,7 +49,7 @@ else
     rsync -a /datadrive/tomcat/webapps/eisi/ArchivosProfesores/ /datadrive/backup/files/ArchivosProfesores/
     rsync -a /datadrive/tomcat/webapps/eisi/WebProfesor/ /datadrive/backup/files/WebProfesor/
     rsync -a /datadrive/tomcat/webapps/eisi/grupo/ /datadrive/backup/files/grupo/
-    rsync -a /datadrive/archivos/ /datadrive/backup/archivos/
+    #rsync -a /datadrive/archivos/ /datadrive/backup/archivos/
 
     rm -rf /datadrive/tomcat/webapps/eisi/*
 
