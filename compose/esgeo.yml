@@ -17,7 +17,7 @@ services:
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_esgeo"
       DIVISION_NAME: "division_esgeo"
-      URL_ESCUELA: "http://eisidev01.uis.edu.co" #parametro[2]
+      URL_ESCUELA: "http://geologia.uis.edu.co" #parametro[2]
       NOMBRE_ABREVIADO: "ESGEO" #parametro[3]
       NOMBRE_LARGO_ESCUELA: "Escuela de Geología" #parametro[4]
       NOMBRE_SISTEMA: "GEOWeb" #parametro[5]
@@ -107,7 +107,7 @@ services:
       CORREO_10_PASS: "piolin" #parametro[89]
       CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
       COMA_REALTIME_KEY: "otro" #parametro[91]
-      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Ordenanza No 83 de 1944 | Carácter académico: Universidad | Código SNIES: 1204 Nit: 890201213-4" #parametro[92]
     command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
 volumes:
   coma_esgeo_files_backup:
