@@ -112,7 +112,7 @@ services:
       COMA_REALTIME_KEY: "otro" #parametro[91]
       RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Ordenanza No 83 de 1944 | Carácter académico: Universidad | Código SNIES: 1204 Nit: 890201213-4" #parametro[92]
     command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
-volume:
+volumes:
   coma_eim_files_backup:
     external: false
     name: coma_eim_files_backup
