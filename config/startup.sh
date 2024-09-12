@@ -13,7 +13,11 @@ if [ ! -f /tmp/initializated ]; then
 
     echo "Finished unzipping eisi.war"
 
-    rm -rf /datadrive/tomcat/webapps/eisi/css/*
+    #rm -rf /datadrive/tomcat/webapps/eisi/css/*
+    rm -rf /datadrive/tomcat/webapps/eisi/css/index8/colors/*
+    rm -rf /datadrive/tomcat/webapps/eisi/css/index7/*
+
+
     rm -rf /datadrive/tomcat/webapps/eisi/images/*
     rm -rf /datadrive/tomcat/webapps/eisi/ArchivosProfesores/*
 
@@ -34,7 +38,8 @@ if [ ! -f /tmp/initializated ]; then
     mkdir -p /datadrive/backup/db/division
 
     # Copies original file from first time creation
-    rsync -a /datadrive/original_files/css/ /datadrive/tomcat/webapps/eisi/css/
+    rsync -a /datadrive/original_files/css/index8/colors/ /datadrive/tomcat/webapps/eisi/css/index8/colors/
+    rsync -a /datadrive/original_files/css/index7/ /datadrive/tomcat/webapps/eisi/css/index7/
     rsync -a /datadrive/original_files/images/ /datadrive/tomcat/webapps/eisi/images/
     rsync -a /datadrive/original_files/ArchivosProfesores/ /datadrive/tomcat/webapps/eisi/ArchivosProfesores/
     rsync -a /datadrive/original_files/WebProfesor/ /datadrive/tomcat/webapps/eisi/WebProfesor/
@@ -44,12 +49,12 @@ if [ ! -f /tmp/initializated ]; then
 
     echo "Finished transferring files."
 else
-    rsync -a /datadrive/tomcat/webapps/eisi/css/ /datadrive/backup/files/css/
+    rsync -a /datadrive/tomcat/webapps/eisi/css/index8/colors/ /datadrive/backup/files/css/index8/colors/
+    rsync -a /datadrive/tomcat/webapps/eisi/css/index7/ /datadrive/backup/files/css/index7/
     rsync -a /datadrive/tomcat/webapps/eisi/images/ /datadrive/backup/files/images/
     rsync -a /datadrive/tomcat/webapps/eisi/ArchivosProfesores/ /datadrive/backup/files/ArchivosProfesores/
     rsync -a /datadrive/tomcat/webapps/eisi/WebProfesor/ /datadrive/backup/files/WebProfesor/
     rsync -a /datadrive/tomcat/webapps/eisi/grupo/ /datadrive/backup/files/grupo/
-    #rsync -a /datadrive/archivos/ /datadrive/backup/archivos/
 
     rm -rf /datadrive/tomcat/webapps/eisi/*
 
@@ -57,12 +62,14 @@ else
 
     echo "Finished unzipping after deployment."
 
-    rm -rf /datadrive/tomcat/webapps/eisi/css/*
+    rm -rf /datadrive/tomcat/webapps/eisi/css/index8/colors/
+    rm -rf /datadrive/tomcat/webapps/eisi/css/index7/
 
     mkdir -p /datadrive/tomcat/webapps/eisi/WebProfesor
     mkdir -p /datadrive/tomcat/webapps/eisi/grupo
 
-    rsync -a /datadrive/backup/files/css/ /datadrive/tomcat/webapps/eisi/css/
+    rsync -a /datadrive/backup/files/css/index8/colors/ /datadrive/tomcat/webapps/eisi/css/index8/colors/
+    rsync -a /datadrive/backup/files/css/index7/ /datadrive/tomcat/webapps/eisi/css/index7/
     rsync -a /datadrive/backup/files/images/ /datadrive/tomcat/webapps/eisi/images/
     rsync -a /datadrive/backup/files/ArchivosProfesores/ /datadrive/tomcat/webapps/eisi/ArchivosProfesores/
     rsync -a /datadrive/backup/files/WebProfesor/ /datadrive/tomcat/webapps/eisi/WebProfesor/

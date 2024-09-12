@@ -1,33 +1,33 @@
-sistemas         : https://eisidev01.uis.edu.co  : Funciona
-fisicomecanicas  : http://10.6.100.3:9000/eisi   : Funciona
-disindustrial    : http://10.6.100.3:9001/eisi   : Funciona
-fisicoquimicas   : http://10.6.100.3:9002/eisi   : Funciona
-trabajosocial    : http://10.6.100.3:9003/eisi   : Funciona
-humanas          : http://10.6.100.3:9004/eisi   : Funciona
-vacadem          : http://10.6.100.3:9005/eisi   : Funciona
-fisica           : http://10.6.100.3:9006/eisi   : Funciona
-ciencias         : http://10.6.100.3:9007/eisi   : Funciona
-quimica          : http://10.6.100.3:9008/eisi   : Funciona
-civil            : http://10.6.100.3:9010/eisi   : Funciona
-medicina         : http://10.6.100.3:9011/eisi   : Funciona
-microbiologia    : http://10.6.100.3:9012/eisi   : Funciona
-historia         : http://10.6.100.3:9013/eisi   : Funciona
-matematicas      : http://10.6.100.3:9014/eisi   : Funciona
-biologia         : http://10.6.100.3:9015/eisi   : Funciona
-idiomas          : http://10.6.100.3:9016/eisi   : Funciona
-ipred            : http://10.6.100.3:9017/eisi   : Funciona
-industrial       : http://10.6.100.3:9018/eisi   : Funciona
-derecho          : http://10.6.100.3:9019/eisi   : Funciona
-artes            : http://10.6.100.3:9020/eisi   : Funciona
-economia         : http://10.6.100.3:9021/eisi   : Funciona
-fisioterapia     : http://10.6.100.3:9022/eisi   : Funciona
-filosofia        : http://10.6.100.3:9023/eisi   : Funciona
-enfermeria       : http://10.6.100.3:9024/eisi   : Funciona
-educacion        : http://10.6.100.3:9025/eisi   : Funciona
-nutricion        : http://10.6.100.3:9026/eisi   : Funciona
-mecanica         : http://10.6.100.3:9027/eisi   : Funciona
-petroleos        : http://10.6.100.3:9028/eisi   : Funciona
-ingquimica       : http://10.6.100.3:9029/eisi   : Funciona
-metalurgia       : http://10.6.100.3:9030/eisi   : Funciona
-geologia         : http://10.6.100.3:9031/eisi   : Funciona
-e3t              : https://eisidev02.uis.edu.co  : Funciona
+sistemas         : https://eisidev01.uis.edu.co
+fisicomecanicas  : http://10.6.100.3:9000/eisi
+disindustrial    : http://10.6.100.3:9001/eisi
+fisicoquimicas   : http://10.6.100.3:9002/eisi
+trabajosocial    : http://10.6.100.3:9003/eisi
+humanas          : http://10.6.100.3:9004/eisi
+vacadem          : http://10.6.100.3:9005/eisi
+fisica           : http://10.6.100.3:9006/eisi
+ciencias         : http://10.6.100.3:9007/eisi
+quimica          : http://10.6.100.3:9008/eisi
+civil            : http://10.6.100.3:9010/eisi
+medicina         : http://10.6.100.3:9011/eisi
+microbiologia    : http://10.6.100.3:9012/eisi
+historia         : http://10.6.100.3:9013/eisi
+matematicas      : http://10.6.100.3:9014/eisi
+biologia         : http://10.6.100.3:9015/eisi
+idiomas          : http://10.6.100.3:9016/eisi
+ipred            : http://10.6.100.3:9017/eisi
+industrial       : http://10.6.100.3:9018/eisi
+derecho          : http://10.6.100.3:9019/eisi
+artes            : http://10.6.100.3:9020/eisi
+economia         : http://10.6.100.3:9021/eisi
+fisioterapia     : http://10.6.100.3:9022/eisi
+filosofia        : http://10.6.100.3:9023/eisi
+enfermeria       : http://10.6.100.3:9024/eisi
+educacion        : http://10.6.100.3:9025/eisi
+nutricion        : http://10.6.100.3:9026/eisi
+mecanica         : http://10.6.100.3:9027/eisi
+petroleos        : http://10.6.100.3:9028/eisi
+ingquimica       : http://10.6.100.3:9029/eisi
+metalurgia       : http://10.6.100.3:9030/eisi
+geologia         : http://10.6.100.3:9031/eisi
+e3t              : https://eisidev02.uis.edu.co
