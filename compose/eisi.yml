@@ -9,7 +9,7 @@ services:
     volumes:
       - coma_eisi_files_backup:/datadrive/backup
       - ../build/eisi.war:/datadrive/build/eisi.war
-      - ../files/coma_eip:/datadrive/original_files
+      - ../files/coma_eisi:/datadrive/original_files
       - ../config/startup.sh:/datadrive/tomcat/startup.sh
     networks:
       - coma_network
