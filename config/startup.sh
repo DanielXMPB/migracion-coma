@@ -25,7 +25,7 @@ if [ ! -f /tmp/initializated ]; then
     mkdir -p /datadrive/tomcat/webapps/eisi/grupo
     mkdir -p /datadrive/archivos
 
-    #mkdir -p /datadrive/backup/files/css
+    mkdir -p /datadrive/backup/files/css
     mkdir -p /datadrive/backup/files/images
     mkdir -p /datadrive/backup/files/ArchivosProfesores
     mkdir -p /datadrive/backup/files/WebProfesor
