@@ -5,8 +5,8 @@ services:
     ports:
       - "3307:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD: 1234
-      - TZ: America/Bogota
+      - MYSQL_ROOT_PASSWORD=1234
+      - TZ=America/Bogota
     volumes:
       - db_poseidon:/var/lib/mysql
       - ../database/poseidon:/docker-entrypoint-initdb.d
@@ -20,8 +20,8 @@ services:
     ports:
       - "3308:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD: 1234
-      - TZ: America/Bogota
+      - MYSQL_ROOT_PASSWORD=1234
+      - TZ=America/Bogota
     volumes:
       - db_ffm:/var/lib/mysql
       - ../database/ffm:/docker-entrypoint-initdb.d
@@ -35,8 +35,8 @@ services:
     ports:
       - "3309:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD: 1234
-      - TZ: America/Bogota
+      - MYSQL_ROOT_PASSWORD=1234
+      - TZ=America/Bogota
     volumes:
       - db_ffq:/var/lib/mysql
       - ../database/ffq:/docker-entrypoint-initdb.d
@@ -50,8 +50,8 @@ services:
     ports:
       - "3310:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD: 1234
-      - TZ: America/Bogota
+      - MYSQL_ROOT_PASSWORD=1234
+      - TZ=America/Bogota
     volumes:
       - db_fch:/var/lib/mysql
       - ../database/fch:/docker-entrypoint-initdb.d
@@ -65,8 +65,8 @@ services:
     ports:
       - "3311:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD: 1234
-      - TZ: America/Bogota
+      - MYSQL_ROOT_PASSWORD=1234
+      - TZ=America/Bogota
     volumes:
       - db_fcie:/var/lib/mysql
       - ../database/fcie:/docker-entrypoint-initdb.d
@@ -80,8 +80,8 @@ services:
     ports:
       - "3312:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD: 1234
-      - TZ: America/Bogota
+      - MYSQL_ROOT_PASSWORD=1234
+      - TZ=America/Bogota
     volumes:
       - db_fs:/var/lib/mysql
       - ../database/fs:/docker-entrypoint-initdb.d
@@ -95,8 +95,8 @@ services:
     ports:
       - "3313:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD: 1234
-      - TZ: America/Bogota
+      - MYSQL_ROOT_PASSWORD=1234
+      - TZ=America/Bogota
     volumes:
       - db_otros:/var/lib/mysql
       - ../database/otros:/docker-entrypoint-initdb.d

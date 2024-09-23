@@ -6,6 +6,7 @@ services:
     environment:
       - REPO=calumet/coma
       - TOKEN=token
+      - TZ=America/Bogota
     deploy:
       resources: 
         limits:
