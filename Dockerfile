@@ -20,8 +20,8 @@ ENV LD_LIBRARY_PATH ${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}$TOMCAT_NATIVE_LIBDIR
 ENV GPG_KEYS 48F8E69F6390C9F25CFEDCD268248959359E722B A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243
 
 ENV TOMCAT_MAJOR 9
-ENV TOMCAT_VERSION 9.0.93
-ENV TOMCAT_SHA512 3069924eb7041ccc0f2aeceb7d8626793a1a073a5b739a840d7974a18ebeb26cc3374cc5f4a3ffc74d3b019c0cb33e3d1fe96296e6663ac75a73c1171811726d
+ENV TOMCAT_VERSION 9.0.95
+ENV TOMCAT_SHA512 b18103153169c7bf98da055f8ba0ac3e141d121c78869881d3be480e90fcbc3a178a8e71fa70a11aee7f2584727df72be15d30331faec65f4e57c7e67c85c1cf
 
 RUN set -eux; \
 	\
@@ -144,13 +144,11 @@ RUN set -eux; \
 
 RUN apt-get update && apt-get install -y rsync mysql-client cron nano unzip && rm -rf /var/lib/apt/lists/*
 
-COPY config/startup.sh $CATALINA_HOME/startup.sh
-
-RUN chmod +x $CATALINA_HOME/startup.sh
+RUN service cron start
 
 EXPOSE 8080
 
 # upstream eclipse-temurin-provided entrypoint script caused https://github.com/docker-library/tomcat/issues/77 to come back as https://github.com/docker-library/tomcat/issues/302; use "/entrypoint.sh" at your own risk
 ENTRYPOINT []
 
-CMD ["/bin/bash", "-c", "/path/to/startup.sh && catalina.sh run"]
+CMD ["catalina.sh", "run"]

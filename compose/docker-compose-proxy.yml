@@ -12,7 +12,7 @@ services:
       - "80:80"
       - "443:443"
     environment:
-      TZ=America/Bogota
+      TZ: America/Bogota
     networks:
       - coma_network
   certbot:
@@ -22,7 +22,7 @@ services:
       - ../certbot/www/:/var/www/certbot/:rw
       - ../certbot/conf/:/etc/letsencrypt/:rw
     environment:
-      TZ=America/Bogota
+      TZ: America/Bogota
     networks:
       - coma_network
 networks:
