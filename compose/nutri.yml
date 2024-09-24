@@ -13,6 +13,7 @@ services:
       - ../build/eisi.war:/datadrive/build/eisi.war
       - ../files/coma_nutri:/datadrive/original_files
       - ../config/startup.sh:/datadrive/tomcat/startup.sh
+      - ../config/server.xml:/datadrive/tomcat/conf/server.xml
     networks:
       - coma_network
     environment:
