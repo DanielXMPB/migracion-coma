@@ -17,12 +17,11 @@ services:
     networks:
       - coma_network
     environment:
-      TZ: America/Bogota
       DB_DNS: "db_otros"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_vac"
       DIVISION_NAME: "division_vac"
-      URL_ESCUELA: "http://ingsistemas.uis.edu.co" #parametro[2]
+      URL_ESCUELA: "http://vacadem.uis.edu.co" #parametro[2]
       NOMBRE_ABREVIADO: "VAC" #parametro[3]
       NOMBRE_LARGO_ESCUELA: "Unidades de Apoyo UIS" #parametro[4]
       NOMBRE_SISTEMA: "UNAWeb" #parametro[5]

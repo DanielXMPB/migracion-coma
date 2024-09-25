@@ -17,7 +17,6 @@ services:
     networks:
       - coma_network
     environment:
-      TZ: America/Bogota
       DB_DNS: "db_fs"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_efis"
