@@ -5,7 +5,7 @@ services:
   coma_e2con:
     image: untetheredj/coma:latest
     container_name: coma_e2con
-    restart: always
+    restart: on-failure:3
     ports:
       - "9021:8080"
     volumes:

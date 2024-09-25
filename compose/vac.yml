@@ -5,7 +5,7 @@ services:
   coma_vac:
     image: untetheredj/coma:latest
     container_name: coma_vac
-    restart: always
+    restart: on-failure:3
     ports:
       - "9005:8080"
     volumes:

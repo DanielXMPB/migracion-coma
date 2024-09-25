@@ -2,7 +2,7 @@ services:
   coma_esgeo:
     image: untetheredj/coma:latest
     container_name: coma_esgeo
-    restart: always
+    restart: on-failure:3
     ports:
       - "9031:8080"
     volumes:

@@ -5,7 +5,7 @@ services:
   coma_eisi:
     image: untetheredj/coma:latest
     container_name: coma_template
-    restart: always
+    restart: on-failure:3
     volumes:
       - coma_template_files_backup:/datadrive/backup
       - ../build/eisi.war:/datadrive/build/eisi.war

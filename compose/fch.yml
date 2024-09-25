@@ -5,6 +5,7 @@ services:
   coma_fch:
     image: untetheredj/coma:latest
     container_name: coma_fch
+    restart: on-failure:3
     ports:
       - "9004:8080"
     volumes:
