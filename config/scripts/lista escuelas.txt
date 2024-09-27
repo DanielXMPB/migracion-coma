@@ -1,33 +1,55 @@
-sistemas         : https://eisidev01.uis.edu.co
-fisicomecanicas  : http://10.6.100.3:9000/eisi
-disindustrial    : http://10.6.100.3:9001/eisi
-fisicoquimicas   : http://10.6.100.3:9002/eisi
-trabajosocial    : http://10.6.100.3:9003/eisi
-humanas          : http://10.6.100.3:9004/eisi
-vacadem          : http://10.6.100.3:9005/eisi
-fisica           : http://10.6.100.3:9006/eisi
-ciencias         : http://10.6.100.3:9007/eisi
-quimica          : http://10.6.100.3:9008/eisi
-civil            : http://10.6.100.3:9010/eisi
-medicina         : http://10.6.100.3:9011/eisi
-microbiologia    : http://10.6.100.3:9012/eisi
-historia         : http://10.6.100.3:9013/eisi
-matematicas      : http://10.6.100.3:9014/eisi
-biologia         : http://10.6.100.3:9015/eisi
-idiomas          : http://10.6.100.3:9016/eisi
-ipred            : http://10.6.100.3:9017/eisi
-industrial       : http://10.6.100.3:9018/eisi
-derecho          : http://10.6.100.3:9019/eisi
-artes            : http://10.6.100.3:9020/eisi
-economia         : http://10.6.100.3:9021/eisi
-fisioterapia     : http://10.6.100.3:9022/eisi
-filosofia        : http://10.6.100.3:9023/eisi
-enfermeria       : http://10.6.100.3:9024/eisi
-educacion        : http://10.6.100.3:9025/eisi
-nutricion        : http://10.6.100.3:9026/eisi
-mecanica         : http://10.6.100.3:9027/eisi
-petroleos        : http://10.6.100.3:9028/eisi
-ingquimica       : http://10.6.100.3:9029/eisi
-metalurgia       : http://10.6.100.3:9030/eisi
-geologia         : http://10.6.100.3:9031/eisi
-e3t              : https://eisidev02.uis.edu.co
+* sistemas            : https://ingsistemas.uis.edu.co         :
+- calumet             : https://calumet.uis.edu.co             :
+* fisicomecanicas     : https://fisicomecanicas.uis.edu.co     :
+- uisnnova            : https://uisinnova.uis.edu.co           :
+- linkingup           : https://linkingup.uis.edu.co           :
+* disindustrial       : https://disindustrial.uis.edu.co       :
+* fisicoquimicas      : https://fisicoquimicas.uis.edu.co      :
+* trabajosocial       : https://trabajosocial.uis.edu.co       :
+* humanas             : https://humanas.uis.edu.co             :
+* vacadem             : https://vacadem.uis.edu.co             :
+- summerschool        : https://summerschool.uis.edu.co        :
+- intercambiovirtual  : https://intercambiovirtual.uis.edu.co  :
+* fisica              : https://fis.uis.edu.co                 :
+* ciencias            : https://ciencia.uis.edu.co             :
+* quimica             : https://quim.uis.edu.co                :
+* civil               : https://ingenieriacivil.uis.edu.co     :
+- inme                : https://inme.uis.edu.co                :
+- gph                 : https://gph.uis.edu.co                 :
+- simposiopuentes2018 : https://simposiopuentes2018.uis.edu.co :
+* medicina            : https://medicina.uis.edu.co            :
+* microbiologia       : https://microbiologia.uis.edu.co       :
+* historia            : https://historia.uis.edu.co            :
+* matematicas         : https://mat.uis.edu.co                 :
+* biologia            : https://bio.uis.edu.co                 :
+* idiomas             : https://eidiomas.uis.edu.co            :
+* industrial          : https://industrial.uis.edu.co          :
+- opalo               : https://opalo.uis.edu.co               :
+- fym                 : https://fym.uis.edu.co                 :
+- posgradoseeie       : https://posgradoseeie.uis.edu.co       :
+- innotec             : https://innotec.uis.edu.co             :
+- motivatic           : https://motivatic.uis.edu.co           :
+- galea               : https://galea.uis.edu.co               :
+* derecho             : https://derecho.uis.edu.co             :
+* artes               : https://escartes.uis.edu.co            :
+* economia            : https://esceconomia.uis.edu.co         :
+* fisioterapia        : https://fisioterapia.uis.edu.co        :
+* filosofia           : https://escuelafilosofia.uis.edu.co    :
+* enfermeria          : https://enfermeria.uis.edu.co          :
+* educacion           : https://educacion.uis.edu.co           :
+- paidopolis          : https://paidopolis.uis.edu.co          :
+- paidofest           : https://paidofest.uis.edu.co           :
+* nutricion           : https://nutricion.uis.edu.co           :
+* mecanica            : https://mecanicaxserver.uis.edu.co     :
+- posgradosmecanica   : https://posgradosmecanica.uis.edu.co   :
+- dicbot              : https://dicbot.uis.edu.co              :
+* petroleos           : https://petroleos.uis.edu.co           :
+- git                 : https://git.uis.edu.co                 :
+- posgradospetroleos  : https://posgradospetroleos.uis.edu.co  :
+* ingquimica          : https://iq.uis.edu.co                  :
+* metalurgia          : https://metalurgia.uis.edu.co          :
+* geologia            : https://geologia.uis.edu.co            :
+* e3t                 : https://e3t.uis.edu.co                 :
+- cidlis              : https://cidlis.uis.edu.co              :
+- cemos               : https://cemos.uis.edu.co               :
+- posgradose3t        : https://posgradose3t.uis.edu.co        :
