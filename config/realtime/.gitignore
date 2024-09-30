@@ -4,7 +4,7 @@
 ## BASE
 ##
 
-node_modules
+#node_modules
 jspm_packages
 bower_components
 logs
@@ -40,4 +40,4 @@ npm-debug.log
 ## PROJECT
 ##
 
-app/settings/local.js
+#app/settings/local.js
