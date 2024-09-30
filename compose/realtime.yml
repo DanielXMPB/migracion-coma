@@ -1,0 +1,13 @@
+services:
+  realtime:
+    image: realtime:latest
+    container_name: realtime
+    volumes:
+      - ../realtime/realtime:/datadrive/realtime
+    networks:
+      - coma_network
+    command: bash -c "cd /datadrive/realtime && npx pm2 start pm2.json"
+networks:
+  coma_network:
+    driver: bridge
+    name: coma_network
