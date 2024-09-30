@@ -1,5 +1,16 @@
 module.exports = {
-  mysql: {
-    db: process.env.DIAMANTE_NAME,
+  diamante_eisi: {
+    host: 'db_ffm',
+    port: 3307,
+    db: 'diamante_eisi',
+    user: 'root',
+    pass: '1234',
+  },
+  diamante_e3t: {
+    host: 'db_ffm',
+    port: 3307,
+    db: 'diamante_e3t',
+    user: 'root',
+    pass: '1234',
   },
 };

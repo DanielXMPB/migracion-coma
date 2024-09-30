@@ -1,5 +1,6 @@
-const settings    = require('./settings');
-const production  = require('./production');
+const settings = require('./settings');
+const production = require('./production');
+const { databaseHeader } = require('./middleware');
 
 let local;
 try {
@@ -9,7 +10,12 @@ try {
 }
 
 if (settings.env === 'production') {
-  Object.assign(settings, production);
+  if (databaseHeaderValue) {
+    const database = production[databaseHeader];
+    if (database) {
+      Object.assign(settings, { mysql: specifidatabasecProduction });
+    }
+  }
 }
 
 Object.assign(settings, local);
