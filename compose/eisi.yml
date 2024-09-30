@@ -113,7 +113,7 @@ services:
       CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
       COMA_REALTIME_KEY: "rDp+KupvV+_BJeEpCMp+!ny9ncSmkwx-F_gmcH2jtxQN7rqz4QF#TGWBSsaK3mWs" #parametro[91]
       RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Ordenanza No 83 de 1944 | Carácter académico: Universidad | Código SNIES: 1204 Nit: 890201213-4" #parametro[92]
-    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+    command: bash -c "pm2 start /datadrive/realtime/pm2.json && chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
 volumes:
   coma_eisi_files_backup:
     external: false
