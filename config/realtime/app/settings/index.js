@@ -1,6 +1,6 @@
 const settings = require('./settings');
+const session = require('./session');
 const production = require('./production');
-const { databaseHeader } = require('./middleware');
 
 let local;
 try {
@@ -10,14 +10,12 @@ try {
 }
 
 if (settings.env === 'production') {
-  if (databaseHeaderValue) {
-    const database = production[databaseHeader];
+  if (session.database) {
+    const database = production[session.database];
     if (database) {
-      Object.assign(settings, { mysql: specifidatabasecProduction });
+      Object.assign(settings, { mysql: database });
     }
   }
 }
-
-Object.assign(settings, local);
 
 module.exports = settings;

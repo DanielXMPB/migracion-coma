@@ -3,7 +3,7 @@ const compression = require('compression');
 const bodyParser = require('body-parser');
 const session = require('cookie-session');
 const consts = require('consts');
-const settings = require('settings');
+const settings = require('./settings/session');
 const log = require('log');
 const resources = require('resources');
 const security = require('tools/security');
@@ -59,6 +59,8 @@ module.exports = function () {
 
     const token = req.headers['x-api-token'];
     const userId = req.headers['x-api-userid'];
+    const database = req.headers['database'];
+    Object.assign(session, { database: database });
     const isValid = security.isValid({ token, userId });
 
     if (isValid) {
@@ -68,11 +70,7 @@ module.exports = function () {
       res.status(401).json({ code: consts.ERR_AUTH });
     }
 
-    const database = req.headers['database'];
-    databaseHeader = database;
   });
 
   log.middlewares.info('Done.');
 };
-
-module.exports = { databaseHeader };

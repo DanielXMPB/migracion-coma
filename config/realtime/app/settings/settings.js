@@ -10,10 +10,6 @@ module.exports = {
     user: 'root',
     pass: 'admin',
   },
-  session: {
-    name: 'appsession',
-    secret: '1234567890',
-  },
   signature: process.env.COMA_REALTIME_KEY,
   testToken: 'realtime-testing',
 };
