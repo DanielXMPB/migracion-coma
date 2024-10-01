@@ -6,7 +6,7 @@ services:
       - ../realtime/realtime:/datadrive/realtime
     networks:
       - coma_network
-    command: bash -c "cd /datadrive/realtime && npx pm2 start pm2.json"
+    #command: bash -c "cd /datadrive/realtime && npx pm2 start pm2.json"
 networks:
   coma_network:
     driver: bridge
