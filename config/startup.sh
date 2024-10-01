@@ -82,6 +82,11 @@ else
     echo "Finished copying current files."
 fi
 
+
+cd /datadrive/realtime
+source $HOME/.nvm/nvm.sh && pm2 start pm2.json
+
+cd /datadrive/tomcat
 service cron start
 
 catalina.sh run
