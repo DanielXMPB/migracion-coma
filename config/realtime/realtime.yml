@@ -1,0 +1,17 @@
+services:
+  realtime:
+    image: realtime:latest
+    container_name: realtime
+    #volumes:
+     # - ../realtime/realtime:/datadrive/realtime
+    networks:
+      - coma_network
+    #command: bash -c "cd /datadrive/realtime && npx pm2 start pm2.json"
+    environment:
+      - COMA_REALTIME_KEY=rDp+KupvV+_BJeEpCMp+!ny9ncSmkwx-F_gmcH2jtxQN7rqz4QF#TGWBSsaK3mWs
+      - NODE_ENV=production
+      - PORT=41236
+networks:
+  coma_network:
+    driver: bridge
+    name: coma_network
