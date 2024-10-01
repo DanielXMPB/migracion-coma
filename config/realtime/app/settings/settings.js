@@ -4,11 +4,11 @@ module.exports = {
   host: '0.0.0.0',
   port: process.env.PORT || 41236,
   mysql: {
-    host: '127.0.0.1',
+    host: process.env.DB_DNS,
     port: 3306,
-    db: 'diamante_test',
-    user: 'root',
-    pass: 'admin',
+    db: process.env.DIAMANTE_NAME,
+    user: process.env.DB_SQL_USER,
+    pass: process.env.DB_SQL_PASSWORD,
   },
   session: {
     name: 'appsession',
