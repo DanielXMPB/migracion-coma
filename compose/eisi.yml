@@ -7,7 +7,7 @@ services:
     container_name: coma_eisi
     restart: on-failure:3
     ports:
-      - 41236:41236
+      - 8080:8080
     volumes:
       - coma_eisi_files_backup:/datadrive/backup
       - ../build/eisi.war:/datadrive/build/eisi.war

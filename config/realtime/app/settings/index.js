@@ -1,6 +1,7 @@
 const settings = require('./settings');
 const session = require('./session');
 const production = require('./production');
+const log         = require('log');
 
 let local;
 try {
