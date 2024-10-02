@@ -7,13 +7,13 @@ module.exports = {
     host: process.env.DB_DNS,
     port: 3306,
     db: process.env.DIAMANTE_NAME,
-    user: process.env.DB_SQL_USER,
-    pass: process.env.DB_SQL_PASSWORD,
+    user: process.env.DB_SQL_USER_FILE,
+    pass: process.env.DB_SQL_PASSWORD_FILE,
   },
   session: {
     name: 'appsession',
     secret: '1234567890',
   },
-  signature: process.env.COMA_REALTIME_KEY,
+  signature: process.env.COMA_REALTIME_KEY_FILE,
   testToken: 'realtime-testing',
 };
