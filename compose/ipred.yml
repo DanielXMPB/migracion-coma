@@ -32,10 +32,10 @@ services:
       VERSION_SERVIDOR: "5.0" #parametro[10]
       CIUDAD: "Bucaramanga" #parametro[11]
       NOMBRE_CORTO_ESCUELA: "Instituto de Proyección y ED" #parametro[12]
-      DB_SQL_USER: "root" #parametro[13]
-      DB_SQL_PASSWORD: "1234" #parametro[14]
-      POSEIDON_SQL_USER: "root"
-      POSEIDON_SQL_PASSWORD: "1234"
+      DB_SQL_USER_FILE: /run/secrets/db_user #parametro[13]
+      DB_SQL_PASSWORD_FILE: /run/secrets/db_password #parametro[14]
+      POSEIDON_SQL_USER_FILE: /run/secrets/db_user
+      POSEIDON_SQL_PASSWORD_FILE: /run/secrets/db_password
       CODIGO_PREGRADO: "3','1" #parametro[15]
       CODIGO_UNIDAD_ESCUELA: "1188','7046','2220','2230','2240','2250" #parametro[16]
       PREGRADO_2: "82" #parametro[17]
@@ -110,9 +110,20 @@ services:
       CORREO_10: "ipred9@comunidaduis.co" #parametro[88]
       CORREO_10_PASS: "piolin" #parametro[89]
       CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
-      COMA_REALTIME_KEY: "otro" #parametro[91]
+      COMA_REALTIME_KEY_FILE: /run/secrets/coma_realtime_key #parametro[91]
       RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Ordenanza No 83 de 1944 | Carácter académico: Universidad | Código SNIES: 1204 Nit: 890201213-4" #parametro[92]
+    secrets:
+      - db_password
+      - db_user
+      - coma_realtime_key
     command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+secrets:
+  db_password:
+    file: ./secrets/db_password.txt
+  db_user:
+    file: ./secrets/db_user.txt
+  coma_realtime_key:
+    file: ./secrets/coma_realtime_key.txt
 volumes:
   coma_ipred_files_backup:
     external: false
