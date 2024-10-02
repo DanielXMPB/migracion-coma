@@ -2,6 +2,8 @@ services:
   realtime:
     image: realtime:latest
     container_name: realtime
+    ports:
+      - "41236:41236"
     #volumes:
      # - ../realtime/realtime:/datadrive/realtime
     networks:
