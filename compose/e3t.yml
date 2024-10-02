@@ -6,8 +6,6 @@ services:
     image: untetheredj/coma:latest
     container_name: coma_e3t
     restart: on-failure:3
-    ports:
-      - 41236:41236
     volumes:
       - coma_e3t_files_backup:/datadrive/backup
       - ../build/eisi.war:/datadrive/build/eisi.war
