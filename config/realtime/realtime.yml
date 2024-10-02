@@ -1,6 +1,8 @@
 services:
   realtime:
     image: realtime:latest
+    ports:
+      - 41236:41236
     container_name: realtime
     ports:
       - "41236:41236"
