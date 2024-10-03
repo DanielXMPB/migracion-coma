@@ -19,13 +19,6 @@ log.app.info(chalk.bold.green(`
 >>> Running on "${settings.env}" environment.
 >>>`));
 
-log.app.info(chalk.bold.green(`
-  >>>
-  >>> User: "${settings.mysql.user}"
-  >>> User: "${settings.mysql.pass}"
-  >>> User: "${settings.signature}"
-  >>>`));
-
 const server = express();
 const httpServer = http.createServer(server);
 const io = socketio(httpServer);

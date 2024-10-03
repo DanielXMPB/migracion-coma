@@ -45,6 +45,7 @@ module.exports = function () {
 
   // Habilitar verbo HTTP OPTIONS.
   server.options('*', function (req, res) {
+      log.middlewares.info('Options received...');
       res.status(200).end();
   });
 
@@ -52,6 +53,7 @@ module.exports = function () {
   server.use('/api/', function (req, res, next) {
 
     if (req.method === 'OPTIONS') {
+      log.middlewares.info('Options in API...');
       next();
       return;
     }

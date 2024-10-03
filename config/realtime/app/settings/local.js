@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 module.exports = {
     port: 41236,
     mysql: {
