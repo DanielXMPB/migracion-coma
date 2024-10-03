@@ -1,16 +1,11 @@
 services:
   realtime:
     image: realtime:latest
-    ports:
-      - 41236:41236
     container_name: realtime
     ports:
-      - "41236:41236"
-    #volumes:
-     # - ../realtime/realtime:/datadrive/realtime
+      - 41236:41236
     networks:
       - coma_network
-    #command: bash -c "cd /datadrive/realtime && npx pm2 start pm2.json"
     environment:
       - COMA_REALTIME_KEY=rDp+KupvV+_BJeEpCMp+!ny9ncSmkwx-F_gmcH2jtxQN7rqz4QF#TGWBSsaK3mWs
       - NODE_ENV=production

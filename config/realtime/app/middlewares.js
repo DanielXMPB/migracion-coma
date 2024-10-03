@@ -31,7 +31,6 @@ module.exports = function () {
       'Accept',
       'x-api-token',
       'x-api-userid',
-      'x-name-database',
     ].join(', '));
     next();
   });
@@ -59,8 +58,6 @@ module.exports = function () {
 
     const token = req.headers['x-api-token'];
     const userId = req.headers['x-api-userid'];
-    const database = req.headers['x-name-database'];
-    Object.assign(session, { database: database });
     const isValid = security.isValid({ token, userId });
 
     if (isValid) {

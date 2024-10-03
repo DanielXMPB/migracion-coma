@@ -12,7 +12,7 @@ module.exports = function () {
   // Verificación de seguridad.
   io.use((socket, next) => {
 
-    const { token, userId, spaceCode } = socket.handshake.query;
+    const { token, userId } = socket.handshake.query;
     const isValid = security.isValid({ token, userId });
 
     if (isValid) {

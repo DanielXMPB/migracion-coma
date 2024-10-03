@@ -4,11 +4,11 @@ module.exports = {
   host: '0.0.0.0',
   port: process.env.PORT || 41236,
   mysql: {
-    host: 'db_ffm',
+    host: process.env.DB_DNS,
     port: 3306,
-    db: 'diamante_eisi',
-    user: 'root',
-    pass: '1234',
+    db: process.env.DIAMANTE_NAME,
+    user: process.env.DB_SQL_USER,
+    pass: process.env.DB_SQL_PASSWORD
   },
   signature: process.env.COMA_REALTIME_KEY,
   testToken: 'realtime-testing',
