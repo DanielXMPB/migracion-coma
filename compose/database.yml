@@ -6,7 +6,7 @@ services:
     ports:
       - "3307:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD=/run/secrets/db_password
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db_password
       - TZ=America/Bogota
     volumes:
       - db_poseidon:/var/lib/mysql
@@ -16,7 +16,7 @@ services:
       - coma_network
     secrets:
       - db_password
-    command: --max_allowed_packet=32505856 && mysql ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
+    command: --max_allowed_packet=32505856;
   db_ffm:
     image: mysql:5.7.44
     container_name: db_ffm
@@ -24,7 +24,7 @@ services:
     ports:
       - "3308:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD=/run/secrets/db_password
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db_password
       - TZ=America/Bogota
     volumes:
       - db_ffm:/var/lib/mysql
@@ -34,7 +34,7 @@ services:
       - coma_network
     secrets:
       - db_password
-    command: --max_allowed_packet=32505856 && mysql ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
+    command: --max_allowed_packet=32505856
   db_ffq:
     image: mysql:5.7.44
     container_name: db_ffq
@@ -42,7 +42,7 @@ services:
     ports:
       - "3309:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD=/run/secrets/db_password
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db_password
       - TZ=America/Bogota
     volumes:
       - db_ffq:/var/lib/mysql
@@ -52,7 +52,7 @@ services:
       - coma_network
     secrets:
       - db_password
-    command: --max_allowed_packet=32505856 && mysql ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
+    command: --max_allowed_packet=32505856
   db_fch:
     image: mysql:5.7.44
     container_name: db_fch
@@ -60,7 +60,7 @@ services:
     ports:
       - "3310:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD=/run/secrets/db_password
+      - MYSQL_ROOT_PASSWORD_FILE/run/secrets/db_password
       - TZ=America/Bogota
     volumes:
       - db_fch:/var/lib/mysql
@@ -70,7 +70,7 @@ services:
       - coma_network
     secrets:
       - db_password
-    command: --max_allowed_packet=32505856 && mysql ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
+    command: --max_allowed_packet=32505856
   db_fcie:
     image: mysql:5.7.44
     container_name: db_fcie
@@ -78,7 +78,7 @@ services:
     ports:
       - "3311:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD=/run/secrets/db_password
+      - MYSQL_ROOT_PASSWORD_FILE/run/secrets/db_password
       - TZ=America/Bogota
     volumes:
       - db_fcie:/var/lib/mysql
@@ -88,7 +88,7 @@ services:
       - coma_network
     secrets:
       - db_password
-    command: --max_allowed_packet=32505856 && mysql ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
+    command: --max_allowed_packet=32505856
   db_fs:
     image: mysql:5.7.44
     container_name: db_fs
@@ -96,7 +96,7 @@ services:
     ports:
       - "3312:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD=/run/secrets/db_password
+      - MYSQL_ROOT_PASSWORD_FILE/run/secrets/db_password
       - TZ=America/Bogota
     volumes:
       - db_fs:/var/lib/mysql
@@ -106,7 +106,7 @@ services:
       - coma_network
     secrets:
       - db_password
-    command: --max_allowed_packet=32505856 && mysql ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
+    command: --max_allowed_packet=32505856
   db_otros:
     image: mysql:5.7.44
     container_name: db_otros
@@ -114,7 +114,7 @@ services:
     ports:
       - "3313:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD=/run/secrets/db_password
+      - MYSQL_ROOT_PASSWORD_FILE/run/secrets/db_password
       - TZ=America/Bogota
     volumes:
       - db_otros:/var/lib/mysql
@@ -124,7 +124,7 @@ services:
       - coma_network
     secrets:
       - db_password
-    command: --max_allowed_packet=32505856 && mysql ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
+    command: --max_allowed_packet=32505856
 secrets:
   db_password:
     file: ./secrets/db_password.txt

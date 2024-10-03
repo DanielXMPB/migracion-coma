@@ -9,13 +9,13 @@ module.exports = {
     host: process.env.DB_DNS,
     port: 3306,
     db: process.env.DIAMANTE_NAME,
-    user: fs.readFileSync('/run/secrets/db_user', 'utf8'),
-    pass: fs.readFileSync('/run/secrets/db_password', 'utf8')
+    user: fs.readFileSync(process.env.DB_SQL_USER_FILE, 'utf8'),
+    pass: fs.readFileSync(process.env.DB_SQL_PASSWORD_FILE, 'utf8')
   },
   session: {
     name: 'appsession',
     secret: '1234567890'
   },
-  signature: fs.readFileSync('/run/secrets/coma_realtime_key', 'utf8'),
+  signature: fs.readFileSync(process.env.COMA_REALTIME_KEY_FILE, 'utf8'),
   testToken: 'realtime-testing'
 };
