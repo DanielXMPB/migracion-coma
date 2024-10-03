@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 module.exports = {
   env: process.env.NODE_ENV ? process.env.NODE_ENV : 'development',
   dev: process.env.NODE_ENV !== 'production',
@@ -7,13 +9,13 @@ module.exports = {
     host: process.env.DB_DNS,
     port: 3306,
     db: process.env.DIAMANTE_NAME,
-    user: process.env.DB_SQL_USER_FILE,
-    pass: process.env.DB_SQL_PASSWORD_FILE,
+    user: fs.readFileSync('/run/secrets/db_user', 'utf8'),
+    pass: fs.readFileSync('/run/secrets/db_password', 'utf8')
   },
   session: {
     name: 'appsession',
-    secret: '1234567890',
+    secret: '1234567890'
   },
-  signature: process.env.COMA_REALTIME_KEY_FILE,
-  testToken: 'realtime-testing',
+  signature: fs.readFileSync('/run/secrets/coma_realtime_key', 'utf8'),
+  testToken: 'realtime-testing'
 };

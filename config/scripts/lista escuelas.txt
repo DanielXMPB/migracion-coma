@@ -53,3 +53,4 @@
 - cidlis              : https://cidlis.uis.edu.co              :
 - cemos               : https://cemos.uis.edu.co               :
 - posgradose3t        : https://posgradose3t.uis.edu.co        :
+* caluwebapp          : https://caluwebapp.uis.edu.co          :

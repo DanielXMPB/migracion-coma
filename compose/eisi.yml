@@ -35,8 +35,6 @@ services:
       NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
       DB_SQL_USER_FILE: /run/secrets/db_user #parametro[13]
       DB_SQL_PASSWORD_FILE: /run/secrets/db_password #parametro[14]
-      POSEIDON_SQL_USER_FILE: /run/secrets/db_user
-      POSEIDON_SQL_PASSWORD_FILE: /run/secrets/db_password
       CODIGO_PREGRADO: "11" #parametro[15]
       CODIGO_UNIDAD_ESCUELA: "6570" #parametro[16]
       PREGRADO_2: "99999" #parametro[17]
