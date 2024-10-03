@@ -60,7 +60,7 @@ services:
     ports:
       - "3310:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD_FILE/run/secrets/db_password
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db_password
       - TZ=America/Bogota
     volumes:
       - db_fch:/var/lib/mysql
@@ -78,7 +78,7 @@ services:
     ports:
       - "3311:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD_FILE/run/secrets/db_password
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db_password
       - TZ=America/Bogota
     volumes:
       - db_fcie:/var/lib/mysql
@@ -96,7 +96,7 @@ services:
     ports:
       - "3312:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD_FILE/run/secrets/db_password
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db_password
       - TZ=America/Bogota
     volumes:
       - db_fs:/var/lib/mysql
@@ -114,7 +114,7 @@ services:
     ports:
       - "3313:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD_FILE/run/secrets/db_password
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db_password
       - TZ=America/Bogota
     volumes:
       - db_otros:/var/lib/mysql
