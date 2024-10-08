@@ -10,7 +10,6 @@ services:
       COMA_REALTIME_KEY_FILE: /run/secrets/coma_realtime_key #parametro[91]
     networks:
       - coma_network
-    #command: bash -c "cd /datadrive/realtime && npx pm2 start pm2.json"
     secrets:
       - db_password
       - db_user

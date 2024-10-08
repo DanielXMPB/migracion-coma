@@ -21,7 +21,7 @@ services:
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_e3t"
       DIVISION_NAME: "division_e3t"
-      URL_ESCUELA: "https://eisidev02.uis.edu.co" #parametro[2]
+      URL_ESCUELA: "https://e3t.uis.edu.co" #parametro[2]
       NOMBRE_ABREVIADO: "E3T" #parametro[3]
       NOMBRE_LARGO_ESCUELA: "Escuela de Ingenierías Eléctrica, Electrónica y de Telecomunicaciones" #parametro[4]
       NOMBRE_SISTEMA: "E3TWeb" #parametro[5]
