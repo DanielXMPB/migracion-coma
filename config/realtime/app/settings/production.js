@@ -1,5 +1,5 @@
 module.exports = {
   mysql: {
-    db: process.env.DIAMANTE_NAME,
+    db: 'diamante_eisi',
   },
 };

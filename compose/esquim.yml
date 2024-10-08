@@ -17,6 +17,7 @@ services:
     networks:
       - coma_network
     environment:
+      GOOGLE_ANALYTICS_ID: "XXXXXXXX"
       DB_DNS: "db_fcie"
       POSEIDON_DNS: "db_poseidon"
       DIAMANTE_NAME: "diamante_esquim"

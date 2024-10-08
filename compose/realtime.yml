@@ -4,9 +4,24 @@ services:
     container_name: realtime
     volumes:
       - ../realtime/realtime:/datadrive/realtime
+    environment:
+      DB_SQL_USER_FILE: /run/secrets/db_user #parametro[13]
+      DB_SQL_PASSWORD_FILE: /run/secrets/db_password #parametro[14]
+      COMA_REALTIME_KEY_FILE: /run/secrets/coma_realtime_key #parametro[91]
     networks:
       - coma_network
     #command: bash -c "cd /datadrive/realtime && npx pm2 start pm2.json"
+    secrets:
+      - db_password
+      - db_user
+      - coma_realtime_key
+secrets:
+  db_password:
+    file: ./secrets/db_password.txt
+  db_user:
+    file: ./secrets/db_user.txt
+  coma_realtime_key:
+    file: ./secrets/coma_realtime_key.txt
 networks:
   coma_network:
     driver: bridge

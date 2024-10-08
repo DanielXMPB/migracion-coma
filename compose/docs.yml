@@ -1,0 +1,6 @@
+services:
+  comadocs:
+    image: comadocs:latest
+    container_name: comadocs
+    ports:
+      - "8080:80"
