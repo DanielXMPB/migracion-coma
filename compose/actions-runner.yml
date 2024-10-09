@@ -11,9 +11,9 @@ services:
       resources: 
         limits:
           cpus: '0.20'
-          memory: 2G
+          memory: 4G
         reservations:
-          memory: 1.5G
+          memory: 3G
     volumes:
       - /datadrive/deployment:/datadrive/deployment
     command: bash -c "chown -R docker:docker /datadrive/deployment && ./start.sh"

@@ -2,13 +2,13 @@ module.exports = {
   env: process.env.NODE_ENV ? process.env.NODE_ENV : 'development',
   dev: process.env.NODE_ENV !== 'production',
   host: '0.0.0.0',
-  port: process.env.PORT || 41236,
+  port: process.env.PORT || 9700,
   mysql: {
     host: 'db_ffm',
     port: 3306,
-    db: 'diamante_test',
+    db: 'diamante_eisi',
     user: process.env.DB_SQL_USER,
-    pass: process.env.DB_SQL_PASSWORD,
+    pass: process.env.DB_SQL_PASSWORD
   },
   session: {
     name: 'appsession',

@@ -27,7 +27,7 @@ services:
     ports:
       - "3308:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db_password
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db_root_password
       - MYSQL_USER=calumet
       - MYSQL_PASSWORD_FILE=/run/secrets/db_password
       - TZ=America/Bogota
@@ -48,7 +48,7 @@ services:
     ports:
       - "3309:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db_password
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db_root_password
       - MYSQL_USER=calumet
       - MYSQL_PASSWORD_FILE=/run/secrets/db_password
       - TZ=America/Bogota
@@ -69,7 +69,7 @@ services:
     ports:
       - "3310:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db_password
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db_root_password
       - MYSQL_USER=calumet
       - MYSQL_PASSWORD_FILE=/run/secrets/db_password
       - TZ=America/Bogota
@@ -90,7 +90,7 @@ services:
     ports:
       - "3311:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db_password
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db_root_password
       - MYSQL_USER=calumet
       - MYSQL_PASSWORD_FILE=/run/secrets/db_password
       - TZ=America/Bogota
@@ -111,7 +111,7 @@ services:
     ports:
       - "3312:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db_password
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db_root_password
       - MYSQL_USER=calumet
       - MYSQL_PASSWORD_FILE=/run/secrets/db_password
       - TZ=America/Bogota
@@ -132,7 +132,7 @@ services:
     ports:
       - "3313:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db_password
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db_root_password
       - MYSQL_USER=calumet
       - MYSQL_PASSWORD_FILE=/run/secrets/db_password
       - TZ=America/Bogota
