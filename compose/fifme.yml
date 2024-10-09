@@ -117,7 +117,7 @@ services:
       - db_password
       - db_user
       - coma_realtime_key
-    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
+    command: bash -c "/bin/bash /usr/local/bin/secrets-setup.sh && chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
 secrets:
   db_password:
     file: ./secrets/db_password.txt

@@ -23,6 +23,6 @@ file_env() {
 	unset "$fileVar"
 }
 
-file_env "DB_PASSWORD"
-file_env "DB_USER"
+file_env "DB_SQL_PASSWORD"
+file_env "DB_SQL_USER"
 file_env "COMA_REALTIME_KEY"
