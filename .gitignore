@@ -1,4 +1,3 @@
 build/eisi.war
 files
-condor/config/id_rsa
-condor/node_modules/
+compose/secrets

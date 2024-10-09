@@ -16,6 +16,8 @@ services:
       - ../config/server.xml:/datadrive/tomcat/conf/server.xml
     networks:
       - coma_network
+    env_file:
+      - ./secrets/secrets.env
     environment:
       GOOGLE_ANALYTICS_ID: "XXXXXXXX"
       DB_DNS: "db_fs"
@@ -33,10 +35,6 @@ services:
       VERSION_SERVIDOR: "5.0" #parametro[10]
       CIUDAD: "Bucaramanga" #parametro[11]
       NOMBRE_CORTO_ESCUELA: "Esc. de Enfermería" #parametro[12]
-      DB_SQL_USER_FILE: /run/secrets/db_user #parametro[13]
-      DB_SQL_PASSWORD_FILE: /run/secrets/db_password #parametro[14]
-      POSEIDON_SQL_USER_FILE: /run/secrets/db_user
-      POSEIDON_SQL_PASSWORD_FILE: /run/secrets/db_password
       CODIGO_PREGRADO: "51" #parametro[15]
       CODIGO_UNIDAD_ESCUELA: "6830" #parametro[16]
       PREGRADO_2: "99999" #parametro[17]
@@ -111,20 +109,9 @@ services:
       CORREO_10: "enfermeria9@comunidaduis.co" #parametro[88]
       CORREO_10_PASS: "piolin" #parametro[89]
       CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
-      COMA_REALTIME_KEY_FILE: /run/secrets/coma_realtime_key #parametro[91]
       RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
-    secrets:
-      - db_password
-      - db_user
-      - coma_realtime_key
-    command: bash -c "/bin/bash /usr/local/bin/secrets-setup.sh && chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
-secrets:
-  db_password:
-    file: ./secrets/db_password.txt
-  db_user:
-    file: ./secrets/db_user.txt
-  coma_realtime_key:
-    file: ./secrets/coma_realtime_key.txt
+
+    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
 volumes:
   coma_esenf_files_backup:
     external: false

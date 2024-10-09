@@ -15,6 +15,8 @@ services:
       - ../config/realtime:/datadrive/realtime
     networks:
       - coma_network
+    env_file:
+      - ./secrets/secrets.env
     environment:
       GOOGLE_ANALYTICS_ID: "XXXXXXXX"
       DB_DNS: "db_ffm"
@@ -32,8 +34,6 @@ services:
       VERSION_SERVIDOR: "5.0" #parametro[10]
       CIUDAD: "Bucaramanga" #parametro[11]
       NOMBRE_CORTO_ESCUELA: "INGENIERIA DE SISTEMAS" #parametro[12]
-      DB_SQL_USER_FILE: /run/secrets/db_user #parametro[13]
-      DB_SQL_PASSWORD_FILE: /run/secrets/db_password #parametro[14]
       CODIGO_PREGRADO: "11" #parametro[15]
       CODIGO_UNIDAD_ESCUELA: "6570" #parametro[16]
       PREGRADO_2: "99999" #parametro[17]
@@ -108,20 +108,7 @@ services:
       CORREO_10: "cormoran9@comunidaduis.co" #parametro[88]
       CORREO_10_PASS: "piolin" #parametro[89]
       CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
-      COMA_REALTIME_KEY_FILE: /run/secrets/coma_realtime_key #parametro[91]
-      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Ordenanza No 83 de 1944 | Carácter académico: Universidad | Código SNIES: 1204 Nit: 890201213-4" #parametro[92]
-    secrets:
-      - db_password
-      - db_user
-      - coma_realtime_key
-    command: bash -c "/bin/bash /usr/local/bin/secrets-setup.sh && chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
-secrets:
-  db_password:
-    file: ./secrets/db_password.txt
-  db_user:
-    file: ./secrets/db_user.txt
-  coma_realtime_key:
-    file: ./secrets/coma_realtime_key.txt
+      RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Ordenanza No 83 de 1944 | Carácter académico: Universidad | Código SNIES: 1204 Nit: 890201213-4" #parametro[92]    command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
 volumes:
   coma_eisi_files_backup:
     external: false

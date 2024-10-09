@@ -150,9 +150,6 @@ RUN apt-get update && apt-get install -y rsync mysql-client cron nano unzip && r
 
 RUN service cron start
 
-COPY secrets-setup.sh /usr/local/bin/secrets-setup.sh
-RUN chmod +x /usr/local/bin/secrets-setup.sh
-
 EXPOSE 8080
 
 # upstream eclipse-temurin-provided entrypoint script caused https://github.com/docker-library/tomcat/issues/77 to come back as https://github.com/docker-library/tomcat/issues/302; use "/entrypoint.sh" at your own risk
