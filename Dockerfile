@@ -148,17 +148,12 @@ RUN set -eux; \
 
 RUN apt-get update && apt-get install -y rsync mysql-client cron nano unzip && rm -rf /var/lib/apt/lists/*
 
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
-
-RUN export NVM_DIR="$HOME/.nvm"; \
-	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; \
-	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"; \
-	nvm install 20 && npm install -g pm2;
-
 RUN service cron start
 
+COPY docker-entrypoint.sh /datadrive/docker-entrypoint.sh
+RUN chmod +x /datadrive/docker-entrypoint.sh
+
 EXPOSE 8080
-EXPOSE 41236
 
 # upstream eclipse-temurin-provided entrypoint script caused https://github.com/docker-library/tomcat/issues/77 to come back as https://github.com/docker-library/tomcat/issues/302; use "/entrypoint.sh" at your own risk
 ENTRYPOINT []
