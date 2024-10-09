@@ -7,13 +7,13 @@ module.exports = {
     host: 'db_ffm',
     port: 3306,
     db: 'diamante_test',
-    user: 'root',
-    pass: '1234',
+    user: process.env.DB_SQL_USER,
+    pass: process.env.DB_SQL_PASSWORD,
   },
   session: {
     name: 'appsession',
     secret: '1234567890',
   },
-  signature: 'rDp+KupvV+_BJeEpCMp+!ny9ncSmkwx-F_gmcH2jtxQN7rqz4QF#TGWBSsaK3mWs',
+  signature: process.env.COMA_REALTIME_KEY,
   testToken: 'realtime-testing',
 };

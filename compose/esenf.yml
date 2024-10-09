@@ -110,7 +110,6 @@ services:
       CORREO_10_PASS: "piolin" #parametro[89]
       CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
       RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
-
     command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
 volumes:
   coma_esenf_files_backup:

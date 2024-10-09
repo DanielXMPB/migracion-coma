@@ -4,7 +4,6 @@ services:
     container_name: realtime
     volumes:
       - ../realtime/realtime:/datadrive/realtime
-    environment:
     networks:
       - coma_network
     env_file:
