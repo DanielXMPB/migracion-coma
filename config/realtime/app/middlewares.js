@@ -31,6 +31,7 @@ module.exports = function () {
       'Accept',
       'x-api-token',
       'x-api-userid',
+      'x-api-schoolname',
     ].join(', '));
     next();
   });
