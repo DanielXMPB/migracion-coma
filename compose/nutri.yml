@@ -9,8 +9,10 @@ services:
     ports:
       - "9026:8080"
     volumes:
-      - coma_nutri_files_backup:/datadrive/backup
-      - ../build/eisi.war:/datadrive/build/eisi.war
+      - coma_nutri_db_backup:/datadrive/backup
+      - coma_nutri_webapp:/datadrive/tomcat/webapps
+      - coma_nutri_files:/datadrive/archivos
+      - /datadrive/deployment/master/eisi.war:/datadrive/build/eisi.war:ro
       - ../files/coma_nutri:/datadrive/original_files
       - ../config/startup.sh:/datadrive/tomcat/startup.sh
       - ../config/server.xml:/datadrive/tomcat/conf/server.xml
@@ -110,12 +112,17 @@ services:
       CORREO_10_PASS: "piolin" #parametro[89]
       CAT_ADMIN_BOLSA_EMPLEO: "CT39" #parametro[90]
       RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Reconocimiento como Universidad: Resolución número 25 de 23 de febrero de 1949 del Ministerio de Justicia." #parametro[92]
-
     command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
 volumes:
-  coma_nutri_files_backup:
+  coma_nutri_db_backup:
     external: false
-    name: coma_nutri_files_backup
+    name: coma_nutri_db_backup
+  coma_nutri_webapp:
+    external: false
+    name: coma_nutri_webapp
+  coma_nutri_files:
+    external: false
+    name: coma_nutri_files
 networks:
   coma_network:
     driver: bridge

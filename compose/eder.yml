@@ -9,8 +9,10 @@ services:
     ports:
       - "9019:8080"
     volumes:
-      - coma_eder_files_backup:/datadrive/backup
-      - ../build/eisi.war:/datadrive/build/eisi.war
+      - coma_eder_db_backup:/datadrive/backup
+      - coma_eder_webapp:/datadrive/tomcat/webapps
+      - coma_eder_files:/datadrive/archivos
+      - /datadrive/deployment/master/eisi.war:/datadrive/build/eisi.war:ro
       - ../files/coma_eder:/datadrive/original_files
       - ../config/startup.sh:/datadrive/tomcat/startup.sh
       - ../config/server.xml:/datadrive/tomcat/conf/server.xml
@@ -112,9 +114,15 @@ services:
       RECONOCIMIENTO_UNIVERSIDAD: "Universidad Industrial de Santander | Vigilada Mineducación | Ordenanza No 83 de 1944 | Carácter académico: Universidad | Código SNIES: 1204 Nit: 890201213-4" #parametro[92]
     command: bash -c "chmod +x /datadrive/tomcat/startup.sh && /bin/bash /datadrive/tomcat/startup.sh"
 volumes:
-  coma_eder_files_backup:
+  coma_eder_db_backup:
     external: false
-    name: coma_eder_files_backup
+    name: coma_eder_db_backup
+  coma_eder_webapp:
+    external: false
+    name: coma_eder_webapp
+  coma_eder_files:
+    external: false
+    name: coma_eder_files
 networks:
   coma_network:
     driver: bridge
