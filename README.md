@@ -3,7 +3,7 @@
 Describe la arquitectura de Docker utilizada para la migración de COMA hacia un servidor centralizado, el cual utiliza Docker.
 
 # Versiones Utilizadas
-- Tomcat v9.0.93
+- Tomcat v9.0.95
 - MySQL v5.7.44
 - Nginx v1.27.1
 - JDK 21 (LTS)
@@ -25,7 +25,7 @@ El proyecto COMA fue migrado en el año 2024 hacia un servidor centralizado dent
 Cada escuela tiene su propio contenedor de Tomcat.
 
 #### Startup de Tomcat
-El archivo `/config/startup.sh` del repositorio contiene un script que se ejecuta cada vez que el contenedor inicia. En este script está la lógica de conservación de archivos, portales de profesores y grupos, CSS, entre otros, para que cuándo se haga un despliegue, Tomcat no sobreescriba éstos archivos.
+El archivo `/config/startup.sh` del repositorio contiene un script que se ejecuta cada vez que el contenedor inicia. En este script está la lógica de conservación de archivos, portales de profesores y grupos, entre otros, para que cuándo se haga un despliegue, Tomcat no sobreescriba éstos archivos cuando detecta un cambio en el .war.
 
 La primera vez que se crea el contenedor (es decir, cuándo se va a crear un nuevo portal web), sucede lo siguiente:
 - Se crea el archivo `/tmp/initializated` para indicar que ya se ejecutó la configuración inicial.
